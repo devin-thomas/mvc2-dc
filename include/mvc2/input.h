@@ -30,4 +30,21 @@ typedef struct {
     u8  stick_dir;
 } MvC2InputState;
 
+/*
+ * Low-level controller state matching binary offsets 0x8C010080 - 0x8C010324
+ * Stored in global controller buffer at 0x8C2681DC.
+ */
+typedef struct {
+    u16 current_buttons;   /* 0x00: Held raw buttons */
+    u16 previous_buttons;  /* 0x02: Buttons from previous frame */
+    u16 analog_x;          /* 0x04: Joystick horizontal */
+    u16 analog_y;          /* 0x06: Joystick vertical */
+    u16 trigger_l;         /* 0x08: Left analog trigger (0-255) */
+    u16 trigger_r;         /* 0x0A: Right analog trigger (0-255) */
+    u16 reserved[2];       /* 0x0C - 0x0E */
+    u16 repeat_buttons;    /* 0x10: Buttons firing in auto-repeat mode */
+    u16 repeat_counter;    /* 0x12: Debounce and auto-repeat timer */
+} MvC2PadState;
+
 #endif /* MVC2_INPUT_H */
+
