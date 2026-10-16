@@ -28,8 +28,12 @@ try:
 except ImportError:
     HAS_CAPSTONE = False
 
-RESEARCH_URL = "http://100.111.153.70:11434"
+HOST_URLS = {
+    "research": "http://100.111.153.70:11434",
+    "command":  "http://100.86.124.96:11434",
+}
 DEFAULT_MODEL = "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M"
+COMMAND_DEFAULT_MODEL = "qwen3.5:9b"
 
 SYSTEM_PROMPT = """You are an expert Hitachi SuperH (SH-4) reverse engineer and Sega Dreamcast C decompiler.
 You are decompiling retail Sega Katana SDK / Shinobi C code from SH-4 machine code.
@@ -86,7 +90,11 @@ def disassemble(bin_path: Path, vram_addr: int, byte_count: int) -> str:
 
 
 def run_decompile_stream(prompt: str, show_thinking: bool = True, live_file: Path | None = None,
-                         model: str = DEFAULT_MODEL, no_think: bool = False):
+                         model: str | None = None, host: str = "research", no_think: bool = False):
+    base_url = HOST_URLS.get(host, HOST_URLS["research"])
+    if model is None:
+        model = COMMAND_DEFAULT_MODEL if host == "command" else DEFAULT_MODEL
+
     body = {
         "model": model,
         "messages": [
@@ -96,14 +104,14 @@ def run_decompile_stream(prompt: str, show_thinking: bool = True, live_file: Pat
         "stream": True,
         "options": {
             "temperature": 0.2,
-            "num_ctx": 4096,
+            "num_ctx": 16384,
         }
     }
     if no_think:
         body["think"] = False
 
     req = urllib.request.Request(
-        f"{RESEARCH_URL}/api/chat",
+        f"{base_url}/api/chat",
         data=json.dumps(body).encode("utf-8"),
         headers={"Content-Type": "application/json"}
     )
@@ -112,17 +120,23 @@ def run_decompile_stream(prompt: str, show_thinking: bool = True, live_file: Pat
     if live_file:
         live_file.parent.mkdir(parents=True, exist_ok=True)
         lf = live_file.open("w", encoding="utf-8")
-        lf.write(f"# Qwen Live Decompilation Stream\n**Model**: `{model}`\n\n")
+        lf.write(f"# Qwen Live Decompilation Stream\n**Host**: `{host}` | **Model**: `{model}`\n\n")
         lf.flush()
 
     in_thinking = False
     thinking_buffer = []
     code_buffer = []
 
-    print(f"\n[aipipe] Querying {model} on research (M5 Max)...", flush=True)
+    print(f"\n[aipipe] Querying {model} on {host}...", flush=True)
 
     try:
-        with urllib.request.urlopen(req, timeout=900) as resp:
+        try:
+            resp_cm = urllib.request.urlopen(req, timeout=900)
+        except urllib.error.HTTPError as e:
+            err_msg = e.read().decode("utf-8", errors="replace")
+            print(f"\n[Ollama Error {e.code}]: {err_msg}", file=sys.stderr)
+            raise
+        with resp_cm as resp:
             buf = b""
             while True:
                 chunk = resp.read(128)
@@ -134,6 +148,7 @@ def run_decompile_stream(prompt: str, show_thinking: bool = True, live_file: Pat
                     raw_line = raw_line.strip()
                     if not raw_line:
                         continue
+
                     ev = json.loads(raw_line.decode("utf-8", errors="replace"))
                     msg = ev.get("message", {})
                     think_chunk = msg.get("thinking", "")
@@ -197,7 +212,8 @@ def main():
     parser.add_argument("--show-thinking", action="store_true", default=True, help="Display live reasoning")
     parser.add_argument("--no-think", action="store_true", help="Skip thinking phase for instant code")
     parser.add_argument("--live-file", type=Path, default=Path("build/qwen_live.md"), help="File to write live stream to")
-    parser.add_argument("--model", type=str, default=DEFAULT_MODEL)
+    parser.add_argument("--host", type=str, default="research", choices=["research", "command"], help="Host to run Qwen on")
+    parser.add_argument("--model", type=str, default=None, help="Model name (defaults to Qwen 27B on research, 9B on command)")
     args = parser.parse_args()
 
     disasm_text = disassemble(args.bin, args.vram, args.size)
@@ -217,8 +233,10 @@ Assembly:
         show_thinking=args.show_thinking,
         live_file=args.live_file,
         model=args.model,
+        host=args.host,
         no_think=args.no_think
     )
+
 
 
 if __name__ == "__main__":

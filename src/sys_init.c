@@ -21,6 +21,54 @@ typedef struct {
 } MvC2SystemInfo;
 
 extern MvC2SystemInfo *g_system_info;
+extern u8 g_controller_poll_disabled;
+
+void controller_update_repeat(MvC2PadState *ctrl);
+
+/*
+ * 0x8C010080 - Poll Dreamcast Maple bus controllers (ports A0, B0, C0, D0).
+ * Updates global pad state tables for all connected players.
+ */
+void dreamcast_poll_controllers(void) {
+    s32 port;
+    typedef void (*PdInitFunc)(void);
+    typedef void *(*PdGetPeripheralFunc)(u32);
+
+    /* Initialize Maple peripheral bus */
+    ((PdInitFunc)0x8C17794E)();
+
+    /* Acquire device handles for ports A, B, C, D */
+    g_maple_devices[0] = ((PdGetPeripheralFunc)0x8C177A54)(0);   /* Port A0 */
+    g_maple_devices[1] = ((PdGetPeripheralFunc)0x8C177A54)(6);   /* Port B0 */
+    g_maple_devices[2] = ((PdGetPeripheralFunc)0x8C177A54)(12);  /* Port C0 */
+    g_maple_devices[3] = ((PdGetPeripheralFunc)0x8C177A54)(18);  /* Port D0 */
+
+    if (g_controller_poll_disabled != 0) {
+        return;
+    }
+
+    /* Process player controllers (Ports 0..1) */
+    for (port = 0; port < 2; port++) {
+        void *dev = g_maple_devices[port];
+        if (dev != NULL) {
+            /* Offset 0x30 points to peripheral condition structure */
+            u32 *cond_ptr = *(u32 **)((u8 *)dev + 48);
+            if (cond_ptr != NULL && (*cond_ptr & 1) != 0) {
+                u16 raw_buttons = *(u16 *)((u8 *)cond_ptr + 2);
+                u16 prev_buttons = g_player_pads[port].current_buttons;
+
+                g_player_pads[port].previous_buttons = prev_buttons;
+                g_player_pads[port].current_buttons = raw_buttons;
+                g_player_pads[port].pressed = raw_buttons & ~prev_buttons;
+                g_player_pads[port].released = prev_buttons & ~raw_buttons;
+
+                /* Update auto-repeat */
+                controller_update_repeat(&g_player_pads[port]);
+            }
+        }
+    }
+}
+
 
 /*
  * 0x8C0102C0 - Update controller auto-repeat timer and repeat buttons mask.
@@ -137,3 +185,50 @@ void sys_shutdown_subsystems(void) {
         "ldc r0, sr\n"
     );
 }
+
+/*
+ * 0x8C0103F8 - Check Maple bus peripheral disconnect / timeout error.
+ * Decompiled in parallel on Host command (Apple M5 Air, Qwen 3.5 9B).
+ */
+#define MAPLE_ERR_TIMEOUT      -23
+#define MAPLE_ERR_DISCONNECTED -33
+
+extern u32 g_maple_disconnect_status; /* VRAM: 0x8C212BF8 */
+
+void check_maple_disconnect_error(s32 error_code) {
+    if (error_code == MAPLE_ERR_TIMEOUT) {
+        g_maple_disconnect_status = 1;
+        return;
+    }
+
+    if (error_code == MAPLE_ERR_DISCONNECTED) {
+        return;
+    }
+
+    /* Fall through: all other unexpected errors flag disconnect */
+    g_maple_disconnect_status = 1;
+}
+
+/*
+ * 0x8C010458 - System heap and work buffer initialization.
+ * Decompiled in parallel on Host research (Apple M5 Max, Qwen 3.8 27B).
+ */
+extern void *g_heap_work_buffer;
+
+s32 sys_init_heap_buffer(void) {
+    typedef void *(*SyMallocFunc)(u32);
+    typedef void (*SyHeapInitFunc)(void *);
+
+    if (g_heap_work_buffer == NULL) {
+        /* Allocate 128 KB work buffer if unallocated */
+        g_heap_work_buffer = ((SyMallocFunc)0x8C1743B0)(0x20000);
+        if (g_heap_work_buffer == NULL) {
+            return -1;
+        }
+    }
+
+    /* Initialize Shinobi heap manager */
+    ((SyHeapInitFunc)0x8C174400)(g_heap_work_buffer);
+    return 0;
+}
+
