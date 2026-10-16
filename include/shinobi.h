@@ -17,6 +17,7 @@ void  syFree(void *ptr);
 
 /* System hardware initialization */
 void  syHwInit(void);
+void  syHwFinish(void);
 void  syStartInit(void);
 
 /* Cache management */

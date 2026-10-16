@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="dashboard-task-id" content="mvc2-dc-decomp-20261016">
+  <meta name="dashboard-updated-at" content="2026-10-16T18:57:05-05:00">
+  <title>MvC2 Dreamcast Decompilation - Task Dashboard</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --success: #3fb950;
+      --warning: #d29922;
+      --error: #f85149;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 1.5rem;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h1 { font-size: 1.5rem; font-weight: 600; color: #fff; }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-working { background: rgba(88, 166, 255, 0.2); color: var(--accent); border: 1px solid var(--accent); }
+    .badge-complete { background: rgba(63, 185, 80, 0.2); color: var(--success); border: 1px solid var(--success); }
+    .meta-bar {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .action-card {
+      border-left: 4px solid var(--success);
+      background: rgba(63, 185, 80, 0.05);
+    }
+    .warning-card {
+      border-left: 4px solid var(--warning);
+      background: rgba(210, 153, 34, 0.05);
+    }
+    ul { list-style: none; }
+    li { margin-bottom: 0.5rem; }
+    .milestone-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #21262d;
+    }
+    .milestone-item:last-child { border-bottom: none; }
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+    .tag-complete { background: rgba(63, 185, 80, 0.2); color: var(--success); }
+    .tag-in_progress { background: rgba(88, 166, 255, 0.2); color: var(--accent); }
+    .tag-pending { background: #21262d; color: var(--text-muted); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+    .timestamp { font-family: monospace; font-size: 0.8rem; }
+    .snapshot-box {
+      background: #090d13;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-family: monospace;
+      color: #e6edf3;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1 id="task-title">MvC2 Dreamcast Autonomous Decompilation</h1>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+          Task ID: <span id="task-id" class="timestamp">mvc2-dc-decomp-20261016</span> | Branch: <span id="branch" class="timestamp">qwen</span>
+        </div>
+      </div>
+      <div id="overall-state-badge" class="badge badge-working">WORKING</div>
+    </header>
+
+    <div class="meta-bar">
+      <div>Phase: <strong id="phase" style="color: #fff;">Phase 2: Multi-Host Decompilation Loop & Peripheral Subsystems</strong></div>
+      <div>Updated: <span id="updated-at" class="timestamp">2026-10-16T18:57:05-05:00</span></div>
+    </div>
+
+    <!-- Action Required -->
+    <div class="card action-card">
+      <div class="card-title">✅ Action Required</div>
+      <p id="action-required">No action required from you right now. The autonomous multi-host decompilation daemon is active across the local Apple Silicon cluster (Research + Command).</p>
+    </div>
+
+    <!-- Current Activity -->
+    <div class="card">
+      <div class="card-title">⚡ Current Activity</div>
+      <p id="current-activity">Decompiling peripheral subsystems in <code>src/sys_init.c</code> and dispatch functions via Qwen-27B on Research and Qwen-9B on Command with Clang syntax reviewer loop.</p>
+    </div>
+
+    <!-- Milestones -->
+    <div class="card">
+      <div class="card-title">🎯 Milestones</div>
+      <ul id="milestones-list">
+        <li class="milestone-item"><span>Milestone 1: Environment, Tooling & Binary Extraction</span><span class="tag tag-complete">Complete</span></li>
+        <li class="milestone-item"><span>Milestone 2: Multi-Node AI Cluster Pipeline (ai-pipe unbuffered)</span><span class="tag tag-complete">Complete</span></li>
+        <li class="milestone-item"><span>Milestone 3: Autonomous Queue Daemon & Compiler Reviewer Loop</span><span class="tag tag-complete">Complete</span></li>
+        <li class="milestone-item"><span>Milestone 4: Maple Bus & Peripheral Subsystems (src/sys_init.c)</span><span class="tag tag-in_progress">In Progress</span></li>
+        <li class="milestone-item"><span>Milestone 5: Ninja Graphics & Rend Engine Decompilation</span><span class="tag tag-pending">Pending</span></li>
+        <li class="milestone-item"><span>Milestone 6: Gameplay & Fighter State Tables</span><span class="tag tag-pending">Pending</span></li>
+        <li class="milestone-item"><span>Milestone 7: Byte-Match Verification (objdiff / 100% target)</span><span class="tag tag-pending">Pending</span></li>
+      </ul>
+    </div>
+
+    <!-- Grid: Next Up & Warnings -->
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">📋 Next Up</div>
+        <ul id="next-up-list" style="font-size: 0.9rem;">
+          <li>1. Run autonomous daemon batch on remaining startup and Maple bus handlers</li>
+          <li>2. Identify and label literal pools vs instruction streams in disassembler</li>
+          <li>3. Extract Ninja graphics initialization functions</li>
+          <li>4. Update progress badge and objdiff configurations</li>
+        </ul>
+      </div>
+
+      <div class="card warning-card">
+        <div class="card-title">⚠️ Warnings & Resource Constraints</div>
+        <ul id="warnings-list" style="font-size: 0.85rem;">
+          <li><strong>[Agent handling]</strong> Research host internal SSD space is low (~43 GB); all repos, tools, and build outputs are strictly restricted to <code>/Volumes/PortableSSD/mvc2-dc</code>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Walk-Away Snapshot -->
+    <div class="card">
+      <div class="card-title">🛡️ Walk-Away Snapshot</div>
+      <div class="snapshot-box" id="snapshot-box">
+        <strong>Last verified state:</strong> 11 functions decompiled and verified with Clang syntax check<br>
+        <strong>Cluster:</strong> Research (M5 Max, Qwen-27B) + Command (M5 Air, Qwen-9B)<br>
+        <strong>Next safe command:</strong> <code>python tools/auto_decomp_daemon.py --batch 5</code><br>
+        <strong>Serving:</strong> Tailscale Serve on port 8472 (Local port 4182)
+      </div>
+    </div>
+
+    <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">
+      Auto-refreshing state every 15s • Private Long Horizon Dashboard
+    </div>
+  </div>
+
+  <script>
+    async function refreshStatus() {
+      try {
+        const res = await fetch('status.json?t=' + Date.now());
+        if (!res.ok) return;
+        const data = await res.json();
+        
+        document.getElementById('task-id').textContent = data.task_id;
+        document.getElementById('updated-at').textContent = data.updated_at;
+        document.getElementById('phase').textContent = data.phase;
+        document.getElementById('branch').textContent = data.branch;
+        document.getElementById('action-required').textContent = data.action_required;
+        document.getElementById('current-activity').textContent = data.current_activity;
+        
+        const badge = document.getElementById('overall-state-badge');
+        badge.textContent = (data.overall_state || 'WORKING').toUpperCase();
+        badge.className = 'badge badge-' + (data.overall_state === 'complete' ? 'complete' : 'working');
+      } catch (e) {
+        console.warn('Status fetch failed', e);
+      }
+    }
+    setInterval(refreshStatus, 15000);
+  </script>
+</body>
+</html>
