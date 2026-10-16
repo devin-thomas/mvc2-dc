@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/encounter/objdiff/main/objdiff-gui/schema.json",
+  "min_version": "2.0.0",
+  "custom_make": "make",
+  "build_base": true,
+  "build_target": false,
+  "target_dir": "assets",
+  "base_dir": "build",
+  "units": [
+    {
+      "name": "crt0",
+      "target_path": "assets/crt0.bin",
+      "base_path": "build/src/crt0.o"
+    },
+    {
+      "name": "main",
+      "target_path": "assets/engine_main.bin",
+      "base_path": "build/src/main.o"
+    }
+  ]
+}

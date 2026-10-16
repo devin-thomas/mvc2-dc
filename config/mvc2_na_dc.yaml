@@ -1,0 +1,45 @@
+name: Marvel vs. Capcom 2 (Dreamcast NA)
+sha1: d792ef936edd89dfb2ce5399c6b4949460dd3d7b
+options:
+  basename: 1ST_READ
+  target_path: build-inputs/1ST_READ_descrambled.bin
+  base_path: .
+  platform: dreamcast
+  compiler: SHC
+  arch: sh4
+  endian: little
+  symbol_addrs_path: config/symbols.txt
+  asm_path: asm
+  src_path: src
+  asset_path: assets
+  build_path: build
+
+segments:
+  - name: header_crt0
+    type: code
+    start: 0x00000000
+    vram: 0x8C010000
+    subsegments:
+      - [0x00000000, asm, crt0]
+      - [0x00000030, rodata, lib_handles]
+
+  - name: text
+    type: code
+    start: 0x00000080
+    vram: 0x8C010080
+    subsegments:
+      - [0x00000080, asm, sys_init]
+      - [0x00001000, asm, engine_main]
+      - [0x00050000, asm, fight_engine]
+      - [0x000D0000, asm, sound_adx]
+      - [0x00100000, asm, graphics_kamui]
+
+  - name: data
+    type: data
+    start: 0x00140000
+    vram: 0x8C150000
+    subsegments:
+      - [0x00140000, data, fight_tables]
+      - [0x00180000, data, sys_data]
+
+  - [0x001BA499]

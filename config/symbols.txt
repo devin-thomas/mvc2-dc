@@ -1,0 +1,44 @@
+# Marvel vs. Capcom 2 (Dreamcast NA) - Symbol Map
+# Format: <address> <type> <name> [size]
+# Types: func, data, rodata, bss, reg
+
+# CRT0 and Katana SDK Startup (0x8C010000 - 0x8C010080)
+0x8C010000 func start 0x30
+0x8C01000c func _crt0_boot 0x14
+0x8C010030 rodata _lib_handle_start 0x40
+0x8C010070 rodata _lib_handle_end 0x10
+0x8C010080 func _crt0_init
+
+# Common Katana / Shinobi Functions
+0x8C1742c0 func syStartInit
+
+# Dreamcast Memory Mapped I/O Registers (Area 5 / P4)
+0xA05F6800 reg G2_BASE
+0xA05F6C00 reg MAPLE_BASE
+0xA05F6C04 reg MAPLE_DMAADDR
+0xA05F6C10 reg MAPLE_RESET2
+0xA05F6C14 reg MAPLE_ENABLE
+0xA05F6C18 reg MAPLE_STATUS
+0xA05F6C80 reg MAPLE_RESET1
+0xA05F7000 reg GDROM_BASE
+0xA05F8000 reg PVR_RESET
+0xA05F8004 reg PVR_STARTRENDER
+0xA05F8008 reg PVR_TA_INIT
+0xA05F800C reg PVR_YUV_ADDR
+0xA05F8014 reg PVR_TA_OPB_START
+0xA05F8018 reg PVR_TA_OPB_END
+0xA05F8040 reg PVR_BORDER_COL
+0xA05F8044 reg PVR_FB_CFG
+0xA05F8088 reg PVR_ID
+0xA05F808C reg PVR_REVISION
+0xA0700000 reg AICA_BASE
+0xA0702800 reg AICA_RTC_HI
+0xA0702804 reg AICA_RTC_LO
+
+# SH-4 On-Chip CPU Registers (P4 Area: 0xFF000000+)
+0xFF00001C reg SH4_CCN_PVR
+0xFF000020 reg SH4_CCN_CVR
+0xFF000024 reg SH4_CCN_PRR
+0xFF000030 reg SH4_CCN_CCR
+0xFF000038 reg SH4_CCN_QACR0
+0xFF00003C reg SH4_CCN_QACR1

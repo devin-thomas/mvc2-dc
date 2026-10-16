@@ -1,0 +1,31 @@
+# Build outputs
+build/
+*.o
+*.obj
+*.elf
+*.map
+
+# Disc dumps and copyrighted assets
+build-inputs/
+archives/
+*.cdi
+*.gdi
+*.iso
+*.raw
+assets/*.bin
+
+# Python and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
