@@ -232,3 +232,103 @@ s32 sys_init_heap_buffer(void) {
     return 0;
 }
 
+
+/*
+ * 0x8C010412 - func_8C010412
+ */
+#include <stdint.h>
+
+// Forward declarations for external functions referenced by the disassembly
+extern int32_t sub_8C010508(void);
+extern int32_t sub_8C01050C(void);
+extern int32_t sub_8C010510(void);
+extern int32_t sub_8C010514(void);
+extern int32_t sub_8C010518(void);
+extern int32_t sub_8C01051C(void);
+extern int32_t sub_8C010520(void);
+
+// Global variables referenced by the disassembly
+extern int32_t g_8C010508;
+extern int32_t g_8C01050C;
+extern int32_t g_8C010510;
+extern int32_t g_8C010514;
+extern int32_t g_8C010518;
+extern int32_t g_8C01051C;
+extern int32_t g_8C010520;
+
+int32_t func_8C010412(void) {
+    int32_t r0;
+    int32_t r2;
+    int32_t r3;
+    int32_t r4;
+    int32_t r14;
+
+    // Load function pointer from global variable
+    r14 = *(int32_t*)0x8C010508;
+
+    // Check if the pointer is null
+    if (*(int32_t*)r14 == 0) {
+        // If null, call the alternative function
+        r3 = *(int32_t*)0x8C010510;
+        r0 = sub_8C010510();
+        
+        // Store the result
+        r3 = *(int32_t*)0x8C010514;
+        *(int32_t*)r3 = r0;
+        
+        // Call another function
+        r2 = *(int32_t*)0x8C010518;
+        r0 = sub_8C010518();
+        r4 = r0;
+        
+        // Check if result is 4
+        if (r0 != 4) {
+            r2 = 0;
+            *(int32_t*)r14 = r2;
+        }
+        
+        // Call another function
+        r3 = *(int32_t*)0x8C01051C;
+        r0 = sub_8C01051C();
+        
+        // Check if result is 6
+        if (r0 != 6) {
+            r4 = r0;
+            r0 = r4;
+            
+            // Check if result is 7
+            if (r0 != 7) {
+                // Fall through to common exit path
+            }
+        }
+    } else {
+        // If not null, call the primary function
+        r3 = *(int32_t*)0x8C01050C;
+        r0 = sub_8C01050C();
+        r4 = r0;
+        
+        // Check if result is 0
+        if (r4 == 0) {
+            r0 = r4;
+            r3 = 1;
+            *(int32_t*)r14 = r3;
+        }
+        
+        // Check if result is -23
+        if (r0 != -23) {
+            r0 = r4;
+            
+            // Check if result is -33
+            if (r0 != -33) {
+                // Fall through to common exit path
+            }
+        }
+    }
+
+    // Common exit path: set a flag
+    r3 = *(int32_t*)0x8C010520;
+    r2 = 1;
+    *(int32_t*)r3 = r2;
+
+    return r0;
+}
