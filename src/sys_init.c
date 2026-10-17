@@ -2305,3 +2305,8 @@ extern uint32_t g_return_address_offset; // Placeholder for the constant loaded 
  * 0x8C01B99E - func_8C01B99E (18 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C01B99E); */
+
+/*
+ * 0x8C01B9B4 - func_8C01B9B4
+ */
+
