@@ -3699,3 +3699,8 @@ extern uint32_t gbr; // Global Base Register, typically 0xC01F8000 on DC hardwar
  * 0x8C025192 - func_8C025192
  */
 
+
+/*
+ * 0x8C02527E - func_8C02527E
+ */
+
