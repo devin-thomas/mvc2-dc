@@ -3121,3 +3121,8 @@ extern const struct { int val1; } g_jump_table_FXX[];
  * 0x8C020B28 - func_8C020B28
  */
 
+
+/*
+ * 0x8C0209EC - func_8C0209EC
+ */
+
