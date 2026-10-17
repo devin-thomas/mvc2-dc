@@ -4755,3 +4755,8 @@ extern uint32_t *g_vram_base_56_r1; // Placeholder for @(56,r1) address calculat
 extern uint32_t *g_vram_base_56_r3; // Same logic for R3
 
 // Helper to simulate the jump table behavior if necessary, but here we just inline the jumps or assume they are
+
+/*
+ * 0x8C02DEF4 - func_8C02DEF4
+ */
+
