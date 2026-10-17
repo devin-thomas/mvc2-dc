@@ -9286,3 +9286,8 @@ extern FuncPtr_Generic _func_ptr_0x8C0423A; // 0x8C04223A (loaded at 0x8c050b44)
  * 0x8C050AAA - func_8C050AAA
  */
 
+
+/*
+ * 0x8C0506F8 - func_8C0506F8
+ */
+
