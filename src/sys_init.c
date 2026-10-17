@@ -1293,3 +1293,8 @@ extern uint32_t *g_unk_8C01759A; // Address 0x8C01 + offset implied by context o
 // Based on the pattern `mov.l r11,@(48,r11)` followed immediately by `.word`, these are likely static address constants in a jump table or similar structure, not runtime variables loaded from memory at those exact offsets relative to R11 unless R11 points to an array of pointers.
 // However, standard Katana SDK patterns often use `mov.l @(offset,rX), rY` where the offset is encoded as immediate data if it's a small constant, but here we see `.word 0x8c01`. 
 // Given the instruction stream: `cmp/str`, then address words
+
+/*
+ * 0x8C01549C - func_8C01549C
+ */
+
