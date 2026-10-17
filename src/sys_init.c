@@ -5807,3 +5807,14 @@ void func_8C036682() {
  * 0x8C036266 - func_8C036266
  */
 
+
+/*
+ * 0x8C0366F4 - func_8C0366F4
+ */
+extern uint32_t func_8C042D8C(uint32_t a, uint32_t b); // Placeholder for jsr @r3 (addr 0x8C042D8C)
+extern void func_8C213046(void *a);                      // Placeholder for jsr @r3 (addr 0x8C213046, r2 points to it after mov.b check? No, logic is complex. Let's trace carefully.)
+
+// Re-evaluating the indirect jumps based on static data at fixed addresses:
+// The code loads pointers from ROM/data segments into registers and then indirection happens.
+// Since I cannot see the content of 0x8C213046 or similar without memory dump, 
+// but the prompt implies these are function calls via indirect jump tables often found in SDK
