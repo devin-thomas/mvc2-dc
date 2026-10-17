@@ -935,3 +935,8 @@ extern void *g_some_global_6c_offset; // Placeholder for @(r3+48), assuming it's
 
 // Note: The assembly uses r1, r7, r9-r14 as stack pointers or local vars depending on calling convention context.
 // Since we don't have the caller
+
+/*
+ * 0x8C012C26 - func_8C012C26
+ */
+
