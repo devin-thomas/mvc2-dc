@@ -9691,3 +9691,14 @@ extern uint32_t g_vram_offset_b; // Corresponds to address 0x8C052B3A (pointer b
 // Based on standard Katana SDK patterns:
 // - r4 is likely a context pointer or frame buffer start.
 // - The addresses 0x8C052B36, etc., are constants loaded into
+
+/*
+ * 0x8C052A90 - func_8C052A90
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function scope.
+extern void func_8C014F60(void); // Placeholder name based on typical SDK patterns if 0x8c0532a8 is a call target, but here it's BSR (Branch to Subroutine). Assuming standard naming convention or specific symbol resolution needed by the user.
+// Note: The assembly shows 'bsr' which branches to subroutine at address 0x8C014F60? No, let's re-read carefully.
+// Address provided in prompt is VRAM for func_8C052A90. 
+// Instruction at 0x8c0532a8: The assembly says 'bsr      0x8c0532a8'. This looks like a relative branch or an absolute address if the assembler output
