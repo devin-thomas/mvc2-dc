@@ -5328,3 +5328,8 @@ extern void (*func_8C1240A0)(void); // Address 0x8C032270 -> 0x8C1240A0
  * 0x8C031F34 - func_8C031F34
  */
 
+
+/*
+ * 0x8C032320 - func_8C032320
+ */
+
