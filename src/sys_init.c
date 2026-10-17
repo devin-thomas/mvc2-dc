@@ -8891,3 +8891,16 @@ extern uint32_t (*func_8C0511B4)(void); // Address 0x8c04e6
 // Extern declarations for referenced functions and globals (as per Dreamcast ABI context)
 extern void (*func_8C04FEA8)(void); // Address loaded at 0x8C04E654
 extern uint32_t func_8C052CE2(uint32_t, int16_t *); // Function pointer logic inferred from usage pattern or specific signature if known. Assuming generic based on context of passing r14 and returning value used in extu.b check? Wait, looking at 0x8c04e658 -> 0x8C052CE2 call: mov.l @r3 (func ptr) then jsr. The return is checked via 'extu.b' on r0 before branching to error handling or success path logic later? Actually, let's re-evaluate the flow at
+
+/*
+ * 0x8C04E64C - func_8C04E64C
+ */
+#include <stdint.h>
+
+// External declarations for referenced symbols (inferred from context)
+extern uint32_t *g_vram_base; // Base address implied by r0 usage in load/store patterns if not passed directly, but here it seems to be a specific pointer. Assuming external data pointers exist at the hardcoded addresses or are resolved via linker script. For standalone syntax check:
+
+// Helper function declarations (names inferred from typical SDK naming conventions for these offsets)
+extern void func_8C052CE2(uint32_t arg1, uint32_t arg2); // Address 0x8c04e764 -> 0x8c052ce2
+extern int (*func_ptr_table_entry)(void *base, uintptr_t offset); 
+// Note: The assembly uses indirect jumps to functions loaded from tables. Without the actual table definitions or symbol names for 0x
