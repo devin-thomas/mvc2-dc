@@ -6001,3 +6001,8 @@ extern void (*func_ptr)(void); // Placeholder for the function called via JSR @r
  * 0x8C038ADA - func_8C038ADA (656 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C038ADA); */
+
+/*
+ * 0x8C038094 - func_8C038094
+ */
+
