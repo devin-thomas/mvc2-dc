@@ -7442,3 +7442,8 @@ extern void *func_8C26A518(void **arg, int size); // Pointer derived from addres
  * 0x8C044944 - func_8C044944
  */
 
+
+/*
+ * 0x8C044C7C - func_8C044C7C
+ */
+
