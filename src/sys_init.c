@@ -1110,3 +1110,8 @@ extern uint32_t func_8C01470C(void); // Address 0x8C26823C based on context anal
  * 0x8C014E96 - func_8C014E96
  */
 
+
+/*
+ * 0x8C014D52 - func_8C014D52
+ */
+
