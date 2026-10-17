@@ -902,3 +902,8 @@ extern uint32_t (*func_8C012450)(void); // Address 0x8C03563A
  * 0x8C01244C - func_8C01244C (612 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C01244C); */
+
+/*
+ * 0x8C012922 - func_8C012922 (772 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C012922); */
