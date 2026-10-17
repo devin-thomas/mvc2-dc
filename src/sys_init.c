@@ -4518,3 +4518,8 @@ extern uint32_t func_8C149850(void); // Address 0x8C149850 from r1 at 0x8c02a4dc
  * 0x8C02AFF0 - func_8C02AFF0 (834 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C02AFF0); */
+
+/*
+ * 0x8C02B5C2 - func_8C02B5C2 (522 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C02B5C2); */
