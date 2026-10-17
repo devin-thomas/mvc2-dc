@@ -1195,3 +1195,16 @@ extern void (*func_ptr_r3)(void); // Placeholder for the table lookup
  * 0x8C014F54 - func_8C014F54
  */
 
+
+/*
+ * 0x8C015106 - func_8C015106
+ */
+#include <stdint.h>
+
+// External declarations for global data addresses loaded at runtime/static locations.
+extern uint32_t *g_data_8C0152D4; // 0x8C0152D4 = 0x8C011D0C (Function pointer)
+extern uint32_t g_flag_8c2897ac[6];   // Base address for flag array, size inferred from usage. 
+// Note: The assembly loads specific offsets into this block or uses it as a base with offset math.
+// Based on 0x8C2897AC and subsequent accesses like @(r15+), we assume an aligned structure.
+extern uint32_t *g_data_8c26823c; // Base address for the struct containing flags at offsets +4, +12? 
+// Actually, looking at 0x8C26823C usage: mov.l @r1,r2 then byte ops.
