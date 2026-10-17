@@ -10216,3 +10216,8 @@ extern void func_8C0550BA(uint32_t *ptr); // Helper function referenced in delay
  * 0x8C055066 - func_8C055066
  */
 
+
+/*
+ * 0x8C05501A - func_8C05501A
+ */
+
