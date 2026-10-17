@@ -9852,3 +9852,8 @@ extern uint32_t *g_DataBlock_8C052FB0; // Address 0x8C052FB0 points to this base
  * 0x8C052D96 - func_8C052D96
  */
 
+
+/*
+ * 0x8C052E4E - func_8C052E4E
+ */
+
