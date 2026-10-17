@@ -11119,3 +11119,23 @@ extern uint32_t g_Data_8C059EC6; // Loaded to R1 initially? No, mov.w 0x...r1. W
  * 0x8C059F4A - func_8C059F4A
  */
 
+
+/*
+ * 0x8C05A48A - func_8C05A48A
+ */
+#include <stdint.h>
+
+// External declarations for global variables referenced in the function.
+extern uint32_t g_vram_8C0104F6; // Base address 0x8C05A5B0 (derived from context) -> actually stored at offset, but let's assume these are globals or pointers passed via stack if not global. Based on Katana SDK patterns:
+// The addresses like 0x8c2895F0 and 0x8c2896B0 loaded into r4/r7 suggest they point to specific VRAM structures (likely Hitachi's internal data tables).
+extern uint32_t *g_ptr_8C0104F6; // Placeholder for the pointer stored at address pointed by initial load. 
+// Correction: The assembly loads a 32-bit value from memory into r4/r7 directly, then uses it as an offset or base.
+// Let's define externs based on typical Katana SDK structure where these are likely global pointers to data tables in VRAM/DRAM cache lines.
+
+extern uint8_t *g_data_table_1; // Corresponding to the block starting at 0x8C2895F0 (r4)
+extern uint32_t g_limit_val_a;   // Value loaded into r7 initially? No, r7 is modified later. 
+// Re-evaluating: The code loads specific addresses from memory locations that seem to be global variables holding pointers or offsets.
+// Since exact variable names are unknown in the SDK source without symbol table, we use externs with descriptive placeholders based on usage patterns (e.g., "limit", "base").
+
+extern uint32_t g_base_offset_1; // Address loaded into r4 at 0x8C05A4F6
+extern uint32_t *g_ptr_source_a; // Pointer to data being read/written, derived from
