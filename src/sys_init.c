@@ -7124,3 +7124,8 @@ static const uintptr_t g_data_8c138b90 = 0x8C138B90;   // Address loaded
  * 0x8C041F24 - func_8C041F24
  */
 
+
+/*
+ * 0x8C04234E - func_8C04234E
+ */
+
