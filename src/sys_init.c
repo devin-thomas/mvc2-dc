@@ -6031,3 +6031,8 @@ extern void (*func_ptr)(void); // Placeholder for the function called via JSR @r
  * 0x8C038E9C - func_8C038E9C
  */
 
+
+/*
+ * 0x8C039250 - func_8C039250
+ */
+
