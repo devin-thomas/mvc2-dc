@@ -5581,3 +5581,22 @@ extern void (*g_func_ptr_8c1f9fc)(void);   // Function pointer at 0x8CE60FC? No
  * 0x8C0342DA - func_8C0342DA (496 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C0342DA); */
+
+/*
+ * 0x8C034F3A - func_8C034F3A
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function (based on Dreamcast ABI and context)
+extern uint16_t (*func_8C1294C8)(void); // Address loaded from 0x8C03507C/0x8C0350CC, likely a callback or table lookup
+
+// Global variables inferred from constant loads (addresses relative to base)
+extern uint8_t g_vram_base_6a;   // Offset for r4 + 20 -> used as index/base? Actually looks like an offset into VRAM. 
+                                  // Based on `mov.w #20,r0` then `@(r0,r4)` where r4 is base, this acts as a stride or specific address calculation.
+// Re-evaluating constants:
+extern uint8_t g_vram_offset_6a;  // Value at 0x8C03506A (likely used to compute an offset)
+extern uint16_t (*g_callback_ptr)(void); // Pointer loaded from 0x8C03507C
+
+// Helper macros for SH-4 specific operations if not available in target C, though standard shifts work.
+#define EXTU_B(x) ((uint32_t)((x)) & 0xFFu)
+#define EXTU_W(x) ((uint64_t)(
