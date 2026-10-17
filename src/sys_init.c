@@ -1323,3 +1323,9 @@ extern uint32_t *g_unk_8C01759A; // Address 0x8C01 + offset implied by context o
  * 0x8C0162F8 - func_8C0162F8
  */
 
+
+/*
+ * 0x8C0167F2 - func_8C0167F2
+ */
+extern uint32_t *gbr; // Global Base Register pointer, typically passed or defined externally in SDK context. Note: The assembly uses @(r0,gbr) syntax where gbr is a register holding the base address of VRAM/ROM data structures relative to GBR. In standard SH-4 calling conventions without explicit arguments for this specific offset logic, we assume r12 (GPR 12) or similar holds 'gbr' if not passed in args. However, looking at `mov.w` sequences loading addresses into registers like r9/r0 before using them as bases relative to GBR suggests these are fixed offsets from the global base register used by Katana SDK for VRAM/ROM access.
+// Correction based on standard Dreamcast SH-4 usage: The syntax @(rX, gbr) implies an offset calculation where 'gbr' is a specific value (often 0x8C26 or similar in retail builds acting as the ROM base).
