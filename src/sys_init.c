@@ -4318,3 +4318,8 @@ extern uint32_t *g_vram_table_start; // Placeholder for the base address if not 
  * 0x8C028988 - func_8C028988
  */
 
+
+/*
+ * 0x8C02883C - func_8C02883C
+ */
+
