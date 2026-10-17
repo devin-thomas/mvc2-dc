@@ -7972,3 +7972,8 @@ extern struct StackFrame *g_stack_frame_base; // Base address for the stack fram
  * 0x8C0473B0 - func_8C0473B0
  */
 
+
+/*
+ * 0x8C0472E2 - func_8C0472E2
+ */
+
