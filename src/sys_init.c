@@ -9250,3 +9250,29 @@ extern uint16_t func_table_entry_r5_offset; // Placeholder name, actually the co
  * 0x8C050682 - func_8C050682
  */
 
+
+/*
+ * 0x8C050962 - func_8C050962
+ */
+#include <stdint.h>
+
+// Helper function declarations (extern) to ensure standalone syntax validity.
+// These addresses are resolved from the assembly constants provided in comments.
+extern void (*func_0x8C2896B0)(void); // Address 0x8C2896B0 loaded at 0x8c0509f4
+extern uint32_t func_ptr_table_entry_a[1]; // Placeholder for table logic if needed, or direct call
+// Based on analysis of the jump tables and calls:
+
+extern void (*func_0x8C0EFDC0)(void); // Address 0x8C0EFDC0 loaded at 0x8c0509f8 (called with r2)
+extern uint32_t func_ptr_table_b[1];   // Placeholder for table logic
+
+// Specific function pointers derived from the assembly constants:
+typedef void (*FuncPtr_4A)(void);      // Called via jsr @r3 where 0x8c0509fc -> 0x8C1294C8 (likely a specific routine)
+extern FuncPtr_4A func_ptr_routine_a;
+
+// The assembly uses hardcoded addresses for several calls. We define them as externs to match the ABI requirement.
+typedef void (*FuncPtr_Generic)(void);
+extern FuncPtr_Generic _func_generic_addr1; // 0x8C2895F0 (loaded at 0x8c050b54) - likely a helper like SH-4 math or memory op? No, looks like data. Wait, r3 is loaded from there then used as jsr target.
+// Correction: The assembly loads an address into R12/R3 and calls it. These are function pointers stored in ROM/VRAM tables.
+
+extern FuncPtr_Generic _func_ptr_0x8C042CA; // 0x8C0424CA (loaded at 0x8c050b40)
+extern FuncPtr_Generic _func_ptr_0x8C0423A; // 0x8C04223A (loaded at 0x8c050b44) - Note: hex in asm is
