@@ -7004,3 +7004,8 @@ extern uint32_t (*func_8C040190)(void); // Address 0x8C040190 contains the addre
  * 0x8C041816 - func_8C041816
  */
 
+
+/*
+ * 0x8C041AA8 - func_8C041AA8
+ */
+
