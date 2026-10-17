@@ -3648,3 +3648,17 @@ extern int g_flag_8C0253BC;   // Value at address 0x8c0253bc (loaded as word)
 extern uint32_t *g_ptr_8C0253CC; // Address pointer stored at 0x8C0253cc, loaded into r1 initially
 extern int g_flag_8C0253BE;    // Value at address 0x8c0253be (loaded as word)
 extern uint32_t *g_ptr_8C0253C0; // Address pointer stored at
+
+/*
+ * 0x8C025320 - func_8C025320
+ */
+#include <stdint.h>
+
+// External declarations for referenced symbols and globals (placeholder names based on context)
+extern uint32_t g_unk_8C26823C; // Address stored at 0x8C0253D0
+extern const char *g_str_table_start; // Base address of string table, derived from logic flow or global data segment
+// Note: The assembly uses hardcoded addresses for the base pointer (r14) and offset calculations. 
+// In a real decompilation context without full symbol resolution, these are often mapped to specific globals or structs.
+// Assuming r2 points to an array of pointers where each entry is 32-bit aligned data containing string offsets/lengths.
+
+extern uint8_t g_unk_byte_at_offset[10]; // Placeholder for the byte read at offset +6 from base pointer if needed, though logic suggests direct
