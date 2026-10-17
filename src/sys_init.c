@@ -7889,3 +7889,8 @@ extern uint32_t *g_vram_ptr; // Base VRAM address, assumed to be at 0x8C046DBC b
  * 0x8C046AFA - func_8C046AFA
  */
 
+
+/*
+ * 0x8C046BEE - func_8C046BEE
+ */
+
