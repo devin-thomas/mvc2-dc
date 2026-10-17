@@ -7020,3 +7020,8 @@ extern void *r7_bank; // Pointer to banked memory region for r7 context? Or spec
 // Re-evaluating 'ldc': In SH-4 Dreamcast SDK context (Katana/SHARC or specific DC compiler quirks):
 // Usually, this is a custom macro for accessing banked memory. 
 // However, looking at the pattern: `(0x8C26823C)` points to data in RAM? Or VRAM?
+
+/*
+ * 0x8C041C22 - func_8C041C22
+ */
+
