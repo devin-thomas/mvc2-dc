@@ -10058,3 +10058,8 @@ extern uint8_t *g_ptr_r6; // Corresponds to register usage of r6 as a data point
  * 0x8C053DE4 - func_8C053DE4
  */
 
+
+/*
+ * 0x8C054634 - func_8C054634 (808 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C054634); */
