@@ -9108,3 +9108,8 @@ extern uint32_t *g_unk_8c0105fe; // Base address 0x8C0500FE, likely a different 
  * 0x8C04FE7C - func_8C04FE7C
  */
 
+
+/*
+ * 0x8C04FF88 - func_8C04FF88
+ */
+
