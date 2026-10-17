@@ -1876,3 +1876,8 @@ extern uint32_t g_vram_base; // Corresponds to r4 usage pattern, assumed global 
 extern uint32_t g_flag_8C01A056; // Corresponds to 0x8c01a056 (mov.w) - likely a flag or offset table entry
 extern uint32_t g_data_ptr_8C019FEF; // Corresponds to 0x8c01a04e/r1 usage pattern in the loop logic. 
 // Note: The assembly uses hardcoded
+
+/*
+ * 0x8C019D04 - func_8C019D04
+ */
+
