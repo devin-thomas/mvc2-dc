@@ -4795,3 +4795,8 @@ extern void (*func_ptr)(void); // Helper function declared at address 0x8C02E014
 
 extern void (*helper_func)(void); // Placeholder for address 0x8c02e014 if it's a C function call
 // Actually, looking at the pattern 'bsr addr', this is
+
+/*
+ * 0x8C02DFA6 - func_8C02DFA6
+ */
+
