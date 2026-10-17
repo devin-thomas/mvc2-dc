@@ -7713,3 +7713,24 @@ static void func_8C04638C(uint32_t *p_target, int dummy_arg1);
 // Based on standard Dreamcast SDK patterns:
 // Path 1 (at 8C04638C): Sets return value 62, clears arg register, performs a byte store to VRAM at offset in p_target+base, then RTS.
 // Path 2 (at 8C046394
+
+/*
+ * 0x8C046396 - func_8C046396
+ */
+#include <stdint.h>
+
+extern uint16_t *g_vram_ptr; // Assumed global VRAM pointer based on context (r4)
+
+uint8_t func_8C046396(uint16_t *vram_addr, int index_offset) {
+    uint8_t result = 0x3E; // #62 in decimal is 0b00111110
+    
+    if (index_offset == 1) {
+        return vram_addr[index_offset]; 
+    } else {
+        return result;
+    }
+}
+
+// Note: The provided assembly snippet contains a jump/branch delay slot issue or an unreachable tail.
+// Original flow at rts is immediate, but the next instruction (mov r3,r0) would execute if we ignore 'rts'.
+// Given standard SH-4 behavior where RTS halts execution immediately
