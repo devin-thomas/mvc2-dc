@@ -6780,7 +6780,7 @@
     "vram": 2349025480,
     "end_vram": 2349026282,
     "size": 802,
-    "status": "pending",
+    "status": "stubbed",
     "attempts": 0
   },
   {
