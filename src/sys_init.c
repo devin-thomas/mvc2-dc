@@ -10074,3 +10074,8 @@ extern void func_8C0634(int arg); // Helper function referenced at 0x8C054634 (o
 // Line 0x8C054B3A: mov.w 0x8c054b7a,r0 -> loads a word from data segment into r0 (likely an address).
 // Then later calls happen. 
 // Wait
+
+/*
+ * 0x8C0544D8 - func_8C0544D8
+ */
+
