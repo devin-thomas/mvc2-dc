@@ -8175,3 +8175,8 @@ extern uint16_t *table_ptr_a;   // Address loaded into r2 (from 0x8c049044) poin
  * 0x8C048B4E - func_8C048B4E
  */
 
+
+/*
+ * 0x8C048D34 - func_8C048D34
+ */
+
