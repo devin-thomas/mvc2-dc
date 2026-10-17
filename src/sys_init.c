@@ -10966,3 +10966,13 @@ extern const uint16_t _data_0; // Placeholder for data starting at .word locatio
  * 0x8C059704 - func_8C059704 (528 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C059704); */
+
+/*
+ * 0x8C059946 - func_8C059946
+ */
+#include <stdint.h>
+
+extern uint16_t *g_unk_ptr_r4_offset; // Corresponds to address in @(r0,r4) or similar base logic if not passed directly, but here r4 is the frame pointer/base. Assuming standard SDK pattern where r4 holds a specific struct/offset table start.
+// Note: In Katana/MVCA2 SH-4 code, 'mov.b @(5,r4),r0' usually accesses an offset from FP (Frame Pointer). 
+// However, without knowing what is at 0x8C0599AC or the value of r4's base context perfectly, we must assume standard ABI where arguments are in registers.
+// Given 'mov.w @(r0,r4),r3', it implies a lookup table starting at address held by (uint16_t*)(&g_unk_ptr_r4_offset + 5) or
