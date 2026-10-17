@@ -5857,3 +5857,8 @@ extern const struct {
 
 // Reconstructed global based on assembly flow: 
 // The code loads a pointer from 0x8C010524 (implied by context of Katana SDK, but here we see
+
+/*
+ * 0x8C036CB8 - func_8C036CB8
+ */
+
