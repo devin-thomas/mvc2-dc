@@ -4493,3 +4493,13 @@ extern uint32_t g_some_global_var; // Placeholder if r15 points to a specific gl
  * 0x8C02A534 - func_8C02A534
  */
 
+
+/*
+ * 0x8C02A464 - func_8C02A464
+ */
+extern uint32_t func_8C02A5EC(void); // Address 0x8C02A5EC = 0x00008220, likely a pointer or value lookup table base. Adjust signature if known (e.g., extern const void* ...).
+extern uint32_t func_8C149868(void); // Address 0x8C149868 from r1 at 0x8c02a5e8. Likely a table base address stored in ROM/VRAM map. Adjust signature if known.
+extern uint32_t func_8C149860(void); // Address 0x8C149860 from r1 at 0x8c02a4e0. Likely a table base address stored in ROM/VRAM map. Adjust signature if known.
+extern uint32_t func_8C149850(void); // Address 0x8C149850 from r1 at 0x8c02a4dc. Likely a table base address stored in ROM/VRAM map. Adjust signature if known.
+
+// Global variables or data
