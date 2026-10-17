@@ -1510,3 +1510,8 @@ extern uint8_t *g_vram_base; // Base address 0x8C1454AC inferred, or passed via 
 // Based on standard Katana SDK patterns, r4 often holds a specific object/structure address (e.g., 0x8C129xxx) and absolute addresses like 0x8c017d9X are offsets into that structure or global constants relative to the module base.
 // However, looking closely at `mov.b @(r0,r4), r0` where r0 is derived from an offset table (0x8C129xxx etc.), it implies a lookup in a static array defined elsewhere.
 // Let
+
+/*
+ * 0x8C01799A - func_8C01799A
+ */
+
