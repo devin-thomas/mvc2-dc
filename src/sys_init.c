@@ -4612,3 +4612,8 @@ extern uint32_t _SH_4_Data_Table[]; // Global data table containing function poi
 uint32_t func_8C02BD06(void) {
     return (uint32_t)_SH_4_Data_Table[(uintptr_t)(0x8c02bd64 - 0)]; 
 }
+
+/*
+ * 0x8C02BD0C - func_8C02BD0C
+ */
+
