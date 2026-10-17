@@ -7824,3 +7824,8 @@ extern uint32_t g_unk_8C2895F0; // VRAM address stored at 0x8C046ADC, loaded int
 // Note: The assembly loads the value from memory location 0x8c046adc directly. 
 // In typical Dreamcast SDK patterns for this context, g_unk_8C2895F0 is likely the global variable holding that address or the code assumes direct access to a known constant in VRAM/ROM map.
 // Based on "mov.l 0x8c046adc,r5", r5 gets the content of memory at offset 0x8c046adc relative to current segment base, which is often mapped to g_unk_8C2895F0 in de
+
+/*
+ * 0x8C046912 - func_8C046912
+ */
+
