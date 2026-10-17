@@ -4246,3 +4246,13 @@ extern uint32_t g_unk_table_a[/* size */]; // Corresponds to 0x8C044F26 area log
  * 0x8C02861E - func_8C02861E
  */
 
+
+/*
+ * 0x8C028518 - func_8C028518
+ */
+extern const unsigned char g_vram_data[0x8C0450C0 - 0x8C212CE8]; // Approximate size based on context, adjust if known exactly. The actual data is at the address loaded into r3/r2 logic below.
+// Note: In real decompilation, we would define these as extern pointers to specific tables found in global symbols or ROM maps. 
+// Here we assume standard Dreamcast SDK patterns where such addresses point to function pointer arrays stored in VRAM/ROM.
+
+extern void (*g_func_ptr_table_0x8C212CE8)(void); // Placeholder for the address 0x8C212CE8
+extern unsigned char g_byte_at_offset[4];         // Buffer if needed, though direct access is used here. Actually, r3 points to a table where offset+0 holds an index or
