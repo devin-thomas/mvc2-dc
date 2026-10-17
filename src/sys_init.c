@@ -4241,3 +4241,8 @@ extern uint32_t g_unk_table_a[/* size */]; // Corresponds to 0x8C044F26 area log
  * 0x8C02852A - func_8C02852A
  */
 
+
+/*
+ * 0x8C02861E - func_8C02861E
+ */
+
