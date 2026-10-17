@@ -2811,3 +2811,15 @@ static const uint8_t g_Offset_0x16 = 0x16; // Derived from 'add #52' where base 
  * 0x8C01F0CA - func_8C01F0CA
  */
 
+
+/*
+ * 0x8C01F30E - func_8C01F30E
+ */
+#include <stdint.h>
+
+// Global constants derived from absolute addresses in the assembly.
+extern const uint32_t g_offset_low_byte = 0x8C147178; // Address at F364 (r0 load) - Base? No, it's an immediate address used as a pointer base or offset source depending on context, but here loaded into r0.
+// Re-evaluating based on standard Katana SDK patterns: These are likely pointers to data structures in the game ROM/VRAM map.
+extern const uint32_t g_ptr_base_1 = 0x8C26A940; // Address at F360 (r3 load)
+// Note: The assembly loads absolute addresses directly into registers, not relative offsets from a base register like r4 in the final usage context shown. 
+// However, to make it compilable as
