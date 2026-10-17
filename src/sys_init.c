@@ -3725,3 +3725,8 @@ static void *resolve_gbr_offset(uintptr_t base_addr) {
 }
 
 // Note: The assembly uses a complex jump table and indirect calls via the 'gbr' (Global Base Register) mechanism common
+
+/*
+ * 0x8C025574 - func_8C025574
+ */
+
