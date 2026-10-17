@@ -8360,3 +8360,8 @@ extern void func_8C034E8C(int a0, int a1); // 0x8C049D18 (Re-verified from `mov.
 // Let's re-examine: 0x8C049BDA loads r3 from table based on conditionals (2 or not). Then jumps to it. 
 // The function at BDC/BD0 seems complex.
 // To strictly fix the "
+
+/*
+ * 0x8C0499EA - func_8C0499EA
+ */
+
