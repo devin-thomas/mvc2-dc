@@ -6320,3 +6320,8 @@ extern uint16_t (*func_jump_target)(void);  // Function pointer table at 0x8C0F7
 // Global constants embedded in the binary (addresses of data)
 static const uintptr_t DATA_ADDR_A = 0x8C26823CU; 
 static const uint32_t OFFSET_B_4 = 0x8C0F71A8U - 0xCUL; // Derived from
+
+/*
+ * 0x8C03BE0A - func_8C03BE0A
+ */
+
