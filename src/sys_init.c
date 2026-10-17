@@ -5425,3 +5425,8 @@ extern uint32_t *g_unk_return_stack; // Placeholder for the global return stack 
 // This pattern typically restores the Program Counter (PR) and Return Address Stack Pointer (RSP/AR0 in some contexts, but here PR is explicitly loaded from stack).
 // However, standard SH-4 ABI uses R8-R14 as callee-saved. If this function returns via RTS after loading PR into itself or a register that holds the return address? 
 //
+
+/*
+ * 0x8C03349E - func_8C03349E
+ */
+
