@@ -1718,3 +1718,15 @@ extern const uint32_t g_jump_table_1[]; // Points to 0x8c14... sequence starting
  * 0x8C018C4A - func_8C018C4A
  */
 
+
+/*
+ * 0x8C019030 - func_8C019030
+ */
+extern uint32_t g_vram_table_8C0190E8; // Address 0x8C0190E8 contains the base pointer (r6)
+extern const uint32_t *g_data_ptr_8C0190F4; // Pointer loaded from 0x8C0190F4, used as r1 in some contexts but here likely a specific table address. Based on usage `mov.l @r6,r1` then offsetting by 8 (2 words), it seems to be another base or the same one reloaded? Actually looking at code: 
+// Line 5E loads from 0x8C0190F4 into r3, not r1. Wait, line E7 `mov.l @r6,r1`.
+// Let's trace carefully.
+
+extern uint32_t g_offset_base_8C0190D8; // Address where the final write happens? No, 0x8c0190d8 is code address for rts/return logic in previous attempt context or just a label? 
+// Re-reading assembly:
+// `mova 0
