@@ -6727,3 +6727,8 @@ extern void (*func_ptr_table_entry)(void *); // Placeholder for the table at 0x8
 // Re-analysis of calls:
 // Call 1 (r2): Address from [0x8C03F394] = 0x8C0355B2 -> func_8C0355B2(uint32_t) ? No, args in r6? 
 // Let's look at
+
+/*
+ * 0x8C03EC72 - func_8C03EC72
+ */
+
