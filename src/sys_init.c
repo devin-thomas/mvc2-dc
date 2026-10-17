@@ -8882,3 +8882,12 @@ void func_8C05218A(void *arg_ptr);                 // Address 0x8c04e65c -> 0x8c
 // Note: The assembly uses indirect jumps via r3/r2 which point to these functions.
 
 extern uint32_t (*func_8C0511B4)(void); // Address 0x8c04e6
+
+/*
+ * 0x8C04E5E2 - func_8C04E5E2
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced functions and globals (as per Dreamcast ABI context)
+extern void (*func_8C04FEA8)(void); // Address loaded at 0x8C04E654
+extern uint32_t func_8C052CE2(uint32_t, int16_t *); // Function pointer logic inferred from usage pattern or specific signature if known. Assuming generic based on context of passing r14 and returning value used in extu.b check? Wait, looking at 0x8c04e658 -> 0x8C052CE2 call: mov.l @r3 (func ptr) then jsr. The return is checked via 'extu.b' on r0 before branching to error handling or success path logic later? Actually, let's re-evaluate the flow at
