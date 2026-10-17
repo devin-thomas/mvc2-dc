@@ -1075,3 +1075,8 @@ extern uint32_t func_8C01470C(void); // Address 0x8C26823C based on context anal
  * 0x8C014164 - func_8C014164
  */
 
+
+/*
+ * 0x8C0147E0 - func_8C0147E0 (930 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0147E0); */
