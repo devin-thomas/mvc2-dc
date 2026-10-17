@@ -16,7 +16,7 @@
 ---
 
 ## Current Activity
-Decompiling Dreamcast MK-51049: **962/8240** functions (**9.572%**, 125,456 bytes) matched across cluster.
+Decompiling Dreamcast MK-51049: **963/8240** functions (**9.576%**, 125,496 bytes) matched across cluster.
 
 ---
 

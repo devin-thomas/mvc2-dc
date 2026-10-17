@@ -6898,3 +6898,8 @@ extern const int g_const_10; // Likely 16 or similar based on 'sub r0,r10' conte
  * 0x8C03FFC0 - func_8C03FFC0
  */
 
+
+/*
+ * 0x8C03FF98 - func_8C03FF98
+ */
+
