@@ -5081,3 +5081,8 @@ extern int (*func_8C123370)(void *);      // Called at 0x8c030508 (r2) - pointer
 // No, it's likely a function address stored in memory that gets loaded into r2/r4/etc to call via indirect jump/branch.
 extern void func_8C132640(void);           // Called at 0x8c030514 (r3) - pointer arithmetic involved? 
                                             // Code: mov.l ... r3, jsr @r3. So it's a function address in memory loaded to r3 then called.
+
+/*
+ * 0x8C030AA4 - func_8C030AA4 (540 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C030AA4); */
