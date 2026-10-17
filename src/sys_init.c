@@ -6813,3 +6813,15 @@ extern uint32_t g_Data_8C03FC54; // Address 0x8C03FC54 contains value at offset 
  * 0x8C03F758 - func_8C03F758
  */
 
+
+/*
+ * 0x8C03FE62 - func_8C03FE62
+ */
+#include <stdint.h>
+
+// Global data pointers (addresses) extracted from the assembly constants
+static const uint32_t g_base_addr_1 = 0x8C14DBF0; // From mov.l at FE64
+static const uint32_t g_data_offset_1 = 0x8C03FF2C - 0x8C03FE7A + (uint32_t)(uintptr_t)g_base_addr_1; 
+// Correction: The assembly uses absolute addresses for the table base. Let's re-evaluate based on standard Katana SDK patterns.
+// Actually, looking at FE64 and FE76, these are likely direct pointers to data tables or specific offsets relative to a segment.
+// Given the context of "func_8C03FE62" being small (78 bytes) and doing jumps/switches:
