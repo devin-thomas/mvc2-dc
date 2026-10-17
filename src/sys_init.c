@@ -2109,3 +2109,8 @@ void func_8C01B3E0() {
  * 0x8C01B366 - func_8C01B366
  */
 
+
+/*
+ * 0x8C01B20C - func_8C01B20C
+ */
+
