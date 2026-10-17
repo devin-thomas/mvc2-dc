@@ -4028,3 +4028,8 @@ extern void func_8C174DAC(uint32_t val); // Address
  * 0x8C027366 - func_8C027366
  */
 
+
+/*
+ * 0x8C0272C2 - func_8C0272C2
+ */
+
