@@ -7997,3 +7997,8 @@ extern struct StackFrame *g_stack_frame_base; // Base address for the stack fram
  * 0x8C047338 - func_8C047338
  */
 
+
+/*
+ * 0x8C047722 - func_8C047722 (1194 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C047722); */
