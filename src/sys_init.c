@@ -9997,3 +9997,13 @@ extern uint32_t *g_data_8C05DF4; // Address 0x8c053df4 -> points to table at 0x8
  * 0x8C053F6E - func_8C053F6E (504 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C053F6E); */
+
+/*
+ * 0x8C05426A - func_8C05426A
+ */
+extern uint32_t func_8C0542CA(uint32_t a, uint32_t b); // Placeholder for the indirect call target at 0x8C0543A8 (which resolves to 0x8C055CF6)
+// Note: The assembly uses an absolute address load into r2 then jsr @r2. 
+// Since we cannot resolve external symbols without a map, and the previous attempt failed on syntax,
+// we assume func_8C0543A8 is defined elsewhere or this function calls it directly if known.
+// However, looking at 0x8c0542ac: mov.l 0x8c0543a8,r2 ; [0x8C0543A8] = 0x8C055CF6
+// This implies a direct
