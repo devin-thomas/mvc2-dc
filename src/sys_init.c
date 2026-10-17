@@ -5909,3 +5909,20 @@ static const uint32_t *g_ptr_table = (uint32_t *)(uintptr_t)0x8C212CE8; // Loade
  * 0x8C036F76 - func_8C036F76
  */
 
+
+/*
+ * 0x8C037A46 - func_8C037A46
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced addresses and functions found in the disassembly context.
+extern uint32_t (*func_8C037BA0)(void); // Address 0x8C037B94 points to this or similar logic, but direct call uses mov.a which implies a function pointer load at runtime offset? Actually looking closely: 
+// The assembly loads addresses into r0 via .word instructions. These are likely pointers to functions stored in the ROM/VRAM map table.
+extern uint32_t (*func_8C14D310)(void); // 0x8c037b90 -> This is a function pointer? No, usually data tables point to code or structs. 
+// Re-evaluating based on SH-4 Katana SDK patterns:
+// The .word instructions at offsets like A6C (A8), etc., are loading addresses of functions from the "Jump Table" in VRAM/ROM.
+// Let's define placeholders for these external function pointers as they appear to be loaded dynamically or statically mapped.
+
+extern uint32_t (*func_0x8c14d310)(void); // Placeholder for 0x8C14D310 if it is a func ptr, but usually .word loads an address directly into rX which might then be used as a pointer or index.
+// Correction: In Katana SDK, these addresses (like 0x8c037ba0) are often function pointers stored in the ROM map table loaded at runtime. 
+// However, without seeing the loader code that populates `r4` with this specific address
