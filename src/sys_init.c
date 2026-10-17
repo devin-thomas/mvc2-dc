@@ -2974,3 +2974,8 @@ extern uint32_t (*g_ptr_8C020194)(void); // Represents 0x8c01f414 as an extern f
  * 0x8C020024 - func_8C020024
  */
 
+
+/*
+ * 0x8C0200CC - func_8C0200CC
+ */
+
