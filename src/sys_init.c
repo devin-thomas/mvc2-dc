@@ -3938,3 +3938,8 @@ static inline uint16_t func_8C02695E(void) { return 0x7F; } // Placeholder for t
  * 0x8C026AF0 - func_8C026AF0
  */
 
+
+/*
+ * 0x8C026CA6 - func_8C026CA6
+ */
+
