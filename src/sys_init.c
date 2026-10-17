@@ -5293,3 +5293,8 @@ extern uint32_t *g_8c031b5e; // 0x8C031B46 + offset? No, let's look at the const
  * 0x8C031ACA - func_8C031ACA
  */
 
+
+/*
+ * 0x8C031B48 - func_8C031B48
+ */
+
