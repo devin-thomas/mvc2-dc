@@ -7864,3 +7864,8 @@ extern uint32_t g_unk_8C2895F0; // VRAM address stored at 0x8C046ADC, loaded int
  * 0x8C046C74 - func_8C046C74
  */
 
+
+/*
+ * 0x8C046ACA - func_8C046ACA
+ */
+
