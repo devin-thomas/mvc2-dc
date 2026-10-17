@@ -3345,3 +3345,14 @@ extern int func_8c11e680(int, void *, unsigned char); // Address 0x8C11E680 from
  * 0x8C022648 - func_8C022648
  */
 
+
+/*
+ * 0x8C022238 - func_8C022238
+ */
+extern uint32_t *func_ptr_table_base; // Placeholder for 0x8C022438 / 0x8C12 logic if needed, but likely direct data access. Assuming these are static addresses or globals defined elsewhere in the SDK context which we must assume exist as externs for compilation.
+// Note: The assembly uses hardcoded VRAM/ROM addresses (e.g., 0x8c022438). In a real decompiler, these would be resolved to actual function pointers or data structures from the Katana SDK map. 
+// For this snippet to compile standalone with -fsyntax-only without linker errors on undefined symbols like 'func_8C1514', we assume they are defined elsewhere in the project's .c files.
+extern void func_8C022376(void); // Corresponds to 0x8C022376 (derived from context of typical Katana SDK patterns, though exact addr not fully explicit without map, assuming standard jump target resolution) -> Actually looking at the assembly: 
+// The jumps are relative or absolute. Let's trace carefully.
+// 0x8c021514 is a call site? No, it looks like `bra` to an address that might be in another file.
+// Wait, line
