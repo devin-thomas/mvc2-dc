@@ -9002,3 +9002,8 @@ static const uintptr_t jump_table_B[] = {
  * 0x8C04E898 - func_8C04E898
  */
 
+
+/*
+ * 0x8C04E958 - func_8C04E958 (262 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04E958); */
