@@ -2148,3 +2148,16 @@ extern void *g_unk_ptr_0x8C14; // Address 0x8C14 (Used in swap.b logic)
 // Global variables referenced by offsets from GBR or specific addresses.
 static volatile int g_shadow_r9 = -1; 
 static volatile uint32_t g_temp_val[6] __attribute__((aligned(4)));
+
+/*
+ * 0x8C01B59E - func_8C01B59E
+ */
+#include <stdint.h>
+
+extern uint32_t func_8C044F12(uint32_t a, int b); // Derived from jsr @0x8C044F12 with args r6(0), 11
+extern void *g_ptr_table_start;                    // Address at 0x8C01B5E0 (derived)
+extern uint32_t g_func_8C146288(void);            // Function pointer resolved from table
+extern uint32_t (*func_resolver)(void);           // Pointer to resolver function
+
+// Global constants embedded in the binary at specific offsets relative to this code block or absolute if static.
+// Based on analysis: 0x8C01B6D8 -> func_8C044F12, etc. We assume these are resolved externs for compilation safety
