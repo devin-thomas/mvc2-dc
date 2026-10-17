@@ -9308,3 +9308,16 @@ static uint32_t helper_func_8c051a9e(uint32_t val, int index) { /* implementatio
  * Decompile of func_8C051060 (VRAM: 0x8C051060)
  * Logic appears to be a lookup table switch with conditional decrementing and recursion.
  */
+
+/*
+ * 0x8C0510D8 - func_8C0510D8
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global variables/functions found in the binary context.
+extern uint32_t g_unk_8C051194; // Base address constant 0x8C051194 (likely a table base)
+extern uint32_t g_unk_8C051196; // Address of function pointer or data at offset from r14/r0 logic? 
+                                 // Actually, looking at usage: mov.w #addr to r0. It acts as an immediate address load if not a register value.
+// Re-evaluating constants based on assembly patterns:
+// 0x8c051194 is loaded into R0 then used in @(R0,R14). This suggests R0 holds the offset or base of a table relative to r14 (frame pointer?). 
+// However,
