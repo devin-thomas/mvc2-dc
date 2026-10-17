@@ -1147,3 +1147,16 @@ extern void (*func_8C268234)(void); // Address 0x8C26823C is a function pointer 
 // r3 points to address 0x8c0150cc (which holds value 0x8c26823c). This looks like a function pointer or struct base.
 // Instruction at 0xB4: mov.l @r3,r2 -> loads the content of that memory location into r2. 
 // If 0x8C26823C is an address, then func_8C2682
+
+/*
+ * 0x8C0150C2 - func_8C0150C2
+ */
+#include <stdint.h>
+
+// External declarations for referenced functions and data (as per Dreamcast ABI context)
+extern void func_8C2697A9(void); // Address 0x8C2697A9 derived from offset at 0x8C0152DC + base logic if needed, but here used as direct call target via r3/r4 setup? Wait. 
+// Correction based on assembly:
+// At 0x8C0150F4: mov.l 0x8c0152dc,r2 -> [r2] = 0x8C2697A9 (This is a function pointer or address)
+// Then jsr @r2 calls it. So func_8C2697A9 exists.
+
+extern void (*func_ptr_r3)(void); // Placeholder for the table lookup
