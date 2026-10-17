@@ -8234,3 +8234,17 @@ extern void (*func_jump_table_entry)(void);
 
 // Placeholder for the external functions resolved by the indirect jumps at offsets relative to base addresses.
 extern void (*func_ptr_A)(void); // Corresponds to address
+
+/*
+ * 0x8C049490 - func_8C049490
+ */
+#include <stdint.h>
+
+// External declarations for referenced symbols/globals (inferred from context)
+extern uint8_t *gbr; // Global Base Register pointer, typically used as a base address offset source in DC SDKs. However, the assembly uses @(160,gbr). In Katana/MVCA2 contexts, this often points to specific VRAM or RAM regions managed by the engine's memory manager. We assume it resolves to an array of bytes starting at gbr + 160 relative offset logic if used as a base for indexed access in some SDKs, but standard SH-4 `gbr` is just GBR register value (usually 0x8Cxxxxxx). 
+// Correction based on assembly: @(offset,gbr) uses the content of r29 (GBR) + immediate offset.
+extern uint32_t *func_8c0518a0; // Address loaded at 0x8c049594, likely a function pointer or data table base.
+// Note: The assembly loads addresses from fixed locations like 0x8C04957e, etc., which are effectively constants in the binary but act as pointers to tables/functions here.
+
+extern uint32_t *table_1; // Corresponds to address loaded at r3 (0x8c04958c) -> 0x8C054400
+// The assembly loads specific addresses directly into registers
