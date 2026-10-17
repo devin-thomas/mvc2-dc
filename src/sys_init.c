@@ -2732,3 +2732,17 @@ extern void func_8C129128(void);    // Resolved from 0x8C01E07C (data at 0x8C045
  * 0x8C01DD9C - func_8C01DD9C
  */
 
+
+/*
+ * 0x8C01E8BC - func_8C01E8BC
+ */
+#include <stdint.h>
+
+// External declarations for referenced global data and helper functions.
+extern uint32_t g_Data_8C01E950; // Address 0x8C01E950 = 0x8C01E926 (likely a base pointer or offset)
+extern uint32_t g_VAddrTableBase; // Placeholder for the table containing function pointers at offsets defined in code. 
+// Based on context, these are likely specific VRAM addresses loaded into registers r2/r3 before jsr calls.
+
+// Reconstructing the static data loads based on assembly constants:
+static const uint8_t g_Offset_0x16 = 0x16; // Derived from 'add #52' where base is often a struct offset, but here it's an absolute add to r4? 
+// Actually, looking at `mov
