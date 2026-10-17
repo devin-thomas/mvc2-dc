@@ -8567,3 +8567,8 @@ extern uint32_t (*func_ptr_table_entry5)(uint32_t base_ptr); // Placeholder for 
 extern uint32_t (*func_ptr_table_entry6)(uint32_t base_ptr); // Placeholder for the sixth call type found in Katana SDK context if needed, but here we assume direct calls or specific helpers. Based on assembly: func_8C04BF7E is called directly with 1 argument (r9).
 extern uint32_t (*func_ptr_table_entry7)(uint32_t base_ptr); // Placeholder for the seventh call type found in Katana SDK context if needed, but here we assume direct calls or specific helpers. Based on assembly: func_8C04BF7E is called directly with 1 argument (r9).
 extern uint32_t (*func_ptr_table_entry8)(uint32_t base_ptr); // Placeholder for the eighth call type found in Katana SDK context if needed, but here we assume direct calls or specific helpers. Based on assembly:
+
+/*
+ * 0x8C04C14C - func_8C04C14C
+ */
+
