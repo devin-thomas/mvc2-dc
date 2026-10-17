@@ -2461,3 +2461,8 @@ extern void func_8C213AF8(void); // Target of mov.a
  * 0x8C01C4EA - func_8C01C4EA (24 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C01C4EA); */
+
+/*
+ * 0x8C01C502 - func_8C01C502
+ */
+
