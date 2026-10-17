@@ -5313,3 +5313,8 @@ extern void (*func_8C1240A0)(void); // Address 0x8C032270 -> 0x8C1240A0
 // The assembly contains several "mov.w" instructions loading addresses into r4/r5 which are then used in indirect jumps or calls. 
 // Based on the provided .word data blocks (e.g., at 0x8c032260, etc.), these act as jump tables for specific sub-functions within a larger routine structure common in Katana SDK.
 // We define
+
+/*
+ * 0x8C0320CA - func_8C0320CA
+ */
+
