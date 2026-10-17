@@ -3484,3 +3484,8 @@ extern void func_8C1294C8(void);    // Address 0x8C1294C8 (loaded from constant 
 
 extern uint8_t g_vram_flag_8c0240cc; // Loaded at offset 0x1C relative to base pointer? No, absolute load from constant table usually implies a global or specific VRAM address. 
                                       // Given "mov
+
+/*
+ * 0x8C023FDA - func_8C023FDA
+ */
+
