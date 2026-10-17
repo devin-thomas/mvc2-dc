@@ -4588,3 +4588,8 @@ extern uint32_t func_8C14B0C8(void *base, int index); // Placeholder for the fun
 // And func_8C14B0C8 (at 0x8c02bd58) is another one.
 
 extern uint32_t (*func_ptr_table_entry)(void); // Generic type for the result of dereferencing if it's a function, or just
+
+/*
+ * 0x8C02BC54 - func_8C02BC54
+ */
+
