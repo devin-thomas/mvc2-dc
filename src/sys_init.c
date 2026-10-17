@@ -1865,3 +1865,14 @@ extern uint8_t *g_0x8C145D1C; // Corresponding to mov.l #0x8c019c2c,r5
  * 0x8C0199FA - func_8C0199FA
  */
 
+
+/*
+ * 0x8C019FEA - func_8C019FEA
+ */
+#include <stdint.h>
+
+// Global variables referenced in func_8C019FEA (must be declared extern for standalone compilation)
+extern uint32_t g_vram_base; // Corresponds to r4 usage pattern, assumed global VRAM base pointer context or passed via register if not static. Based on assembly 'r4' being used as a base without definition in snippet, we assume it's an external variable holding the target buffer address.
+extern uint32_t g_flag_8C01A056; // Corresponds to 0x8c01a056 (mov.w) - likely a flag or offset table entry
+extern uint32_t g_data_ptr_8C019FEF; // Corresponds to 0x8c01a04e/r1 usage pattern in the loop logic. 
+// Note: The assembly uses hardcoded
