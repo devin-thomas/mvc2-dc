@@ -4996,3 +4996,8 @@ extern uint32_t func_8C02FBE6_offset[5]; // Offset array for the indirect store 
  * 0x8C03009A - func_8C03009A
  */
 
+
+/*
+ * 0x8C02FF5A - func_8C02FF5A
+ */
+
