@@ -9451,3 +9451,8 @@ extern uint32_t *g_vram_8C051BCA_base; // Corresponds to address 0x8c051c8c cont
  * 0x8C051888 - func_8C051888
  */
 
+
+/*
+ * 0x8C051AF6 - func_8C051AF6
+ */
+
