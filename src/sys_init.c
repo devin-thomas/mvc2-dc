@@ -9428,3 +9428,8 @@ extern uint32_t g_addr_8C2896B0; // 0x8C2896B0 (Loaded into R9) - Wait, assembly
  * 0x8C0514B8 - func_8C0514B8
  */
 
+
+/*
+ * 0x8C051610 - func_8C051610
+ */
+
