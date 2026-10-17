@@ -9972,3 +9972,8 @@ extern uint32_t *g_data_8C05DF4; // Address 0x8c053df4 -> points to table at 0x8
  * 0x8C053A14 - func_8C053A14
  */
 
+
+/*
+ * 0x8C053A74 - func_8C053A74
+ */
+
