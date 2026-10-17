@@ -6441,3 +6441,8 @@ extern void func_8C010524(int, int); // Placeholder for address at offset 0xf446
 // Note: The assembly uses "mov #imm" followed by ".word addr". In SH-4, this is often an indirect branch setup or specific inline expansion for function calls/jumps found in Katana SDK's custom calling conventions where the address word encodes parameters and target. 
 // Given the pattern `mov #32,r0` then `.word 0xf446`, it implies a call to an absolute address with argument preparation, OR more likely in this specific SH-4 inline expansion style:
 // The ".word" instruction here is actually encoding a jump/branch
+
+/*
+ * 0x8C03C6EC - func_8C03C6EC
+ */
+
