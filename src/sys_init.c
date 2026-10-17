@@ -694,3 +694,8 @@ extern uint32_t func_8C011906(uintptr_t a, uintptr_t b); // Placeholder for cont
  * 0x8C011910 - func_8C011910
  */
 
+
+/*
+ * 0x8C011828 - func_8C011828
+ */
+
