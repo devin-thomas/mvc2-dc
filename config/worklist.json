@@ -5437,14 +5437,14 @@
     "end_vram": 2348989742,
     "size": 6,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C02BD2E",
     "vram": 2348989742,
     "end_vram": 2348992396,
     "size": 2654,
-    "status": "pending",
+    "status": "stubbed",
     "attempts": 0
   },
   {
