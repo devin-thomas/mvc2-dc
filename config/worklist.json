@@ -5572,7 +5572,7 @@
     "vram": 2348997546,
     "end_vram": 2348997590,
     "size": 44,
-    "status": "pending",
+    "status": "matched",
     "attempts": 1
   },
   {
