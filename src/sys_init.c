@@ -11174,3 +11174,8 @@ extern uint32_t *g_ptr_source_a; // Pointer to data being read/written, derived 
  * 0x8C05A6AC - func_8C05A6AC
  */
 
+
+/*
+ * 0x8C05A882 - func_8C05A882
+ */
+
