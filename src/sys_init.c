@@ -1267,3 +1267,8 @@ extern int g_flag_byte_6C;               // Placeholder for byte stored
  * 0x8C0153D2 - func_8C0153D2 (32 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C0153D2); */
+
+/*
+ * 0x8C01564A - func_8C01564A (528 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C01564A); */
