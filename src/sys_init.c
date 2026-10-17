@@ -6466,3 +6466,8 @@ extern void func_8C010524(int, int); // Placeholder for address at offset 0xf446
  * 0x8C03C832 - func_8C03C832
  */
 
+
+/*
+ * 0x8C03C75E - func_8C03C75E
+ */
+
