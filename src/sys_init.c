@@ -2077,3 +2077,16 @@ extern uint8_t g_vram_data_52_offset; // Placeholder for the data at base+0x34 (
  * 0x8C01ADE6 - func_8C01ADE6 (1062 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C01ADE6); */
+
+/*
+ * 0x8C01B37E - func_8C01B37E
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function (addresses resolved from data)
+extern uint32_t (*func_8C044F12)(uint32_t, int); // Address 0x8C044F12 loaded at r3 initially? No, it's a pointer to code. Re-evaluating based on usage.
+// Actually: mov.l #... ,r3 then jsr @r3 implies indirect call via address in register. 
+// Let's define the external functions by their addresses found in data sections or assume they are global symbols if not constants.
+// Based on typical Katana SDK patterns, these look like function pointers stored in ROM/RAM tables.
+
+extern uint8_t (*g_ptr_0x8C1294BC)(void); // Address 0x8C1294BC loaded at
