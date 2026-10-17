@@ -3435,3 +3435,8 @@ void func_8C04(void); // Corresponds to branch target 0x8c023a9c logic path or s
 // The instruction `jsr      @r9` calls whatever function address is in R9.
 // Based on typical Katana SDK patterns and the provided assembly, we assume these are external symbols or internal functions not fully visible here but necessary for compilation context if they were defined locally. 
 // However, since this snippet only asks to decompile THIS specific block which contains a JSR @r9 (indirect call), I must declare r9's target as an extern function pointer
+
+/*
+ * 0x8C023AF6 - func_8C023AF6
+ */
+
