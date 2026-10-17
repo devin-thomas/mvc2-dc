@@ -8687,3 +8687,8 @@ void func_dispatcher_case_B(uint32_t arg_a, uint32_t arg_b); // Placeholder for 
 
 // Actually, looking at the jumps:
 // 0x8C
+
+/*
+ * 0x8C04D638 - func_8C04D638 (206 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04D638); */
