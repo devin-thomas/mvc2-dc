@@ -6662,3 +6662,14 @@ extern uint32_t func_8C010524(void); // Placeholder for the function at r4 addre
  * 0x8C03E84E - func_8C03E84E (804 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03E84E); */
+
+/*
+ * 0x8C03E7BA - func_8C03E7BA
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/pointers (addresses extracted from assembly)
+extern uint64_t *g_8C26A95C; // Address 0x8C26A95C loaded at offset E7D2/E826 context implies large buffer or struct pointer, but usage suggests byte access. Re-evaluating based on `mov.l` loading address then immediate dereference? 
+// Correction: The assembly loads addresses into registers r10/r3 etc which are pointers to data structures in VRAM/RAM.
+extern uint8_t *g_8C26A95C_ptr; // Placeholder for the pointer loaded at 0x8c03e884 (which is 0x8C26A95C). 
+// Actually, looking closely: `mov.l 0x8c03e884,r3` loads a *pointer* into r3. Then later we access it as bytes? No, SH-
