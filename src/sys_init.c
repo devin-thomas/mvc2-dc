@@ -7929,3 +7929,17 @@ static inline uint32_t get_base_addr(uint8_t index) {
 
 // Reconstructed logic based on assembly flow:
 // The function appears to be a complex bit-manipulation routine involving byte extraction, shifting, and conditional updates of memory at offset 0x
+
+/*
+ * 0x8C047492 - func_8C047492
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/data (addresses inferred from assembly)
+extern uint32_t *g_unk_ptr_base; // Corresponds to 0x8C26823C or similar base logic if not direct pointer
+extern const unsigned char g_data_table[]; 
+extern int (*func_callback)(void);
+
+// Helper macros for the specific memory layout implied by offsets in assembly
+#define BASE_ADDR_1 (uint32_t)0x8c268234 // Derived from 0x8C047536 + offset logic if needed, but here we assume direct load or relative. 
+// Actually, looking at `mov.w 0x8c047536,r0` then `@(r0,r4)`, r0 is an index/offset into a table pointed to by r4?
