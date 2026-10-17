@@ -8056,3 +8056,15 @@ extern void func_8C034DEE(uint32_t *, uint32_t); // Address 0x8
  * 0x8C047F8E - func_8C047F8E (688 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C047F8E); */
+
+/*
+ * 0x8C048546 - func_8C048546
+ */
+extern void func_8C051AF6(void *); // Address 0x8C048634 -> 0x8C051AF6
+extern int func_8C0518A0(int, uint32_t *, uint32_t **); // Address 0x8C048638 -> 0x8C0518A0 (likely div helper)
+extern void func_8C0526D6(void *); // Address 0x8C04863c -> 0x8C0526D6
+extern int func_8C053F14(int, uint32_t *, uint32_t **); // Address 0x8C048644 -> 0x8C053F14 (likely div helper)
+extern void func_8C052AF0(void *); // Address 0x8C04864c -> 0x8C052AF0
+extern int func_8C052C84(int, uint32_t *, uint32_t **); // Address 0x8C048650 -> 0x8C052C84 (likely div helper)
+extern void func_8C034DEE(void *); // Address 0x8C048654 -> 0x8C034DEE
+extern int func_8C05211C(int, uint32_t *, uint32_t **);
