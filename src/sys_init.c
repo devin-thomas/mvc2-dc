@@ -4503,3 +4503,8 @@ extern uint32_t func_8C149860(void); // Address 0x8C149860 from r1 at 0x8c02a4e0
 extern uint32_t func_8C149850(void); // Address 0x8C149850 from r1 at 0x8c02a4dc. Likely a table base address stored in ROM/VRAM map. Adjust signature if known.
 
 // Global variables or data
+
+/*
+ * 0x8C02A7CE - func_8C02A7CE (630 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C02A7CE); */
