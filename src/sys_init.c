@@ -4818,3 +4818,8 @@ extern void func_8C02FD26(uint32_t arg, uint32_t unused_arg); // Address 0x8C02F
 extern void (*func_ptr_r4)(void *arg);                  // Pointer loaded from r4 at offset E458/E45A? No, likely specific pointers. 
 // Re-evaluating based on assembly:
 // The
+
+/*
+ * 0x8C02E378 - func_8C02E378
+ */
+
