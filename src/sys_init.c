@@ -4023,3 +4023,8 @@ extern void func_8C174BC2(uint32_t val); // Address 0x8C1F8AC4 -> likely a helpe
 extern void func_8C174DAC(uint32_t val); // Address 0x8C1F8AC4 -> Wait, checking assembly: 
 // r12 = 0x8c027588 (value is 0x8C174BC2). So the function at that address.
 extern void func_8C174DAC(uint32_t val); // Address
+
+/*
+ * 0x8C027366 - func_8C027366
+ */
+
