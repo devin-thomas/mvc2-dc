@@ -7649,3 +7649,13 @@ extern void func_8C045926(void); // Placeholder name based on typical SDK patter
  * 0x8C045ADA - func_8C045ADA
  */
 
+
+/*
+ * 0x8C045E64 - func_8C045E64
+ */
+#include <stdint.h>
+
+extern void func_0x8C268340(uint32_t *dst, uint32_t src); // Address 0x8C129728 -> likely a helper or the address itself is used as data pointer context. Based on usage: mov.l @(r5), r2 then store to dst? No, looking at pattern: it loads from source array into temp registers (R3,R6,R7) and stores back with offset logic.
+// Actually, analyzing 0x8C129728 usage in similar Katana SDK functions usually implies a specific helper or data table access. 
+// However, the instruction `jsr @r3` where r3 is loaded from static address suggests calling a function at that location if it's code, OR loading an offset to call relative?
+// Given "mov.l 0x8c045fc0,r3" and then jsr@r3. If 0x8C12
