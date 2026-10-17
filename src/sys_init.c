@@ -9366,3 +9366,14 @@ extern uint32_t g_unk_8C051196; // Address of function pointer or data at offset
  * 0x8C051230 - func_8C051230 (558 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C051230); */
+
+/*
+ * 0x8C0514AE - func_8C0514AE
+ */
+#include <stdint.h>
+
+extern uint32_t *g_unk_return_addr; // Placeholder for the label at 0x8C0514AE+4 (pr)
+
+void func_8C0514AE(void) {
+    g_unk_return_addr = NULL; 
+}
