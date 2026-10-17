@@ -8641,3 +8641,8 @@ extern uint32_t *g_base_ptr; //
  * 0x8C04C8AC - func_8C04C8AC
  */
 
+
+/*
+ * 0x8C04C77A - func_8C04C77A
+ */
+
