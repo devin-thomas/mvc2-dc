@@ -3636,3 +3636,15 @@ extern uint32_t (*func_8C024DE2)(void); // Return type inferred from usage as a 
  * 0x8C024E66 - func_8C024E66
  */
 
+
+/*
+ * 0x8C0252D6 - func_8C0252D6
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/data (addresses resolved from assembly)
+extern uint32_t *g_8C044F12; // Address 0x8C044F12, loaded into r3 initially
+extern int g_flag_8C0253BC;   // Value at address 0x8c0253bc (loaded as word)
+extern uint32_t *g_ptr_8C0253CC; // Address pointer stored at 0x8C0253cc, loaded into r1 initially
+extern int g_flag_8C0253BE;    // Value at address 0x8c0253be (loaded as word)
+extern uint32_t *g_ptr_8C0253C0; // Address pointer stored at
