@@ -8051,3 +8051,8 @@ extern void func_8C034DEE(uint32_t *, uint32_t); // Address 0x8
  * 0x8C047E7E - func_8C047E7E
  */
 
+
+/*
+ * 0x8C047F8E - func_8C047F8E (688 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C047F8E); */

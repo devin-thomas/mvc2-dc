@@ -10077,14 +10077,14 @@
     "end_vram": 2349105038,
     "size": 72,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C047F8E",
     "vram": 2349105038,
     "end_vram": 2349105726,
     "size": 688,
-    "status": "pending",
+    "status": "stubbed",
     "attempts": 0
   },
   {
