@@ -7943,3 +7943,8 @@ extern int (*func_callback)(void);
 // Helper macros for the specific memory layout implied by offsets in assembly
 #define BASE_ADDR_1 (uint32_t)0x8c268234 // Derived from 0x8C047536 + offset logic if needed, but here we assume direct load or relative. 
 // Actually, looking at `mov.w 0x8c047536,r0` then `@(r0,r4)`, r0 is an index/offset into a table pointed to by r4?
+
+/*
+ * 0x8C047218 - func_8C047218
+ */
+
