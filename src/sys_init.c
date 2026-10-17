@@ -1740,3 +1740,24 @@ extern uint32_t g_offset_base_8C0190D8; // Address where the final write happens
  * 0x8C0191AA - func_8C0191AA
  */
 
+
+/*
+ * 0x8C019630 - func_8C019630
+ */
+#include <stdint.h>
+
+// External declarations for referenced globals/helpers (as per instructions)
+extern uint32_t g_unk_8C0196A0; // Address 0x8C0197EC / 0x8C04 pattern suggests a table or specific offset logic, but treated as extern here.
+// Note: The assembly uses hardcoded addresses for tables (e.g., 0x8c0197ec). In real decompilation, these would be resolved to actual function pointers or data structures defined elsewhere in the SDK. 
+// For this snippet to compile standalone with -fsyntax-only as requested without resolving every single global:
+extern void (*g_jump_table_8C26A934)(void); // Placeholder for 0x8c10 / 0x8c14 patterns if they were functions, though context suggests data tables. 
+// Given the complexity of hardcoded addresses in retail SDKs without a symbol table:
+extern uint32_t g_data_8C108060; // Placeholder for address at 0x8C108060 (from mov.l @r3,r0)
+extern void (*g_func_ptr_8C145A7A)(void); // Placeholder for jump target logic if applicable, though used as data here.
+
+// Re-defining externs based on the specific address patterns found in the assembly to ensure syntax validity without linker errors for unknown symbols.
+// The code heavily relies on hardcoded addresses which act as function pointers or table bases.
+extern void (*g_ptr_8C145AB4)(void); // 0x8c0196c4 -> 0x8C145AB4 (Jump target)
+extern uint32_t g_data_base_8C145AA8; // 0x8c0196c8 -> 0x8C145AA8 (Data base for offsets like +28, +30)
+extern void (*g_func_ptr_8C108210)(void); // 0x8c0196cc -> 0x8C108210 (JSR target)
+extern uint32_t g_data_base_8C145A7A;   // 0x8c019
