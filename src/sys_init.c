@@ -6803,3 +6803,8 @@ extern uint32_t g_Data_8C03FC54; // Address 0x8C03FC54 contains value at offset 
  * 0x8C03F92A - func_8C03F92A
  */
 
+
+/*
+ * 0x8C03FBB0 - func_8C03FBB0
+ */
+
