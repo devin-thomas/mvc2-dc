@@ -5904,3 +5904,8 @@ static const uint32_t *g_ptr_table = (uint32_t *)(uintptr_t)0x8C212CE8; // Loade
  * 0x8C0368F4 - func_8C0368F4
  */
 
+
+/*
+ * 0x8C036F76 - func_8C036F76
+ */
+
