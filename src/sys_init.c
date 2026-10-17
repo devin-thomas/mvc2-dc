@@ -3610,3 +3610,14 @@ static const char *sTable = (const char *)0x8C024ECA;    // Label at offset ECA 
  * 0x8C024A1E - func_8C024A1E
  */
 
+
+/*
+ * 0x8C024F5C - func_8C024F5C
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function but not defined here.
+extern uint32_t (*func_8C024DE2)(void); // Return type inferred from usage as a subroutine call returning void or int, assumed generic pointer return context based on SH-4 calling conventions where bsr returns to caller's stack frame logic often used for setup/teardown in SDK. However, looking at the code flow:
+// The function calls func_8C024DE2 which likely sets up a specific state (like an interrupt handler or callback). 
+// Given "sts.l pr,@-r15" before bsr and lds after, it's saving/restoring PR. 
+// Let's assume the return type of func_8c024de2 is void for this snippet context as no result is used immediately in a way that suggests an int return
