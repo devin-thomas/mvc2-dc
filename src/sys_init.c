@@ -5936,3 +5936,8 @@ extern uint32_t (*func_0x8c14d310)(void); // Placeholder for 0x8C14D310 if it is
  * 0x8C037B8C - func_8C037B8C (840 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C037B8C); */
+
+/*
+ * 0x8C037360 - func_8C037360
+ */
+
