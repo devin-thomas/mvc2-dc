@@ -9603,3 +9603,8 @@ static uint16_t g_data_8c05254a;   // Addressed at 0x8C05254A, value = base addr
  * 0x8C05218A - func_8C05218A
  */
 
+
+/*
+ * 0x8C052618 - func_8C052618
+ */
+
