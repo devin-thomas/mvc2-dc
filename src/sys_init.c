@@ -3768,3 +3768,8 @@ extern void (*func_ptr_unk)(uint32_t, uint32_t); // Placeholder for
  * 0x8C0254B2 - func_8C0254B2
  */
 
+
+/*
+ * 0x8C02585A - func_8C02585A
+ */
+
