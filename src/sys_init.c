@@ -5956,3 +5956,8 @@ extern void (*func_ptr)(void); // Placeholder for the function called via JSR @r
 #define ADDR_8C037BAC  (uint32_t)0x8C136694 // Base address for the structure being iterated over? Or just an offset base. 
 // Based on usage: r3 = mov.l [addr], then shll, implies shifting a pointer or index.
 #define ADDR_8
+
+/*
+ * 0x8C037ED4 - func_8C037ED4
+ */
+
