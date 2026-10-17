@@ -5838,3 +5838,8 @@ extern void func_8C213046(void *a);                      // Placeholder for jsr 
  * 0x8C036686 - func_8C036686
  */
 
+
+/*
+ * 0x8C036AB0 - func_8C036AB0 (520 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C036AB0); */
