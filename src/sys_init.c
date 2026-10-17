@@ -3300,3 +3300,8 @@ extern int func_8c11e680(int, void *, unsigned char); // Address 0x8C11E680 from
  * 0x8C021966 - func_8C021966
  */
 
+
+/*
+ * 0x8C021632 - func_8C021632
+ */
+
