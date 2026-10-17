@@ -5388,3 +5388,8 @@ extern uint8_t *g_UnknownArray; // Placeholder for global arrays accessed via of
  * 0x8C032FAE - func_8C032FAE
  */
 
+
+/*
+ * 0x8C0328EE - func_8C0328EE
+ */
+
