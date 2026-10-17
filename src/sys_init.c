@@ -6183,3 +6183,8 @@ extern uint32_t (*func_8C01F5E0)(void); // Corresponds to bsr 0x8c03aa90 based o
     // Without a symbol table mapping these specific hex values (0x8C268340 etc) to symbols, we assume they resolve to functions returning uint32_t or void*.
     // Given 'tst r0' checks for zero return value of the BSR'd function:
 extern int (*func_8C1A9E50)(void); // Placeholder name mapping 0x8c03aa
+
+/*
+ * 0x8C03A97E - func_8C03A97E
+ */
+
