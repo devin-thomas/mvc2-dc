@@ -10989,3 +10989,8 @@ extern void subr_func(void *ptr);                          // Placeholder for bs
 // Global variables / pointers referenced by absolute addresses in the assembly (inferred from context)
 static uint32_t gbr_ptr = 0;                              // GBR register value used as base pointer offset source? Or specific VRAM address. Assuming it holds a valid pointer or is manipulated elsewhere. 
 // Note: In SH-4, @(r0,gbr) usually means r0 + (gbr << shift). If '20' was the immediate in mov.l @
+
+/*
+ * 0x8C059582 - func_8C059582
+ */
+
