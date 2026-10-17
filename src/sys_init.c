@@ -3735,3 +3735,21 @@ static void *resolve_gbr_offset(uintptr_t base_addr) {
  * 0x8C0256A2 - func_8C0256A2
  */
 
+
+/*
+ * 0x8C025AB8 - func_8C025AB8
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global data and helper functions found in the disassembly context.
+extern uint32_t g_unk8C025BC8; // Value: 0x8C2897E0 (likely a base address or table pointer)
+extern uint32_t g_unk8C025BCC; // Value: 0x8C26A944 (pointer to data structure?)
+extern uint32_t g_unk8C025BC0; // Value: 0x8C26823C (function pointer or table base)
+extern uint32_t g_unk8C025BC4; // Value: 0x8C212CEC (another function/table pointer)
+// Note: The addresses at 0x8c025bd0 and 0x8c025bd4 are resolved to specific runtime values in the binary.
+extern uint32_t g_unk8C025BD0; // Value: 0x8C129128 (function pointer)
+extern uint32_t g_unk8C025BD4; // Value: 0x8C1292D4 (function pointer)
+
+// Helper function stubs inferred from indirect calls @r3. These would be defined elsewhere in the SDK.
+void func_helper_A(uint32_t arg); 
+extern void (*func_ptr_unk)(uint32_t, uint32_t); // Placeholder for
