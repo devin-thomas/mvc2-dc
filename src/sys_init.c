@@ -1945,3 +1945,8 @@ extern void (*func_ptr_8c01a1be)(void);
  * 0x8C01A71A - func_8C01A71A
  */
 
+
+/*
+ * 0x8C01A44A - func_8C01A44A
+ */
+
