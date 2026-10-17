@@ -4657,3 +4657,8 @@ uint32_t func_8C02BD06(void) {
  * 0x8C02C78C - func_8C02C78C
  */
 
+
+/*
+ * 0x8C02D14E - func_8C02D14E (46 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C02D14E); */
