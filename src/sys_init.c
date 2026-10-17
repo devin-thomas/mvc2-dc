@@ -2722,3 +2722,8 @@ extern void func_8C129128(void);    // Resolved from 0x8C01E07C (data at 0x8C045
  * 0x8C01DCFA - func_8C01DCFA
  */
 
+
+/*
+ * 0x8C01DBCA - func_8C01DBCA
+ */
+
