@@ -8752,3 +8752,8 @@ extern int (*func_ptr)(void) = (int (*)(void))((uintptr_t)0x8C034E8C + 16 * size
 // Correction: The assembly shows two distinct jump targets loaded from static data. 
 // 0x8c04dc58 -> 0x8C034DEE (likely a function)
 // 0x8c04dc5c -> 0x8C03
+
+/*
+ * 0x8C04D77E - func_8C04D77E
+ */
+
