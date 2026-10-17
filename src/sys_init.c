@@ -4286,3 +4286,8 @@ extern uint32_t _sh4_vram_8c0290f4; // Address stored at 0x8C0290F4 (value: 0x8C
  * 0x8C029042 - func_8C029042
  */
 
+
+/*
+ * 0x8C02874C - func_8C02874C
+ */
+
