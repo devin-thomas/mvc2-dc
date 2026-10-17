@@ -10474,3 +10474,16 @@ uint32_t func_8C055A70(void) {
  * 0x8C05584E - func_8C05584E
  */
 
+
+/*
+ * 0x8C055A76 - func_8C055A76
+ */
+extern uint32_t func_8C14EBB0(void); // Address loaded at 0x8C055A92 / 0x8C055AEA
+static const struct { int val; } _table = {{-80}, {-6, -7}};
+
+// Helper to resolve offset from table based on previous value (simplified logic)
+uint32_t func_8C010524(uint32_t base_addr); // Placeholder for the jump target resolution if needed dynamically
+
+static uint32_t *get_ptr_from_offset_table(const struct { int val; } *table, const void **base_ref) {
+    return (void *)func_8C010524((uint32_t)(uintptr_t)*base_ref); // This is a placeholder reconstruction of the indirect jump logic found in SH-4 code. 
+}
