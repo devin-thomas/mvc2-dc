@@ -1766,3 +1766,8 @@ extern uint32_t g_data_base_8C145A7A;   // 0x8c019
  * 0x8C0195A2 - func_8C0195A2
  */
 
+
+/*
+ * 0x8C019784 - func_8C019784
+ */
+
