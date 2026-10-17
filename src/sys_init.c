@@ -8821,3 +8821,8 @@ extern uint32_t *g_unk_ptr_table2;   // Corresponds to address loaded from r0 in
 extern int g_flag_b;                 // Likely corresponds to value at 0x8C04DFAA (checked for non-zero)
 extern uint32_t **g_jump_target_map1;// Table starting around offset derived from flag checks, used as jump table base? 
 // Actually looking closer:
+
+/*
+ * 0x8C04DCC2 - func_8C04DCC2
+ */
+
