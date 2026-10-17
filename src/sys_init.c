@@ -11104,3 +11104,8 @@ extern uint32_t g_Data_8C059EC6; // Loaded to R1 initially? No, mov.w 0x...r1. W
  * 0x8C05A094 - func_8C05A094 (558 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C05A094); */
+
+/*
+ * 0x8C05A426 - func_8C05A426 (70 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C05A426); */
