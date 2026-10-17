@@ -3753,3 +3753,8 @@ extern uint32_t g_unk8C025BD4; // Value: 0x8C1292D4 (function pointer)
 // Helper function stubs inferred from indirect calls @r3. These would be defined elsewhere in the SDK.
 void func_helper_A(uint32_t arg); 
 extern void (*func_ptr_unk)(uint32_t, uint32_t); // Placeholder for
+
+/*
+ * 0x8C025C52 - func_8C025C52
+ */
+
