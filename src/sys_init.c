@@ -8913,3 +8913,8 @@ extern int (*func_ptr_table_entry)(void *base, uintptr_t offset);
 // External declarations for global data referenced in the function.
 extern const uint32_t *g_DataTable_1; // Address 0x8C04E76C -> points to table starting at r5 offset logic? No, direct load suggests it's a pointer or base address used directly as an array index source if not dereferenced immediately in the assembly pattern. Looking closely: `mov.l 0x8c04e76c,r3` then `jsr @r3`. This is likely calling a function stored at that address, OR loading a constant pointer to be used later. Given subsequent usage of r14 as base and offsets in tables (implied by sequential loads), let's assume 0x8C05218A is the start of a data structure or code block accessed via indirect jump first? 
 // Re-evalu
+
+/*
+ * 0x8C04E53A - func_8C04E53A
+ */
+
