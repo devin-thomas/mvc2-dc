@@ -10165,3 +10165,8 @@ extern uint32_t func_8C055be4(uint32_t a, uint32_t b); // Placeholder for extern
 // but based strictly on this snippet and typical Katana patterns where r6/r7 often hold pointers to structs passed as args (r0-r3), we assume a1=r4, a2=r5.
 extern uint8_t *g_some_global_ptr; // Placeholder for the base address if 0x8C054FAA/0x8C054FAB are not immediate constants but pointers to globals in this specific build context (unlikely given 'mov.w #imm'). 
 // Correction: The
+
+/*
+ * 0x8C054EE2 - func_8C054EE2
+ */
+
