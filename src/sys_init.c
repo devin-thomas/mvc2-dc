@@ -9504,3 +9504,8 @@ extern uint32_t func_8C051E64(uint32_t a, uint32_t b); // Adjusted signature bas
 // Re-evaluating the call site logic: 
 // `mov.l @(r0,r4),r3` loads an address/value into r3.
 // Then `bsr 0x8c051e64`. The SH-4 BSR instruction does not take arguments directly; it jumps to a subroutine which must be called via JSR or the
+
+/*
+ * 0x8C052008 - func_8C052008 (184 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C052008); */
