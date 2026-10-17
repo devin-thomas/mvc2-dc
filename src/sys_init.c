@@ -10740,3 +10740,8 @@ extern void func_f3e6(void *arg, int size1, int size2); // Corresponds to 0xf3e6
 extern void func_f3e6_wrapper(uint8_t *dst, uint8_t src); // Placeholder logic inferred from 92/104 byte copy patterns if not direct calls
 
 // Global variables referenced via absolute addresses in the assembly (VRAM context)
+
+/*
+ * 0x8C057492 - func_8C057492
+ */
+
