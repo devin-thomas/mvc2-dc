@@ -8365,3 +8365,8 @@ extern void func_8C034E8C(int a0, int a1); // 0x8C049D18 (Re-verified from `mov.
  * 0x8C0499EA - func_8C0499EA
  */
 
+
+/*
+ * 0x8C049DFC - func_8C049DFC
+ */
+
