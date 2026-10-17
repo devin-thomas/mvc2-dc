@@ -8152,3 +8152,16 @@ static const struct {
 // Pattern: 
 // 1. Load base offset from memory? No, it's hardcoded in the assembly as .word sequences added to registers then used for jumps or data access?
 // Wait, looking closely at lines
+
+/*
+ * 0x8C048EEA - func_8C048EEA
+ */
+#include <stdint.h>
+
+// Helper functions and globals referenced in func_8C048EEA must be declared extern here.
+extern void (*func_ptr_a)(void); // Corresponds to 0x8C0573E8 (from r3 at F24)
+extern uint16_t *data_table_base; // Base address for table lookups, derived from context or global state if known precisely in full binary. Assuming it's a pointer stored/loaded dynamically based on the assembly flow involving offsets like 0x8C14E6E0. In this specific snippet without external globals defined, we assume these are resolved at runtime via pointers passed to subroutines or loaded into r3/r2 directly by those subs.
+// Note: The assembly loads addresses from fixed constants (e.g., 0x8c0573e8) which act as function pointers in this context.
+
+extern void (*sub_func_1)(void); // Corresponds to address at 0x8C049030 -> 0x8C051AF6
+extern uint16_t *table_ptr_a;   // Address loaded into r2 (from 0x8c049044) pointing to data structure. In real DC binary, this
