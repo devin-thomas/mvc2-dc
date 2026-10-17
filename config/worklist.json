@@ -2572,7 +2572,7 @@
     "vram": 2348926998,
     "end_vram": 2348927122,
     "size": 124,
-    "status": "pending",
+    "status": "matched",
     "attempts": 1
   },
   {
@@ -2613,7 +2613,7 @@
     "end_vram": 2348927560,
     "size": 32,
     "status": "pending",
-    "attempts": 1
+    "attempts": 2
   },
   {
     "name": "func_8C01CA48",
@@ -2621,7 +2621,7 @@
     "end_vram": 2348927606,
     "size": 46,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C01CA76",
