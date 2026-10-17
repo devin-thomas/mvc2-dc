@@ -4785,3 +4785,13 @@ extern uint32_t *g_vram_base_56_r3; // Same logic for R3
  * 0x8C02DCD6 - func_8C02DCD6
  */
 
+
+/*
+ * 0x8C02E3C8 - func_8C02E3C8
+ */
+extern void (*func_ptr)(void); // Helper function declared at address 0x8C02E014, assumed to take no args based on context (bsr without explicit arg list in SH-4 often implies static or specific linkage) but here it's a jump target. Assuming standard calling convention where arguments are passed if needed, though none seem used before bsr.
+// Note: In Dreamcast C decompilation of Katana SDK, 'func_8C02E3CA' is the actual function name for this block or similar naming scheme might apply to 0x8c02e014. 
+// However, based on strict assembly provided:
+
+extern void (*helper_func)(void); // Placeholder for address 0x8c02e014 if it's a C function call
+// Actually, looking at the pattern 'bsr addr', this is
