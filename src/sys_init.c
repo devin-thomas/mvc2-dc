@@ -9057,3 +9057,12 @@ static const uintptr_t jump_table_B[] = {
  * 0x8C04F9BE - func_8C04F9BE
  */
 
+
+/*
+ * 0x8C04FFA2 - func_8C04FFA2
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function (based on context analysis)
+extern uint32_t g_unk_table_base; // Corresponds to address 0x8C150F3A logic or similar table base if dynamic, but here it's a literal load. Assuming static data access based on `mov.l`. Actually, looking at the code: `mov.l 0x8c050040,r3` loads an immediate address into r3 which is then used as a pointer? No, wait.
+// Re-evaluating line `mov.l    0x8c050040,r3`. The comment says `[0x8C050040] = 0x8C150F3A`. This implies the instruction is loading a pointer to an address stored at that location, OR it
