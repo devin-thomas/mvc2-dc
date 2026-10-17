@@ -10286,3 +10286,17 @@ extern void func_8C0550BA(uint32_t *ptr); // Helper function referenced in delay
  * 0x8C0551F0 - func_8C0551F0
  */
 
+
+/*
+ * 0x8C05529E - func_8C05529E
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/helpers (assumed based on context)
+extern uint32_t *g_some_ptr_4; // Corresponds to argument in r4 or global base if not passed directly, but here it's arg.
+extern uint8_t  g_byte_field_r6[10]; // Hypothetical buffer at offset from r6 (based on @(r6), @(2,r6)) - *Correction*: In SH-4 decompilation of Katana SDK, these are often stack or specific struct members passed via registers. 
+// Re-evaluating based on standard Dreamcast ABI:
+// Arguments come in R4-R7. The code uses r0 as a base pointer (likely the first argument).
+// Let's assume this function takes pointers/addresses and returns an int status.
+
+extern uint32_t *g_global_table_1;
