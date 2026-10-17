@@ -1968,3 +1968,8 @@ static void process_block(uint32_t dst_addr, const struct _SH4_Context *ctx) {
 extern uint32_t g_unk_A740;   // Value: 0x8C26A940
 extern int (*g_ptr_A71c)(void);    // Function pointer at A71c -> calls func_0x8C044F12 (via r2)
 // Note: Exact types for
+
+/*
+ * 0x8C01A7E8 - func_8C01A7E8
+ */
+
