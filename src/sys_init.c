@@ -7282,3 +7282,8 @@ extern uint32_t *func_8C04335C_base_addr(void); // Base address 0x8c043410, assu
  * 0x8C042F14 - func_8C042F14
  */
 
+
+/*
+ * 0x8C0438A2 - func_8C0438A2 (532 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0438A2); */
