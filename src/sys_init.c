@@ -4382,3 +4382,15 @@ static const uint32_t g_data_offset = 0x6c;       // Derived from add #116, r1 i
  * 0x8C029D5A - func_8C029D5A
  */
 
+
+/*
+ * 0x8C02A316 - func_8C02A316
+ */
+extern uint32_t func_8C1292D4(uint32_t arg); // Address loaded from 0x8C02A3FC/0x8C02A3F8 context, likely a helper or table lookup function. Adjust name if known globally.
+
+// Global constants/data addresses (simulated as externs for standalone compilation)
+extern const uint16_t *g_DataAddr_0; // 0x8c02a3ea -> points to base of data structure in r4/r5 context? Actually looks like an offset or specific pointer source. Let's assume it resolves to a known global array based on typical SDK patterns, but since we can't resolve the symbol name from raw bytes without more context, we treat 0x8c02a3ea as pointing to `g_DataBase`.
+// Correction: In SH-4 decompilation of Katana/MVC2, these fixed addresses often point to specific global tables. 
+// Let's define placeholders for the absolute memory locations if they aren't standard globals.
+extern const uint16_t *const g_OffsetTable_0; // 0x8c02a3ea (likely a pointer or offset source) - Re-evaluating based on usage: `mov.w imm, rX` then used as base for `(rBase + Offset)`. 
+// Actually
