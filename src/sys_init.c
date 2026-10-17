@@ -7351,3 +7351,8 @@ extern uint8_t *g_vram_base; // Base address for VRAM access, derived from 0x8c0
 // Extern declarations for referenced addresses and functions found in the assembly trace.
 extern uint32_t (*func_8C039240)(void); // Address loaded from 0x8C044004 at F70, called if r0==1 (likely a check or setup)
 extern void func_8C11C720(uint32_t arg_a, uint32_t arg_b); // Called with args derived from constants/registers when condition fails initially. Note: Assembly shows mov.l 0x8c04400a,r5 (implied context) then jsr @r3 where r3=func_8C11C720? Actually assembly says `mov #0, r4` before call at F7A/F7E. Let's assume standard signature based on usage
+
+/*
+ * 0x8C043C0C - func_8C043C0C
+ */
+
