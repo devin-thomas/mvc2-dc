@@ -6052,7 +6052,7 @@
     "vram": 2349008334,
     "end_vram": 2349008422,
     "size": 88,
-    "status": "pending",
+    "status": "matched",
     "attempts": 1
   },
   {
@@ -6069,7 +6069,7 @@
     "end_vram": 2349008606,
     "size": 82,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C0306DE",
