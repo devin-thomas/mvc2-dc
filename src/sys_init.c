@@ -1407,3 +1407,8 @@ extern uint32_t g_8C144768; // Placeholder for 0x8c01708c value if it's not imme
  * 0x8C017182 - func_8C017182
  */
 
+
+/*
+ * 0x8C017270 - func_8C017270
+ */
+
