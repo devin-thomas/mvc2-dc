@@ -8666,3 +8666,8 @@ extern uint32_t *g_base_ptr; //
  * 0x8C04CC1C - func_8C04CC1C (996 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04CC1C); */
+
+/*
+ * 0x8C04D000 - func_8C04D000 (528 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04D000); */
