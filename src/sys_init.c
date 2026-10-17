@@ -1120,3 +1120,18 @@ extern uint32_t func_8C01470C(void); // Address 0x8C26823C based on context anal
  * 0x8C0146C2 - func_8C0146C2
  */
 
+
+/*
+ * 0x8C014B82 - func_8C014B82
+ */
+extern void func_8C011898(uint32_t arg); // 0x8c014da8 -> 0x8C011898, called with r4=arg (from stack) or similar context? Actually looking at usage: mov.l @r15+ is not used here. Wait, line BA0 loads address into R3 then calls it.
+extern void func_8C26823C(uint32_t arg); // 0x8c014db0 -> 0x8C26823C (Line BA6) - Context: Called with r4=arg? No, line BAC loads @r14 into R4. So func_8C26823C takes arg in R4 which is *ptr*.
+extern void func_8C01197A(uint32_t arg); // 0x8c014dac -> 0x8C01197A (Line BAA) - Called with r4=arg? No, line BA6 loads @r14 into R4. So func_8C01197A takes arg in R4 which is *ptr*.
+extern void func_8C289750(uint32_t a, uint32_t b); // 0x8c014db6 -> 0x8C289750 (Line BEE) - Called with r4=a? No. Line BEE loads @r14 into R3 then calls it. Wait, line BF2 sets #11 in R4. So func_8C289750 takes arg in R4 which is 11.
+extern void func_8C016DF2(uint32_t a); // 0x8c014db8 -> 0x8C016DF2 (Line BF6) - Called with r4=a? No, line BFA sets #4 in R4. So func_8C016DF2 takes arg in R4 which is 4.
+extern void func_8C0182E0(uint32_t a); // 0x8c014dbc -> 0x8C0182E0 (Line BFC) - Called with r4=a? No, line BF8 sets #4 in R4. Wait, previous call was func_8C016DF2(4). This one is also called after setting R4=4? Let's re-read.
+// Re-reading sequence:
+// BFA: mov.w  r3,r4 (Wait, assembly says `mov.l @r15+` isn't here. It says `mov #4,r4`. Then `jsr @(0x8c014dbc)`. So arg is literal 4? Or maybe R4 was used as a temp for something else?
+// Let's look at the pattern: 
+// BAA: mov.l @r15+ (Wait, no. Line BA6 loads address to r3 then calls it).
+// Actually, let's trace carefully from start of
