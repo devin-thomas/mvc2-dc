@@ -9579,3 +9579,8 @@ extern uint32_t g_8C0525b4; // Value at 0x8c0525b4 loaded into r5. Likely a poin
  * 0x8C05216E - func_8C05216E
  */
 
+
+/*
+ * 0x8C0521D4 - func_8C0521D4
+ */
+
