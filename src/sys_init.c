@@ -3275,3 +3275,8 @@ extern int func_8c11e680(int, void *, unsigned char); // Address 0x8C11E680 from
 // - Offsets like +4, +6 are implied by register usage patterns in similar Katana SDK code or derived from context if not explicit.
 // However, looking closely at 0x8C02187E (cmp/str r3,r12) and the jump logic:
 // The assembly seems to be manipulating a specific struct layout where fields are accessed via
+
+/*
+ * 0x8C02157C - func_8C02157C
+ */
+
