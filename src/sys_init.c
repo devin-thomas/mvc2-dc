@@ -8436,3 +8436,8 @@ extern const struct { /* Struct containing offsets or flags */ } s_table_start_o
 extern uint32_t *g_ptr_1; // Corresponds to address loaded into r1 (likely a function table)
 // The assembly loads specific addresses directly, so we model the logic using pointers derived from those constants if they represent data structures, 
 // or assume direct access for code segments. Given "jsr @r2", these are likely jump tables stored in VRAM/ROM mapped memory
+
+/*
+ * 0x8C04A010 - func_8C04A010
+ */
+
