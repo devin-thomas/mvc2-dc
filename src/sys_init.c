@@ -7499,3 +7499,8 @@ extern void *r5_ptr; // Placeholder for r5 base pointer context if needed, thoug
 // Re-evaluating based on standard SH-4 Dreamcast patterns: 
 // Arguments typically in R4-R7. This function takes no explicit arguments listed but uses R3 (result of load) and modifies memory at offsets from R4/R5/R6? 
 // Wait, looking closely: `mov.l @(8,r4),r3` -> loads pointer/value into r3 based on arg 1 (R4).
+
+/*
+ * 0x8C044F1E - func_8C044F1E
+ */
+
