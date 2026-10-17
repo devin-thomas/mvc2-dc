@@ -5792,3 +5792,8 @@ extern void func_8C036682(void); // Placeholder for external declaration if need
 void func_8C036682() {
     return; 
 }
+
+/*
+ * 0x8C036142 - func_8C036142
+ */
+
