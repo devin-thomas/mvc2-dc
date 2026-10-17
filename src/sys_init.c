@@ -3465,3 +3465,8 @@ void func_8C04(void); // Corresponds to branch target 0x8c023a9c logic path or s
  * 0x8C02384E - func_8C02384E
  */
 
+
+/*
+ * 0x8C023B8A - func_8C023B8A (114 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C023B8A); */
