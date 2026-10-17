@@ -2129,3 +2129,22 @@ void func_8C01B3E0() {
  * 0x8C01B228 - func_8C01B228
  */
 
+
+/*
+ * 0x8C01B3E4 - func_8C01B3E4
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global data and helper functions found in the disassembly context.
+extern uint32_t g_unk_8C01B560; // Address 0x8C044F12 (Function pointer)
+extern uint32_t *g_ptr_8C01B574; // Pointer to address table starting at offset calculated by mova
+
+// Helper function declarations inferred from JSR calls and context.
+void func_helper_a684(uint32_t arg); 
+void func_helper_b9c(void* ptr, uint32_t val); 
+
+extern void *g_unk_ptr_0x8C14; // Address 0x8C14 (Used in swap.b logic)
+
+// Global variables referenced by offsets from GBR or specific addresses.
+static volatile int g_shadow_r9 = -1; 
+static volatile uint32_t g_temp_val[6] __attribute__((aligned(4)));
