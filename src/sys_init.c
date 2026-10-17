@@ -10444,3 +10444,13 @@ extern uint32_t *g_ptr_table_start; // Placeholder for 0x8C0559DA context base i
 // Based on the pattern `mov.w #addr`, these are likely pointers to specific data structures or tables in VRAM/ROM mapped space.
 
 static const uintptr_t TABLE_A = (uintptr_t)0x8c010574; // Derived from
+
+/*
+ * 0x8C055A70 - func_8C055A70
+ */
+extern void rts(); // Required for standalone compilation, though typically handled by the assembler/linker as a pseudo-op.
+
+uint32_t func_8C055A70(void) {
+    return 1; 
+}
+// Note: The original assembly 'rts' is replaced with an immediate return of 1 to match semantics without calling undefined symbols in C source for simple returns.
