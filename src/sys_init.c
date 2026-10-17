@@ -1781,3 +1781,14 @@ extern uint32_t g_data_base_8C145A7A;   // 0x8c019
  * 0x8C0191EC - func_8C0191EC
  */
 
+
+/*
+ * 0x8C0197C8 - func_8C0197C8
+ */
+#include <stdint.h>
+
+extern uint32_t *func_8C0197F8(void); // Address 0x8C0197F8 points to this function's entry or data, treated as a pointer source here based on context. Actually, looking at `mov.l @(r0,r4), r14` and the jump table logic:
+// Correction from assembly analysis: 
+// The first instruction loads an address into R3 which is then used for indirect jumps (JMP @R3). This looks like a trampoline or function pointer lookup.
+// However, standard Katana SDK patterns often use static arrays of addresses as dispatch tables.
+// Let's assume the value at 0x8C0197F8 is an address to jump to directly if it were data, but `jmp @r3` implies R3 holds a function pointer or code offset
