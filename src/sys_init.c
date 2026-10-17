@@ -9862,3 +9862,12 @@ extern uint32_t *g_DataBlock_8C052FB0; // Address 0x8C052FB0 points to this base
  * 0x8C052FB4 - func_8C052FB4 (208 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C052FB4); */
+
+/*
+ * 0x8C0536AC - func_8C0536AC
+ */
+extern uint32_t func_8C01f9(uintptr_t base, uintptr_t offset); // Placeholder for the jump table entry logic at 0x8C0536AC/AE if interpreted as a call, but here it's likely data or part of a larger structure. Assuming standard SH-4 calling convention where r2/r1 are args and return is in r0.
+// Note: The assembly provided starts with `.word` which suggests this might be the start of an instruction sequence that includes immediate values acting as opcodes for indirect jumps, typical in Katana SDK's jump tables or specific inline code patterns. 
+// However, strictly decompiling based on valid SH-4 instructions starting at 0x8C0536AE:
+
+extern uint32_t func_8c01f9(uintptr_t base); // Hypothetical helper if .word implies a
