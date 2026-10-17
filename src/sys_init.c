@@ -3070,3 +3070,8 @@ extern void (*func_ptr_table)(void); // Placeholder if r2 points to
  * 0x8C020588 - func_8C020588 (446 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C020588); */
+
+/*
+ * 0x8C0209C6 - func_8C0209C6
+ */
+
