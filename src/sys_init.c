@@ -6486,3 +6486,17 @@ extern void func_8C010524(int, int); // Placeholder for address at offset 0xf446
  * 0x8C03C7F6 - func_8C03C7F6 (60 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03C7F6); */
+
+/*
+ * 0x8C03CB58 - func_8C03CB58
+ */
+extern uint16_t (*func_0f318)(void); // Placeholder for external function at address 0xF318
+extern void func_0xf427(void);       // Placeholder for external function at address 0xF427 (r4+arg)
+
+// Note: The assembly provided contains multiple jump targets and data structures that appear to be 
+// part of a larger control flow or lookup table, but the snippet itself is fragmented.
+// Based on standard SH-4 Dreamcast patterns for Marvel vs Capcom 2 SDKs:
+// - r1 = base offset (likely derived from argument in r4) + constant
+// - The .word instructions at offsets are likely jump targets stored as absolute addresses or relative jumps.
+// Given the context of "func_8C03CB58" being a small stub, this looks like it might be 
+// part
