@@ -1160,3 +1160,8 @@ extern void func_8C2697A9(void); // Address 0x8C2697A9 derived from offset at 0x
 // Then jsr @r2 calls it. So func_8C2697A9 exists.
 
 extern void (*func_ptr_r3)(void); // Placeholder for the table lookup
+
+/*
+ * 0x8C015044 - func_8C015044
+ */
+
