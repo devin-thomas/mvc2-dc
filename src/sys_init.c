@@ -10658,3 +10658,8 @@ extern uint8_t g_vram_data_0x8C2896B0[4]; // Address 0x8C2896B0 loaded into r3 i
  * 0x8C0569DA - func_8C0569DA
  */
 
+
+/*
+ * 0x8C056ACE - func_8C056ACE
+ */
+
