@@ -5640,3 +5640,18 @@ extern uint16_t (*g_callback_ptr)(void); // Pointer loaded from 0x8C03507C
  * 0x8C034D7E - func_8C034D7E
  */
 
+
+/*
+ * 0x8C035000 - func_8C035000
+ */
+#include <stdint.h>
+
+// Global variables referenced in the function (VRAM addresses/constants)
+extern uint32_t g_vram_0x8C010524; // Base address for r7 logic? Or constant pool base. Based on usage at 0x8c035072, it seems to be a pointer or offset source. Let's assume it holds the value loaded into r7 initially if not an immediate. Actually, looking at `mov.w 0x8C010524,r7` in previous context usually implies loading from memory unless it's absolute addressing which SH-4 doesn't do for immediates >32k directly without specific instructions. Wait, the assembly says `mov.w #...`. No, `mov.w imm` is not standard SH-4 immediate load to register if large? 
+// Correction: The provided asm uses `mov.w 0x8c035072,r7`. This loads a word from memory address 0x8C035072.
+extern uint16_t g_vram_0x8C035072; // Address holding the value for r7 (likely an offset or pointer)
+extern uint16_t g_vram_0x8C035074; // Base address used in many loads `@(r0,r4)` where r0 is loaded from here. 
+// Wait, looking at 0x8c035072: it's a memory location containing the value to load into R7?
+// Let's re-read carefully: `mov.w 0x8C035072,r7`. This loads [0x8C035072] -> r7. 
+// So g_vram_0x8C035072 is the address of that word.
+extern uint16_t *g_ptr_base; // Placeholder for
