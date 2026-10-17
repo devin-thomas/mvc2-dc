@@ -6762,3 +6762,8 @@ extern void (*func_ptr_table_entry)(void *); // Placeholder for the table at 0x8
  * 0x8C03FBD6 - func_8C03FBD6 (22 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03FBD6); */
+
+/*
+ * 0x8C03FB5C - func_8C03FB5C
+ */
+
