@@ -9276,3 +9276,8 @@ extern FuncPtr_Generic _func_generic_addr1; // 0x8C2895F0 (loaded at 0x8c050b54)
 
 extern FuncPtr_Generic _func_ptr_0x8C042CA; // 0x8C0424CA (loaded at 0x8c050b40)
 extern FuncPtr_Generic _func_ptr_0x8C0423A; // 0x8C04223A (loaded at 0x8c050b44) - Note: hex in asm is
+
+/*
+ * 0x8C0506B4 - func_8C0506B4
+ */
+
