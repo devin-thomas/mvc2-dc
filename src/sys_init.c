@@ -1459,3 +1459,8 @@ extern void g_proc_a(union SH_REGISTERS *regs); // Corresponds to jump table ent
  * 0x8C0173E2 - func_8C0173E2
  */
 
+
+/*
+ * 0x8C0177D8 - func_8C0177D8
+ */
+
