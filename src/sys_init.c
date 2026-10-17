@@ -8165,3 +8165,8 @@ extern uint16_t *data_table_base; // Base address for table lookups, derived fro
 
 extern void (*sub_func_1)(void); // Corresponds to address at 0x8C049030 -> 0x8C051AF6
 extern uint16_t *table_ptr_a;   // Address loaded into r2 (from 0x8c049044) pointing to data structure. In real DC binary, this
+
+/*
+ * 0x8C04880C - func_8C04880C
+ */
+
