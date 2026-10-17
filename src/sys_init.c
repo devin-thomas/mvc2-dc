@@ -8026,3 +8026,8 @@ extern void func_8C034DEE(uint32_t *, uint32_t); // Address 0x8
  * 0x8C047594 - func_8C047594
  */
 
+
+/*
+ * 0x8C0475FC - func_8C0475FC
+ */
+
