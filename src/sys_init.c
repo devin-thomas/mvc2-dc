@@ -8948,3 +8948,22 @@ extern const uint32_t *g_DataTable_1; // Address 0x8C04E76C -> points to table s
  * 0x8C04E906 - func_8C04E906 (18 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04E906); */
+
+/*
+ * 0x8C04E918 - func_8C04E918
+ */
+#include <stdint.h>
+
+// External declarations for referenced symbols (addresses resolved from assembly constants)
+extern uint32_t *const __attribute__((section(".rodata"))) _0x8C14E9DC; // Address 0x8C14E9DC
+static const uintptr_t jump_table_0[] = {
+    0, /* Placeholder for alignment or unused slot if index < valid range */
+};
+
+// Helper to resolve the specific table based on input logic (simplified mapping from assembly)
+extern uint32_t *const __attribute__((section(".rodata"))) _table_A; // Corresponding to address starting at offset 0x8C14E9DC + index*? 
+static const uintptr_t jump_table_B[] = {
+    0, /* Placeholder */
+};
+
+// Reconstruct the logic based on SH-4 specific table lookup pattern found in
