@@ -2874,3 +2874,8 @@ extern uint32_t g_vram_ptr;          // Corresponds to r0 base address logic, li
 // Re-evaluating based on `mov.b @(r0,r12),r0`: This loads a byte from [R0 + R12]. 
 // In Dreamcast SH-4 games, this often accesses specific flags in the object's data structure passed as an argument or global context.
 // However, looking at the usage
+
+/*
+ * 0x8C01F628 - func_8C01F628
+ */
+
