@@ -7040,3 +7040,8 @@ extern void *r7_bank; // Pointer to banked memory region for r7 context? Or spec
  * 0x8C04184E - func_8C04184E
  */
 
+
+/*
+ * 0x8C041ABE - func_8C041ABE
+ */
+
