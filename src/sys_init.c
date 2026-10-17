@@ -4206,3 +4206,8 @@ extern uint32_t g_unk_table_a[/* size */]; // Corresponds to 0x8C044F26 area log
 // Correction based on standard Katana SDK patterns: The addresses loaded are likely function pointers or data tables defined elsewhere. 
 // Since I cannot see the linker map for Marvel vs Capcom 2 ROMs directly here, I must assume these static loads point to specific global symbols or functions known in that context.
 // However, without a symbol table, I will use extern placeholders with comments indicating their likely nature based on usage
+
+/*
+ * 0x8C0283B8 - func_8C0283B8
+ */
+
