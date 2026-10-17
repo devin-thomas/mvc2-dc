@@ -1432,3 +1432,15 @@ extern uint32_t g_8C144768; // Placeholder for 0x8c01708c value if it's not imme
  * 0x8C01701C - func_8C01701C
  */
 
+
+/*
+ * 0x8C01760A - func_8C01760A
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced addresses and functions found in the disassembly context.
+extern uint32_t g_unk_8C0177B8; // Address 0x8C017624 loads this into r4 initially (likely a pointer or offset)
+extern void (*g_func_ptr_8C017750)(void); 
+extern void (*g_func_ptr_8C017752)(uint32_t, uint32_t); // Used at 0x8c01767a with r4 as arg
+extern void g_proc_a(union SH_REGISTERS *regs); // Corresponds to jump table entry at 0x8C017764 (func_8C018090)
+// Note: The actual function pointers are resolved from
