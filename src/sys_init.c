@@ -7050,3 +7050,16 @@ extern void *r7_bank; // Pointer to banked memory region for r7 context? Or spec
  * 0x8C0418BE - func_8C0418BE
  */
 
+
+/*
+ * 0x8C042014 - func_8C042014
+ */
+#include <stdint.h>
+
+// External declarations for referenced symbols and globals. Adjust names/types based on your project's context.
+extern uint32_t g_vram_base_8C042062; // Corresponds to address 0x8c042062 in assembly, likely a pointer or value stored there.
+// Note: The addresses 0x8c042062 and 0x8c042064 are hardcoded literals in the disassembly pointing into VRAM/ROM space.
+// In a real decompiler context with symbol resolution, these would be resolved to actual variable names or function pointers.
+// Here we treat them as raw addresses cast to uintptr_t for pointer arithmetic if they represent offsets/data locations.
+
+extern uint32_t *g_ptr_8C041F5C; // Target of the branch at
