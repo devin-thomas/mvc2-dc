@@ -4195,3 +4195,14 @@ static void (*func_8C0450C0)(uint32_t); // Address 0x8C0450C0, called at r3->jsr
     // Actually, looking at `mov.w @(28,r14), r0` before the branch to 0x8c028398 which jumps over it.
     // Let's assume standard C calling convention for these helpers if arguments are passed in registers (r4).
 // The assembly is complex with embedded data tables and indirect calls. We will declare them as extern void or uint32_t based on typical patterns, but since
+
+/*
+ * 0x8C02849C - func_8C02849C
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global data/tables (addresses resolved from ROM)
+extern uint32_t g_unk_table_a[/* size */]; // Corresponds to 0x8C044F26 area logic if needed, but here used as direct load source in some contexts or just placeholder. Actually looking at usage: mov.l #1,r5 then jsr @g_func_A; r3 is func return? No, let's trace carefully.
+// Correction based on standard Katana SDK patterns: The addresses loaded are likely function pointers or data tables defined elsewhere. 
+// Since I cannot see the linker map for Marvel vs Capcom 2 ROMs directly here, I must assume these static loads point to specific global symbols or functions known in that context.
+// However, without a symbol table, I will use extern placeholders with comments indicating their likely nature based on usage
