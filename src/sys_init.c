@@ -3584,3 +3584,8 @@ extern uint8_t g_vram_flag_8c0240cc; // Loaded at offset 0x1C relative to base p
  * 0x8C024808 - func_8C024808 (534 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C024808); */
+
+/*
+ * 0x8C024DE2 - func_8C024DE2
+ */
+
