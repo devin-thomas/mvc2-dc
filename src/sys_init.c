@@ -3803,3 +3803,17 @@ extern void (*func_ptr_unk)(uint32_t, uint32_t); // Placeholder for
  * 0x8C02619E - func_8C02619E
  */
 
+
+/*
+ * 0x8C0260C4 - func_8C0260C4
+ */
+extern uint8_t *func_8C025364(void); // Address 0x8C025364 referenced in branch
+// Global data addresses resolved from disassembly context:
+static const uintptr_t g_addr_base = (uintptr_t)0x8C010524; 
+extern uint32_t *g_ptr_8c2897e0(void); // 0x8C2897E0 at offset 0xA0 from base? Or direct load. Assuming external symbol for safety based on pattern.
+// Actually, looking at `mov.l 0x8c0261a0,r14` where [addr] = target address. 
+// Let's assume these are pointers to specific data structures loaded into registers r3, r7, r14 initially.
+
+extern uint32_t *g_data_8C2897E0; // Corresponds to 0x8c0261a0
+extern uint32_t *g_data_8C26823C; // Corresponds to 0x8c026198 (value is address) -> Wait, instruction says `mov.l imm,r3`. 
+// Correction: The assembly loads immediate addresses into registers. These are likely pointers passed or loaded from a table not fully shown, OR they point
