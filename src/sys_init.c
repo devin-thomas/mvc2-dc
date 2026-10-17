@@ -10812,3 +10812,17 @@ extern void (*func_ptr_8C2896B0)(void); // Address at 0x8c0577cc
  * 0x8C057944 - func_8C057944
  */
 
+
+/*
+ * 0x8C057D08 - func_8C057D08
+ */
+#include <stdint.h>
+
+// Extern declarations required by the decompiled function context.
+extern uint8_t *func_0231(void); // Address 0x8C057D64 / 0x8C057E52 logic implies a lookup or helper returning an offset/pointer base, but based on usage patterns in Katana SDK (VRAM access), these are likely static arrays or specific VRAM pointers. Given the assembly loads constants into r3/r13 and uses them as offsets relative to 'r4'/'r6', we assume standard global data structures exist at those addresses if they were not immediate values, but here 0x8C057D62/64 etc are likely static const arrays or specific VRAM pointers defined elsewhere.
+// However, looking closely: 
+// mov.w    0x8c057d62,r0 -> loads a WORD from address 0x8C057D62 into r0 (which is then used as an offset).
+// This suggests the code at these addresses contains offsets or indices.
+extern const uint16_t _data_0; // Placeholder for data starting at .word locations if they are not immediate constants in a larger structure, but here we treat them as specific memory regions containing byte arrays/indices. 
+// Actually, re-evaluating the assembly: `mov.w 0x8c057d62,r0` loads a WORD from address 0x8C057D62 into r0.
+// Then `mov.b r3,@(r0,r14)` uses that loaded value
