@@ -563,3 +563,8 @@ int func_8C010AF4(int arg) {
     
     return result;
 }
+
+/*
+ * 0x8C010506 - func_8C010506 (1078 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C010506); */
