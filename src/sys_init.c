@@ -9952,3 +9952,18 @@ static inline uint32_t func_8C053CB0(uint32_t a) {
  * 0x8C053C8A - func_8C053C8A
  */
 
+
+/*
+ * 0x8C053CBE - func_8C053CBE
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced symbols and globals (required for standalone syntax check)
+extern uint32_t func_8C05AF4(uint32_t a, uint32_t b); // Address 0x8c053af4
+extern void *g_sgr;                                     // Shadow register target address
+// Note: The assembly uses hardcoded addresses for data pointers. 
+// In the actual binary context, these would be resolved to specific global variables or structs.
+// For this decompilation, we treat them as opaque external references based on their usage patterns.
+
+extern uint32_t *g_data_8C05DF4; // Address 0x8c053df4 -> points to table at 0x8C2895F1
+// The assembly loads a pointer from address 0x8C053
