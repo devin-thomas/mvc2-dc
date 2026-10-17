@@ -6954,3 +6954,8 @@ extern uint32_t (*func_8C040190)(void); // Address 0x8C040190 contains the addre
  * 0x8C04049E - func_8C04049E (718 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04049E); */
+
+/*
+ * 0x8C04076C - func_8C04076C (2206 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04076C); */
