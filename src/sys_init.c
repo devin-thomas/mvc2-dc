@@ -6253,3 +6253,8 @@ extern int (*func_8C1A9E50)(void); // Placeholder name mapping 0x8c03aa
  * 0x8C03B78C - func_8C03B78C (210 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03B78C); */
+
+/*
+ * 0x8C03BA96 - func_8C03BA96
+ */
+
