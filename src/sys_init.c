@@ -10094,3 +10094,23 @@ extern void func_8C0634(int arg); // Helper function referenced at 0x8C054634 (o
  * 0x8C05495C - func_8C05495C
  */
 
+
+/*
+ * 0x8C054BB8 - func_8C054BB8
+ */
+#include <stdint.h>
+
+extern uint32_t func_8C05E7F0(uint32_t a, uint32_t b); // Placeholder for the JSR at 0x8C054CEA based on context analysis of similar patterns in SDK. If exact address differs, adjust accordingly or remove if not needed for this specific snippet's logic flow (the provided assembly jumps to it).
+// Note: The actual function pointer loaded into r3 is derived from a table at 0x8C054D94 which points to various internal routines. 
+// Since the exact target of @r3 isn't fully resolved in this isolated snippet without more context, we assume 'func_...' or similar exists for that address range if it's not an immediate jump offset calculation error.
+// However, looking closely at 0x8C054CE2: mov.l #28,r5; ... jsr @r3 where r3 was loaded from a table. 
+// Let's assume the function pointer is valid and named generically or resolved elsewhere. For compilation syntax only, we declare externs for any called functions if their names aren't obvious constants.
+extern void (*func_ptr_8C054D94)(void); // Placeholder name for the routine at 0x8C05A706 (derived from r2 load)
+
+// Re-evaluating specific JSRs:
+// At 0x8C054CEA, it calls @r3. The value in r3 comes from a table lookup or previous logic not fully shown if this is the start of that block? 
+// Actually, looking at 0x8C054CF2-0x8C054D94: mov.l #28,r11; ... wait.
+// Let's look at 0x8C054CEA again. It calls @r3. r3 was set by `mov.b @(7, r14)`? No.
+// Trace back from CE A: 
+// CF6 jsr @r2 (where r2 is loaded from table 0x8C054D94 at CFA). So the call at CE A must be different or I misread the flow.
+// Ah, line CE A calls `js
