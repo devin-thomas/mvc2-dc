@@ -5214,3 +5214,14 @@ extern uint32_t func_8C26A8E4(void); // Placeholder for the external function re
  * 0x8C031052 - func_8C031052
  */
 
+
+/*
+ * 0x8C031084 - func_8C031084
+ */
+#include <stdint.h>
+// Extern declarations for referenced symbols/globals (assumed based on context)
+extern uint32_t *g_unk_ptr; // Placeholder if @(r4, 0x8C...) refers to a global table entry at offset 0x8C relative to r4 base? 
+                             // Actually looking at the code: mov.l @(8,r4),r3. If r4 is an address of a struct/table, this loads from +8.
+// Based on "mov.l 0x8c0310b0,r4" where [0x8C0310B0] = 0x8C26A8E4: 
+extern uint32_t g_base_table_addr; // The value at address 0x8C0310B0
+// Based on "mov.l @(r0,r1),
