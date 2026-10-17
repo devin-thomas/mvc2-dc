@@ -9176,3 +9176,8 @@ extern void func_8C05060E(uint32_t *a); // Helper function declared as extern to
  * 0x8C050610 - func_8C050610 (54 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C050610); */
+
+/*
+ * 0x8C0500AC - func_8C0500AC
+ */
+
