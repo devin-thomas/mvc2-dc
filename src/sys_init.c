@@ -9702,3 +9702,15 @@ extern void func_8C014F60(void); // Placeholder name based on typical SDK patter
 // Note: The assembly shows 'bsr' which branches to subroutine at address 0x8C014F60? No, let's re-read carefully.
 // Address provided in prompt is VRAM for func_8C052A90. 
 // Instruction at 0x8c0532a8: The assembly says 'bsr      0x8c0532a8'. This looks like a relative branch or an absolute address if the assembler output
+
+/*
+ * 0x8C052A9C - func_8C052A9C
+ */
+#include <stdint.h>
+
+extern uint32_t *g_unk_8c052b3a; // Address 0x8c052b3a
+extern uint32_t g_unk_8c052b36[1]; // Base address for pointer calculation, size inferred from usage pattern (likely a single element or small array)
+// Note: The assembly loads an offset/pointer at 0x8C052B36 into r0. 
+// Given the context of Katana SDK and typical SH-4 patterns where immediate offsets are used as pointers to data structures, 
+// we assume g_unk_8c052b3a is a pointer or base address variable that might be modified elsewhere, but here it's loaded directly from memory at 0x8C052B36.
+// Re-evaluating
