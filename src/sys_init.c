@@ -2702,3 +2702,8 @@ extern void func_8C129128(void);    // Resolved from 0x8C01E07C (data at 0x8C045
 // The assembly loads addresses from fixed locations like 0x8c01e07c which contain other absolute addresses (e.g., 0x8C287AE8).
 // These are likely function pointers or global variable addresses. We must declare them as externs to make the C code valid syntax, 
 // assuming they point to functions returning uint32_t based on
+
+/*
+ * 0x8C01E038 - func_8C01E038
+ */
+
