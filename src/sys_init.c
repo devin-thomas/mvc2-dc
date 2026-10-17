@@ -8831,3 +8831,8 @@ extern uint32_t **g_jump_target_map1;// Table starting around offset derived fro
  * 0x8C04DD3E - func_8C04DD3E
  */
 
+
+/*
+ * 0x8C04DCEC - func_8C04DCEC
+ */
+
