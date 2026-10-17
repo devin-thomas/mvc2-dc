@@ -10043,3 +10043,8 @@ extern uint8_t *g_ptr_r6; // Corresponds to register usage of r6 as a data point
  * 0x8C053EFE - func_8C053EFE
  */
 
+
+/*
+ * 0x8C054166 - func_8C054166
+ */
+
