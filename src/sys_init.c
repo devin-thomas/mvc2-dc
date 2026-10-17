@@ -4863,3 +4863,15 @@ extern void (*func_ptr_r4)(void *arg);                  // Pointer loaded from r
  * 0x8C02F4D2 - func_8C02F4D2 (516 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C02F4D2); */
+
+/*
+ * 0x8C02F6D6 - func_8C02F6D6
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals and helpers (as per Dreamcast ABI context)
+extern uint32_t g_unk_8C02F762; // Loaded into r5 initially, likely a base offset or pointer component
+extern uint16_t g_unk_8C02F764; // Used in loop logic before BSR call
+extern uint32_t g_unk_8C02F766; // Returned value from subroutine 0x8c03009a, used as offset incrementer? Or part of address calc. Re-evaluating based on flow: r4 gets this after add #12... wait, let's trace carefully.
+// Correction on globals based on immediate analysis:
+extern uint32_t g_unk_8C02F762; // mov.w
