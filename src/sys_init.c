@@ -9326,3 +9326,8 @@ extern uint32_t g_unk_8C051196; // Address of function pointer or data at offset
  * 0x8C050FA8 - func_8C050FA8
  */
 
+
+/*
+ * 0x8C050FE0 - func_8C050FE0
+ */
+
