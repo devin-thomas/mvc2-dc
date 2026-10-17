@@ -5139,3 +5139,8 @@ extern uint32_t func_8C26A8E4(void); // Placeholder for the external function re
 
 // Correction on logic based strictly on provided bytes:
 // 0x8C030FDC: mov.l    0x8c03108c,r
+
+/*
+ * 0x8C030F9E - func_8C030F9E
+ */
+
