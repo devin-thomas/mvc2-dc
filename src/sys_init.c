@@ -1713,3 +1713,8 @@ extern const uint32_t g_jump_table_1[]; // Points to 0x8c14... sequence starting
  * 0x8C018ED0 - func_8C018ED0
  */
 
+
+/*
+ * 0x8C018C4A - func_8C018C4A
+ */
+
