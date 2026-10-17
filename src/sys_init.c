@@ -10007,3 +10007,15 @@ extern uint32_t func_8C0542CA(uint32_t a, uint32_t b); // Placeholder for the in
 // we assume func_8C0543A8 is defined elsewhere or this function calls it directly if known.
 // However, looking at 0x8c0542ac: mov.l 0x8c0543a8,r2 ; [0x8C0543A8] = 0x8C055CF6
 // This implies a direct
+
+/*
+ * 0x8C0542E0 - func_8C0542E0
+ */
+#include <stdint.h>
+
+// External declarations for global variables referenced in the function.
+extern uint8_t g_unk_8C26823C; // Address loaded at 0x8C0543B0 (value: 0x8C26823C) -> likely a pointer or index table base, but code treats it as data source.
+extern uint16_t g_unk_8C212CD1; // Address loaded at 0x8C0543B4 (value: 0x8C212CD1)
+extern uint8_t g_unk_8C212CDB;   // Value used as offset/base, address loaded at 0x8C0543B8
+
+// Note on addresses in assembly comments like [0x8C...]: These are the literal values
