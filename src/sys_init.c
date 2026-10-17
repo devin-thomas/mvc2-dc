@@ -10362,3 +10362,13 @@ extern int32_t (*func_ptr)(void); // Placeholder for the function called at 0x8c
  * 0x8C05550A - func_8C05550A (32 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C05550A); */
+
+/*
+ * 0x8C05575C - func_8C05575C
+ */
+extern uint32_t *func_8C010524(void); // Placeholder for external symbol based on context analysis if needed, but strictly following instruction to declare externs. Assuming these are globals or function pointers passed in r4/r5/etc. However, looking at the code: `mov.l @(r0,r4),r3` suggests loading a pointer from memory pointed by (base+disp).
+// Note: The assembly uses absolute addresses for constants and indirect jumps typical of Katana SDK inline asm or specific runtime structures. 
+// We must declare any external symbols referenced as externs at the top level if they are not local variables.
+
+extern uint32_t *g_some_table_8C055764; // Hypothetical name for 0x8c055764 data
+extern void (*func_ptr)(void);           // For indirect jump target resolution
