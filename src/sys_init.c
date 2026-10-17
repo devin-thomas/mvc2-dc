@@ -7948,3 +7948,22 @@ extern int (*func_callback)(void);
  * 0x8C047218 - func_8C047218
  */
 
+
+/*
+ * 0x8C0474E0 - func_8C0474E0
+ */
+#include <stdint.h>
+
+// External declarations for referenced globals and functions found in the disassembly context.
+extern uint32_t g_unk_8C129128; // Address loaded at 0x8C047554, likely a function pointer or data table base.
+extern void (*func_ptr)(uint32_t); // Placeholder for the JSR target if not resolved to a specific name.
+
+// Helper structure representing the stack frame layout based on register usage and offsets.
+struct StackFrame {
+    uint16_t field_0;   // r5 (counter) - likely modified in loop
+    uint32_t field_4;   // Source data pointer or value being processed
+};
+
+extern struct StackFrame *g_stack_frame_base; // Base address for the stack frame at 0x8C14E420.
+
+//
