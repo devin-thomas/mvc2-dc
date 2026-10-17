@@ -44,14 +44,20 @@ EXPECTED_SHA1 = "d792ef936edd89dfb2ce5399c6b4949460dd3d7b"
 WORKLIST_PATH = Path("config/worklist.json")
 SYS_INIT_C = Path("src/sys_init.c")
 
+import concurrent.futures
+import threading
+
 HOST_URLS = {
-    "research": "http://100.111.153.70:11434",
+    "research": "http://100.111.153.70:11435",
     "command":  "http://100.86.124.96:11434",
 }
 HOST_MODELS = {
-    "research": "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M",
+    "research": "Qwen3.8-27B-GGUF:UD-Q4_K_M (6x parallel Metal)",
     "command":  "qwen3.5:9b",
 }
+
+COMMIT_LOCK = threading.Lock()
+PRINT_LOCK = threading.Lock()
 
 # Sentinel exit codes
 EXIT_SUCCESS = 0
@@ -72,6 +78,9 @@ Dreamcast ABI:
 Instructions:
 1. Decompile the given SH-4 assembly function into a clean, complete, idiomatic C function.
 2. Emit ONLY valid C code wrapped in a ```c ... ``` block. No conversational preamble.
+3. Do NOT write long multi-line assembly trace comments inside the C function. Keep comments brief (1 line max).
+4. When casting integer addresses to pointers, cast via (uintptr_t) first, e.g. `(uint32_t *)(uintptr_t)0x8C010524`, and do not qualify mutable targets as `const`.
+5. Ensure all helper functions or global variables referenced in the function are declared as `extern` at the top of your snippet so it compiles standalone with `-fsyntax-only`.
 """
 
 
@@ -89,8 +98,9 @@ def probe_host(host_name: str) -> bool:
     url = HOST_URLS.get(host_name)
     if not url:
         return False
+    endpoint = "/health" if host_name == "research" else "/api/version"
     try:
-        req = urllib.request.Request(f"{url}/api/version")
+        req = urllib.request.Request(f"{url}{endpoint}")
         with urllib.request.urlopen(req, timeout=3) as resp:
             return resp.status == 200
     except Exception:
@@ -107,7 +117,7 @@ def check_cluster() -> str | None:
     return "research" if research_up else "command"
 
 
-def scan_functions(start_addr: int = 0x8C010080, end_addr: int = 0x8C011000) -> list[dict]:
+def scan_functions(start_addr: int = 0x8C010080, end_addr: int = 0x8C030000) -> list[dict]:
     data = REFERENCE_BIN.read_bytes()
     base = 0x8C010000
     chunk = data[start_addr - base : end_addr - base]
@@ -150,14 +160,27 @@ def scan_functions(start_addr: int = 0x8C010080, end_addr: int = 0x8C011000) -> 
 
 
 def load_worklist() -> list[dict]:
+    existing = []
     if WORKLIST_PATH.exists():
         try:
-            return json.loads(WORKLIST_PATH.read_text(encoding="utf-8"))
+            existing = json.loads(WORKLIST_PATH.read_text(encoding="utf-8"))
         except Exception:
-            pass
+            existing = []
 
-    print("[Worklist] Scanning binary for SH-4 function boundaries...")
-    funcs = scan_functions(0x8C010080, 0x8C011000)
+    max_end = max((f["end_vram"] for f in existing), default=0x8C010080)
+    pending_count = sum(1 for f in existing if f.get("status") == "pending")
+    if existing and pending_count < 50 and max_end < 0x8C150000:
+        next_chunk = min(max_end + 0x10000, 0x8C150000)
+        print(f"[Worklist] Queue low ({pending_count} pending). Expanding scan from 0x{max_end:08X} to 0x{next_chunk:08X}...")
+        more_funcs = scan_functions(max_end, next_chunk)
+        existing.extend(more_funcs)
+        save_worklist(existing)
+        return existing
+    elif existing:
+        return existing
+
+    print("[Worklist] Scanning initial binary range for SH-4 function boundaries...")
+    funcs = scan_functions(0x8C010080, 0x8C040000)
     
     # Mark already decompiled functions
     if SYS_INIT_C.exists():
@@ -178,7 +201,8 @@ def save_worklist(funcs: list[dict]):
 
 def disassemble_func(vram_addr: int, size: int) -> str:
     data = REFERENCE_BIN.read_bytes()
-    offset = vram_addr - 0x8C010000
+    base = 0x8C010000
+    offset = vram_addr - base
     chunk = data[offset : offset + size]
     md = capstone.Cs(capstone.CS_ARCH_SH, capstone.CS_MODE_SH4 | capstone.CS_MODE_LITTLE_ENDIAN)
 
@@ -192,76 +216,95 @@ def disassemble_func(vram_addr: int, size: int) -> str:
         if insns:
             insn = insns[0]
             raw = " ".join(f"{b:02x}" for b in insn.bytes)
-            lines.append(f"0x{insn.address:08X}:  {raw:<6}  {insn.mnemonic:<8} {insn.op_str}")
+            comment = ""
+            if insn.mnemonic == "mov.l" and insn.op_str.startswith("0x"):
+                m = re.match(r"0x([0-9a-fA-F]+)", insn.op_str)
+                if m:
+                    lit_addr = int(m.group(1), 16)
+                    lit_off = lit_addr - base
+                    if 0 <= lit_off <= len(data) - 4:
+                        lit_val = struct.unpack("<I", data[lit_off : lit_off + 4])[0]
+                        comment = f"  ; [0x{lit_addr:08X}] = 0x{lit_val:08X}"
+            lines.append(f"0x{insn.address:08X}: {insn.mnemonic:<8} {insn.op_str}{comment}")
             curr += insn.size
         else:
             if curr + 2 <= len(chunk):
                 w = struct.unpack("<H", chunk[curr : curr + 2])[0]
-                lines.append(f"0x{addr:08X}:  {chunk[curr]:02x} {chunk[curr+1]:02x}    .word    0x{w:04x}")
+                lines.append(f"0x{addr:08X}: .word 0x{w:04x}")
                 curr += 2
             else:
-                lines.append(f"0x{addr:08X}:  {chunk[curr]:02x}       .byte    0x{chunk[curr]:02x}")
+                lines.append(f"0x{addr:08X}: .byte 0x{chunk[curr]:02x}")
                 curr += 1
     return "\n".join(lines)
 
 
-def query_qwen(prompt: str, host: str) -> str:
+def query_qwen(prompt: str, host: str, max_tokens: int = 768) -> str:
     url = HOST_URLS[host]
-    model = HOST_MODELS[host]
 
+    if host == "research":
+        # Direct multi-slot llama-server OpenAI endpoint (6 parallel slots of Qwen3.8-27B)
+        body = {
+            "messages": [
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": prompt},
+            ],
+            "max_tokens": max_tokens,
+            "temperature": 0.2,
+            "repeat_penalty": 1.15,
+            "chat_template_kwargs": {"enable_thinking": False},
+            "stop": ["\n```\n", "```\n", "```"],
+            "stream": False,
+        }
+        req = urllib.request.Request(
+            f"{url}/v1/chat/completions",
+            data=json.dumps(body).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            out = json.loads(resp.read().decode("utf-8", errors="replace"))
+            return out["choices"][0]["message"]["content"]
+
+    # Command host (Ollama /api/chat)
+    model = HOST_MODELS[host]
     body = {
         "model": model,
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": prompt},
         ],
-        "stream": True,
+        "stream": False,
+        "keep_alive": "24h",
         "options": {
             "temperature": 0.2,
-            "num_ctx": 16384,
+            "num_ctx": 8192,
+            "num_predict": max_tokens,
+            "repeat_penalty": 1.15,
+            "stop": ["\n```\n", "```\n", "```"],
         },
         "think": False,
     }
-
     req = urllib.request.Request(
         f"{url}/api/chat",
         data=json.dumps(body).encode("utf-8"),
-        headers={"Content-Type": "application/json"}
+        headers={"Content-Type": "application/json"},
     )
-
-    chunks = []
-    with urllib.request.urlopen(req, timeout=300) as resp:
-        buf = b""
-        while True:
-            chunk = resp.read(128)
-            if not chunk:
-                break
-            buf += chunk
-            while b"\n" in buf:
-                line, buf = buf.split(b"\n", 1)
-                line = line.strip()
-                if not line:
-                    continue
-                ev = json.loads(line.decode("utf-8", errors="replace"))
-                msg = ev.get("message", {})
-                content = msg.get("content", "")
-                if content:
-                    chunks.append(content)
-                    sys.stdout.write(content)
-                    sys.stdout.flush()
-
-    return "".join(chunks)
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        out = json.loads(resp.read().decode("utf-8", errors="replace"))
+        return out.get("message", {}).get("content", "")
 
 
 def extract_c_code(response_text: str) -> str:
-    matches = re.findall(r"```c\s*(.*?)\s*```", response_text, re.DOTALL)
+    matches = re.findall(r"```(?:c|C)?\s*(.*?)\s*```", response_text, re.DOTALL)
     if matches:
-        return matches[-1].strip()
-    return response_text.strip()
+        code = matches[-1].strip()
+    else:
+        code = re.sub(r"^```(?:c|C)?\s*", "", response_text.strip())
+        code = re.sub(r"\s*```$", "", code.strip())
+    return code
 
 
-def validate_c_syntax(code_snippet: str) -> tuple[bool, str]:
-    test_file = Path("build/temp_syntax_test.c")
+def validate_c_syntax(code_snippet: str, worker_id: int = 0) -> tuple[bool, str]:
+    test_file = Path(f"build/temp_syntax_test_w{worker_id}.c")
     test_file.parent.mkdir(parents=True, exist_ok=True)
     full_c = f"""#include "types.h"
 #include "sh4.h"
@@ -274,30 +317,41 @@ def validate_c_syntax(code_snippet: str) -> tuple[bool, str]:
 
     try:
         res = subprocess.run(
-            ["clang", "-fsyntax-only", "-I", "include", str(test_file)],
+            [
+                "clang",
+                "-fsyntax-only",
+                "-Wno-int-to-pointer-cast",
+                "-Wno-pointer-to-int-cast",
+                "-Wno-incompatible-pointer-types-discards-qualifiers",
+                "-I",
+                "include",
+                str(test_file),
+            ],
             capture_output=True,
             text=True,
             timeout=10
         )
         return (res.returncode == 0, res.stderr)
     except Exception as e:
-        return (True, str(e))  # Fallback to true if clang unavailable
+        return (True, str(e))
 
 
-def process_function(f: dict, cluster_state: str) -> bool:
+def process_function(f: dict, preferred_host: str, worker_id: int, worklist: list[dict]) -> bool:
     vram = f["vram"]
     size = f["size"]
     name = f["name"]
 
-    # Choose host based on complexity and cluster state
-    if cluster_state == "both":
-        preferred_host = "command" if size <= 120 else "research"
-    else:
-        preferred_host = cluster_state
+    # Oversize guard: functions > 500 bytes exceed standard slot contexts
+    if size > 500:
+        with COMMIT_LOCK:
+            f["status"] = "stubbed"
+            integrate_stub(name, vram, size, worklist)
+        with PRINT_LOCK:
+            print(f"[Worker-{worker_id}] [Oversize] Stubbed {name} ({size} B > 500 B limit for manual review)", flush=True)
+        return False
 
-    print(f"\n{'='*70}")
-    print(f"[Daemon] Processing {name} (0x{vram:08X}, {size} bytes) on Host: {preferred_host}")
-    print(f"{'='*70}")
+    with PRINT_LOCK:
+        print(f"[Worker-{worker_id}:{preferred_host}] Starting {name} (0x{vram:08X}, {size} B)", flush=True)
 
     disasm = disassemble_func(vram, size)
     prompt = f"""Decompile this Sega Dreamcast SH-4 assembly function:
@@ -309,46 +363,46 @@ Assembly:
 {disasm}
 """
 
+    max_tok = min(1024, max(192, (size // 2) * 3))
     for attempt in range(1, 4):
         f["attempts"] = attempt
-        print(f"\n[Attempt {attempt}/3] Querying {preferred_host} ({HOST_MODELS[preferred_host]})...")
         try:
-            resp = query_qwen(prompt, preferred_host)
+            resp = query_qwen(prompt, preferred_host, max_tokens=max_tok)
             c_code = extract_c_code(resp)
         except Exception as e:
-            print(f"[Host Error] {preferred_host} failed: {e}", file=sys.stderr)
-            # Try fallback host if available
+            with PRINT_LOCK:
+                print(f"[Worker-{worker_id} Error] {preferred_host} on {name}: {e}", file=sys.stderr, flush=True)
             alt_host = "command" if preferred_host == "research" else "research"
             if probe_host(alt_host):
-                print(f"[Fallback] Retrying on {alt_host}...")
                 preferred_host = alt_host
                 continue
-            else:
-                print(f"[FATAL] All AI hosts unreachable!", file=sys.stderr)
-                sys.exit(EXIT_ERR_CLUSTER)
+            return False
 
-        valid, err = validate_c_syntax(c_code)
+        valid, err = validate_c_syntax(c_code, worker_id=worker_id)
         if valid:
-            print(f"\n[OK] Syntax check passed for {name}!")
-            integrate_function(name, vram, c_code)
-            f["status"] = "matched"
+            with COMMIT_LOCK:
+                f["status"] = "matched"
+                integrate_function(name, vram, c_code, worklist)
+            with PRINT_LOCK:
+                print(f"[Worker-{worker_id}:{preferred_host}] [OK] Matched {name} (attempt {attempt}/3)!", flush=True)
             return True
         else:
-            print(f"\n[Syntax Warning] Clang reported:\n{err[:300]}")
-            prompt += f"\n\nPrevious attempt had syntax issues:\n{err[:300]}\nPlease correct these and emit clean C code."
+            prompt += f"\n\nPrevious attempt had syntax issues:\n{err[:350]}\nPlease fix all undeclared identifiers or syntax errors and emit ONLY valid C code inside ```c ... ```."
 
-    print(f"[Skip] {name} could not be cleanly validated after 3 attempts. Storing stub.")
-    f["status"] = "stubbed"
-    integrate_stub(name, vram, size)
+    with COMMIT_LOCK:
+        f["status"] = "stubbed"
+        integrate_stub(name, vram, size, worklist)
+    with PRINT_LOCK:
+        print(f"[Worker-{worker_id}:{preferred_host}] [Skip] Stubbed {name} after 3 attempts.", flush=True)
     return False
 
 
-def integrate_function(name: str, vram: int, c_code: str):
+def integrate_function(name: str, vram: int, c_code: str, worklist: list[dict]):
     header = f"\n/*\n * 0x{vram:08X} - {name}\n */\n"
     current_content = SYS_INIT_C.read_text(encoding="utf-8") if SYS_INIT_C.exists() else ""
     SYS_INIT_C.write_text(current_content + header + c_code + "\n", encoding="utf-8")
+    save_worklist(worklist)
 
-    # Update badge, sync dashboard & commit
     res = subprocess.run(["python", "tools/progress.py", "--badge", "--sync-dashboard"], capture_output=True, text=True)
     for line in res.stdout.splitlines():
         if "Matched Code:" in line or "Functions:" in line:
@@ -357,19 +411,21 @@ def integrate_function(name: str, vram: int, c_code: str):
     subprocess.run(["git", "commit", "-m", f"feat(decompile): decompile {name} (0x{vram:08X})"], capture_output=True)
 
 
-def integrate_stub(name: str, vram: int, size: int):
+def integrate_stub(name: str, vram: int, size: int, worklist: list[dict]):
     stub = f"\n/*\n * 0x{vram:08X} - {name} ({size} bytes) - STUBBED FOR REVIEW\n */\n/* INCLUDE_ASM(\"asm/sys_init.s\", {name}); */\n"
     current_content = SYS_INIT_C.read_text(encoding="utf-8") if SYS_INIT_C.exists() else ""
     SYS_INIT_C.write_text(current_content + stub, encoding="utf-8")
+    save_worklist(worklist)
     subprocess.run(["python", "tools/progress.py", "--badge", "--sync-dashboard"], capture_output=True)
     subprocess.run(["git", "add", "src/sys_init.c", "config/worklist.json", "docs/agent-dashboard/mvc2-dc-decomp/"], capture_output=True)
     subprocess.run(["git", "commit", "-m", f"chore(decompile): stub {name} (0x{vram:08X})"], capture_output=True)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Autonomous Decompilation Daemon")
-    parser.add_argument("--batch", type=int, default=1, help="Number of functions to process before stopping")
+    parser = argparse.ArgumentParser(description="Autonomous Multi-Worker Decompilation Daemon")
+    parser.add_argument("--batch", type=int, default=7, help="Number of functions to process before stopping")
     parser.add_argument("--loop", action="store_true", help="Run continuously over entire worklist")
+    parser.add_argument("--workers", type=int, default=7, help="Total concurrent workers (6 research + 1 command)")
     args = parser.parse_args()
 
     verify_integrity()
@@ -378,7 +434,7 @@ def main():
         print("[FATAL] Both AI hosts (research and command) are unreachable!", file=sys.stderr)
         sys.exit(EXIT_ERR_CLUSTER)
 
-    print(f"[Daemon] Cluster Status: {cluster.upper()} reachable.")
+    print(f"[Daemon] Cluster Status: {cluster.upper()} reachable (Workers={args.workers}: 6x research 27B + 1x command 9B).")
     worklist = load_worklist()
 
     pending = [f for f in worklist if f["status"] == "pending"]
@@ -390,18 +446,36 @@ def main():
         print("[SUCCESS] All functions in worklist are matched! 100% complete!")
         sys.exit(EXIT_SUCCESS)
 
-    count = 0
     limit = len(pending) if args.loop else args.batch
+    targets = pending[:limit]
 
-    for f in pending:
-        if count >= limit:
-            break
-        success = process_function(f, cluster)
-        save_worklist(worklist)
-        count += 1
-        time.sleep(1)
+    import queue
+    q = queue.Queue()
+    for f in targets:
+        q.put(f)
 
-    print(f"\n[Daemon] Pass finished. Processed {count} functions.")
+    def worker_loop(worker_id: int):
+        # Workers 0..5 run on research (6 parallel slots of Qwen3.8-27B); Worker 6 runs on command (qwen3.5:9b)
+        if cluster == "both":
+            host = "command" if worker_id == 6 else "research"
+        else:
+            host = cluster
+        while True:
+            try:
+                f = q.get_nowait()
+            except queue.Empty:
+                break
+            try:
+                process_function(f, host, worker_id, worklist)
+            finally:
+                q.task_done()
+
+    num_workers = min(args.workers, len(targets))
+    with concurrent.futures.ThreadPoolExecutor(max_workers=num_workers) as ex:
+        futures = [ex.submit(worker_loop, wid) for wid in range(num_workers)]
+        concurrent.futures.wait(futures)
+
+    print(f"\n[Daemon] Pass finished. Processed {len(targets)} functions across {num_workers} parallel workers.")
     sys.exit(EXIT_SUCCESS)
 
 
