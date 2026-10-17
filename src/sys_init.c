@@ -9549,3 +9549,12 @@ extern void func_8C0532A8(void); // Address loaded from 0x8C0521
  * 0x8C051EA0 - func_8C051EA0
  */
 
+
+/*
+ * 0x8C0520F2 - func_8C0520F2
+ */
+extern uint32_t func_8C052EC6(uint32_t a, uint32_t b); // Placeholder for BSR target 0x8c052ec6 logic inferred from context or external definition needed. Assuming it returns void based on flow if not used in r0 directly before return? Wait, let's re-evaluate the call graph.
+// Actually, looking at `bsr` usage: 
+// bsr 0x8C051FAC -> likely a helper that modifies state or checks flags without returning useful data to this stack frame if not used in r0 immediately after.
+// However, standard practice for Katana SDK decompilation when exact prototypes aren't provided is to assume extern void/uint32_t based on usage. 
+// In the assembly: `bsr 0x8C051FAC` happens at 0
