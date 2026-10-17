@@ -4394,3 +4394,8 @@ extern const uint16_t *g_DataAddr_0; // 0x8c02a3ea -> points to base of data str
 // Let's define placeholders for the absolute memory locations if they aren't standard globals.
 extern const uint16_t *const g_OffsetTable_0; // 0x8c02a3ea (likely a pointer or offset source) - Re-evaluating based on usage: `mov.w imm, rX` then used as base for `(rBase + Offset)`. 
 // Actually
+
+/*
+ * 0x8C02A30A - func_8C02A30A
+ */
+
