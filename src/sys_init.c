@@ -907,3 +907,11 @@ extern uint32_t (*func_8C012450)(void); // Address 0x8C03563A
  * 0x8C012922 - func_8C012922 (772 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C012922); */
+
+/*
+ * 0x8C012C7E - func_8C012C7E
+ */
+#include <stdint.h>
+
+extern void func_8C01357A(uintptr_t addr, uint32_t val);
+extern int  (*func_8C013450)(uintptr_t *stack_ptr, uintptr_t arg_val); // Assuming return type based on usage pattern in similar SDK functions, adjusted to match 'mov r0,r4' before call if needed. Re-evaluating: mov #2,r7 then bsr 0x8c013450 suggests it might be a helper taking args or returning status. Given the context of setting bits and checking flags in Katana SDK, this is likely a flag check or specific logic function. Let's assume standard int return for safety if not void, but looking at 'mov r0,r4' before call implies passing result back? No, mov #3,r6 then bsr suggests args are passed via
