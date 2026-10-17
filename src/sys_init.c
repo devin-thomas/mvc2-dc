@@ -1673,3 +1673,8 @@ extern const uint32_t g_jump_table_1[]; // Points to 0x8c14... sequence starting
     // Actually, looking at `mov.l @(r0,r2), r3`, the addresses loaded are:
     // Offset +6 (from B56): 0x8C1459EC -> This is likely a function pointer.
     // Let's define them as
+
+/*
+ * 0x8C018DC4 - func_8C018DC4
+ */
+
