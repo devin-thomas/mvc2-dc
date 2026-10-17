@@ -2099,3 +2099,8 @@ extern void func_8C01B3E0(void); // Placeholder for external reference if needed
 void func_8C01B3E0() {
     return; // rts at 0x8C01B3E0 (nop in delay slot)
 }
+
+/*
+ * 0x8C01B346 - func_8C01B346
+ */
+
