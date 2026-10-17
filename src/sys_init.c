@@ -9423,3 +9423,8 @@ extern uint32_t g_addr_8C14EA50; // 0x8C14EA50 (Loaded into R10)
 extern uint32_t g_addr_8C2896B0; // 0x8C2896B0 (Loaded into R9) - Wait, assembly says `mov.l @r9,r0` then uses r0. 
 // Correction: The code loads addresses from static words at startup of this function? No, it looks like a state machine or object update loop where registers hold pointers to specific VRAM regions loaded once per call chain context (likely passed in R14 as base).
 // Actually, looking closely: `mov.l 0x8c05162c,r8` loads an immediate address. This suggests these are fixed addresses for this function's logic or global constants defined elsewhere.
+
+/*
+ * 0x8C0514B8 - func_8C0514B8
+ */
+
