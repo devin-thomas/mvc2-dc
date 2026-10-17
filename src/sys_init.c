@@ -3305,3 +3305,8 @@ extern int func_8c11e680(int, void *, unsigned char); // Address 0x8C11E680 from
  * 0x8C021632 - func_8C021632
  */
 
+
+/*
+ * 0x8C02199E - func_8C02199E (732 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C02199E); */
