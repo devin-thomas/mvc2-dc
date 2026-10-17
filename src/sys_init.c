@@ -7090,3 +7090,8 @@ static inline uint32_t get_jump_table_entry(uint32_t base_addr, int offset) {
  * 0x8C041ECC - func_8C041ECC
  */
 
+
+/*
+ * 0x8C041EE2 - func_8C041EE2
+ */
+
