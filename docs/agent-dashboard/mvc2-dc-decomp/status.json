@@ -1,6 +1,6 @@
 {
   "task_id": "mvc2-dc-decomp-20261016",
-  "updated_at": "2026-10-16T18:57:05-05:00",
+  "updated_at": "2026-10-16T19:06:38-05:00",
   "task": "Marvel vs. Capcom 2 (Dreamcast) Autonomous Decompilation",
   "overall_state": "working",
   "phase": "Phase 2: Multi-Host Decompilation Loop & Peripheral Subsystems",
@@ -14,15 +14,36 @@
     "current_url": "https://titan.takaya-lionfish.ts.net:8472/"
   },
   "action_required": "No action required from you right now. The autonomous multi-host decompilation daemon is active across the local Apple Silicon cluster (Research + Command).",
-  "current_activity": "Decompiling peripheral subsystems in src/sys_init.c and dispatch functions via Qwen-27B on Research and Qwen-9B on Command with Clang syntax reviewer loop.",
+  "current_activity": "Decompiling Dreamcast MK-51049: 16/8240 functions (0.132%, 1,728 bytes) matched across cluster.",
   "milestones": [
-    { "name": "Milestone 1: Environment, Tooling & Binary Extraction", "status": "complete" },
-    { "name": "Milestone 2: Multi-Node AI Cluster Pipeline (ai-pipe unbuffered)", "status": "complete" },
-    { "name": "Milestone 3: Autonomous Queue Daemon & Compiler Reviewer Loop", "status": "complete" },
-    { "name": "Milestone 4: Maple Bus & Peripheral Subsystems (src/sys_init.c)", "status": "in_progress" },
-    { "name": "Milestone 5: Ninja Graphics & Rend Engine Decompilation", "status": "pending" },
-    { "name": "Milestone 6: Gameplay & Fighter State Tables", "status": "pending" },
-    { "name": "Milestone 7: Byte-Match Verification (objdiff / 100% target)", "status": "pending" }
+    {
+      "name": "Milestone 1: Environment, Tooling & Binary Extraction",
+      "status": "complete"
+    },
+    {
+      "name": "Milestone 2: Multi-Node AI Cluster Pipeline (ai-pipe unbuffered)",
+      "status": "complete"
+    },
+    {
+      "name": "Milestone 3: Autonomous Queue Daemon & Compiler Reviewer Loop",
+      "status": "complete"
+    },
+    {
+      "name": "Milestone 4: Maple Bus & Peripheral Subsystems (src/sys_init.c)",
+      "status": "in_progress"
+    },
+    {
+      "name": "Milestone 5: Ninja Graphics & Rend Engine Decompilation",
+      "status": "pending"
+    },
+    {
+      "name": "Milestone 6: Gameplay & Fighter State Tables",
+      "status": "pending"
+    },
+    {
+      "name": "Milestone 7: Byte-Match Verification (objdiff / 100% target)",
+      "status": "pending"
+    }
   ],
   "blockers": [],
   "warnings": [
@@ -52,12 +73,30 @@
     }
   ],
   "outputs": [
-    { "label": "Immutable Reports Ledger", "path": "reports/INDEX.md" },
-    { "label": "Plan 001", "path": "reports/plans/001-2026-10-16-dreamcast-decompilation-cluster.md" },
-    { "label": "Walkthrough 001", "path": "reports/walkthroughs/001-2026-10-16-cluster-and-first-functions.md" },
-    { "label": "Decompiled System Subsystems", "path": "src/sys_init.c" },
-    { "label": "Autonomous Daemon Script", "path": "tools/auto_decomp_daemon.py" },
-    { "label": "Live Stream Monitor", "path": "build/qwen_live.md" }
+    {
+      "label": "Immutable Reports Ledger",
+      "path": "reports/INDEX.md"
+    },
+    {
+      "label": "Plan 001",
+      "path": "reports/plans/001-2026-10-16-dreamcast-decompilation-cluster.md"
+    },
+    {
+      "label": "Walkthrough 001",
+      "path": "reports/walkthroughs/001-2026-10-16-cluster-and-first-functions.md"
+    },
+    {
+      "label": "Decompiled System Subsystems",
+      "path": "src/sys_init.c"
+    },
+    {
+      "label": "Autonomous Daemon Script",
+      "path": "tools/auto_decomp_daemon.py"
+    },
+    {
+      "label": "Live Stream Monitor",
+      "path": "build/qwen_live.md"
+    }
   ],
   "next_up": [
     "Run autonomous daemon batch on remaining startup and Maple bus handlers",
@@ -66,19 +105,45 @@
     "Update progress badge and objdiff configurations"
   ],
   "activity_log": [
-    { "timestamp": "2026-10-16T18:15:00-05:00", "event": "Repository mvc2-dc initialized on branch qwen with Dreamcast 1ST_READ.BIN extraction" },
-    { "timestamp": "2026-10-16T18:25:00-05:00", "event": "Tailscale cluster verified between Titan, Research (M5 Max), and Command (M5 Air)" },
-    { "timestamp": "2026-10-16T18:35:00-05:00", "event": "Patched ai-pipe with unbuffered chunk streaming and distributed to cluster" },
-    { "timestamp": "2026-10-16T18:45:00-05:00", "event": "Created autonomous daemon with Clang syntax reviewer loop and sentinel exit code 42" },
-    { "timestamp": "2026-10-16T18:52:00-05:00", "event": "Decompiled 11 functions (740 bytes) in src/sys_init.c and peripheral subsystems" },
-    { "timestamp": "2026-10-16T18:56:00-05:00", "event": "Activated immutable-reports, private-long-horizon-dashboard, and ucmail" }
+    {
+      "timestamp": "2026-10-16T18:15:00-05:00",
+      "event": "Repository mvc2-dc initialized on branch qwen with Dreamcast 1ST_READ.BIN extraction"
+    },
+    {
+      "timestamp": "2026-10-16T18:25:00-05:00",
+      "event": "Tailscale cluster verified between Titan, Research (M5 Max), and Command (M5 Air)"
+    },
+    {
+      "timestamp": "2026-10-16T18:35:00-05:00",
+      "event": "Patched ai-pipe with unbuffered chunk streaming and distributed to cluster"
+    },
+    {
+      "timestamp": "2026-10-16T18:45:00-05:00",
+      "event": "Created autonomous daemon with Clang syntax reviewer loop and sentinel exit code 42"
+    },
+    {
+      "timestamp": "2026-10-16T18:52:00-05:00",
+      "event": "Decompiled 11 functions (740 bytes) in src/sys_init.c and peripheral subsystems"
+    },
+    {
+      "timestamp": "2026-10-16T18:56:00-05:00",
+      "event": "Activated immutable-reports, private-long-horizon-dashboard, and ucmail"
+    }
   ],
   "walk_away_snapshot": {
-    "last_good_state": "All 11 functions syntax-checked with Clang, cluster reachable, daemon operational",
+    "last_good_state": "16 functions matched (0.132%, 1,728 bytes) verified with Clang syntax check",
     "unfinished_operation": "Batch processing functions in 0x8C010400 - 0x8C011000 range",
     "next_safe_step": "Run python tools/auto_decomp_daemon.py --batch 5",
-    "touched_files": ["src/sys_init.c", "tools/auto_decomp_daemon.py", "reports/INDEX.md", "docs/agent-dashboard/mvc2-dc-decomp/status.json"],
-    "running_processes": ["Python HTTP server (127.0.0.1:4182)", "Tailscale Serve (https://titan.takaya-lionfish.ts.net:8472)"],
+    "touched_files": [
+      "src/sys_init.c",
+      "tools/auto_decomp_daemon.py",
+      "reports/INDEX.md",
+      "docs/agent-dashboard/mvc2-dc-decomp/status.json"
+    ],
+    "running_processes": [
+      "Python HTTP server (127.0.0.1:4182)",
+      "Tailscale Serve (https://titan.takaya-lionfish.ts.net:8472)"
+    ],
     "user_action": "None"
   }
 }

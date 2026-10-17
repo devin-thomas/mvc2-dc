@@ -348,9 +348,12 @@ def integrate_function(name: str, vram: int, c_code: str):
     current_content = SYS_INIT_C.read_text(encoding="utf-8") if SYS_INIT_C.exists() else ""
     SYS_INIT_C.write_text(current_content + header + c_code + "\n", encoding="utf-8")
 
-    # Update badge & commit
-    subprocess.run(["python", "tools/progress.py", "--badge"], capture_output=True)
-    subprocess.run(["git", "add", "src/sys_init.c", "assets/progress.svg", "config/worklist.json"], capture_output=True)
+    # Update badge, sync dashboard & commit
+    res = subprocess.run(["python", "tools/progress.py", "--badge", "--sync-dashboard"], capture_output=True, text=True)
+    for line in res.stdout.splitlines():
+        if "Matched Code:" in line or "Functions:" in line:
+            print(f"[Progress] {line.strip()}")
+    subprocess.run(["git", "add", "src/sys_init.c", "assets/progress.svg", "config/worklist.json", "docs/agent-dashboard/mvc2-dc-decomp/"], capture_output=True)
     subprocess.run(["git", "commit", "-m", f"feat(decompile): decompile {name} (0x{vram:08X})"], capture_output=True)
 
 
@@ -358,7 +361,8 @@ def integrate_stub(name: str, vram: int, size: int):
     stub = f"\n/*\n * 0x{vram:08X} - {name} ({size} bytes) - STUBBED FOR REVIEW\n */\n/* INCLUDE_ASM(\"asm/sys_init.s\", {name}); */\n"
     current_content = SYS_INIT_C.read_text(encoding="utf-8") if SYS_INIT_C.exists() else ""
     SYS_INIT_C.write_text(current_content + stub, encoding="utf-8")
-    subprocess.run(["git", "add", "src/sys_init.c", "config/worklist.json"], capture_output=True)
+    subprocess.run(["python", "tools/progress.py", "--badge", "--sync-dashboard"], capture_output=True)
+    subprocess.run(["git", "add", "src/sys_init.c", "config/worklist.json", "docs/agent-dashboard/mvc2-dc-decomp/"], capture_output=True)
     subprocess.run(["git", "commit", "-m", f"chore(decompile): stub {name} (0x{vram:08X})"], capture_output=True)
 
 
