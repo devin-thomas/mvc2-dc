@@ -6396,3 +6396,8 @@ extern uint16_t *gbr_27; // @(27,gbr) -> 0x8C26... likely a GBR-relative offset 
  * 0x8C03C560 - func_8C03C560
  */
 
+
+/*
+ * 0x8C03C67A - func_8C03C67A
+ */
+
