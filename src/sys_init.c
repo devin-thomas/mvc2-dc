@@ -3090,3 +3090,8 @@ extern void (*func_ptr_table)(void); // Placeholder if r2 points to
  * 0x8C020C50 - func_8C020C50
  */
 
+
+/*
+ * 0x8C020C54 - func_8C020C54
+ */
+
