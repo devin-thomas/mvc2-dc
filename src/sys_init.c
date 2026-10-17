@@ -10797,3 +10797,8 @@ extern void (*func_ptr_8C2896B0)(void); // Address at 0x8c0577cc
  * 0x8C057520 - func_8C057520
  */
 
+
+/*
+ * 0x8C05791E - func_8C05791E
+ */
+
