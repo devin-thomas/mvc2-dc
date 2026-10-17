@@ -10383,3 +10383,8 @@ extern void *g_unk_ptr; // Placeholder for global variable at address in r5/r6 c
 // It appears to be setting the return value based on input but then modifying memory pointed to by r6 before returning 0? 
 // Wait, re-evaluating logic flow:
 // 1. Load byte from [r5] into r0 (return
+
+/*
+ * 0x8C0556E4 - func_8C0556E4
+ */
+
