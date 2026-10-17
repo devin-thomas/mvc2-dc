@@ -4043,3 +4043,8 @@ extern void *func_8C02759c; // 0x8C1F8E8C
 extern uint32_t func_8C0275a4[]; // Table starting at 0x8C1F978D (offsets) or data? Context suggests lookup table. Assuming array of offsets/indices based on usage pattern in similar SDK code, but here it's used as a base for byte access via r1+r3 logic later? Re-evaluating: 
 // Actually, looking at 0x8C0274E0-E6:
 // mov.l #
+
+/*
+ * 0x8C0273C6 - func_8C0273C6
+ */
+
