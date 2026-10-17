@@ -656,3 +656,13 @@ extern uint8_t *g_8c012cbc; // [0x8C010BFC] - derived from context if needed, bu
  * 0x8C011726 - func_8C011726
  */
 
+
+/*
+ * 0x8C011888 - func_8C011888
+ */
+#include <stdint.h>
+
+extern uint32_t func_8C115D2E(uint32_t a, uint32_t b); // jsr @r2 call target inferred from context/size analysis if needed, but here we assume standard signature based on usage pattern in SDK. Adjust as per actual callee definition.
+extern void *g_ptr_table_8C011974; 
+// Note: The assembly uses literal addresses for globals/constants embedded at 0x8c... which are not const-qualified and mutable targets should be cast via uintptr_t if needed, but here they act as function pointers or data.
+// Based on the pattern `mov.l addr,r2` followed by `jsr @r2`, these are likely addresses of functions stored in a table or direct calls to fixed routines defined elsewhere with those specific entry points (0x8C115D
