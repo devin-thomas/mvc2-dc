@@ -1,7 +1,7 @@
 # Task Status: Marvel vs. Capcom 2 (Dreamcast) Autonomous Decompilation
 
 - **Task ID**: `mvc2-dc-decomp-20261016`
-- **Updated At**: `2026-10-17T12:16:57-05:00`
+- **Updated At**: `2026-10-17T12:17:07-05:00`
 - **Overall State**: `working`
 - **Phase**: `Phase 2: Multi-Host Decompilation Loop & Peripheral Subsystems`
 - **Repository / Branch**: `https://github.com/devin-thomas/mvc2-dc` (`qwen`)
@@ -16,7 +16,7 @@
 ---
 
 ## Current Activity
-Decompiling Dreamcast MK-51049: **1013/8240** functions (**10.087%**, 132,198 bytes) matched across cluster.
+Decompiling Dreamcast MK-51049: **1014/8240** functions (**10.089%**, 132,226 bytes) matched across cluster.
 
 ---
 

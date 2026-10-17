@@ -7241,3 +7241,8 @@ extern uint32_t *gbr_ptr_base; // Base address for GBR pointers, adjusted by off
  * 0x8C0432F2 - func_8C0432F2 (98 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C0432F2); */
+
+/*
+ * 0x8C042ECE - func_8C042ECE
+ */
+
