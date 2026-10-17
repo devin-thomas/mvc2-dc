@@ -7791,3 +7791,8 @@ extern uint16_t g_DataAddr_Mid;   // Address 0x8c04643c (Mid/High bytes or next 
  * 0x8C046236 - func_8C046236
  */
 
+
+/*
+ * 0x8C0463D2 - func_8C0463D2 (900 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0463D2); */
