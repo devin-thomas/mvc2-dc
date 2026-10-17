@@ -9196,3 +9196,8 @@ extern void func_8C05060E(uint32_t *a); // Helper function declared as extern to
  * 0x8C0503AA - func_8C0503AA
  */
 
+
+/*
+ * 0x8C0502A4 - func_8C0502A4
+ */
+
