@@ -8943,3 +8943,8 @@ extern const uint32_t *g_DataTable_1; // Address 0x8C04E76C -> points to table s
  * 0x8C04E40C - func_8C04E40C
  */
 
+
+/*
+ * 0x8C04E906 - func_8C04E906 (18 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04E906); */
