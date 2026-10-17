@@ -10195,3 +10195,8 @@ extern uint8_t *g_some_global_ptr; // Placeholder for the base address if 0x8C05
  * 0x8C055062 - func_8C055062
  */
 
+
+/*
+ * 0x8C055094 - func_8C055094
+ */
+
