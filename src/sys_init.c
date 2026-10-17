@@ -9211,3 +9211,22 @@ extern uint32_t g_8C0507F4; // Base address for data structures (derived from co
 // Since r4 is typically passed in and points to an object/struct header:
 extern uint32_t g_8C0507F6; // Placeholder for 0x8c050892 offset data if treated as a field, but assembly treats it as absolute load. 
 // Correction based on standard Katana SDK patterns where r4 is the object pointer:
+
+/*
+ * 0x8C050834 - func_8C050834
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced functions and globals (as per Dreamcast ABI context)
+extern void (*func_8C2896B0)(void); // Address 0x8C2896B0 loaded at offset 0x4A relative to base? No, direct call. Assuming it's a function pointer or address of func. Based on usage `jsr @r3` where r3 holds the value from mov.l #...
+extern void (*func_8C10004A)(void); // Address 0x8C10004A loaded at offset 0xE4 relative to base? No, direct call.
+// Note: The assembly uses `mov.w` then `.word`. This pattern usually defines a function pointer or an address that is used as such in the jump table logic if not resolved by linker symbols here. 
+// However, looking closely at lines like 0x8C0509E4 and 0x8C2896B0:
+// Line 0x8c0508b0 loads r13 with a value from memory (likely an address).
+// Lines using `.word` often define constants or pointers in the ROM. 
+// Given `jsr @r2`, `mov.l ... ,@-r15` stack frame setup, and typical Katana SDK patterns:
+// These are likely function addresses stored as data words that get loaded into registers for indirect calls/jumps.
+
+extern void (*func_8C04223A)(void); // Address 0x8C04223A (from offset 0xB4)
+extern uint16_t func_table_entry_r5_offset; // Placeholder name, actually the code loads r5 from @(r5)+? No. 
+// Re-evaluating: `mov.l @r15+,pr` etc restore stack frame. The `.word` instructions are likely defining local variables or constants in place if this were a data section, but here they look like immediate values being loaded into registers for specific logic paths (
