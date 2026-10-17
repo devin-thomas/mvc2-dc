@@ -5486,3 +5486,8 @@ extern uint32_t g_unk_8c1f9d8c; // Address 0x8C1F9D8C (from 0x8c0338b0)
 extern uint32_t g_unk_8c1f9d94; // Address 0x8C1F9D94 (from 0x8c0338b8)
 extern uint32_t g_unk_8c1f9d98; // Address 0x8C1F9D98 (from 0x8c0338bc)
 extern void (*g_func_ptr_8c1f9fc)(void);   // Function pointer at 0x8CE60FC? No
+
+/*
+ * 0x8C0335E2 - func_8C0335E2
+ */
+
