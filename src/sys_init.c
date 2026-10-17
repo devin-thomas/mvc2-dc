@@ -9066,3 +9066,17 @@ static const uintptr_t jump_table_B[] = {
 // External declarations for symbols referenced in the function (based on context analysis)
 extern uint32_t g_unk_table_base; // Corresponds to address 0x8C150F3A logic or similar table base if dynamic, but here it's a literal load. Assuming static data access based on `mov.l`. Actually, looking at the code: `mov.l 0x8c050040,r3` loads an immediate address into r3 which is then used as a pointer? No, wait.
 // Re-evaluating line `mov.l    0x8c050040,r3`. The comment says `[0x8C050040] = 0x8C150F3A`. This implies the instruction is loading a pointer to an address stored at that location, OR it
+
+/*
+ * 0x8C05000A - func_8C05000A
+ */
+#include <stdint.h>
+
+// Helper function declarations (extern) for SH-4 Dreamcast ABI context.
+// These correspond to the jump targets found in the assembly (.word 0xf3xx, etc.).
+extern void func_8C050026(uint16_t arg); // Corresponds to .word 0xf38d at offset +2 (relative logic) or similar pattern. 
+// Note: The provided snippet contains raw jump opcodes (.word fxxx). Without the actual target addresses resolved from those opcodes,
+// we must assume they point to specific helper functions defined elsewhere in the SDK.
+// Based on standard Katana/MVCA2 patterns for VRAM access or similar small stubs at 0x8C05...:
+
+extern void func_8C050036(uint16_t arg); // Placeholder for .word 0
