@@ -10411,3 +10411,8 @@ extern uint32_t r5_val[8]; // Array accessed at offset 0x4 relative to base? Or 
 // However, looking at `mov.b @(1,r6)` followed by logic that modifies it:
 // It seems r6 holds a base address + 0x4 offset? Or the code is manipulating a byte in memory pointed to by (r6+1).
 // Given "VRAM Address" context and typical SDK
+
+/*
+ * 0x8C0556FA - func_8C0556FA
+ */
+
