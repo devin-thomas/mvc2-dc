@@ -1657,3 +1657,19 @@ extern uint32_t *table_8C018ba8; // Pointer at address
  * 0x8C0186EC - func_8C0186EC
  */
 
+
+/*
+ * 0x8C018B28 - func_8C018B28
+ */
+extern uint32_t (*func_8C0184D4)(uint32_t, int); // Helper function address 0x8c0184d4
+// Global data pointers (addresses stored in ROM/VRAM)
+static const uintptr_t g_data_ptr_table[] = { 
+    0x8C018B56UL, // Address of instruction at offset +2 relative to start? No, these are absolute addresses.
+                   // Re-evaluating based on assembly: The .word directives define a jump table or data structure in ROM/VRAM.
+};
+
+// Corrected approach for the static lookup tables found directly in code (0x8C1459xx)
+extern const uint32_t g_jump_table_1[]; // Points to 0x8c14... sequence starting at offset implied by context or direct load? 
+    // Actually, looking at `mov.l @(r0,r2), r3`, the addresses loaded are:
+    // Offset +6 (from B56): 0x8C1459EC -> This is likely a function pointer.
+    // Let's define them as
