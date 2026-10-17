@@ -8118,3 +8118,20 @@ extern void (*func_8C0526D6)(int32_t arg); // Address 0x8C0526D6, takes low byte
  * 0x8C048632 - func_8C048632
  */
 
+
+/*
+ * 0x8C048D9E - func_8C048D9E
+ */
+extern void *func_8C034DEE(void); // Address 0x8C034DEE from table at 0x8C048F1C
+extern int func_8C05218A(int, int, int, int, int, int, int, int, int, int, int, int, int); // Address 0x8C05218A from table at 0x8C048F10
+extern void func_8C051648(int *dst, const char *src, unsigned short len); // Address 0x8C051648 from table at 0x8C048F20
+
+// Global constants embedded in the function (simulating data section)
+static uint32_t g_jump_table_1[7] = { 
+    0x01d3, // Branch target offset or address relative to base? Context suggests jump logic.
+             // Actually looking at usage: mov.l @(r0,r1), r3; jmp @r3. These are likely function pointers stored in a table.
+             // Wait, the assembly shows .word 0x01d3 etc inside the code stream but used as data? 
+             // Re-evaluating lines like "mov.w 0x8c048dd4,r0". This loads an address into r0 then uses it for indexing.
+};
+
+// Correct
