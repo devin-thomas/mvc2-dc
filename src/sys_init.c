@@ -4308,3 +4308,8 @@ extern uint32_t *g_vram_table_start; // Placeholder for the base address if not 
 // However, looking at `mov.l 0x8c0290a4,r0`, this is a direct load of an array pointer or table start relative to some segment?
 // Actually, the pattern suggests:
 // r1 =
+
+/*
+ * 0x8C028916 - func_8C028916
+ */
+
