@@ -2990,3 +2990,8 @@ void func_8C0358(void); // Corresponds to the BSR at 0x8C020206 relative offset 
 // Note: In real decompilation of Katana SDK, addresses like 0x8C1474EC are often resolved at link time or via a jump table not fully visible here. 
 // We assume func_8C0358 is the target label for the BSR instruction found in assembly.
 extern void (*func_ptr_table)(void); // Placeholder if r2 points to
+
+/*
+ * 0x8C020028 - func_8C020028
+ */
+
