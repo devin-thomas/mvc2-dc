@@ -5126,3 +5126,8 @@ extern void func_8C132640(void);           // Called at 0x8c030514 (r3) - pointe
  * 0x8C030922 - func_8C030922
  */
 
+
+/*
+ * 0x8C030712 - func_8C030712
+ */
+
