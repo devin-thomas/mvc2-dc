@@ -1,9 +1,0 @@
-{
-  "email": {
-    "enabled": true,
-    "to": "gohan@uppercut-labs.com",
-    "interval": 10
-  },
-  "discord_webhook": "",
-  "slack_webhook": ""
-}
