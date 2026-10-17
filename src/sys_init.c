@@ -5687,3 +5687,8 @@ extern unsigned int *context_struct_ptr_r4; // Placeholder for r
  * 0x8C03563A - func_8C03563A (6 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03563A); */
+
+/*
+ * 0x8C035640 - func_8C035640
+ */
+
