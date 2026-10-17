@@ -7524,3 +7524,15 @@ extern void *r5_ptr; // Placeholder for r5 base pointer context if needed, thoug
  * 0x8C044E56 - func_8C044E56
  */
 
+
+/*
+ * 0x8C0453E6 - func_8C0453E6
+ */
+#include <stdint.h>
+
+// Helper function declaration (address 0x8C0455F4)
+extern void func_8C0455f4(uint32_t arg); // Arguments: r6, r7; Return in r14? Or modifies globals. Based on usage pattern where it's called with specific setup and then restored via stack pop sequence after 'add #4', likely a subroutine that uses the passed pointer/arg context or returns a value placed at [r15+8] relative to current frame if not saved, but here r14 is used as return reg. Let's assume standard C convention where it might take args in registers and set result in R0? 
+// Re-evaluating based on SH-4 calling conventions often seen:
+// The sequence `mov.l rX,@-r15` saves regs to stack frame.
+// Then `bsr 0x8c0455f4`.
+// After return, it
