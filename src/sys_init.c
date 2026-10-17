@@ -1555,3 +1555,8 @@ extern uint8_t *g_vram_base; // Base address 0x8C1454AC inferred, or passed via 
  * 0x8C0178B4 - func_8C0178B4
  */
 
+
+/*
+ * 0x8C018252 - func_8C018252
+ */
+
