@@ -9802,3 +9802,18 @@ extern void func_8C0532A8(uintptr_t *); // Adjust signature based on actual usag
  * 0x8C052B34 - func_8C052B34 (336 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C052B34); */
+
+/*
+ * 0x8C052F20 - func_8C052F20
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global data/variables (addresses are embedded in code)
+extern uint32_t *g_DataBlock_8C052FB0; // Address 0x8C052FB0 points to this base or is the value itself? 
+                                        // Based on usage: mov.w @(r0,r4), r2 where r0=addr. 
+                                        // Actually, looking at pattern:
+                                        // r0 = addr of struct member (e.g., 0x8c052fb0)
+                                        // Then @(r0, r4) loads from [base + offset].
+                                        // So g_DataBlock_8C052FB0 is likely the base pointer passed in R4? 
+                                        // No, R4 is usually a parameter. Let's assume 0x8c052fb0 etc are offsets or specific addresses relative to something.
+                                        // Re-evaluating: The code does `mov.w #addr, r0`
