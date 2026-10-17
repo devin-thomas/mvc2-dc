@@ -2255,3 +2255,8 @@ extern uint32_t g_return_address_offset; // Placeholder for the constant loaded 
  * 0x8C01B776 - func_8C01B776
  */
 
+
+/*
+ * 0x8C01B68A - func_8C01B68A
+ */
+
