@@ -9857,3 +9857,8 @@ extern uint32_t *g_DataBlock_8C052FB0; // Address 0x8C052FB0 points to this base
  * 0x8C052E4E - func_8C052E4E
  */
 
+
+/*
+ * 0x8C052FB4 - func_8C052FB4 (208 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C052FB4); */
