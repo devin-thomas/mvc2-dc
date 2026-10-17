@@ -9361,3 +9361,8 @@ extern uint32_t g_unk_8C051196; // Address of function pointer or data at offset
  * 0x8C050C5A - func_8C050C5A
  */
 
+
+/*
+ * 0x8C051230 - func_8C051230 (558 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C051230); */
