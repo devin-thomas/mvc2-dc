@@ -5823,3 +5823,8 @@ extern void func_8C213046(void *a);                      // Placeholder for jsr 
  * 0x8C03673E - func_8C03673E
  */
 
+
+/*
+ * 0x8C036150 - func_8C036150
+ */
+
