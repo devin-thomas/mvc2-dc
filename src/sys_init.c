@@ -1045,3 +1045,8 @@ extern uint32_t func_8C04257C; // Address loaded at 0x8C01352E (likely a functio
 extern uint32_t func_8C01470C(void); // Address 0x8C26823C based on context analysis of similar patterns, though exact label name is inferred. If this address holds a function pointer or specific data structure access logic defined elsewhere in the SDK, ensure that symbol exists globally.
 // Note: The assembly loads an immediate value into r14 (0x8c01470c) which points to 0x8C26823C. This is likely a hardcoded pointer or offset used for table lookup/switch dispatch in the Katana SDK engine logic, not necessarily a C function call target itself unless dereferenced later by caller context (which isn't visible here). However, standard practice for such "jump tables" often implies looking up an entry at that address.
 // Re-evaluating
+
+/*
+ * 0x8C0135B2 - func_8C0135B2
+ */
+
