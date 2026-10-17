@@ -4338,3 +4338,17 @@ extern uint32_t *g_vram_table_start; // Placeholder for the base address if not 
  * 0x8C029054 - func_8C029054
  */
 
+
+/*
+ * 0x8C029A58 - func_8C029A58
+ */
+#include <stdint.h>
+
+// Helper function declarations (extern) to ensure standalone compilation with -fsyntax-only
+static void func_8C1294BC(void *a, int b); // Corresponds to address 0x8C1294BC loaded into r3
+void (*func_ptr_table_entry)(int);          // Placeholder for the jump target at 0x8C0450C0
+
+// Global data addresses (mapped from assembly constants)
+static const uint32_t g_data_offset = 0x6c;       // Derived from add #116, r1 is base + offset. Wait, let's re-evaluate the math.
+                                                  // Actually: mov.l addr,r3 -> jsr @r3 (call func). Then "add #116, r1". 
+                                                  // The call happens at r1+0? No,
