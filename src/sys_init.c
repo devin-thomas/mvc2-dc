@@ -10084,3 +10084,8 @@ extern void func_8C0634(int arg); // Helper function referenced at 0x8C054634 (o
  * 0x8C0544E8 - func_8C0544E8
  */
 
+
+/*
+ * 0x8C054D04 - func_8C054D04
+ */
+
