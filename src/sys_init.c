@@ -10999,3 +10999,8 @@ static uint32_t gbr_ptr = 0;                              // GBR register value 
  * 0x8C05923C - func_8C05923C
  */
 
+
+/*
+ * 0x8C0591BC - func_8C0591BC
+ */
+
