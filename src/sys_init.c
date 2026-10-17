@@ -3233,3 +3233,8 @@ void func_8C01A56(int *ptr_r4_arg, uint32_t val_r7_arg); // Placeholder signatur
  * 0x8C02138A - func_8C02138A
  */
 
+
+/*
+ * 0x8C021298 - func_8C021298
+ */
+
