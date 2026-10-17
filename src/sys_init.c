@@ -6642,3 +6642,8 @@ extern uint32_t func_8C010524(void); // Placeholder for the function at r4 addre
  * 0x8C03D864 - func_8C03D864
  */
 
+
+/*
+ * 0x8C03D8DC - func_8C03D8DC
+ */
+
