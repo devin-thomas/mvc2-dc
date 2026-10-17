@@ -7406,3 +7406,12 @@ extern void func_8C11C720(uint32_t arg_a, uint32_t arg_b); // Called with args d
  * 0x8C044A16 - func_8C044A16 (564 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C044A16); */
+
+/*
+ * 0x8C044C4A - func_8C044C4A
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced symbols and globals (adjust names/types as needed based on full context)
+extern uint32_t func_8009C6E(uint32_t a, uint32_t b); // Placeholder name matching the BSR target address 0x8c044a16 logic pattern if it's a function call wrapper. If direct jump to code at that addr exists without calling convention change, adjust accordingly. Assuming standard C linkage for the sub-function based on usage of r5/r4 args and return in r0.
+extern uint32_t *g_8C289610; // Address 0x8c044a16 points to code or data? The assembly shows 'bsr' (branch subroutine) which implies a function call target at that address, not just loading an offset into r5
