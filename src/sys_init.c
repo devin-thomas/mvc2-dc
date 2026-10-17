@@ -2853,3 +2853,8 @@ extern const uint32_t g_ptr_base_1 = 0x8C26A940; // Address at F360 (r3 load)
  * 0x8C01F450 - func_8C01F450
  */
 
+
+/*
+ * 0x8C01F454 - func_8C01F454
+ */
+
