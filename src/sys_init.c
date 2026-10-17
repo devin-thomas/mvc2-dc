@@ -2090,3 +2090,12 @@ extern uint32_t (*func_8C044F12)(uint32_t, int); // Address 0x8C044F12 loaded at
 // Based on typical Katana SDK patterns, these look like function pointers stored in ROM/RAM tables.
 
 extern uint8_t (*g_ptr_0x8C1294BC)(void); // Address 0x8C1294BC loaded at
+
+/*
+ * 0x8C01B3E0 - func_8C01B3E0
+ */
+extern void func_8C01B3E0(void); // Placeholder for external reference if needed, though this is a stub.
+
+void func_8C01B3E0() {
+    return; // rts at 0x8C01B3E0 (nop in delay slot)
+}
