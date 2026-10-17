@@ -8481,3 +8481,27 @@ extern uint32_t *g_ptr_1; // Corresponds to address loaded into r1 (likely a fun
  * 0x8C04B1D8 - func_8C04B1D8 (582 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04B1D8); */
+
+/*
+ * 0x8C04AE82 - func_8C04AE82
+ */
+#include <stdint.h>
+
+// External declarations for referenced functions and global variables based on context analysis.
+extern void (*func_8C034DEE)(void); // Address 0x8C034DEE (from r2 at AF64)
+extern uint16_t func_table_entry_5;   // Placeholder name, actual address is in data section or computed dynamically if not static. 
+// Note: The assembly loads addresses directly into registers from ROM/RAM constants defined later in the snippet.
+// We assume these are external symbols resolved at link time for a standalone compilation context.
+
+extern uint16_t (*func_8C0532A8)(void); // Address 0x8C0532A8 (from r3 at AF68)
+extern void func_bsr_adf0(void);         // BSR to address in data section, treated as function call here.
+
+// Data constants embedded in the assembly snippet mapped to variables for clarity or direct usage if static.
+static const uint16_t addr_5 = 0x0233;   // From AF56 (used with r4 offset) -> actually used at AEB8: mov.w #... wait, let's re-read carefully.
+// Correction on Data Section mapping based on assembly flow:
+
+extern void (*func_ptr_base)(void);       // Placeholder for the base function pointer logic if not direct addresses.
+// Actually, looking at AF50-AF7C, these are absolute address constants loaded into registers or used as offsets/pointers.
+// Let's define them as externs representing the actual memory locations found in the binary.
+
+extern uint16_t data_8c04af50; // 0x01eb (AF50)
