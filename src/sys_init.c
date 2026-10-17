@@ -5473,3 +5473,16 @@ extern uint64_t func_8C0331D8(uint32_t a, uint32_t b); // Helper function refere
  * 0x8C0331D0 - func_8C0331D0
  */
 
+
+/*
+ * 0x8C03379C - func_8C03379C
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global variables/functions found in the disassembly context.
+extern uint32_t g_unk_8c1f9d90; // Address 0x8C1F9D90 (from 0x8c0338b4)
+extern uint32_t g_unk_8c1f9d80; // Address 0x8C1F9D80 (from 0x8c0338ac)
+extern uint32_t g_unk_8c1f9d8c; // Address 0x8C1F9D8C (from 0x8c0338b0)
+extern uint32_t g_unk_8c1f9d94; // Address 0x8C1F9D94 (from 0x8c0338b8)
+extern uint32_t g_unk_8c1f9d98; // Address 0x8C1F9D98 (from 0x8c0338bc)
+extern void (*g_func_ptr_8c1f9fc)(void);   // Function pointer at 0x8CE60FC? No
