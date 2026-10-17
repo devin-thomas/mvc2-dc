@@ -4352,3 +4352,8 @@ void (*func_ptr_table_entry)(int);          // Placeholder for the jump target a
 static const uint32_t g_data_offset = 0x6c;       // Derived from add #116, r1 is base + offset. Wait, let's re-evaluate the math.
                                                   // Actually: mov.l addr,r3 -> jsr @r3 (call func). Then "add #116, r1". 
                                                   // The call happens at r1+0? No,
+
+/*
+ * 0x8C029E1E - func_8C029E1E
+ */
+
