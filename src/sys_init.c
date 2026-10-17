@@ -10573,3 +10573,8 @@ void func_8C055D28(void) {
 extern uint8_t g_vram_data_0x8C2896B0[4]; // Address 0x8C2896B0 loaded into r3 initially, likely a base pointer or small buffer access pattern given size constraints. Assuming it's an array of bytes based on the `mov.b` usage at offset calculation logic if not handled by helper. However, looking closely: 
 // Actually, let's re-evaluate 0x8C2896B0. It is loaded into r3 then used as a base for @r3 (word load). So it points to an object of size >=4 bytes or the code accesses multiple words from there?
 // Wait, `mov.l @r3,r5` loads 4 bytes starting at address in r3
+
+/*
+ * 0x8C055D74 - func_8C055D74
+ */
+
