@@ -7422,3 +7422,8 @@ extern uint32_t *g_8C289610; // Address 0x8c044a16 points to code or data? The a
 extern uint32_t func_8C044DCE(uint32_t arg); // Address 0x8C044DCE based on bsr target logic relative to prologue/epilogue context or direct call if offset is zero. Given the assembly shows 'bsr 0x8c044dce', this resolves directly.
 extern uint32_t func_8C129728(uint32_t arg); // Address from r14 at 0x8C044EA8
 extern void *func_8C26A518(void **arg, int size); // Pointer derived from address pattern and usage context (likely a helper) - Note: The assembly calls it via JSR with specific args. Based on typical SDK patterns for this game, these are likely internal helpers or data accessors. However, strictly decompiling
+
+/*
+ * 0x8C04445A - func_8C04445A
+ */
+
