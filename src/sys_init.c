@@ -4271,3 +4271,8 @@ extern uint32_t _sh4_vram_8c029008; // Address stored at 0x8C029008, value is li
 extern uint32_t _sh4_vram_8c0290f4; // Address stored at 0x8C0290F4 (value: 0x8C12...) -> Actually the assembly loads a constant address into r4, then jumps to it? No.
 // Correction on logic based on SH-4 SDK patterns:
 // The pattern `mov.w addr,rX` followed by `.word value` usually means loading an immediate word from ROM/VRAM at 'addr' which contains another pointer or
+
+/*
+ * 0x8C02882A - func_8C02882A
+ */
+
