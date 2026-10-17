@@ -10633,3 +10633,8 @@ extern uint8_t g_vram_data_0x8C2896B0[4]; // Address 0x8C2896B0 loaded into r3 i
  * 0x8C056A26 - func_8C056A26
  */
 
+
+/*
+ * 0x8C056B6E - func_8C056B6E (630 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C056B6E); */

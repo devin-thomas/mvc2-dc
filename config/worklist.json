@@ -13181,14 +13181,14 @@
     "end_vram": 2349165422,
     "size": 160,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C056B6E",
     "vram": 2349165422,
     "end_vram": 2349166052,
     "size": 630,
-    "status": "pending",
+    "status": "stubbed",
     "attempts": 0
   },
   {
