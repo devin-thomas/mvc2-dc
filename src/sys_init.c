@@ -8248,3 +8248,8 @@ extern uint32_t *func_8c0518a0; // Address loaded at 0x8c049594, likely a functi
 
 extern uint32_t *table_1; // Corresponds to address loaded at r3 (0x8c04958c) -> 0x8C054400
 // The assembly loads specific addresses directly into registers
+
+/*
+ * 0x8C0490DC - func_8C0490DC
+ */
+
