@@ -5630,3 +5630,8 @@ extern uint16_t (*g_callback_ptr)(void); // Pointer loaded from 0x8C03507C
  * 0x8C034C18 - func_8C034C18
  */
 
+
+/*
+ * 0x8C034DEE - func_8C034DEE
+ */
+
