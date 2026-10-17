@@ -1359,3 +1359,8 @@ extern uint32_t *gbr; // Global Base Register pointer, typically passed or defin
  * 0x8C0166A0 - func_8C0166A0
  */
 
+
+/*
+ * 0x8C0164CC - func_8C0164CC
+ */
+
