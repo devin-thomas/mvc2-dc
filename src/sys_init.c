@@ -5184,3 +5184,8 @@ extern uint32_t func_8C26A8E4(void); // Placeholder for the external function re
  * 0x8C030FEC - func_8C030FEC (14 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C030FEC); */
+
+/*
+ * 0x8C031068 - func_8C031068
+ */
+
