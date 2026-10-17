@@ -989,3 +989,8 @@ extern void func_8C044E56(int count, uintptr_t base_ptr); // Loops 'count' times
  * 0x8C013572 - func_8C013572
  */
 
+
+/*
+ * 0x8C012E66 - func_8C012E66
+ */
+
