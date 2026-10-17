@@ -10976,3 +10976,16 @@ extern uint16_t *g_unk_ptr_r4_offset; // Corresponds to address in @(r0,r4) or s
 // Note: In Katana/MVCA2 SH-4 code, 'mov.b @(5,r4),r0' usually accesses an offset from FP (Frame Pointer). 
 // However, without knowing what is at 0x8C0599AC or the value of r4's base context perfectly, we must assume standard ABI where arguments are in registers.
 // Given 'mov.w @(r0,r4),r3', it implies a lookup table starting at address held by (uint16_t*)(&g_unk_ptr_r4_offset + 5) or
+
+/*
+ * 0x8C05997E - func_8C05997E
+ */
+#include <stdint.h>
+
+// Helper functions referenced in the decompiled function (must be declared externally)
+extern uint8_t func_0x8C26345E(uint16_t val, int offset); // Corresponds to dmulu.l logic or similar helper if not intrinsic
+extern void subr_func(void *ptr);                          // Placeholder for bsr 0x8c059964
+
+// Global variables / pointers referenced by absolute addresses in the assembly (inferred from context)
+static uint32_t gbr_ptr = 0;                              // GBR register value used as base pointer offset source? Or specific VRAM address. Assuming it holds a valid pointer or is manipulated elsewhere. 
+// Note: In SH-4, @(r0,gbr) usually means r0 + (gbr << shift). If '20' was the immediate in mov.l @
