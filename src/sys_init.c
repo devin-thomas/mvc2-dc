@@ -4800,3 +4800,8 @@ extern void (*helper_func)(void); // Placeholder for address 0x8c02e014 if it's 
  * 0x8C02DFA6 - func_8C02DFA6
  */
 
+
+/*
+ * 0x8C02E2FA - func_8C02E2FA
+ */
+
