@@ -1402,3 +1402,8 @@ extern uint32_t g_8C144768; // Address 0x8C144768 loaded at r3 initially, likely
 // Based on typical Katana patterns and the usage of `jsr @r2` where r2 comes from a table, these are likely function pointers or offsets into tables.
 extern uint32_t g_8C144768; // Placeholder for 0x8c01708c value if it's not immediate data in the binary dump provided contextually. 
 // Correction: The assembly loads `
+
+/*
+ * 0x8C017182 - func_8C017182
+ */
+
