@@ -332,3 +332,8 @@ int32_t func_8C010412(void) {
 
     return r0;
 }
+
+/*
+ * 0x8C0104C0 - func_8C0104C0 (70 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0104C0); */
