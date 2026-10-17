@@ -9891,3 +9891,8 @@ extern void func_8C053706(void); // Helper function referenced in delay slot of 
 // Addr | Opcode                     | Comment
 // -----|-----------------------------|----------------------------------
 // ...F6| mov.w    0x8c05380e,r0     | Load base address into r0 (r4 is likely a frame pointer or offset register passed in, but here it's used as part of the addressing
+
+/*
+ * 0x8C053708 - func_8C053708
+ */
+
