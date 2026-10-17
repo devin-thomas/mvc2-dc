@@ -6547,3 +6547,8 @@ extern void func_0xf427(void);       // Placeholder for external function at add
 extern uint32_t func_8C010524(void); // Placeholder for the function at r4 address if it's a call, but here r4 is used as pointer. Assuming global data or similar based on context of Katana SDK often using globals in registers directly passed by caller logic not shown. However, strictly following ABI: arguments are r3,r5 etc? Wait, Dreamcast C calling convention usually passes args differently than SH-4 inline asm sometimes seen in low level tools like Katana which might use specific register sets or this is a leaf function where inputs come from stack/registers defined by caller context not standard SWABI. 
 // Re-evaluating ABI for Katana SDK / Marvel vs Capcom 2:
 // The prompt says "Arguments in r4, r5, r6, r7". This implies the CALLER puts args there? Or is this a specific toolchain convention
+
+/*
+ * 0x8C03CF6A - func_8C03CF6A (688 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C03CF6A); */
