@@ -2950,3 +2950,8 @@ extern uint32_t func_8C14730E(uint32_t a, uint32_t b); // Address 0x8C147310 inf
  * 0x8C01FA9E - func_8C01FA9E
  */
 
+
+/*
+ * 0x8C01F7D0 - func_8C01F7D0
+ */
+
