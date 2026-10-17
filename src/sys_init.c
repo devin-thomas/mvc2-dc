@@ -5430,3 +5430,8 @@ extern uint32_t *g_unk_return_stack; // Placeholder for the global return stack 
  * 0x8C03349E - func_8C03349E
  */
 
+
+/*
+ * 0x8C03319E - func_8C03319E
+ */
+
