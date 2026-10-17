@@ -4048,3 +4048,8 @@ extern uint32_t func_8C0275a4[]; // Table starting at 0x8C1F978D (offsets) or da
  * 0x8C0273C6 - func_8C0273C6
  */
 
+
+/*
+ * 0x8C0274F2 - func_8C0274F2
+ */
+
