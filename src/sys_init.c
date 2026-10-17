@@ -8717,3 +8717,8 @@ void func_dispatcher_case_B(uint32_t arg_a, uint32_t arg_b); // Placeholder for 
  * 0x8C04D338 - func_8C04D338
  */
 
+
+/*
+ * 0x8C04D4EE - func_8C04D4EE
+ */
+
