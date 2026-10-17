@@ -8416,3 +8416,8 @@ extern uint32_t func_0x8C04A574(void); // Address stored at VRAM offset 0x16 rel
 // mov.b @(6,r14),r0 -> load byte at base+6 into r0.
 // tst r0,r0 -> test zero flag based on loaded value.
 // bf 0x8c04a49e -> Branch Forward if Zero Flag is SET (value was
+
+/*
+ * 0x8C04A002 - func_8C04A002
+ */
+
