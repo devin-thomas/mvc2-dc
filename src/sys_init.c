@@ -7486,3 +7486,8 @@ static const struct { int add_offset; } s_offsets[] =
  * 0x8C044DCE - func_8C044DCE
  */
 
+
+/*
+ * 0x8C044F12 - func_8C044F12
+ */
+
