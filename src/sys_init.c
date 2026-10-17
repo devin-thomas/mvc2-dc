@@ -4576,3 +4576,15 @@ extern void (*func_ptr_8c212bf0)(void); // Placeholder for 0x8C212BF0 if it's a 
  * 0x8C02B882 - func_8C02B882 (584 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C02B882); */
+
+/*
+ * 0x8C02BCA0 - func_8C02BCA0
+ */
+#include <stdint.h>
+
+extern uint32_t func_8C14B0C8(void *base, int index); // Placeholder for the function at 0x8C14B0C8 if it's a call target logic not fully resolved or just data pointer usage. However, looking closely:
+// The assembly loads addresses from ROM/RAM into r0 and then dereferences @(r0,r5). 
+// This implies func_8C14B1F4 (at 0x8c02bd54) is likely a function address or data pointer table base.
+// And func_8C14B0C8 (at 0x8c02bd58) is another one.
+
+extern uint32_t (*func_ptr_table_entry)(void); // Generic type for the result of dereferencing if it's a function, or just
