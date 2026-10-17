@@ -5225,3 +5225,8 @@ extern uint32_t *g_unk_ptr; // Placeholder if @(r4, 0x8C...) refers to a global 
 // Based on "mov.l 0x8c0310b0,r4" where [0x8C0310B0] = 0x8C26A8E4: 
 extern uint32_t g_base_table_addr; // The value at address 0x8C0310B0
 // Based on "mov.l @(r0,r1),
+
+/*
+ * 0x8C0310F2 - func_8C0310F2
+ */
+
