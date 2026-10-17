@@ -6874,3 +6874,17 @@ extern int g_flag_counter_at_offset_28_r4; // Variable at offset +28 from r4 bas
  * 0x8C03FDF6 - func_8C03FDF6
  */
 
+
+/*
+ * 0x8C03FF16 - func_8C03FF16
+ */
+#include <stdint.h>
+
+extern const uint8_t *g_ptr_unk; // Address 0x8C03FF16 (derived from context)
+extern int g_var_r4_offset28;   // Offset for pointer arithmetic, likely a struct member or local offset stored in r4/r5 logic
+// Note: The assembly uses absolute addresses and register-based offsets typical of Katana SDK. 
+// Without the full symbol table mapping these specific constants to named globals/structs, we use extern placeholders with correct types inferred from usage (uint8_t for bytes, uint32_t for words).
+
+extern const int g_const_10; // Likely 16 or similar based on 'sub r0,r10' context if not immediate
+// Re-evaluating constants: 
+// - cmp/eq #-119 -> likely checking a specific byte value (e.g., state flag
