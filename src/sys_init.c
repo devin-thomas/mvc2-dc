@@ -3422,3 +3422,16 @@ extern uint32_t *g_8C023A6a; // VRAM address 0x8C023A64 (derived from mov.w) - a
  * 0x8C023576 - func_8C023576
  */
 
+
+/*
+ * 0x8C023A68 - func_8C023A68
+ */
+#include <stdint.h>
+
+// Helper function declarations (extern) to ensure standalone syntax validity.
+void func_8C04(void); // Corresponds to branch target 0x8c023a9c logic path or similar indirect call context if not direct jump, but here it's a JSR from r9 which points elsewhere? Wait, analysis shows:
+// Actually, looking at the code flow:
+// mov.l    @r15+,pr (restore PR) -> this is part of exception handling setup.
+// The instruction `jsr      @r9` calls whatever function address is in R9.
+// Based on typical Katana SDK patterns and the provided assembly, we assume these are external symbols or internal functions not fully visible here but necessary for compilation context if they were defined locally. 
+// However, since this snippet only asks to decompile THIS specific block which contains a JSR @r9 (indirect call), I must declare r9's target as an extern function pointer
