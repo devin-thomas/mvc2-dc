@@ -5096,3 +5096,8 @@ extern void func_8C132640(void);           // Called at 0x8c030514 (r3) - pointe
  * 0x8C0308C2 - func_8C0308C2
  */
 
+
+/*
+ * 0x8C030CC0 - func_8C030CC0 (60 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C030CC0); */
