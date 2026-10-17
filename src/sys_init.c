@@ -2660,3 +2660,18 @@ extern void func_8C1F8B91(uint32_t, uint32_t); // Loaded to r6? No, r6 is passed
 // Let's assume standard C linkage where r5/r6 are passed arguments and used as pointers/indices into internal tables stored at 0x8C1F...
 
 extern void func_8C26823C(void); // Address loaded to r6? No, mov.l @r6,r4 suggests reading FROM the address
+
+/*
+ * 0x8C01DF3C - func_8C01DF3C
+ */
+#include <stdint.h>
+
+extern uint32_t *g_unk_8C2141E9; // Address stored at 0x8C01DF84
+extern void (*func_ptr_a)(void);   // Function pointer from delay slot after mov.b @r3 (likely jump target logic)
+// Note: The assembly uses indirect jumps and specific VRAM/ROM addresses. 
+// Based on the pattern `mov.l 0x..., rX` followed by a branch/jump, these are likely function pointers or data tables in ROM/VRAM.
+extern uint8_t *g_unk_table_a; // Address stored at 0x8C01DF94 (used for multiplication base)
+
+// Reconstructing the logic based on SH-4 delay slots and register usage:
+// r3 points to a table of function pointers or data.
+// The code
