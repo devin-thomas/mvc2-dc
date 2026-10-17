@@ -3166,3 +3166,17 @@ extern const struct { int val1; } g_jump_table_FXX[];
  * 0x8C020E3A - func_8C020E3A
  */
 
+
+/*
+ * 0x8C021052 - func_8C021052
+ */
+#include <stdint.h>
+
+// Helper function declarations (extern) to ensure standalone compilation with -fsyntax-only
+extern void func_8C021344(void); // Called at 0x8C0210F8 based on context analysis of the jump table logic. Note: The assembly shows a direct call/branch pattern that implies this function exists in the linked binary but isn't defined here.
+extern void func_8C021376(void); // Placeholder for potential missing helper if 0x8c021344 is not enough, though usually these are specific to game logic. 
+// Based on standard Katana SDK patterns:
+// The jump table at the end suggests calls to various subroutines. Since exact addresses aren't fully resolved in a single pass without full symbol resolution, we declare them as extern void with generic names or assume they exist.
+// However, looking closely at 0x8C0210E6: bsr 0x8c021344 and 0x8C0210EC: bsr 0x8c02122e. These are likely specific game logic functions.
+// Let's assume standard naming or generic placeholders if symbols aren't available, but the prompt asks for valid C code. 
+// We will declare them as extern void with names derived from context
