@@ -2171,3 +2171,8 @@ extern uint32_t (*func_resolver)(void);           // Pointer to resolver functio
  * 0x8C01B474 - func_8C01B474
  */
 
+
+/*
+ * 0x8C01B59A - func_8C01B59A
+ */
+
