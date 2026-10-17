@@ -8622,3 +8622,12 @@ extern void func_8C04CB9E(void); // Placeholder for external reference if needed
 void func_8C04CB9E() {
     return; // Function body contains only 'rts' (return) and padding ('nop').
 }
+
+/*
+ * 0x8C04CBA2 - func_8C04CBA2
+ */
+extern uint32_t *g_unk_8C05; // Base address for data structures, inferred from context (r4 usage)
+extern int g_unk_8C06;       // Value at offset 78 of r4 structure? Or global. Context suggests local var logic but stored to memory. Re-evaluating: likely a pointer or specific struct member access pattern common in SDK. Let's assume standard SH-4 variable passing if not globals, but here addresses are hardcoded relative to registers.
+// Based on "mov.w 0x8c04ccf0,r0" and subsequent loads, these look like offsets into the structure pointed by r4 (which holds a base address). 
+// However, without knowing what g_unk_8C05 is exactly, we must treat it as an external pointer.
+extern uint32_t *g_base_ptr; //
