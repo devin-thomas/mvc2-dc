@@ -8997,3 +8997,8 @@ static const uintptr_t jump_table_B[] = {
  * 0x8C04E7E8 - func_8C04E7E8
  */
 
+
+/*
+ * 0x8C04E898 - func_8C04E898
+ */
+
