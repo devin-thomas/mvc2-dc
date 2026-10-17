@@ -5867,3 +5867,20 @@ extern const struct {
  * 0x8C036DDE - func_8C036DDE
  */
 
+
+/*
+ * 0x8C0370A4 - func_8C0370A4
+ */
+extern void func_8C0370CE(void);
+// Global data addresses (derived from assembly constants)
+static const uint32_t g_data_offset_table[] = { 16, 24 }; // Derived from .word sequences at offsets relative to base logic if needed, but here used as immediate loads. Actually looking closely: 
+// The code does `mova` then `.word`. This is a jump table or switch dispatch mechanism embedded in the assembly that gets resolved by loading an offset into r0 and using it for branching/offsetting.
+// Let's re-analyze the specific logic at 8C03712A-8C03714E which seems to be a large switch statement on input `r0` (value from memory).
+
+extern uint32_t g_unk_8C26823C; // Address loaded into r6
+static const uint32_t *g_ptr_table = (uint32_t *)(uintptr_t)0x8C212CE8; // Loaded at 0x8c03714e logic? No, let's trace carefully.
+
+// Re-evaluating the assembly structure for C representation:
+// The function initializes a buffer starting at r14 (offset by some base).
+// It writes specific bytes to fixed offsets in this buffer based on input conditions.
+// Then it performs a lookup into `g_unk_8C26823
