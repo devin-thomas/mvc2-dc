@@ -9382,3 +9382,8 @@ void func_8C0514AE(void) {
  * 0x8C05120E - func_8C05120E
  */
 
+
+/*
+ * 0x8C05145E - func_8C05145E
+ */
+
