@@ -6859,3 +6859,8 @@ extern int g_flag_counter_at_offset_28_r4; // Variable at offset +28 from r4 bas
  * 0x8C03FDA2 - func_8C03FDA2
  */
 
+
+/*
+ * 0x8C03FED6 - func_8C03FED6
+ */
+
