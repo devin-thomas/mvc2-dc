@@ -9133,3 +9133,14 @@ extern uint32_t *g_unk_8c0105fe; // Base address 0x8C0500FE, likely a different 
  * 0x8C04FD94 - func_8C04FD94
  */
 
+
+/*
+ * 0x8C050552 - func_8C050552
+ */
+#include <stdint.h>
+
+// Helper function declaration (addressed via constant in assembly)
+extern uint32_t (*func_8C05B19E)(uint32_t, void *); // Address 0x8C03319E inferred from context of call at r2+4 offset logic if needed, but here direct jump. Assuming standard function pointer usage based on 'jsr @r2'.
+// Actually, looking at assembly: mov.l #0x8c05b0,r2 -> jsr @(PC)+ (indirect). 
+// The value 0x8C03319E is the target address. Let's declare it as a function pointer or assume global symbol if known.
+// Since we don't have the map, we must treat r2 load as loading an absolute address into R2 then jumping indirectly? No, 'js
