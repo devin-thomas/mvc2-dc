@@ -5408,3 +5408,8 @@ extern uint8_t *g_UnknownArray; // Placeholder for global arrays accessed via of
  * 0x8C032650 - func_8C032650
  */
 
+
+/*
+ * 0x8C032A28 - func_8C032A28 (346 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C032A28); */
