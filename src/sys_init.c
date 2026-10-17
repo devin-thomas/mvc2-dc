@@ -9916,3 +9916,8 @@ extern void func_8C053706(void); // Helper function referenced in delay slot of 
  * 0x8C0535A8 - func_8C0535A8
  */
 
+
+/*
+ * 0x8C0533FC - func_8C0533FC
+ */
+
