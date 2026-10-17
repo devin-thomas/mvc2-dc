@@ -5517,14 +5517,14 @@
     "end_vram": 2348995958,
     "size": 136,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C02D576",
     "vram": 2348995958,
     "end_vram": 2348996750,
     "size": 792,
-    "status": "pending",
+    "status": "stubbed",
     "attempts": 0
   },
   {
