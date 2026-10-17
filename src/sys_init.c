@@ -4875,3 +4875,8 @@ extern uint16_t g_unk_8C02F764; // Used in loop logic before BSR call
 extern uint32_t g_unk_8C02F766; // Returned value from subroutine 0x8c03009a, used as offset incrementer? Or part of address calc. Re-evaluating based on flow: r4 gets this after add #12... wait, let's trace carefully.
 // Correction on globals based on immediate analysis:
 extern uint32_t g_unk_8C02F762; // mov.w
+
+/*
+ * 0x8C02E586 - func_8C02E586
+ */
+
