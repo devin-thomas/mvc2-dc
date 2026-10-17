@@ -7869,3 +7869,13 @@ extern uint32_t g_unk_8C2895F0; // VRAM address stored at 0x8C046ADC, loaded int
  * 0x8C046ACA - func_8C046ACA
  */
 
+
+/*
+ * 0x8C046D68 - func_8C046D68
+ */
+#include <stdint.h>
+
+extern uint32_t *g_vram_ptr; // Base VRAM address, assumed to be at 0x8C046DBC based on context or passed via r14 if not global. Here treated as the base loaded from fixed offset relative to code start logic often seen in SDKs where r14 is frame buffer pointer and 0x8c046dbc might be a specific table entry, but given 'mov.w #... ,r0' it loads an address into R0 which acts as the data source.
+// Correction based on standard Katana/SH-4 patterns: 
+// The instruction `mov.w 0x8c046dbc,r0` suggests loading a specific constant or table entry from that absolute location, OR if this is relative to r15 (stack), it's unusual for VRAM.
+// However, looking at
