@@ -8373,14 +8373,14 @@
     "end_vram": 2349069178,
     "size": 80,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C03F37A",
     "vram": 2349069178,
     "end_vram": 2349069824,
     "size": 646,
-    "status": "pending",
+    "status": "stubbed",
     "attempts": 0
   },
   {
