@@ -6378,3 +6378,8 @@ extern uint16_t *data_ptr_r9;       // Derived from address 0x8C03BEC4 + offset 
  * 0x8C03C4C0 - func_8C03C4C0
  */
 
+
+/*
+ * 0x8C03C4E2 - func_8C03C4E2
+ */
+
