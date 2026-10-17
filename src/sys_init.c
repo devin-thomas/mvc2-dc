@@ -2161,3 +2161,8 @@ extern uint32_t (*func_resolver)(void);           // Pointer to resolver functio
 
 // Global constants embedded in the binary at specific offsets relative to this code block or absolute if static.
 // Based on analysis: 0x8C01B6D8 -> func_8C044F12, etc. We assume these are resolved externs for compilation safety
+
+/*
+ * 0x8C01B494 - func_8C01B494
+ */
+
