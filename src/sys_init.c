@@ -2969,3 +2969,8 @@ extern uint32_t func_8C01F414(uint32_t a, uint32_t b); // Placeholder for extern
 // For a standalone C snippet without full symbol resolution of every hardcoded address, we assume these point to external functions/data structures defined elsewhere in the SDK.
 extern uint32_t (*g_ptr_8C020194)(void); // Represents 0x8c01f414 as an extern function pointer for clarity if it's a call target, but here it is 'bra' (branch). 
 // Correction: The assembly uses `bra` to absolute addresses
+
+/*
+ * 0x8C020024 - func_8C020024
+ */
+
