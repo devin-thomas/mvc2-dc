@@ -7312,3 +7312,8 @@ extern uint8_t *const g_vram_base; // Represents 0x8C043AD0 if it's a base point
 extern uint8_t *g_vram_base; // Base address for VRAM access, derived from 0x8c043c30 context or passed as offset if not absolute. Assuming r4 holds the base pointer and r0 is an index/offset relative to it based on typical Katana SDK patterns where @(r0,r4) implies post-indexed addressing with a register holding the structure address in r4 (often 0x8C01xxxx or similar, but here we treat r4 as the struct ptr).
 // Note: In SH-4 Dreamcast code, 'mov.b #val,@(reg_offset, base_reg)' writes to [base_reg + reg_offset]. 
 // Here, r4 is likely a fixed pointer (e.g., 0x8C01xxxx) loaded elsewhere or passed in. The assembly uses absolute addresses for the target
+
+/*
+ * 0x8C04349E - func_8C04349E
+ */
+
