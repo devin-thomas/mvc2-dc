@@ -1730,3 +1730,8 @@ extern const uint32_t *g_data_ptr_8C0190F4; // Pointer loaded from 0x8C0190F4, u
 extern uint32_t g_offset_base_8C0190D8; // Address where the final write happens? No, 0x8c0190d8 is code address for rts/return logic in previous attempt context or just a label? 
 // Re-reading assembly:
 // `mova 0
+
+/*
+ * 0x8C019406 - func_8C019406
+ */
+
