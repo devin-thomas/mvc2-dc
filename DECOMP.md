@@ -1,6 +1,6 @@
 # Marvel vs. Capcom 2 (Dreamcast NA) Decompilation Guide
 
-This document outlines the reverse engineering methodology, architecture conventions, and matching guidelines for the Sega Dreamcast port of **Marvel vs. Capcom 2: New Age of Heroes** (NTSC-U, `MK-51049`).
+This document outlines the reverse engineering methodology, architecture conventions, and matching guidelines for the Sega Dreamcast port of **Marvel vs. Capcom 2: New Age of Heroes** (NTSC-U, `T1212N` V1.001).
 
 ---
 

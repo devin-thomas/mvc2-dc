@@ -15,7 +15,7 @@ The SH-4 processor maps 4 GB of virtual address space into five distinct regions
 ## MvC2 Execution Layout
 
 * **`0x8C000000 - 0x8C00FFFF` (64 KB):** Reserved system area / Katana bootstrap workspace.
-* **`0x8C010000 - 0x8C1CA499` (1.72 MB):** `1ST_READ.BIN` linear loaded image.
+* **`0x8C010000 - 0x8C1C9D99` (1.72 MB, end exclusive):** `1ST_READ.BIN` linear loaded image.
   - `0x8C010000`: CRT0 entrypoint (6x `nop` slide, CRT bootstrap, Lib Handle Table).
   - `0x8C010080`: Primary initialization and engine entry.
   - `0x8C011000`: Main game loop and system dispatchers.

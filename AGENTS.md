@@ -7,7 +7,7 @@ Welcome to the Sega Dreamcast *Marvel vs. Capcom 2* (Retro REA) workspace. All a
 * Use targeted file lookups and tool scripts (`tools/sh4_disasm.py`, `tools/decompile.py`, `tools/auto_decomp_daemon.py`).
 
 ## 2. Integrity of Source Archives & Git Branching
-* The decompilation target is Sega Dreamcast (NTSC-U, serial `MK-51049`).
+* The decompilation target is Sega Dreamcast (NTSC-U, retail serial `T1212N` V1.001; the CDI's `MK-51049` IP.BIN header is a scene replacement, see `docs/TARGET.md`).
 * Executable: `1ST_READ.BIN` (Hitachi SH-4, base load address `0x8C010000`).
 * Pristine assets and disc dumps must never be corrupted or overwritten.
 * Active autonomous AI-assisted decompilation takes place on the `qwen` branch.

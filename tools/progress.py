@@ -155,7 +155,7 @@ def sync_dashboard(prog: dict):
         data = json.loads(status_json.read_text(encoding="utf-8"))
         data["updated_at"] = now_iso
         data["current_activity"] = (
-            f"Decompiling Dreamcast MK-51049: {prog['verified_matched_funcs']}/{prog['total_funcs']} verified byte-identical "
+            f"Decompiling Dreamcast T1212N: {prog['verified_matched_funcs']}/{prog['total_funcs']} verified byte-identical "
             f"({prog['verified_code_percent']:.3f}%), {prog['candidate_funcs']} syntax-valid C candidates ({prog['candidate_code_percent']:.3f}% est.), "
             f"{prog['pending_funcs']} pending."
         )
@@ -200,7 +200,7 @@ def sync_dashboard(prog: dict):
             html = re.sub(r'<span id="updated-at" class="timestamp">[^<]*</span>', f'<span id="updated-at" class="timestamp">{now_iso}</span>', html)
             pct_str = f"{prog['verified_code_percent']:.3f}%"
             activity_html = (
-                f'<p id="current-activity">Decompiling Dreamcast MK-51049: '
+                f'<p id="current-activity">Decompiling Dreamcast T1212N: '
                 f'<strong>{prog["verified_matched_funcs"]}/{prog["total_funcs"]}</strong> verified byte-identical '
                 f'(<strong>{pct_str}</strong>, {prog["verified_matched_bytes"]:,} bytes) | '
                 f'<strong>{prog["candidate_funcs"]}</strong> C candidates generated ({prog["candidate_code_percent"]:.3f}% est.) | '
@@ -217,7 +217,7 @@ def sync_dashboard(prog: dict):
             md = re.sub(r'- \*\*Updated At\*\*: `[^`]*`', f'- **Updated At**: `{now_iso}`', md)
             activity_md = (
                 f"## Current Activity\n"
-                f"Decompiling Dreamcast MK-51049:\n"
+                f"Decompiling Dreamcast T1212N:\n"
                 f"- **Verified Byte-Identical**: **{prog['verified_matched_funcs']}/{prog['total_funcs']}** functions (**{prog['verified_code_percent']:.3f}%**, {prog['verified_matched_bytes']:,} bytes)\n"
                 f"- **Generated C Candidates**: **{prog['candidate_funcs']}** definitions (**{prog['candidate_code_percent']:.3f}%** est., {prog['candidate_code_bytes']:,} bytes)\n"
                 f"- **Queue / Triage**: **{prog['triaged_funcs']}/{prog['total_funcs']}** candidates triaged (**{prog['pending_funcs']}** pending, **{prog['stubbed_funcs']}** stubbed)\n"

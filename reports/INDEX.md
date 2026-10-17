@@ -17,3 +17,4 @@ Immutable historical ledger for implementation plans, design decisions, and veri
 | `001` | `2026-10-16` | `Executed` | Cluster Setup, Auto-Decompiler Daemon & Initial Subsystems Decompilation | [`walkthroughs/001-2026-10-16-cluster-and-first-functions.md`](walkthroughs/001-2026-10-16-cluster-and-first-functions.md) |
 | `002` | `2026-10-17` | `Executed` | 100% Autonomous AFK Decompilation Loop Verification | [`walkthroughs/002-2026-10-17-afk-loop-verification.md`](walkthroughs/002-2026-10-17-afk-loop-verification.md) |
 | `003` | `2026-10-17` | `Executed` | P0 Integrity Audit, Validation Hardening, and Historical Decompilation Recovery | [`walkthroughs/003-2026-10-17-orchestrator-audit-and-recovery.md`](walkthroughs/003-2026-10-17-orchestrator-audit-and-recovery.md) |
+| `004` | `2026-10-17` | `Executed` | Target Identity Check: T1212N V1.001, not MK-51049 | [`walkthroughs/004-2026-10-17-target-identity.md`](walkthroughs/004-2026-10-17-target-identity.md) |

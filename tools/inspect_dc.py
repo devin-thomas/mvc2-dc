@@ -18,7 +18,7 @@ import struct
 import sys
 from pathlib import Path
 
-# Ground truth retail fingerprints for North American Marvel vs. Capcom 2 (MK-51049)
+# Ground truth retail fingerprints for North American Marvel vs. Capcom 2 (T1212N V1.001, from our CDI rip)
 EXPECTED_FINGERPRINTS = {
     "scrambled": {
         "size": 1809817,

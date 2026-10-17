@@ -38,7 +38,7 @@ def setup_from_cdi(cdi_path: Path, output_dir: Path) -> bool:
     ip_sha1 = hashlib.sha1(ip_bin).hexdigest()
     print(f"    IP.BIN: {len(ip_bin):,} bytes (SHA-1: {ip_sha1})")
     if ip_sha1 == EXPECTED_IP_BIN_SHA1:
-        print("    -> [OK] IP.BIN matches North American retail release (MK-51049).")
+        print("    -> [OK] IP.BIN matches the known CDI rip header (MK-51049, a scene replacement; retail is T1212N).")
     else:
         print(f"    -> [WARN] IP.BIN does not match expected {EXPECTED_IP_BIN_SHA1}.")
 

@@ -4,12 +4,12 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Matching Progress](assets/progress.svg)](DECOMP.md)
 
-An early matching decompilation of **Marvel vs. Capcom 2: New Age of Heroes** for the **Sega Dreamcast**, targeting the North American NTSC-U retail release (`MK-51049`).
+An early matching decompilation of **Marvel vs. Capcom 2: New Age of Heroes** for the **Sega Dreamcast**, targeting the North American NTSC-U retail release (`T1212N`, `V1.001`). See [docs/TARGET.md](docs/TARGET.md) for why the `MK-51049` header on our CDI is not the retail identity.
 
 This repository specifically focuses on the Sega Dreamcast port powered by the **Hitachi SH-4 (SH7091)** 32-bit RISC processor. Other platforms in the Marvel vs. Capcom 2 ecosystem are tracked independently:
 * **PlayStation 2:** Handled separately in [`g-guthrie/mvc2-ps2-decomp`](https://github.com/g-guthrie/mvc2-ps2-decomp) (MIPS R5900 / Metrowerks CodeWarrior).
-* **Arcade (NAOMI):** Uses identical Hitachi SH-4 architecture with custom NAOMI security board and ROM banking (`epr-21576*` through `epr-21579*`).
-* **PlayStation 3 (PSN):** Digital Eclipse PowerPC Cell port.
+* **Arcade (NAOMI):** Same Hitachi SH-4 architecture. The game program is `epr-23085a` plus mask ROMs `mpr-23048`–`mpr-23084` (MAME set `mvsc2`); `epr-21576*`–`epr-21579*` are the NAOMI BIOS, not game code. Decompiled separately in [`g-guthrie/mvc2-naomi-decomp`](https://github.com/g-guthrie/mvc2-naomi-decomp).
+* **PlayStation 3 (PSN):** Backbone Entertainment PowerPC (Cell) port, 2009, shared with the Xbox 360 release.
 
 ---
 
@@ -17,16 +17,16 @@ This repository specifically focuses on the Sega Dreamcast port powered by the *
 
 | Item | Value |
 | :--- | :--- |
-| **Product Serial** | `MK-51049` (Version `V1.007`, Date `20000217`) |
+| **Product Serial** | `T1212N` (Version `V1.001`), retail NTSC-U. Our CDI's IP.BIN reads `MK-51049 V1.007 20000217`, a replaced scene header. |
 | **Target Binary** | `1ST_READ.BIN` (Linear loaded entry `0x8C010000`) |
-| **Loaded Image Span** | `0x8C010000..0x8C1CA499` (`1,809,817` bytes) |
+| **Loaded Image Span** | `0x8C010000..0x8C1C9D99` (`1,809,817` bytes, end exclusive) |
 | **On-Disc Scrambled SHA-1** | `0655030b9ea9ba88f94640320391163e663aff3d` |
 | **On-Disc Scrambled SHA-256** | `591c328d225f7b84eaae361730d46dbcf372e92e5b0de2ee81c674f4aa878f5f` |
 | **Descrambled RAM SHA-1** | `d792ef936edd89dfb2ce5399c6b4949460dd3d7b` |
 | **Descrambled RAM SHA-256** | `c24708540c018bc01728be117e3d405e1e91add1f0f975793eab52086298463e` |
 | **Boot Sector (`IP.BIN`) SHA-1** | `bd2b774a6cb07211672de282ae82d7fbc242f660` |
 | **Conservative Text Span** | `0x8C010080..0x8C150000` (`~1.25 MB`) |
-| **Initialized Data Span** | `0x8C150000..0x8C1CA499` (`~499 KB`) |
+| **Initialized Data Span** | `0x8C150000..0x8C1C9D99` (`~499 KB`) |
 | **Original Compiler** | Hitachi SuperH C/C++ Compiler (`shc.exe` v5.0/v6.0) / `asmsh.exe` with `-cpu=sh4 -endian=little` |
 | **Embedded SDK & Middleware** | Sega Shinobi OS v1.62, Kamui2 v16.3.2.0, CRI ADX v5.66, CRI Sofdec RNA v1.26 |
 
