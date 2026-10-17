@@ -4404,3 +4404,17 @@ extern const uint16_t *const g_OffsetTable_0; // 0x8c02a3ea (likely a pointer or
  * 0x8C029F4C - func_8C029F4C
  */
 
+
+/*
+ * 0x8C02A3DA - func_8C02A3DA
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/helpers (adjust names as needed based on broader context)
+extern uint32_t g_some_global_var; // Placeholder if r15 points to a specific global or stack frame base not defined here. 
+                                   // In this snippet, the logic depends entirely on runtime state in registers/r6 and return value -1 vs incremented counter.
+
+// Note: The provided assembly is 14 bytes but contains an unreachable instruction sequence after 'bf'.
+// Address 0x8C02A3DA to 0x8C02A3E5 covers the logic below. 
+// Instruction at 0x8C02A3E6 (mov.l @r15+, r14) is in a delay slot of an implicit return or unreachable path if 'bf' taken,
+// but given standard SH-4 behavior where bf
