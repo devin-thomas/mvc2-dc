@@ -8068,3 +8068,12 @@ extern void func_8C052AF0(void *); // Address 0x8C04864c -> 0x8C052AF0
 extern int func_8C052C84(int, uint32_t *, uint32_t **); // Address 0x8C048650 -> 0x8C052C84 (likely div helper)
 extern void func_8C034DEE(void *); // Address 0x8C048654 -> 0x8C034DEE
 extern int func_8C05211C(int, uint32_t *, uint32_t **);
+
+/*
+ * 0x8C04870A - func_8C04870A
+ */
+extern void func_8C051AF6(uint32_t, uint32_t); // Address 0x8C048810 -> 0x8C051AF6
+extern int func_8C0518A0(int, int, int, int);   // Address 0x8C048814 -> 0x8C0518A0 (Returns: r0)
+extern void func_8C0526D6(uint32_t *);          // Address 0x8C048818 -> 0x8C0526D6
+extern int func_8C051868(int, uint32_t, uint32_t); // Address 0x8C04881C -> 0x8C051868 (Returns: r0)
+extern void func_8C051BCA(uint32_t *);          // Address 0x8C048
