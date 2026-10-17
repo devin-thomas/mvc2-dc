@@ -5600,3 +5600,8 @@ extern uint16_t (*g_callback_ptr)(void); // Pointer loaded from 0x8C03507C
 // Helper macros for SH-4 specific operations if not available in target C, though standard shifts work.
 #define EXTU_B(x) ((uint32_t)((x)) & 0xFFu)
 #define EXTU_W(x) ((uint64_t)(
+
+/*
+ * 0x8C034E70 - func_8C034E70
+ */
+
