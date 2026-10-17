@@ -6079,3 +6079,8 @@ extern void func_8C14D4A0(uint32_t *dest, const uint32_t *src, uint32_t count); 
  * 0x8C038F34 - func_8C038F34
  */
 
+
+/*
+ * 0x8C0395AC - func_8C0395AC (26 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0395AC); */
