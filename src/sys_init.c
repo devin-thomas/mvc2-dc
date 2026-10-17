@@ -9471,3 +9471,8 @@ extern uint32_t (*g_ptr_to_call)(void);
  * 0x8C051BEC - func_8C051BEC
  */
 
+
+/*
+ * 0x8C051D56 - func_8C051D56
+ */
+
