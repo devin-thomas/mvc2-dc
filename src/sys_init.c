@@ -2436,3 +2436,8 @@ extern void func_8C213B0C(void); // Target of mov.a / jsr sequence starting at B
 extern void (*func_ptr_8C213B0C)(void); // Placeholder for the value loaded from 0x8c01c01c if it's a pointer. But usually in these SDKs, they call specific known routines. 
 // Let's assume standard behavior: The addresses like `0x8c01baa4` are absolute function calls or pointers to functions defined elsewhere.
 extern void func_8C213AF8(void); // Target of mov.a
+
+/*
+ * 0x8C01C30E - func_8C01C30E
+ */
+
