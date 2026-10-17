@@ -7692,3 +7692,8 @@ extern uint16_t *func_8C045FFE_helper(void); // Placeholder for the JSR target a
 extern uint16_t *g_8c26a8c4; // Address loaded at 0x8C045FFA (implied by context of typical SH-4 Katana patterns, though assembly shows mov.l @r3,r2 then access). Actually, looking closely: 
 // The JSR is indirect via r3. Let's assume the helper exists or use a generic name if not provided in globals list.
 // Re-evaluating 0x8C0460E4 content (0x8C26A8C4): This looks like an address of another function or data table entry used by JSR @r3
+
+/*
+ * 0x8C045CCE - func_8C045CCE
+ */
+
