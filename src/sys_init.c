@@ -7452,3 +7452,15 @@ extern void *func_8C26A518(void **arg, int size); // Pointer derived from addres
  * 0x8C044CCC - func_8C044CCC
  */
 
+
+/*
+ * 0x8C044FA2 - func_8C044FA2
+ */
+#include <stdint.h>
+
+extern uint32_t *g_unk_table_A; // Corresponds to address 0x8C287A5C (from constant at 0x8C045004)
+extern uint32_t *g_unk_table_B; // Corresponds to address 0x8C287A94 (from constant at 0x8C045024)
+
+uint32_t func_8C044FA2(uint32_t a1, uint32_t a2, uint32_t *a3); // Placeholder for context if needed, but logic is self-contained mostly.
+// Actually, looking at the code: r6 (arg 5) and r7 are used as base pointers/offsets? 
+// Let's re-analyze arguments based on standard SH-4 calling convention
