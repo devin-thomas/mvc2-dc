@@ -5348,3 +5348,8 @@ extern uint8_t *g_UnknownArray; // Placeholder for global arrays accessed via of
 // Based on the assembly logic: 
 // - It handles indirect jumps based on r5/r4 calculations relative to 0x8C032390.
 // - If no match, it performs a linear search/swap loop starting at offset
+
+/*
+ * 0x8C031F9C - func_8C031F9C
+ */
+
