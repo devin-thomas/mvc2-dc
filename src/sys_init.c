@@ -10431,3 +10431,16 @@ extern uint32_t r5_val[8]; // Array accessed at offset 0x4 relative to base? Or 
  * 0x8C05563C - func_8C05563C
  */
 
+
+/*
+ * 0x8C0559DA - func_8C0559DA
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global data/variables (addresses inferred from context)
+extern uint32_t g_unk_8C010574; // Base address 0x8C0559DA + offset logic implies this or similar structure, but using explicit addresses provided in disassembly comments where possible. 
+// Note: The assembly uses absolute loads like `mov.w #addr`. We represent these as externs based on the raw hex values if they are data pointers, or assume global variables named by address convention common in SDK decompilation (e.g., g_unk_<hex>).
+extern uint32_t *g_ptr_table_start; // Placeholder for 0x8C0559DA context base if not a direct variable. 
+// Based on the pattern `mov.w #addr`, these are likely pointers to specific data structures or tables in VRAM/ROM mapped space.
+
+static const uintptr_t TABLE_A = (uintptr_t)0x8c010574; // Derived from
