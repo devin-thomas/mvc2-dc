@@ -10063,3 +10063,14 @@ extern uint8_t *g_ptr_r6; // Corresponds to register usage of r6 as a data point
  * 0x8C054634 - func_8C054634 (808 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C054634); */
+
+/*
+ * 0x8C054B34 - func_8C054B34
+ */
+extern void func_8C0634(int arg); // Helper function referenced at 0x8C054634 (offset from base) or similar pattern, assuming standard call convention based on usage. Adjust address if exact offset needed: likely bsr @r2 where r2 is a pointer to code? No, looking closely:
+// Correction on helper calls: 
+// mov.l 0x8c054b7a,r0 -> load addr from data section (likely function ptr) then call.
+// Actually, let's re-evaluate the "jsr @r2" and "bsr ...".
+// Line 0x8C054B3A: mov.w 0x8c054b7a,r0 -> loads a word from data segment into r0 (likely an address).
+// Then later calls happen. 
+// Wait

@@ -1,6 +1,6 @@
 {
   "task_id": "mvc2-dc-decomp-20261016",
-  "updated_at": "2026-10-17T13:12:53-05:00",
+  "updated_at": "2026-10-17T13:13:02-05:00",
   "task": "Marvel vs. Capcom 2 (Dreamcast) Autonomous Decompilation",
   "overall_state": "working",
   "phase": "Phase 2: Multi-Host Decompilation Loop & Peripheral Subsystems",
@@ -14,7 +14,7 @@
     "current_url": "https://titan.takaya-lionfish.ts.net:8472/"
   },
   "action_required": "No action required from you right now. The autonomous multi-host decompilation daemon is active across the local Apple Silicon cluster (Research + Command).",
-  "current_activity": "Decompiling Dreamcast MK-51049: 1391/8240 functions (13.973%, 183,128 bytes) matched across cluster.",
+  "current_activity": "Decompiling Dreamcast MK-51049: 1392/8240 functions (13.982%, 183,250 bytes) matched across cluster.",
   "milestones": [
     {
       "name": "Milestone 1: Environment, Tooling & Binary Extraction",
@@ -131,7 +131,7 @@
     }
   ],
   "walk_away_snapshot": {
-    "last_good_state": "1391 functions matched (13.973%, 183,128 bytes) verified with Clang syntax check",
+    "last_good_state": "1392 functions matched (13.982%, 183,250 bytes) verified with Clang syntax check",
     "unfinished_operation": "Batch processing functions in 0x8C010400 - 0x8C011000 range",
     "next_safe_step": "Run python tools/auto_decomp_daemon.py --batch 5",
     "touched_files": [
