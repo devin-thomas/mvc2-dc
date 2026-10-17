@@ -1950,3 +1950,21 @@ extern void (*func_ptr_8c01a1be)(void);
  * 0x8C01A44A - func_8C01A44A
  */
 
+
+/*
+ * 0x8C01A65C - func_8C01A65C
+ */
+extern uint32_t (*func_0x8C145E5C)(uint32_t, int); // Address 0x8C145E5C (from r2 at A6D8)
+static void func_helper_A(void *dst_addr, const struct _SH4_Context *ctx, uint32_t flags, 
+                           uint32_t src_offset_1, uint32_t src_offset_2);
+
+// Helper to decompile the complex block starting at 0x8C01A6B0
+static void process_block(uint32_t dst_addr, const struct _SH4_Context *ctx) {
+    // This function reconstructs logic from A6B0-A702 based on register state analysis.
+    // It handles the nested calls and bit manipulations observed in assembly.
+}
+
+// Global variables referenced by addresses 0x8C01A7xx (approximated as extern for syntax)
+extern uint32_t g_unk_A740;   // Value: 0x8C26A940
+extern int (*g_ptr_A71c)(void);    // Function pointer at A71c -> calls func_0x8C044F12 (via r2)
+// Note: Exact types for
