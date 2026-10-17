@@ -1282,3 +1282,14 @@ extern int g_flag_byte_6C;               // Placeholder for byte stored
  * 0x8C015E68 - func_8C015E68 (850 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C015E68); */
+
+/*
+ * 0x8C0164B4 - func_8C0164B4
+ */
+#include <stdint.h>
+
+extern uint32_t *g_unk_8C01759A; // Address 0x8C01 + offset implied by context or global data section
+// Note: The assembly contains embedded words that act as addresses. 
+// Based on the pattern `mov.l r11,@(48,r11)` followed immediately by `.word`, these are likely static address constants in a jump table or similar structure, not runtime variables loaded from memory at those exact offsets relative to R11 unless R11 points to an array of pointers.
+// However, standard Katana SDK patterns often use `mov.l @(offset,rX), rY` where the offset is encoded as immediate data if it's a small constant, but here we see `.word 0x8c01`. 
+// Given the instruction stream: `cmp/str`, then address words

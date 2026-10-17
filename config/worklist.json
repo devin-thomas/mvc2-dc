@@ -1021,15 +1021,15 @@
     "end_vram": 2348901556,
     "size": 444,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C0164B4",
     "vram": 2348901556,
     "end_vram": 2348901580,
     "size": 24,
-    "status": "pending",
-    "attempts": 0
+    "status": "matched",
+    "attempts": 1
   },
   {
     "name": "func_8C0164CC",
