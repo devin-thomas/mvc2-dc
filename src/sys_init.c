@@ -9876,3 +9876,8 @@ extern uint32_t func_8c01f9(uintptr_t base); // Hypothetical helper if .word imp
  * 0x8C053504 - func_8C053504
  */
 
+
+/*
+ * 0x8C05354E - func_8C05354E
+ */
+
