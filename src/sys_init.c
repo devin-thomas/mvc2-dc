@@ -5240,3 +5240,8 @@ extern uint32_t g_base_table_addr; // The value at address 0x8C0310B0
  * 0x8C031104 - func_8C031104
  */
 
+
+/*
+ * 0x8C031414 - func_8C031414 (1658 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C031414); */
