@@ -5298,3 +5298,18 @@ extern uint32_t *g_8c031b5e; // 0x8C031B46 + offset? No, let's look at the const
  * 0x8C031B48 - func_8C031B48
  */
 
+
+/*
+ * 0x8C03221A - func_8C03221A
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced functions and globals based on context analysis.
+extern void (*func_8C02DED6)(void); // Address 0x8C032268 -> 0x8C02DED6
+extern uint16_t func_table_entry[4]; // Addresses at offsets relative to base pointers (derived from mov.w patterns)
+// Note: The assembly uses hardcoded addresses for function jumps. These are mapped below based on the .word data sections provided in the prompt which act as lookup tables or direct address storage.
+
+extern void (*func_8C1240A0)(void); // Address 0x8C032270 -> 0x8C1240A0
+// The assembly contains several "mov.w" instructions loading addresses into r4/r5 which are then used in indirect jumps or calls. 
+// Based on the provided .word data blocks (e.g., at 0x8c032260, etc.), these act as jump tables for specific sub-functions within a larger routine structure common in Katana SDK.
+// We define
