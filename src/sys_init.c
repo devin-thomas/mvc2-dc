@@ -2043,3 +2043,32 @@ extern void *func_8C108192(void); // Address loaded at AB8C (AC58) - likely a ju
  * 0x8C01AAEC - func_8C01AAEC
  */
 
+
+/*
+ * 0x8C01ABF6 - func_8C01ABF6
+ */
+#include <stdint.h>
+
+// External declarations for referenced global data/funcs found in the assembly stream.
+extern uint32_t g_8C01AC64; // Address 0x8C26823C, likely a table or function pointer base
+extern void (*g_func_ptr_table[])(void); 
+// Based on usage at 0x8c01adac (0x8C146144), g_8C01ADAC is treated as an array of pointers.
+extern uint32_t *const __attribute__((aligned(4))) _g_table_adac; // Placeholder for the table starting at 0x8C146144 if not a direct pointer
+
+// Helper function declarations inferred from JSR calls to addresses like 0x8c01adb0, etc.
+extern void func_8C1294C8(void); 
+extern uint32_t (*func_ptr_helper)(void) __attribute__((section(".text"))); // Generic placeholder for indirect jumps
+
+// Global variables referenced by offsets (simulated as externs since addresses are fixed in ROM/VRAM context but treated as globals here).
+// In a real decompiler, these would be resolved to actual global names. Here we use the raw address logic or assume they exist.
+extern uint8_t g_vram_buffer_52; // Offset 0x34 from r1 (r1 = base + 52) -> actually offset calculation is dynamic in loop? No, fixed add #52 then load. 
+// Re-evaluating: "add #52,r1", "mov.l @r7,r0" where r7 was set to g_8C01AD9C (0x8C26A940).
+// So the data is at 0x8C26A940 + offset. Let's assume a global structure or array exists there.
+
+extern uint32_t *const __attribute__((aligned(4))) g_base_addr_8c26a940; // The base address loaded into r7 (r1)
+// Actually, looking at 0x8C01AC80: mov.l @(r0,r14),r3 where r0 is derived from a table. 
+// Let's assume the data structures are global and accessible via their addresses or offsets relative to some base if not absolute pointers passed in args (but here it looks like VRAM access).
+// Since this is SH-4 Dreamcast, "mov.l @(offset,r1)" where r1 holds an address implies direct memory access.
+
+extern uint8_t g_vram_data_52_offset; // Placeholder for the data at base+0x34 (if 52 was hex? No, #52 is decimal). 
+// Wait, "add #52,r1".
