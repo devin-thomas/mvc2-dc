@@ -7766,3 +7766,8 @@ extern uint32_t (*func_8C046450)(void); // Address 0x8C046450 -> 0x8C129728 (lik
 
 extern uint32_t g_DataAddr_Low;   // Address 0x8c04643a (Low byte of struct)
 extern uint16_t g_DataAddr_Mid;   // Address 0x8c04643c (Mid/High bytes or next field offset base? Context suggests sequential access to same structure instance but different offsets. Re-e
+
+/*
+ * 0x8C0460C6 - func_8C0460C6
+ */
+
