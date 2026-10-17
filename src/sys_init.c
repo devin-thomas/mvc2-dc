@@ -9593,3 +9593,8 @@ extern int (*func_ptr)(void);     // Function pointer loaded from r3 (address in
 // Global/Static variables referenced by addresses:
 static uint16_t g_data_8c05254a;   // Addressed at 0x8C05254A, value = base address + offset logic implied or direct load? Actually mov.w loads the VALUE. Let's assume it holds a pointer or index if used as such later. Re-evaluating: `mov.w addr,r0` usually sets r0 to that constant unless it's an immediate in some contexts, but here it looks like loading constants from ROM/Flash into registers for use as pointers/bases.
 // Correction based on standard SH-4 Katana SDK patterns: These addresses (e.g., 0x8c05254a) are likely data sections containing function pointers or base offsets loaded at runtime/init, but since they appear in `mov.w` without prior setup of r13/r14 as stack frames for globals, and given the context of "retail SDK", these might be hardcoded
+
+/*
+ * 0x8C05225E - func_8C05225E
+ */
+
