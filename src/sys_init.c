@@ -3621,3 +3621,8 @@ extern uint32_t (*func_8C024DE2)(void); // Return type inferred from usage as a 
 // The function calls func_8C024DE2 which likely sets up a specific state (like an interrupt handler or callback). 
 // Given "sts.l pr,@-r15" before bsr and lds after, it's saving/restoring PR. 
 // Let's assume the return type of func_8c024de2 is void for this snippet context as no result is used immediately in a way that suggests an int return
+
+/*
+ * 0x8C024B60 - func_8C024B60
+ */
+
