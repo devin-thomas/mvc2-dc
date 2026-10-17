@@ -2028,3 +2028,8 @@ extern void *func_8C108192(void); // Address loaded at AB8C (AC58) - likely a ju
  * 0x8C01AD92 - func_8C01AD92
  */
 
+
+/*
+ * 0x8C01ADCC - func_8C01ADCC
+ */
+
