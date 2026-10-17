@@ -6273,3 +6273,13 @@ extern int (*func_8C1A9E50)(void); // Placeholder name mapping 0x8c03aa
  * 0x8C03BA4A - func_8C03BA4A
  */
 
+
+/*
+ * 0x8C03BB6E - func_8C03BB6E
+ */
+#include <stdint.h>
+
+extern void func_8C010524(uint32_t *); // Address 0x8C010524 from r3 load at BB72
+extern uint32_t (*func_ptr_table)(uint32_t, int) __attribute__((section(".data"))); 
+// Note: The actual function pointer table is loaded dynamically or statically. Based on context of SH-4 decompilation for Dreamcast SDKs, these are often global pointers stored in VRAM/ROM data sections accessed via absolute loads if not defined as extern globals here. However, the assembly uses `mov.l 0x8c03bc58,r3` which points to a function address (0x8C030F24). We must assume this is an external symbol or resolve it from data.
+// Given the constraint "Do NOT write long
