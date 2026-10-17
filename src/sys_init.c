@@ -8592,3 +8592,8 @@ extern uint32_t (*func_ptr_table_entry8)(uint32_t base_ptr); // Placeholder for 
  * 0x8C04B79E - func_8C04B79E
  */
 
+
+/*
+ * 0x8C04C250 - func_8C04C250 (708 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04C250); */
