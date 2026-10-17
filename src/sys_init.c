@@ -4399,3 +4399,8 @@ extern const uint16_t *const g_OffsetTable_0; // 0x8c02a3ea (likely a pointer or
  * 0x8C02A30A - func_8C02A30A
  */
 
+
+/*
+ * 0x8C029F4C - func_8C029F4C
+ */
+
