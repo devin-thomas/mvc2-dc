@@ -4291,3 +4291,20 @@ extern uint32_t _sh4_vram_8c0290f4; // Address stored at 0x8C0290F4 (value: 0x8C
  * 0x8C02874C - func_8C02874C
  */
 
+
+/*
+ * 0x8C028F8E - func_8C028F8E
+ */
+#include <stdint.h>
+
+extern uint32_t (*func_8C1294C8)(uint32_t, uint32_t); // 0x8C02909C -> func_8C1294C8 (likely a helper or table lookup)
+// Note: The assembly uses indirect jumps via r2 and function calls. 
+// Based on context of Katana SDK/MVCA2, these are likely specific engine functions loaded into the jump buffer.
+
+extern uint32_t func_8C11E2E0(uint32_t); // 0x8C0290B8 -> func_8C11E2E0
+// The table at 0x8C0290A4 contains function pointers or offsets.
+
+extern uint32_t *g_vram_table_start; // Placeholder for the base address if not absolute, but assembly uses fixed addresses in r4/r5 context usually implying global data structures loaded once. 
+// However, looking at `mov.l 0x8c0290a4,r0`, this is a direct load of an array pointer or table start relative to some segment?
+// Actually, the pattern suggests:
+// r1 =
