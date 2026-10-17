@@ -7879,3 +7879,8 @@ extern uint32_t *g_vram_ptr; // Base VRAM address, assumed to be at 0x8C046DBC b
 // Correction based on standard Katana/SH-4 patterns: 
 // The instruction `mov.w 0x8c046dbc,r0` suggests loading a specific constant or table entry from that absolute location, OR if this is relative to r15 (stack), it's unusual for VRAM.
 // However, looking at
+
+/*
+ * 0x8C046DB6 - func_8C046DB6 (870 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C046DB6); */
