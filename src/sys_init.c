@@ -1920,3 +1920,8 @@ extern void (*func_ptr_8c01a1be)(void);
  * 0x8C019F66 - func_8C019F66
  */
 
+
+/*
+ * 0x8C019E1C - func_8C019E1C
+ */
+
