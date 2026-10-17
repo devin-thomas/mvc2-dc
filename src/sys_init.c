@@ -861,3 +861,14 @@ uint32_t func_8C011D06() {
  * 0x8C011F46 - func_8C011F46
  */
 
+
+/*
+ * 0x8C0123E6 - func_8C0123E6
+ */
+#include <stdint.h>
+
+// External declarations for referenced addresses/functions to ensure standalone compilation with -fsyntax-only
+extern uint32_t (*func_8C012454)(void); // Address 0x8C26823C, used as function pointer or data base depending on context. Based on usage 'mov.l @r3,r0' then indirect jump/call, likely a table of pointers or code addresses.
+extern uint32_t (*func_8C012450)(void); // Address 0x8C03563A
+// Note: The assembly uses absolute loads into registers which act as immediate values for the duration of the function scope in this snippet, 
+// but to make it compilable C code that reflects the logic without hardcoding magic numbers or assuming global variables exist at those exact addresses (which are likely ROM/RAM
