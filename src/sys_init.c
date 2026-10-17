@@ -1840,3 +1840,8 @@ extern struct { /* structure containing fields accessed via offsets */ } g_data;
 
 extern uint8_t *g_0x8C145D1C; // Corresponding to mov.l #0x8c019c2c,r5
 // The assembly loads absolute addresses into r3, then uses them as
+
+/*
+ * 0x8C019CF4 - func_8C019CF4
+ */
+
