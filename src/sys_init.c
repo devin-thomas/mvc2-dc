@@ -5131,3 +5131,11 @@ extern void func_8C132640(void);           // Called at 0x8c030514 (r3) - pointe
  * 0x8C030712 - func_8C030712
  */
 
+
+/*
+ * 0x8C030FDC - func_8C030FDC
+ */
+extern uint32_t func_8C26A8E4(void); // Placeholder for the external function referenced by address 0x8C26A8E4 if it's a call, or just an extern variable depending on context. Given 'mov.l #1,r5' pattern in similar Katana SDK functions often implies setting up arguments before calling another routine at that address, but here we are writing to memory relative to r4. Let's assume 0x8C26A8E4 is a data structure or the start of an object being modified. However, looking closely: `mov.l #1,r5` was NOT in this snippet provided by user? Wait, re-reading assembly carefully.
+
+// Correction on logic based strictly on provided bytes:
+// 0x8C030FDC: mov.l    0x8c03108c,r

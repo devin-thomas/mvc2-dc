@@ -6157,7 +6157,7 @@
     "end_vram": 2349010758,
     "size": 342,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C030F46",
@@ -6165,7 +6165,7 @@
     "end_vram": 2349010774,
     "size": 16,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C030F56",
@@ -6173,7 +6173,7 @@
     "end_vram": 2349010846,
     "size": 72,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C030F9E",
@@ -6181,7 +6181,7 @@
     "end_vram": 2349010862,
     "size": 16,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C030FAE",
@@ -6189,7 +6189,7 @@
     "end_vram": 2349010892,
     "size": 30,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C030FCC",
@@ -6197,15 +6197,15 @@
     "end_vram": 2349010908,
     "size": 16,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C030FDC",
     "vram": 2349010908,
     "end_vram": 2349010924,
     "size": 16,
-    "status": "pending",
-    "attempts": 0
+    "status": "matched",
+    "attempts": 2
   },
   {
     "name": "func_8C030FEC",
