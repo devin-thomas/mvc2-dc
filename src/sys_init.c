@@ -4256,3 +4256,8 @@ extern const unsigned char g_vram_data[0x8C0450C0 - 0x8C212CE8]; // Approximate 
 
 extern void (*g_func_ptr_table_0x8C212CE8)(void); // Placeholder for the address 0x8C212CE8
 extern unsigned char g_byte_at_offset[4];         // Buffer if needed, though direct access is used here. Actually, r3 points to a table where offset+0 holds an index or
+
+/*
+ * 0x8C028A04 - func_8C028A04 (1360 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C028A04); */
