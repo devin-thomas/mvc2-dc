@@ -2979,3 +2979,14 @@ extern uint32_t (*g_ptr_8C020194)(void); // Represents 0x8c01f414 as an extern f
  * 0x8C0200CC - func_8C0200CC
  */
 
+
+/*
+ * 0x8C0201EC - func_8C0201EC
+ */
+#include <stdint.h>
+
+// Helper function declarations (extern) to ensure standalone syntax validity.
+void func_8C0358(void); // Corresponds to the BSR at 0x8C020206 relative offset logic, assuming standard call pattern or specific address resolution if not a direct jump table entry in this snippet context. However, based on "bsr 0x8c020358", it's likely an absolute branch to that function name/address.
+// Note: In real decompilation of Katana SDK, addresses like 0x8C1474EC are often resolved at link time or via a jump table not fully visible here. 
+// We assume func_8C0358 is the target label for the BSR instruction found in assembly.
+extern void (*func_ptr_table)(void); // Placeholder if r2 points to
