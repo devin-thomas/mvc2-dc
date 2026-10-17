@@ -8212,3 +8212,12 @@ extern uint32_t g_8C053F14; // Address loaded from label at 0x8C049148
 // treating them as external symbols or defining local placeholders if exact addresses aren't known globally.
 extern uint32_t g_8C05; // Placeholder for 0x8c04913e etc which seem to be function pointers stored at specific offsets? No, they are absolute loads in some places but relative in others? 
 // Actually, looking at `mov.w 0x8c04913e,r0`, this is an immediate load of a pointer.
+
+/*
+ * 0x8C0493C8 - func_8C0493C8
+ */
+extern void func_8C048F0C(void);
+extern void func_8C04A1B2(uint32_t arg0, uint32_t arg1); // Inferred from context of SH-4 calling convention often passing 2 args or using stack frame manipulation if not strictly r-r. Assuming standard based on typical SDK patterns for this era where bsr might handle specific struct unpacking or simple calls with implicit state. If strict ABI: void func_8C04A1B2(void);
+extern uint32_t (*func_ptr_table_entry_a)(void) __attribute__((section(".text"))); // Placeholder name, actual address is 0x8c052ce2
+// Note: The assembly uses indirect jumps via registers loaded from fixed addresses. 
+// We must declare the external functions corresponding to those jump targets or assume they are defined elsewhere in the SDK.
