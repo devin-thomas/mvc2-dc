@@ -3356,3 +3356,8 @@ extern void func_8C022376(void); // Corresponds to 0x8C022376 (derived from cont
 // The jumps are relative or absolute. Let's trace carefully.
 // 0x8c021514 is a call site? No, it looks like `bra` to an address that might be in another file.
 // Wait, line
+
+/*
+ * 0x8C021C7A - func_8C021C7A
+ */
+
