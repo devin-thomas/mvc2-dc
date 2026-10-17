@@ -10426,3 +10426,8 @@ extern uint32_t r5_val[8]; // Array accessed at offset 0x4 relative to base? Or 
  * 0x8C05580C - func_8C05580C
  */
 
+
+/*
+ * 0x8C05563C - func_8C05563C
+ */
+
