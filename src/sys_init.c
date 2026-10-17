@@ -3898,3 +3898,8 @@ extern uint32_t (*func_8c02659a)(void); // Placeholder for the JSR target if it'
 // Re-evaluating based on "Katana SDK": These look like direct jumps to subroutines defined as .word 0x8c14... which implies function calls via JSR @addr.
 
 extern uint32_t g_ptr_8C147F0C; // Corresponds to address 0x
+
+/*
+ * 0x8C026432 - func_8C026432
+ */
+
