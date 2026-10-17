@@ -2589,3 +2589,8 @@ extern const void *g_addr_table_start; // Placeholder for 0x8c01ca76 if it's not
  * 0x8C01CDF4 - func_8C01CDF4 (272 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C01CDF4); */
+
+/*
+ * 0x8C01D0DC - func_8C01D0DC (776 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C01D0DC); */
