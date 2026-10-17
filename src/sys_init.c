@@ -10388,3 +10388,8 @@ extern void *g_unk_ptr; // Placeholder for global variable at address in r5/r6 c
  * 0x8C0556E4 - func_8C0556E4
  */
 
+
+/*
+ * 0x8C0555F6 - func_8C0555F6
+ */
+
