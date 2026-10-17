@@ -9103,3 +9103,8 @@ extern uint32_t *g_unk_8c0105fe; // Base address 0x8C0500FE, likely a different 
 // Note: The assembly loads absolute addresses into r0 (r4 is assumed to be passed as argument).
 // In SH-4 Dreamcast context with Katana SDK, these are often pointers to VRAM/ROM data structures.
 // We assume g_unk_* represent the base pointer stored at those offsets relative to some global or segment base if not
+
+/*
+ * 0x8C04FE7C - func_8C04FE7C
+ */
+
