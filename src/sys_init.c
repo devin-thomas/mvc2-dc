@@ -3534,3 +3534,8 @@ extern uint8_t g_vram_flag_8c0240cc; // Loaded at offset 0x1C relative to base p
  * 0x8C024462 - func_8C024462
  */
 
+
+/*
+ * 0x8C0243D8 - func_8C0243D8
+ */
+
