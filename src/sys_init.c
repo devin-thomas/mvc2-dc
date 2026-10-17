@@ -440,3 +440,40 @@ void func_8C010D96(void *arg_r5_base) {
 
 // Since the assembly contains raw jump tables and specific memory addresses that are not symbolized in this snippet,
 // we must assume these correspond to known internal functions or data structures
+
+/*
+ * 0x8C010A5A - func_8C010A5A
+ */
+#include <stdint.h>
+
+extern uint8_t g_8C212CBC;
+extern uint8_t g_8C212CBD;
+extern uint8_t g_8C212CBF;
+extern uint8_t g_8C212CC0;
+extern uint8_t g_8C212CBE;
+
+void func_8C010A5A(void) {
+    volatile uint32_t *dst = (volatile uint32_t *)(uintptr_t)0x8C26823C;
+    
+    dst[66] = g_8C212CBC;
+    dst[67] = 1;
+    dst[68] = 1;
+    dst[69] = 0;
+    dst[79] = g_8C212CBD;
+    dst[70] = 1;
+    dst[27] = g_8C212CBF;
+    dst[71] = 0;
+    dst[72] = 0;
+    dst[73] = g_8C212CC0;
+    dst[42] = 0;
+    dst[74] = 0;
+    dst[75] = 0;
+    dst[77] = g_8C212CBE;
+    dst[82] = 0;
+    dst[83] = 0;
+    dst[84] = 0;
+    dst[85] = 0;
+    dst[86] = 0;
+    dst[87] = 0;
+    dst[88] = 0;
+}
