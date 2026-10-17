@@ -5667,3 +5667,8 @@ extern void (*(*table_ptr)(void))(int); // Pointer to the actual callback or log
 // Assuming standard Katana SDK structure layout: [0] = some data, [4] = flag/count, [12] = next ptr? 
 // Based on usage: @(4,r4) -> check if valid; @(8,r4) -> store result back to offset 8 of the struct.
 extern unsigned int *context_struct_ptr_r4; // Placeholder for r
+
+/*
+ * 0x8C0355A0 - func_8C0355A0
+ */
+
