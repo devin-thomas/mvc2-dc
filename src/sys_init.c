@@ -7684,3 +7684,11 @@ extern void func_0x8C268340(uint32_t *dst, uint32_t src); // Address 0x8C129728 
  * 0x8C045970 - func_8C045970
  */
 
+
+/*
+ * 0x8C045FFE - func_8C045FFE
+ */
+extern uint16_t *func_8C045FFE_helper(void); // Placeholder for the JSR target at 0x8C26A8C4 based on context analysis if needed, but logic suggests direct call to a specific routine. Assuming standard SDK pattern where r3 points to function address or data structure.
+extern uint16_t *g_8c26a8c4; // Address loaded at 0x8C045FFA (implied by context of typical SH-4 Katana patterns, though assembly shows mov.l @r3,r2 then access). Actually, looking closely: 
+// The JSR is indirect via r3. Let's assume the helper exists or use a generic name if not provided in globals list.
+// Re-evaluating 0x8C0460E4 content (0x8C26A8C4): This looks like an address of another function or data table entry used by JSR @r3
