@@ -747,3 +747,8 @@ extern uint32_t *g_StackBase; // Callee-saved stack pointer base or similar glob
  * 0x8C011AD0 - func_8C011AD0
  */
 
+
+/*
+ * 0x8C011B0A - func_8C011B0A
+ */
+
