@@ -4885,3 +4885,8 @@ extern uint32_t g_unk_8C02F762; // mov.w
  * 0x8C02E5E0 - func_8C02E5E0
  */
 
+
+/*
+ * 0x8C02E8E6 - func_8C02E8E6
+ */
+
