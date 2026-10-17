@@ -7754,3 +7754,15 @@ extern uint8_t *g_vram_base; // Global VRAM start address if not in registers di
  * 0x8C04608C - func_8C04608C
  */
 
+
+/*
+ * 0x8C0463AA - func_8C0463AA
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced addresses and helper functions.
+extern uint32_t (*func_8C046450)(void); // Address 0x8C046450 -> 0x8C129728 (likely a function pointer or data)
+// Note: The assembly loads an address into r3, then calls it. Assuming func_8C046450 is the symbol for that code location.
+
+extern uint32_t g_DataAddr_Low;   // Address 0x8c04643a (Low byte of struct)
+extern uint16_t g_DataAddr_Mid;   // Address 0x8c04643c (Mid/High bytes or next field offset base? Context suggests sequential access to same structure instance but different offsets. Re-e
