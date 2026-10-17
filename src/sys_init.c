@@ -7396,3 +7396,8 @@ extern void func_8C11C720(uint32_t arg_a, uint32_t arg_b); // Called with args d
  * 0x8C043CC8 - func_8C043CC8
  */
 
+
+/*
+ * 0x8C04447A - func_8C04447A (750 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04447A); */
