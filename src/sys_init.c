@@ -10487,3 +10487,8 @@ uint32_t func_8C010524(uint32_t base_addr); // Placeholder for the jump target r
 static uint32_t *get_ptr_from_offset_table(const struct { int val; } *table, const void **base_ref) {
     return (void *)func_8C010524((uint32_t)(uintptr_t)*base_ref); // This is a placeholder reconstruction of the indirect jump logic found in SH-4 code. 
 }
+
+/*
+ * 0x8C055920 - func_8C055920
+ */
+
