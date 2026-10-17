@@ -6303,3 +6303,8 @@ extern uint32_t (*func_ptr_table)(uint32_t, int) __attribute__((section(".data")
  * 0x8C03BC3E - func_8C03BC3E
  */
 
+
+/*
+ * 0x8C03BAD8 - func_8C03BAD8
+ */
+
