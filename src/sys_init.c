@@ -960,3 +960,8 @@ extern void *g_some_global_6c_offset; // Placeholder for @(r3+48), assuming it's
  * 0x8C012CD6 - func_8C012CD6
  */
 
+
+/*
+ * 0x8C012F62 - func_8C012F62 (550 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C012F62); */
