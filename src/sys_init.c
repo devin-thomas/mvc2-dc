@@ -3817,3 +3817,8 @@ extern uint32_t *g_ptr_8c2897e0(void); // 0x8C2897E0 at offset 0xA0 from base? O
 extern uint32_t *g_data_8C2897E0; // Corresponds to 0x8c0261a0
 extern uint32_t *g_data_8C26823C; // Corresponds to 0x8c026198 (value is address) -> Wait, instruction says `mov.l imm,r3`. 
 // Correction: The assembly loads immediate addresses into registers. These are likely pointers passed or loaded from a table not fully shown, OR they point
+
+/*
+ * 0x8C025DE2 - func_8C025DE2
+ */
+
