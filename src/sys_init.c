@@ -4843,3 +4843,8 @@ extern void (*func_ptr_r4)(void *arg);                  // Pointer loaded from r
  * 0x8C02DFAA - func_8C02DFAA
  */
 
+
+/*
+ * 0x8C02E246 - func_8C02E246
+ */
+
