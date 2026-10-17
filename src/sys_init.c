@@ -3185,3 +3185,16 @@ extern void func_8C021376(void); // Placeholder for potential missing helper if 
  * 0x8C020EF4 - func_8C020EF4
  */
 
+
+/*
+ * 0x8C021456 - func_8C021456
+ */
+#include <stdint.h>
+
+extern uint8_t *gbr; // Global Base Register pointer, typically 0xC0 or similar in SH-4 context for VRAM access patterns if not using GBR directly as base. Note: @(r0,gbr) implies r0 is offset and gbr is the register holding the segment/base address (usually R15/GPR3 on Dreamcast).
+extern void func_8C021496(void); // Helper function referenced in delay slot
+
+// Function signature inferred from usage of r4, r7 as args. 
+// Based on Marvel vs Capcom 2 code patterns: likely takes a pointer (r4) and an int/enum (r7).
+void func_8C01A56(int *ptr_r4_arg, uint32_t val_r7_arg); // Placeholder signature based on typical usage in SDK. 
+// Actual
