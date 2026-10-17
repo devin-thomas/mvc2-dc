@@ -1761,3 +1761,8 @@ extern void (*g_ptr_8C145AB4)(void); // 0x8c0196c4 -> 0x8C145AB4 (Jump target)
 extern uint32_t g_data_base_8C145AA8; // 0x8c0196c8 -> 0x8C145AA8 (Data base for offsets like +28, +30)
 extern void (*g_func_ptr_8C108210)(void); // 0x8c0196cc -> 0x8C108210 (JSR target)
 extern uint32_t g_data_base_8C145A7A;   // 0x8c019
+
+/*
+ * 0x8C0195A2 - func_8C0195A2
+ */
+
