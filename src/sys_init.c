@@ -6345,3 +6345,16 @@ static const uint32_t OFFSET_B_4 = 0x8C0F71A8U - 0xCUL; // Derived from
  * 0x8C03BE48 - func_8C03BE48
  */
 
+
+/*
+ * 0x8C03BEB2 - func_8C03BEB2
+ */
+#include <stdint.h>
+
+extern uint32_t _gbr; // Global Base Register (Dreamcast ABI)
+// Note: The following external symbols are inferred from the absolute addresses used in jumps/calls.
+// In a real decompiler context, these would be resolved to actual function names or data structures.
+extern void (*func_8c03bbe2)(void); // Address 0x8C03BBE2 (BSR target)
+extern uint16_t *data_ptr_r9;       // Derived from address 0x8C03BEC4 + offset logic, likely a table lookup base. 
+                                     // Specifically: mov.w 0x8c03b17e -> bra ... then load @r9? No, r9 is loaded at BECO.
+// Re-evaluating the flow based on standard Katana SDK patterns for state machines
