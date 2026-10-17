@@ -11169,3 +11169,8 @@ extern uint32_t *g_ptr_source_a; // Pointer to data being read/written, derived 
  * 0x8C05AA1E - func_8C05AA1E (68 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C05AA1E); */
+
+/*
+ * 0x8C05A6AC - func_8C05A6AC
+ */
+
