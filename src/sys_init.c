@@ -9291,3 +9291,20 @@ extern FuncPtr_Generic _func_ptr_0x8C0423A; // 0x8C04223A (loaded at 0x8c050b44)
  * 0x8C0506F8 - func_8C0506F8
  */
 
+
+/*
+ * 0x8C051060 - func_8C051060
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function but not defined here.
+extern uint32_t *g_vram_ptr_8C0511A0; // Address 0x8C268340, loaded into r4 at B6
+extern void (*func_table_entry)(void);   // Pointer to subroutine called via jsr @r11
+
+// Helper function declaration for the jump table logic if not inlineable.
+static uint32_t helper_func_8c051a9e(uint32_t val, int index) { /* implementation omitted */ return 0; } 
+
+/**
+ * Decompile of func_8C051060 (VRAM: 0x8C051060)
+ * Logic appears to be a lookup table switch with conditional decrementing and recursion.
+ */
