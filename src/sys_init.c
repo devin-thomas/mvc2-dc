@@ -2746,3 +2746,8 @@ extern uint32_t g_VAddrTableBase; // Placeholder for the table containing functi
 // Reconstructing the static data loads based on assembly constants:
 static const uint8_t g_Offset_0x16 = 0x16; // Derived from 'add #52' where base is often a struct offset, but here it's an absolute add to r4? 
 // Actually, looking at `mov
+
+/*
+ * 0x8C01E926 - func_8C01E926 (904 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C01E926); */
