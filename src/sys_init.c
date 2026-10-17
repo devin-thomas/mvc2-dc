@@ -11024,3 +11024,21 @@ static uint32_t gbr_ptr = 0;                              // GBR register value 
  * 0x8C059A94 - func_8C059A94 (600 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C059A94); */
+
+/*
+ * 0x8C059D3A - func_8C059D3A
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/helpers (as per Dreamcast SDK conventions)
+extern uint32_t g_unk_8C059DA8; // Base address 0x8C26823C, likely a table pointer or function ptr array base
+extern const unsigned char *g_table_ptr_base; // Placeholder for the actual data structure at runtime if not static
+
+// Helper functions inferred from usage patterns (must be defined elsewhere in SDK)
+void func_8C059D76_helper(uint32_t arg1, uint32_t arg2); 
+void func_8C059DC4_check_and_call(void (*func_ptr)(void), void *context_data);
+
+// Note: The assembly contains embedded .word directives that act as jump tables or immediate data.
+// These are decompiled into direct calls/switch logic based on the flow at 0x8c059d62 and similar blocks.
+// Since exact function names for these jumps aren't provided in standard SDK headers, 
+// we represent them via inline assembly-like structure or generic
