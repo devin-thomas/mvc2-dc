@@ -2215,3 +2215,8 @@ extern uint32_t g_return_address_offset; // Placeholder for the constant loaded 
 
 // Assuming standard Katana SDK structure where these are global variables or function pointers stored in ROM/RAM segments accessible via fixed offsets relative to a base (often VRAM start). 
 // Since exact variable names aren
+
+/*
+ * 0x8C01B74A - func_8C01B74A
+ */
+
