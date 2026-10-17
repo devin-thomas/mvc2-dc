@@ -6238,3 +6238,8 @@ extern int (*func_8C1A9E50)(void); // Placeholder name mapping 0x8c03aa
  * 0x8C03B85E - func_8C03B85E
  */
 
+
+/*
+ * 0x8C03B16A - func_8C03B16A
+ */
+
