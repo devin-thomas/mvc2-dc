@@ -5926,3 +5926,8 @@ extern uint32_t (*func_8C14D310)(void); // 0x8c037b90 -> This is a function poin
 extern uint32_t (*func_0x8c14d310)(void); // Placeholder for 0x8C14D310 if it is a func ptr, but usually .word loads an address directly into rX which might then be used as a pointer or index.
 // Correction: In Katana SDK, these addresses (like 0x8c037ba0) are often function pointers stored in the ROM map table loaded at runtime. 
 // However, without seeing the loader code that populates `r4` with this specific address
+
+/*
+ * 0x8C0379BC - func_8C0379BC
+ */
+
