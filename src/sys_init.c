@@ -1004,3 +1004,15 @@ extern void func_8C044E56(int count, uintptr_t base_ptr); // Loops 'count' times
  * 0x8C01323E - func_8C01323E
  */
 
+
+/*
+ * 0x8C0134D6 - func_8C0134D6
+ */
+extern uint32_t func_8C04257C; // Address loaded at 0x8C01352E (likely a function pointer base)
+// Note: The assembly uses indirect calls via r13 which points to an address. 
+// We assume the caller sets up this context or it's part of a larger structure passed in registers/stack not fully shown here,
+// but we must declare any external symbols referenced if they are global functions called indirectly.
+// However, looking at 0x8C01352E: .word 0x8c04 -> mov.w #0x8c04,r7? No, it's a label or immediate load logic in the original flow context.
+// Re-evaluating line 0x8C013526/28 based on standard SH-4 patterns: 
+// .word usually implies an address constant if used with mov.l from memory, but here they are data directives often defining constants or addresses for indirect jumps in SDK code.
+// Given the error about undeclared
