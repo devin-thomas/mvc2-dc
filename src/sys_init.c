@@ -6708,3 +6708,8 @@ extern uint8_t *g_8C26A95C_ptr; // Placeholder for the pointer loaded at 0x8c03e
  * 0x8C03EE3E - func_8C03EE3E (580 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03EE3E); */
+
+/*
+ * 0x8C03F082 - func_8C03F082 (564 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C03F082); */
