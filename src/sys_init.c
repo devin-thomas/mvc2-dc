@@ -7854,3 +7854,8 @@ extern uint32_t g_unk_8C2895F0; // VRAM address stored at 0x8C046ADC, loaded int
  * 0x8C046A70 - func_8C046A70
  */
 
+
+/*
+ * 0x8C046C8A - func_8C046C8A (222 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C046C8A); */
