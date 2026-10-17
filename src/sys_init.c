@@ -1165,3 +1165,8 @@ extern void (*func_ptr_r3)(void); // Placeholder for the table lookup
  * 0x8C015044 - func_8C015044
  */
 
+
+/*
+ * 0x8C015010 - func_8C015010
+ */
+
