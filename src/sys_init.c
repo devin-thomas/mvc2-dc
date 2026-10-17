@@ -7251,3 +7251,8 @@ extern uint32_t *gbr_ptr_base; // Base address for GBR pointers, adjusted by off
  * 0x8C042EEA - func_8C042EEA
  */
 
+
+/*
+ * 0x8C042D74 - func_8C042D74
+ */
+
