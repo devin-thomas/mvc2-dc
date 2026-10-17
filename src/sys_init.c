@@ -5144,3 +5144,8 @@ extern uint32_t func_8C26A8E4(void); // Placeholder for the external function re
  * 0x8C030F9E - func_8C030F9E
  */
 
+
+/*
+ * 0x8C030F46 - func_8C030F46
+ */
+
