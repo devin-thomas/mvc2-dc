@@ -4423,3 +4423,8 @@ extern uint32_t g_some_global_var; // Placeholder if r15 points to a specific gl
  * 0x8C02A3E8 - func_8C02A3E8
  */
 
+
+/*
+ * 0x8C02A41E - func_8C02A41E
+ */
+
