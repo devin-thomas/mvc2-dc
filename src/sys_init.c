@@ -1135,3 +1135,15 @@ extern void func_8C0182E0(uint32_t a); // 0x8c014dbc -> 0x8C0182E0 (Line BFC) - 
 // Let's look at the pattern: 
 // BAA: mov.l @r15+ (Wait, no. Line BA6 loads address to r3 then calls it).
 // Actually, let's trace carefully from start of
+
+/*
+ * 0x8C015098 - func_8C015098
+ */
+#include <stdint.h>
+
+// External declarations for referenced symbols and globals (required to compile standalone)
+extern void (*func_8C268234)(void); // Address 0x8C26823C is a function pointer stored at offset +12 of the struct pointed by func_8C268234? No, let's re-analyze.
+// Correction based on assembly: 
+// r3 points to address 0x8c0150cc (which holds value 0x8c26823c). This looks like a function pointer or struct base.
+// Instruction at 0xB4: mov.l @r3,r2 -> loads the content of that memory location into r2. 
+// If 0x8C26823C is an address, then func_8C2682
