@@ -3918,3 +3918,8 @@ extern void (*g_func_ptr)(void);   // Function pointer resolved via JSR @r3
 
 static inline uint16_t func_8C02695E(void) { return 0x7F; } // Placeholder for the actual function at this VRAM addr if needed, or just a dummy call target.
 // Note: The assembly loads an address from memory (r3 = [0x8c02698c]), so we must assume that location holds a valid
+
+/*
+ * 0x8C026874 - func_8C026874
+ */
+
