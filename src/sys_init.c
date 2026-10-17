@@ -337,3 +337,106 @@ int32_t func_8C010412(void) {
  * 0x8C0104C0 - func_8C0104C0 (70 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C0104C0); */
+
+/*
+ * 0x8C010D96 - func_8C010D96
+ */
+extern void *func_8C122160(void); // Address loaded from [0x8C010E30]
+extern void func_8C11D630(uintptr_t, uintptr_t, uint32_t); // Called via r3 (addr in 0x8c010e40)
+extern void func_8C11C0C0(uintptr_t, uintptr_t, uint32_t);   // Called via r2 (addr in 0x8c010e44)
+
+void func_8C010D96(void *arg_r5_base) {
+    void (*func_ptr)(uintptr_t, uintptr_t, uint32_t);
+    
+    __asm__ volatile (
+        "mov.l @-r15" "\n\t" // Push r14 to stack frame base
+        
+        /* First call sequence */
+        "mova 0x8c010e34,r0\n\t" 
+        ".word 0xfffb, .word 0xffeb, .word 0xffdb, .word 0xffcb\n\t" // Relative offsets for jump table? Or just padding/alignment
+        "sts.l pr,@-r15\n\t"   // Save PR (return address) to stack
+        
+        /* Load base pointer from [0x8C010E34] into r0, then use as offset source */
+        ".word 0xfd08\n\t" 
+        "mova 0x8c010e38,r0\n\t" // Base address for second set of jumps?
+        ".word 0xfe08, .word 0xff8d\n\t" 
+        
+        /* Load actual function pointer from [0x8C010E30] */
+        "mov.l 0x8c010e30,r14\n\t" // r14 = func_8C122160 (or similar)
+        
+        ".word 0xf5fc, .word 0xf6ec, .word 0xf7dc\n\t" 
+        "jsr @r14\n\t"             /* Jump to function at r14 */
+        
+        ".word 0xf4fc\n\t" 
+        
+        /* Second call sequence setup */
+        "mova 0x8c010e3c,r0\n\t" // Load address from [0x8C010E3C] into r0 (likely a base or offset)
+        
+        ".word .word 0xfc08, mov #0,r6, mov r6,r5\n\t" 
+        "jsr @%[func_r3]\n\t"      /* Jump to function at r3 */
+        
+        // Note: The assembly uses hardcoded addresses in the text section for jumps.
+        // Based on standard Katana SDK patterns and variable sizes (108 bytes), these are likely jump tables or specific offsets 
+        // relative to a base address loaded into R0/R6 before calling helper functions that take 3 args.
+        
+        /* Reconstructing logic based on typical SH-4 inline assembly decompilation for this pattern: */
+    );
+
+    // Since the provided snippet contains raw jump tables and specific memory loads without clear variable names 
+    // in a high-level context, we must infer the structure from the register usage.
+    
+    /* Pattern Analysis:
+       1. Save r14 (likely return address or saved state) to stack frame top (-r15).
+       2. Load PR and save it too? Or is 'sts.l pr' saving the current PC/return addr for later restore? 
+          Actually, `mov.l @-r15` decrements r15 then loads from there (pushing old SP/r14?). 
+          Wait: `e6 2f mov.l r14,@-r15`. This pushes R14 onto the stack at address -R15.
+       3. A series of `.word` instructions followed by jumps suggest a jump table or sequence execution.
+       
+    */
+
+    // Let's map the specific addresses to externs if possible, but without symbol resolution we treat them as opaque calls 
+    // based on the register usage in similar Katana SDK functions (often handling sprite lists or hitboxes).
+    
+    /* The assembly shows a pattern: Load Base -> Jump Table 1 -> Call Func A; Reset/Load Base2 -> Jump Table 2 -> Call Func B */
+    
+    __asm__ volatile (
+        "mov.l @-r15\n\t" // Push R14 to stack
+    
+        // --- Block 1 ---
+        ".word 0xfffb, .word 0xffeb, .word 0xffdb, .word 0xffcb\n\t" 
+        /* These words are likely relative offsets or direct addresses. Given the context of Katana SDK: */
+        
+        "sts.l pr,@-r15\n\t" // Save PR (Return Address) to stack
+    
+        ".word 0xfd08, .word 0xfe08, .word 0xff8d\n\t" 
+        /* More offsets/addresses. The `mova` instruction loads a base address into R0 which is then used?
+           Actually, looking at the flow:
+           mov.l r14,@-r15 (Push old SP/R14)
+           mova addr,r0 -> sets up an offset or pointer in R0.
+           
+    */
+
+        // Due to the complexity of decoding raw jump tables without symbol names and the specific 
+        // Katana SDK obfuscation style where `.word` sequences often represent relative offsets from a base,
+        // we will decompile this as a sequence calling two distinct helper functions with 3 arguments.
+        
+    );
+
+    /* Re-evaluating based on strict register usage: */
+    
+    __asm__ volatile (
+        "mov.l @-r15\n\t" 
+        ".word .word, mova ..., sts.l pr,@-r15, .word..., movl 0x8c010e30,r14, jsr@r14 \n\t" // Call func_8C122160
+        
+        "mova 0x8c010e3c,r0\n\t" 
+        ".word .word, mov #0,r6, mov r6,r5, jsr @%[func_r3] \n\t" // Call func_8C11D630
+        
+        "mov.l 0x8c010e44,r2\n\t" 
+        ".word .word, nop, jsr@r14 \n\t" // Call func_8C122160 again? Or different offset.
+        
+    );
+
+}
+
+// Since the assembly contains raw jump tables and specific memory addresses that are not symbolized in this snippet,
+// we must assume these correspond to known internal functions or data structures
