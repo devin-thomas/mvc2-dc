@@ -9245,3 +9245,8 @@ extern uint16_t func_table_entry_r5_offset; // Placeholder name, actually the co
  * 0x8C05064E - func_8C05064E
  */
 
+
+/*
+ * 0x8C050682 - func_8C050682
+ */
+
