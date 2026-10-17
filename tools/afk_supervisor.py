@@ -51,12 +51,17 @@ def sync_cloudflare_pages():
     if sync_py.exists():
         try:
             subprocess.run([sys.executable, str(sync_py)], cwd=str(MVC2_ROOT), capture_output=True, timeout=30)
+            env = os.environ.copy()
+            env["CLOUDFLARE_ACCOUNT_ID"] = "f81d8a09a3b225b740c17f5a39f6cf80"
             deploy_res = subprocess.run(
                 ["npx.cmd" if os.name == "nt" else "npx", "wrangler", "pages", "deploy", "pages",
                  "--project-name=mvc2-decomp", "--branch=main", "--commit-dirty=true"],
                 cwd=str(MVC2_ROOT),
+                env=env,
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 timeout=120
             )
             if deploy_res.returncode == 0:
