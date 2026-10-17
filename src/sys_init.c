@@ -3440,3 +3440,8 @@ void func_8C04(void); // Corresponds to branch target 0x8c023a9c logic path or s
  * 0x8C023AF6 - func_8C023AF6
  */
 
+
+/*
+ * 0x8C023732 - func_8C023732
+ */
+
