@@ -1222,3 +1222,8 @@ extern void *g_ptr_table_base;           // Placeholder for the base address of 
 
 extern uint32_t *g_data_ptr_table;       // Placeholder for table starting at 0x8c01540c (derived context)
 extern int g_flag_byte_6C;               // Placeholder for byte stored
+
+/*
+ * 0x8C01534C - func_8C01534C
+ */
+
