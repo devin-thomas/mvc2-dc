@@ -2323,3 +2323,8 @@ extern uint32_t g_return_address_offset; // Placeholder for the constant loaded 
 void func_8C01BC26(void) {
     __asm__ volatile ("rts"); // Return from subroutine (empty delay slot handled by compiler/NOP).
 }
+
+/*
+ * 0x8C01BA66 - func_8C01BA66
+ */
+
