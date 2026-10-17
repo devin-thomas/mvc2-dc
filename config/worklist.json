@@ -8252,7 +8252,7 @@
     "vram": 2349065544,
     "end_vram": 2349065620,
     "size": 76,
-    "status": "pending",
+    "status": "matched",
     "attempts": 1
   },
   {

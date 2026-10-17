@@ -6673,3 +6673,8 @@ extern uint64_t *g_8C26A95C; // Address 0x8C26A95C loaded at offset E7D2/E826 co
 // Correction: The assembly loads addresses into registers r10/r3 etc which are pointers to data structures in VRAM/RAM.
 extern uint8_t *g_8C26A95C_ptr; // Placeholder for the pointer loaded at 0x8c03e884 (which is 0x8C26A95C). 
 // Actually, looking closely: `mov.l 0x8c03e884,r3` loads a *pointer* into r3. Then later we access it as bytes? No, SH-
+
+/*
+ * 0x8C03E548 - func_8C03E548
+ */
+
