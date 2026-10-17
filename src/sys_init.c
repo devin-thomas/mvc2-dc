@@ -8312,3 +8312,8 @@ extern uint8_t g_byte_data_at_offset;
 // Actually, looking at the code flow:
 // It seems to be a state machine or dispatcher based on `r13` (state?) and memory reads from specific offsets relative to registers passed in r4/r5/etc? 
 // No, arguments
+
+/*
+ * 0x8C04987E - func_8C04987E
+ */
+
