@@ -7614,3 +7614,8 @@ extern void func_8C045926(void); // Placeholder name based on typical SDK patter
  * 0x8C045718 - func_8C045718
  */
 
+
+/*
+ * 0x8C045790 - func_8C045790
+ */
+
