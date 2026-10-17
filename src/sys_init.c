@@ -1444,3 +1444,8 @@ extern void (*g_func_ptr_8C017750)(void);
 extern void (*g_func_ptr_8C017752)(uint32_t, uint32_t); // Used at 0x8c01767a with r4 as arg
 extern void g_proc_a(union SH_REGISTERS *regs); // Corresponds to jump table entry at 0x8C017764 (func_8C018090)
 // Note: The actual function pointers are resolved from
+
+/*
+ * 0x8C0173AA - func_8C0173AA
+ */
+
