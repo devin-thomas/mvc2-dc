@@ -2863,3 +2863,14 @@ extern const uint32_t g_ptr_base_1 = 0x8C26A940; // Address at F360 (r3 load)
  * 0x8C01F438 - func_8C01F438
  */
 
+
+/*
+ * 0x8C01F5D0 - func_8C01F5D0
+ */
+#include <stdint.h>
+
+// Global variables referenced in the function (declared extern for standalone compilation)
+extern uint32_t g_vram_ptr;          // Corresponds to r0 base address logic, likely passed or global VRAM pointer context. Based on `mov.b @(r0,r12),r0`, this looks like a specific offset lookup from a structure pointed to by R0 (which is often the object instance in these SDK patterns). Let's assume standard Katana SDK pattern where r0 might be an index into a table or part of a struct.
+// Re-evaluating based on `mov.b @(r0,r12),r0`: This loads a byte from [R0 + R12]. 
+// In Dreamcast SH-4 games, this often accesses specific flags in the object's data structure passed as an argument or global context.
+// However, looking at the usage
