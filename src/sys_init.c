@@ -8441,3 +8441,8 @@ extern uint32_t *g_ptr_1; // Corresponds to address loaded into r1 (likely a fun
  * 0x8C04A010 - func_8C04A010
  */
 
+
+/*
+ * 0x8C04A564 - func_8C04A564
+ */
+
