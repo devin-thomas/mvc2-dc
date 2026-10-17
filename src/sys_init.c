@@ -9433,3 +9433,16 @@ extern uint32_t g_addr_8C2896B0; // 0x8C2896B0 (Loaded into R9) - Wait, assembly
  * 0x8C051610 - func_8C051610
  */
 
+
+/*
+ * 0x8C051BCA - func_8C051BCA
+ */
+#include <stdint.h>
+
+// External declarations for referenced symbols/globals (stubbed as extern per requirements)
+extern uint32_t *g_vram_8C051BCA_base; // Corresponds to address 0x8c051c8c context if needed, or just the value itself. 
+                                        // Based on assembly: mov.w #addr,r0 -> r0 holds a constant pointer/value from VRAM map?
+// Actually, looking at `mov.w 0x8c051c8c,r0`: This loads an immediate address into R0.
+// In SH-4 C decompilation of Dreamcast code: 
+// - Immediate addresses in mov usually point to data structures (like tables) stored in VRAM or ROM that are mapped.
+// - `g_vram_8C051BCA_base` is a placeholder for the
