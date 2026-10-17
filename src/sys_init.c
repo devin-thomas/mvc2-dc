@@ -6500,3 +6500,8 @@ extern void func_0xf427(void);       // Placeholder for external function at add
 // - The .word instructions at offsets are likely jump targets stored as absolute addresses or relative jumps.
 // Given the context of "func_8C03CB58" being a small stub, this looks like it might be 
 // part
+
+/*
+ * 0x8C03C8F6 - func_8C03C8F6
+ */
+
