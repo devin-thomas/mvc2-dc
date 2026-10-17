@@ -3662,3 +3662,8 @@ extern const char *g_str_table_start; // Base address of string table, derived f
 // Assuming r2 points to an array of pointers where each entry is 32-bit aligned data containing string offsets/lengths.
 
 extern uint8_t g_unk_byte_at_offset[10]; // Placeholder for the byte read at offset +6 from base pointer if needed, though logic suggests direct
+
+/*
+ * 0x8C024FD4 - func_8C024FD4
+ */
+
