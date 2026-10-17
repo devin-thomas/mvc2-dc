@@ -3595,3 +3595,8 @@ extern uint8_t g_vram_flag_8c0240cc; // Loaded at offset 0x1C relative to base p
  */
 extern uint32_t func_8C044F12(uint32_t a, uint32_t b); // Address 0x8C024ED4 -> 0x8C044F12
 static const char *sTable = (const char *)0x8C024ECA;    // Label at offset ECA used for mov.w r0, @(r3) logic? No, it's a constant load. Actually looking at usage: mov.w 0x8c024eca,r0 then later moves to memory. It acts as an immediate value or pointer source. Let's assume it points to data table if accessed via ptr, but here loaded into r0 directly. Wait, line E52 loads from address in sTable? No: `mov.w 0x8c024ece,r3`. These are likely constant
+
+/*
+ * 0x8C024AD0 - func_8C024AD0
+ */
+
