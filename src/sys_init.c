@@ -2343,3 +2343,19 @@ void func_8C01BC26(void) {
  * 0x8C01BAA0 - func_8C01BAA0
  */
 
+
+/*
+ * 0x8C01BC2A - func_8C01BC2A
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced addresses and functions found in the disassembly context.
+extern uint32_t *g_907E6403; // Address 0x8C01BC78 content: 0x907E6403 (likely a function pointer or data)
+// Note: The assembly loads this address into r7, but the logic below uses it differently. 
+// Based on standard Katana SDK patterns, these are likely global pointers to tables/functions.
+
+extern uint8_t *g_8C1294BC; // Address 0x8C01BD90 content
+extern void (*func_ptr)(void); // Placeholder for the function called at r3 (likely from g_8C1294BC)
+
+// Global variables referenced by addresses in assembly constants.
+// These are inferred as global state based on typical Katana SDK
