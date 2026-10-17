@@ -2960,3 +2960,12 @@ extern uint32_t func_8C14730E(uint32_t a, uint32_t b); // Address 0x8C147310 inf
  * 0x8C01FDE4 - func_8C01FDE4
  */
 
+
+/*
+ * 0x8C020184 - func_8C020184
+ */
+extern uint32_t func_8C01F414(uint32_t a, uint32_t b); // Placeholder for external jump target logic if needed, though this function jumps to it.
+// Note: The assembly contains direct absolute addresses (e.g., 0x8c01f414) which are treated as global pointers in the decompiled context or resolved at link time. 
+// For a standalone C snippet without full symbol resolution of every hardcoded address, we assume these point to external functions/data structures defined elsewhere in the SDK.
+extern uint32_t (*g_ptr_8C020194)(void); // Represents 0x8c01f414 as an extern function pointer for clarity if it's a call target, but here it is 'bra' (branch). 
+// Correction: The assembly uses `bra` to absolute addresses
