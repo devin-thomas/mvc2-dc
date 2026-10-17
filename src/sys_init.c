@@ -3600,3 +3600,8 @@ static const char *sTable = (const char *)0x8C024ECA;    // Label at offset ECA 
  * 0x8C024AD0 - func_8C024AD0
  */
 
+
+/*
+ * 0x8C024ECA - func_8C024ECA
+ */
+
