@@ -9722,3 +9722,8 @@ extern uint32_t g_unk_8c052b36[1]; // Base address for pointer calculation, size
 
 extern void func_8C0532A8(uintptr_t *); // Adjust signature based on actual usage at 0x8C0532A8 if known, assuming standard call convention for now. Given the context of Katana SDK and SH-4 calling conventions where arguments are in r4-r7, this function likely takes no args or uses global state via pr/r15 stack frame manipulation before jumping to a helper that expects specific registers set up by caller (bsr is branch with link). However, looking at `mov #5,r5` and `mov #1,r0`, these are arguments passed TO the subroutine called.
 // Re-evaluating: The assembly shows an inline sequence where r5=5, r0=1, then loads return address into pr (which is weird for a function entry unless it's setting up a specific stack frame or
+
+/*
+ * 0x8C052906 - func_8C052906
+ */
+
