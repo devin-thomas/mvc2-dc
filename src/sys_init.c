@@ -3100,3 +3100,14 @@ extern void (*func_ptr_table)(void); // Placeholder if r2 points to
  * 0x8C020CE6 - func_8C020CE6
  */
 
+
+/*
+ * 0x8C020C08 - func_8C020C08
+ */
+extern uint32_t *g_base_table_8C020C78; // Address 0x8C147590, likely a base pointer for the jump table structure
+extern const struct { int val1; } g_jump_table_FXX[]; 
+// Note: The assembly uses an offset from r3 (which points to this array) and then jumps via another index.
+// Based on `mov.b @(5,r3),r0` followed by `shll2`, it reads a 4-byte entry at +8 bytes relative to the start of the struct in memory, 
+// effectively skipping one int if packed as {int,int} or just reading an offset directly depending on alignment.
+// Given typical Katana SDK patterns: r3 points to an array where each element is likely `struct { uint16_t low; }` or similar small structs,
+//
