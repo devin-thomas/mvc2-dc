@@ -9633,3 +9633,11 @@ static uint16_t g_data_8c05254a;   // Addressed at 0x8C05254A, value = base addr
  * 0x8C05279A - func_8C05279A
  */
 
+
+/*
+ * 0x8C052822 - func_8C052822
+ */
+extern uint32_t *func_8C05A2CC(void); // Address 0x8C052924 resolved to this function pointer base in original context, but here used as data address. Assuming it points to a table or specific memory region based on usage pattern (mov.l r14,@-r15 then mov.w from fixed offsets).
+extern uint32_t *func_8C05A2CC_ptr; // Placeholder for the base pointer logic if func_8C05A2CC is not a function but data. Re-evaluating: 0x8c052924 contains an address (likely to another table). Let's assume standard SDK pattern where these are global pointers or addresses of tables defined elsewhere in .bss/.data.
+// Correction based on "mov.l 0x8c052924,r3" followed by "jsr @r3": r3 holds an address, jsr jumps to it. So func_8C05A2CC is likely a function name or the label for that memory location which happens to be executable code (a subroutine).
+// However, looking at subsequent usage: mov
