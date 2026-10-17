@@ -6772,3 +6772,14 @@ extern void (*func_ptr_table_entry)(void *); // Placeholder for the table at 0x8
  * 0x8C03FA9C - func_8C03FA9C
  */
 
+
+/*
+ * 0x8C03FBEC - func_8C03FBEC
+ */
+#include <stdint.h>
+
+// Global data addresses (must be defined elsewhere in the actual binary context)
+extern uint32_t g_Data_8C03FC54; // Address 0x8C03FC54 contains value at offset +4 relative to base? No, direct load. Let's assume these are constants or pointers stored globally.
+// Based on assembly: mov.l #0x8c03fc5c,r1 -> R1 gets the address literal if it were a label, but here it looks like loading an immediate value 0x8C03FC54 into R1? 
+// Wait, SH-4 `mov.l imm` loads immediate. But the comment says `[0x8C03FC5C] = ...`.
+// Re-evaluating: The assembly line is `mov.l    0x8c03fc5
