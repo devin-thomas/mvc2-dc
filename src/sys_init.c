@@ -9321,3 +9321,8 @@ extern uint32_t g_unk_8C051196; // Address of function pointer or data at offset
 // Re-evaluating constants based on assembly patterns:
 // 0x8c051194 is loaded into R0 then used in @(R0,R14). This suggests R0 holds the offset or base of a table relative to r14 (frame pointer?). 
 // However,
+
+/*
+ * 0x8C050FA8 - func_8C050FA8
+ */
+
