@@ -6924,3 +6924,8 @@ extern uint32_t (*func_8C040190)(void); // Address 0x8C040190 contains the addre
     // Correction based on assembly: mov.l #0x3C888889, r1. This is likely a function pointer value stored in memory at offset 0x8c040170 relative to some base, but here it's an immediate load into R1 then used? 
     // Re-evaluating: mov.l #imm, r1 usually loads the address of a symbol or data. Here imm is 0x3C888889 which looks like a function pointer (high bits set).
     // However, looking
+
+/*
+ * 0x8C040164 - func_8C040164
+ */
+
