@@ -1886,3 +1886,17 @@ extern uint32_t g_data_ptr_8C019FEF; // Corresponds to 0x8c01a04e/r1 usage patte
  * 0x8C019D96 - func_8C019D96
  */
 
+
+/*
+ * 0x8C01A04E - func_8C01A04E
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/helpers (as per instructions)
+extern uint32_t gbr; // Global Base Register, typically 0x8C000000 on Dreamcast SH-4 core context if not passed in r15/gpr setup
+extern void (*func_ptr_8c01a1ba)(void); 
+// Note: The assembly uses absolute addresses for function pointers. In a real decompiler, these would be resolved to actual symbols or externs based on the binary map.
+// 0x8C01A1BA -> Function pointer used at A0AA and A0C4
+extern void (*func_ptr_8c01a1be)(void); 
+// Note: The assembly uses absolute addresses for function pointers. In a real decompiler, these would be resolved to actual symbols or externs based on the binary map.
+// 0x8
