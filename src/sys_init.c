@@ -1632,3 +1632,8 @@ extern uint32_t *table_8C018ba8; // Pointer at address
  * 0x8C018A30 - func_8C018A30
  */
 
+
+/*
+ * 0x8C018BD2 - func_8C018BD2
+ */
+
