@@ -920,3 +920,18 @@ extern int  (*func_8C013450)(uintptr_t *stack_ptr, uintptr_t arg_val); // Assumi
  * 0x8C012C52 - func_8C012C52
  */
 
+
+/*
+ * 0x8C012D22 - func_8C012D22
+ */
+#include <stdint.h>
+
+extern uint32_t (*func_8C011A9A)(uint32_t); // Address stored at 0x8C012E6C
+extern void func_8C01099C(uint32_t, int32_t); // Address stored at 0x8C012E70
+
+// Global variables referenced by offsets from r3/r4/etc. in the original context
+static uint32_t g_vram_ptr = (uint32_t)0; 
+extern void *g_some_global_6c_offset; // Placeholder for @(r3+48), assuming it's a pointer to data/struct member
+
+// Note: The assembly uses r1, r7, r9-r14 as stack pointers or local vars depending on calling convention context.
+// Since we don't have the caller
