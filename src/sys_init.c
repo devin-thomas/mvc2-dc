@@ -6737,3 +6737,8 @@ extern void (*func_ptr_table_entry)(void *); // Placeholder for the table at 0x8
  * 0x8C03EC0A - func_8C03EC0A
  */
 
+
+/*
+ * 0x8C03EDA8 - func_8C03EDA8
+ */
+
