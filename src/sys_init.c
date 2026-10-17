@@ -10312,3 +10312,13 @@ extern uint32_t func_8C055496(uintptr_t addr); // Placeholder for the external h
 // mov.b @(1,r14),r0 -> Load byte from addr+1 into r0 (low nibble or full byte? SH-4 load is usually word, but 'mov.b' loads 3 bytes: low byte to Rn[7..0], next two ignored. So it's a signed char).
 // add #-1,r0       -> Decrement the loaded value.
 //
+
+/*
+ * 0x8C0554A6 - func_8C0554A6
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/helpers (standalone compilation)
+extern uint32_t g_unk_8C055534; // Loaded into r0 initially, likely a base address or offset table pointer
+extern uint16_t g_unk_8C055536;  // Mask value loaded into r3
+extern int32_t (*func_ptr)(void); // Placeholder for the function called at 0x8c055be4, inferred from bsr context or global lookup table if not immediate. Assuming it's a resolved pointer based on typical SDK patterns where `bsr` jumps to code/data that acts as a callback. If strictly data-only, this might be an array access. Given "ret" logic later, let's assume standard function call semantics for the BSR target or direct jump behavior if no args are passed
