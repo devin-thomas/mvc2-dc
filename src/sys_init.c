@@ -9926,3 +9926,19 @@ extern void func_8C053706(void); // Helper function referenced in delay slot of 
  * 0x8C053C8E - func_8C053C8E (34 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C053C8E); */
+
+/*
+ * 0x8C053CB0 - func_8C053CB0
+ */
+#include <stdint.h>
+
+extern void func_8C0517BE(void); // Helper function referenced at 0x8C053CF0
+
+static inline uint32_t func_8C053CB0(uint32_t a) {
+    (void)a; // Argument is ignored in this stub, likely used for stack alignment or future expansion
+    
+    /* Call helper via address stored in global data */
+    func_8C0517BE();
+
+    return 1u;
+}
