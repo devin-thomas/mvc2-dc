@@ -11253,3 +11253,8 @@ extern void (*func_ptr_B09A)(void); // Placeholder for 0x8c05b134 if it's not th
  * 0x8C05AF1C - func_8C05AF1C
  */
 
+
+/*
+ * 0x8C05AF5A - func_8C05AF5A
+ */
+
