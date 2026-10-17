@@ -2359,3 +2359,8 @@ extern void (*func_ptr)(void); // Placeholder for the function called at r3 (lik
 
 // Global variables referenced by addresses in assembly constants.
 // These are inferred as global state based on typical Katana SDK
+
+/*
+ * 0x8C01BCB0 - func_8C01BCB0
+ */
+
