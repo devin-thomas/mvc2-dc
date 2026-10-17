@@ -7386,3 +7386,8 @@ extern void func_8C11C720(uint32_t arg_a, uint32_t arg_b); // Called with args d
  * 0x8C044382 - func_8C044382
  */
 
+
+/*
+ * 0x8C043E30 - func_8C043E30
+ */
+
