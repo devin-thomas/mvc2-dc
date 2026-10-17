@@ -9144,3 +9144,17 @@ extern uint32_t (*func_8C05B19E)(uint32_t, void *); // Address 0x8C03319E inferr
 // Actually, looking at assembly: mov.l #0x8c05b0,r2 -> jsr @(PC)+ (indirect). 
 // The value 0x8C03319E is the target address. Let's declare it as a function pointer or assume global symbol if known.
 // Since we don't have the map, we must treat r2 load as loading an absolute address into R2 then jumping indirectly? No, 'js
+
+/*
+ * 0x8C05058C - func_8C05058C
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function but not defined here.
+extern uint32_t *g_vram_base; // Assumed global base address based on context (0x8C...)
+extern void (*func_ptr_1)(void); // Corresponds to 0x8c0506cc
+// Note: Specific addresses like 0x8c0506bc, etc., are resolved at runtime or linked. 
+// In a real decompiler context without the full symbol table, these become extern pointers/functions.
+
+extern uint32_t *g_table_1; // Points to address stored at 0x8C0506BC (likely 0x8C2895F0)
+extern void (*func_ptr_2)(void); // Corresponds to 0x8c0506cc resolved via g
