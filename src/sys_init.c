@@ -10916,3 +10916,8 @@ extern const uint16_t _data_0; // Placeholder for data starting at .word locatio
  * 0x8C058AFA - func_8C058AFA
  */
 
+
+/*
+ * 0x8C058BCC - func_8C058BCC
+ */
+
