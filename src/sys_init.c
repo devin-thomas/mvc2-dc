@@ -10519,3 +10519,8 @@ extern uint32_t g_r4_offset_base; // Assuming r4 holds an offset or base, treate
  * 0x8C055BDE - func_8C055BDE
  */
 
+
+/*
+ * 0x8C055C5C - func_8C055C5C
+ */
+
