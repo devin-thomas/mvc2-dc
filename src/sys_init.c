@@ -3381,3 +3381,8 @@ extern void func_8C022376(void); // Corresponds to 0x8C022376 (derived from cont
  * 0x8C022F76 - func_8C022F76
  */
 
+
+/*
+ * 0x8C0234C4 - func_8C0234C4
+ */
+
