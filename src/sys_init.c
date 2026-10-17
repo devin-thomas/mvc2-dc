@@ -1683,3 +1683,8 @@ extern const uint32_t g_jump_table_1[]; // Points to 0x8c14... sequence starting
  * 0x8C018F8C - func_8C018F8C (24 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C018F8C); */
+
+/*
+ * 0x8C018CEC - func_8C018CEC
+ */
+
