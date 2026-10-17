@@ -7491,3 +7491,11 @@ static const struct { int add_offset; } s_offsets[] =
  * 0x8C044F12 - func_8C044F12
  */
 
+
+/*
+ * 0x8C04503E - func_8C04503E
+ */
+extern void *r5_ptr; // Placeholder for r5 base pointer context if needed, though usually passed in args. Assuming standard ABI where caller manages stack frame pointers unless this is a leaf helper manipulating global state directly via registers 4/5 as arguments or globals. Given the register usage (r3,r6) and memory ops on @(8,r4), @(12,r5), it's likely r4/r5 are passed args pointing to structs, not fixed globals like 'this'.
+// Re-evaluating based on standard SH-4 Dreamcast patterns: 
+// Arguments typically in R4-R7. This function takes no explicit arguments listed but uses R3 (result of load) and modifies memory at offsets from R4/R5/R6? 
+// Wait, looking closely: `mov.l @(8,r4),r3` -> loads pointer/value into r3 based on arg 1 (R4).
