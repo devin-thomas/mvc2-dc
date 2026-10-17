@@ -1232,3 +1232,8 @@ extern int g_flag_byte_6C;               // Placeholder for byte stored
  * 0x8C015364 - func_8C015364
  */
 
+
+/*
+ * 0x8C0153F2 - func_8C0153F2
+ */
+
