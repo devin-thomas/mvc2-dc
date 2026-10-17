@@ -6325,3 +6325,8 @@ static const uint32_t OFFSET_B_4 = 0x8C0F71A8U - 0xCUL; // Derived from
  * 0x8C03BE0A - func_8C03BE0A
  */
 
+
+/*
+ * 0x8C03BD24 - func_8C03BD24
+ */
+
