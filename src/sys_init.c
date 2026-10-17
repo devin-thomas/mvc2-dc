@@ -10134,3 +10134,8 @@ extern void (*func_ptr_8C054D94)(void); // Placeholder name for the routine at 0
  * 0x8C054E86 - func_8C054E86 (42 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C054E86); */
+
+/*
+ * 0x8C054D14 - func_8C054D14
+ */
+
