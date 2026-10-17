@@ -1031,3 +1031,8 @@ extern uint32_t func_8C04257C; // Address loaded at 0x8C01352E (likely a functio
  * 0x8C013F0A - func_8C013F0A (602 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C013F0A); */
+
+/*
+ * 0x8C0142D6 - func_8C0142D6 (840 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0142D6); */
