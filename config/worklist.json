@@ -93,15 +93,15 @@
     "end_vram": 2348879142,
     "size": 362,
     "status": "pending",
-    "attempts": 2
+    "attempts": 3
   },
   {
     "name": "func_8C010D26",
     "vram": 2348879142,
     "end_vram": 2348879254,
     "size": 112,
-    "status": "pending",
-    "attempts": 2
+    "status": "stubbed",
+    "attempts": 3
   },
   {
     "name": "func_8C010D96",

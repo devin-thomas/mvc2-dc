@@ -616,3 +616,8 @@ extern uint8_t *g_8c012cbc; // [0x8C010BFC] - derived from context if needed, bu
 // Let's look at standard SH-4 encodings:
 // `mov.w` or `mov.b` with immediate uses specific opcodes. 
 // The provided assembly has comments like `[0x8C010AF8] = 0x8C212BFC`. This usually means "The value stored in memory at address AF8 is ...".
+
+/*
+ * 0x8C010D26 - func_8C010D26 (112 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C010D26); */
