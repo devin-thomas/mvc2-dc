@@ -11114,3 +11114,8 @@ extern uint32_t g_Data_8C059EC6; // Loaded to R1 initially? No, mov.w 0x...r1. W
  * 0x8C059F3C - func_8C059F3C
  */
 
+
+/*
+ * 0x8C059F4A - func_8C059F4A
+ */
+
