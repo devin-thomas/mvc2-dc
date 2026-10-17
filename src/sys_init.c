@@ -11243,3 +11243,8 @@ extern uint32_t (*func_8C034DEE)(void); // Address 0x8C034DEE loaded at offset B
 // Based on standard Katana SDK patterns, this is likely a function pointer or indirect call target.
 extern void (*func_ptr_B09A)(void); // Placeholder for 0x8c05b134 if it's not the address itself, but context suggests direct jump to code at B134 which resolves to something else? 
 // Re-evaluating: mov.l 0x8C05B134,r3. The comment says [0x8C05B134]
+
+/*
+ * 0x8C05AE28 - func_8C05AE28
+ */
+
