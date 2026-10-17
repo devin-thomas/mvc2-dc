@@ -8268,3 +8268,8 @@ extern uint32_t *table_1; // Corresponds to address loaded at r3 (0x8c04958c) ->
  * 0x8C049332 - func_8C049332
  */
 
+
+/*
+ * 0x8C04928E - func_8C04928E
+ */
+
