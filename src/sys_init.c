@@ -8582,3 +8582,8 @@ extern uint32_t (*func_ptr_table_entry8)(uint32_t base_ptr); // Placeholder for 
  * 0x8C04B9A6 - func_8C04B9A6
  */
 
+
+/*
+ * 0x8C04BF0A - func_8C04BF0A
+ */
+
