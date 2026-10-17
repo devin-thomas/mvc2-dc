@@ -8403,3 +8403,16 @@ extern void func_8C034DEE(void); // Placeholder for the jump target at 0x8C04A57
 extern uint32_t func_8C051648(uint32_t arg); // Placeholder for return at 0x8c04a45e context.
 // Actually, let's look closer at the data addresses to define externs properly if possible, or assume they are resolved by linker. 
 // Since I cannot resolve external symbols without a map file, I will declare them as `extern` with generic names derived from address patterns or keep placeholders
+
+/*
+ * 0x8C04A468 - func_8C04A468
+ */
+extern uint32_t func_0x8C04A574(void); // Address stored at VRAM offset 0x16 relative to base, used for jump if r0==0 initially? No, logic check: 
+// Actually looking at the code flow:
+// If input byte is non-zero (tst), it jumps to a different handler.
+// The label 'bf' branches forward IF zero flag IS SET (i.e., input was 0).
+// So if r0 != 0 initially, we skip that block? 
+// Let's re-read carefully:
+// mov.b @(6,r14),r0 -> load byte at base+6 into r0.
+// tst r0,r0 -> test zero flag based on loaded value.
+// bf 0x8c04a49e -> Branch Forward if Zero Flag is SET (value was
