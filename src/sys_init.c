@@ -6089,3 +6089,15 @@ extern void func_8C14D4A0(uint32_t *dest, const uint32_t *src, uint32_t count); 
  * 0x8C039260 - func_8C039260
  */
 
+
+/*
+ * 0x8C0399C0 - func_8C0399C0
+ */
+#include <stdint.h>
+
+extern uint32_t *g_8C26886C; // Address loaded at 0x8C039A5C
+extern const struct { /* Struct definition inferred from context */ } g_DataBlock1; 
+// Note: The code accesses offsets relative to base addresses. Assuming standard SDK layout where these globals point to the start of data structures containing packed structs or arrays accessed via pointer arithmetic and bit shifts (common in Katana engine for hitboxes/physics).
+extern const uint32_t *g_8C26823C; // Address loaded at 0x8C039A54
+// The logic suggests a lookup table or specific data structure traversal. 
+// Given the bit shifts (shll, shll2) and memory access patterns (@(r0,r3)), this is likely unpacking packed integer fields from
