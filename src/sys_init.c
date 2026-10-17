@@ -671,3 +671,8 @@ extern void *g_ptr_table_8C011974;
  * 0x8C011758 - func_8C011758
  */
 
+
+/*
+ * 0x8C011806 - func_8C011806
+ */
+
