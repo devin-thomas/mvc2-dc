@@ -5230,3 +5230,8 @@ extern uint32_t g_base_table_addr; // The value at address 0x8C0310B0
  * 0x8C0310F2 - func_8C0310F2
  */
 
+
+/*
+ * 0x8C0310FE - func_8C0310FE
+ */
+
