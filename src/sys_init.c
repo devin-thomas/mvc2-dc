@@ -6783,3 +6783,8 @@ extern uint32_t g_Data_8C03FC54; // Address 0x8C03FC54 contains value at offset 
 // Based on assembly: mov.l #0x8c03fc5c,r1 -> R1 gets the address literal if it were a label, but here it looks like loading an immediate value 0x8C03FC54 into R1? 
 // Wait, SH-4 `mov.l imm` loads immediate. But the comment says `[0x8C03FC5C] = ...`.
 // Re-evaluating: The assembly line is `mov.l    0x8c03fc5
+
+/*
+ * 0x8C03FC10 - func_8C03FC10
+ */
+
