@@ -4920,3 +4920,14 @@ extern uint32_t g_unk_8C02F762; // mov.w
  * 0x8C02FAF0 - func_8C02FAF0
  */
 
+
+/*
+ * 0x8C02FBE0 - func_8C02FBE0
+ */
+extern uint32_t func_8C02FBE6_offset[5]; // Offset array for the indirect store instruction at 0x8C02FBE4+1 (offset is in r6)
+// Note: The assembly uses a relative offset from register r6. In C, we model this by accessing an external table 
+// where index [r6] provides the base address or immediate adjustment if it's not a direct pointer dereference pattern.
+// However, looking at `mov.b r0,@(5,r6)`: This is "Load Byte from memory at (Base + Offset)".
+// Here Base = r6, Offset = 5 bytes relative to whatever r6 points to? 
+// Actually, SuperH syntax @(offset, base_register) means address = [base_register] + offset.
+// So it loads a byte from the absolute address: &r1[
