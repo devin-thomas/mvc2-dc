@@ -4603,3 +4603,12 @@ extern uint32_t (*func_ptr_table_entry)(void); // Generic type for the result of
  * 0x8C02BACA - func_8C02BACA
  */
 
+
+/*
+ * 0x8C02BD06 - func_8C02BD06
+ */
+extern uint32_t _SH_4_Data_Table[]; // Global data table containing function pointers at fixed offsets.
+
+uint32_t func_8C02BD06(void) {
+    return (uint32_t)_SH_4_Data_Table[(uintptr_t)(0x8c02bd64 - 0)]; 
+}
