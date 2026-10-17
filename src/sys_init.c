@@ -5655,3 +5655,15 @@ extern uint16_t g_vram_0x8C035074; // Base address used in many loads `@(r0,r4)`
 // Let's re-read carefully: `mov.w 0x8C035072,r7`. This loads [0x8C035072] -> r7. 
 // So g_vram_0x8C035072 is the address of that word.
 extern uint16_t *g_ptr_base; // Placeholder for
+
+/*
+ * 0x8C0355F2 - func_8C0355F2
+ */
+extern void *func_8C035648(void); // Address: 0x8C1291DC, likely a function pointer lookup table entry
+extern unsigned int func_8C03564C; // Value: 0xFFFFFFFF (Mask)
+extern void (*(*table_ptr)(void))(int); // Pointer to the actual callback or logic handler at offset +8
+
+// Global/Context pointers assumed based on SH-4 SDK patterns where r4 is often a context struct pointer.
+// Assuming standard Katana SDK structure layout: [0] = some data, [4] = flag/count, [12] = next ptr? 
+// Based on usage: @(4,r4) -> check if valid; @(8,r4) -> store result back to offset 8 of the struct.
+extern unsigned int *context_struct_ptr_r4; // Placeholder for r
