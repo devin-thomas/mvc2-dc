@@ -3672,3 +3672,15 @@ extern uint8_t g_unk_byte_at_offset[10]; // Placeholder for the byte read at off
  * 0x8C025210 - func_8C025210
  */
 
+
+/*
+ * 0x8C025394 - func_8C025394
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/helpers (as per Dreamcast ABI context)
+extern uint32_t gbr; // Global Base Register, typically 0xC01F8000 on DC hardware but treated as extern here if not defined locally.
+                        // Note: In raw SH-4 assembly without a linker map, 'gbr' is the special register for GBR offset calculations relative to code segment base or specific SDK conventions. 
+// Assuming standard Katana/SDK usage where gbr points to the start of the executable image in memory space if used as an address pointer, OR it's a local variable name collision in the original C source mapped here.
+// Given `mov.w r0,@(92,gbr)`, this is likely accessing a specific offset from the GBR register which holds the base address of the loaded program or a specific segment table. 
+// For decompilation safety, we treat it as an external symbol if not defined in scope, but standard Dreamcast C compilers handle `gbr
