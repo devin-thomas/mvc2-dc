@@ -91,11 +91,15 @@ class TestDecompilationValidation(unittest.TestCase):
             tmppath = Path(tmpdir)
             src_dir = tmppath / "src"
             src_dir.mkdir()
+            cfg_dir = tmppath / "config"
+            cfg_dir.mkdir()
+            (cfg_dir / "worklist.json").write_text("[]", encoding="utf-8")
             (src_dir / "test.c").write_text(valid_c, encoding="utf-8")
-            prog = calculate_progress(src_dir=src_dir, asm_dir=tmppath / "asm")
-            self.assertEqual(prog["verified_matched_funcs"], 0, "Host C candidate must not be counted as verified matched")
-            self.assertEqual(prog["verified_matched_bytes"], 0)
-            self.assertGreaterEqual(prog["candidate_funcs"], 1, "Should be counted as candidate")
+            with patch("tools.progress.WORKLIST_FILE", cfg_dir / "worklist.json"):
+                prog = calculate_progress(src_dir=src_dir, asm_dir=tmppath / "asm")
+                self.assertEqual(prog["verified_matched_funcs"], 0, "Host C candidate must not be counted as verified matched")
+                self.assertEqual(prog["verified_matched_bytes"], 0)
+                self.assertEqual(prog["candidate_funcs"], 1, "Should be counted as exactly 1 candidate")
 
     def test_07_valid_sh4_compile_different_bytes_is_mismatch(self):
         """Fixture 7: Valid compile but differing machine bytes is a mismatch, never byte-identical."""
@@ -132,13 +136,17 @@ class TestDecompilationValidation(unittest.TestCase):
             tmppath = Path(tmpdir)
             src_dir = tmppath / "src"
             src_dir.mkdir()
+            cfg_dir = tmppath / "config"
+            cfg_dir.mkdir()
+            (cfg_dir / "worklist.json").write_text("[]", encoding="utf-8")
             c_content = """
             void func_8c010080(void) { }
             void func_8c010080(void) { }
             """
             (src_dir / "dup.c").write_text(c_content, encoding="utf-8")
-            prog = calculate_progress(src_dir=src_dir, asm_dir=tmppath / "asm")
-            self.assertEqual(prog["candidate_funcs"], 1, "Duplicate definitions must be counted only once")
+            with patch("tools.progress.WORKLIST_FILE", cfg_dir / "worklist.json"):
+                prog = calculate_progress(src_dir=src_dir, asm_dir=tmppath / "asm")
+                self.assertEqual(prog["candidate_funcs"], 1, "Duplicate definitions must be counted only once")
 
     def test_11_stubbed_function_not_counted_verified(self):
         """Fixture 11: Stubbed function is not counted in verified matching."""

@@ -1,0 +1,178 @@
+{
+  "audit_timestamp": "2026-10-17T13:45:00-05:00",
+  "pre_audit_counts": {
+    "worklist_total": 1946,
+    "claimed_matched": 1552,
+    "stubbed": 197,
+    "pending": 197,
+    "sys_init_total_lines": 11280
+  },
+  "post_audit_counts": {
+    "genuine_candidates_found": 26,
+    "candidate_syntax_valid": 25,
+    "candidate_syntax_invalid": 0,
+    "empty_headers_pruned": 1522,
+    "empty_reset_to_pending": 1527,
+    "stubs_retained": 197,
+    "current_pending": 1724,
+    "verified_byte_identical": 0
+  },
+  "candidates": [
+    {
+      "name": "sys_shutdown_subsystems",
+      "vram": "0x8C01039A",
+      "syntax_valid": true,
+      "sha256": "30dfc7de43c208a40f3f43dc38a0a97626975442a264cdfa9e59251db0a8845a"
+    },
+    {
+      "name": "func_8C010412",
+      "vram": "0x8C010412",
+      "syntax_valid": true,
+      "sha256": "ccc9188c4ba3b920e5f5020abfa9b0a450db344b90ce395ed8d6991a64ea697b"
+    },
+    {
+      "name": "func_8C010D96",
+      "vram": "0x8C010D96",
+      "syntax_valid": true,
+      "sha256": "590aa944acc371ab4ca5b8fae3bd6ceb7c35cb8689da5196ce3233d42e2d8da3"
+    },
+    {
+      "name": "func_8C010A5A",
+      "vram": "0x8C010A5A",
+      "syntax_valid": true,
+      "sha256": "b5d29f58583457b10879cbec24668111b7fc3a4af01894df839de093cb835ed4"
+    },
+    {
+      "name": "func_8C010AF4",
+      "vram": "0x8C010AF4",
+      "syntax_valid": true,
+      "sha256": "ec8a2dd2499d72b802ffcb262c100de464f1d74573135982bd63f2dfd2a952ee"
+    },
+    {
+      "name": "check_bit",
+      "vram": "0x8C011B5E",
+      "syntax_valid": true,
+      "sha256": "8d3ade94422bf8dca5a717ecd18ae9025c15f8be5f77b2aec4fc312bc9b11af3"
+    },
+    {
+      "name": "func_8C011D06",
+      "vram": "0x8C011D06",
+      "syntax_valid": true,
+      "sha256": "d00b48b3e8865b53d10598e95edc776742fbb31d12c8485750afa0cf191123ba"
+    },
+    {
+      "name": "process_block",
+      "vram": "0x8C01A65C",
+      "syntax_valid": true,
+      "sha256": "c3ed9b463e83012a38c551ad1fa40601b255eff9c10d22fce3edda3d2d487f35"
+    },
+    {
+      "name": "func_8C01B3E0",
+      "vram": "0x8C01B3E0",
+      "syntax_valid": true,
+      "sha256": "de72fc86c2124e62ed0445e181edf2beba153c8fd7ba679053871c6e31272b36"
+    },
+    {
+      "name": "func_8C01BC26",
+      "vram": "0x8C01BC26",
+      "syntax_valid": true,
+      "sha256": "f5f419a8b6a47a7d02341bc51c0eb3f1c5ee62a2b316b8bcbb4d6125e9cadbed"
+    },
+    {
+      "name": "func_8C02695E",
+      "vram": "0x8C026910",
+      "syntax_valid": true,
+      "sha256": "98105ce3a251f051192cb64efc79f805b5b6ffee7086ddf20d9bd860aba283d8"
+    },
+    {
+      "name": "func_8C028268",
+      "vram": "0x8C028268",
+      "syntax_valid": true,
+      "sha256": "ec30103b2e0e0a5afee8b0f79f967d61dcb1e24ef9b16174ac573122e0b626ee"
+    },
+    {
+      "name": "func_8C02BD06",
+      "vram": "0x8C02BD06",
+      "syntax_valid": true,
+      "sha256": "2a5cf846673d3329513a9d1a1da9ba3e6a30c5b21bc045d78a7a8dd063b43a06"
+    },
+    {
+      "name": "func_8C036682",
+      "vram": "0x8C036682",
+      "syntax_valid": true,
+      "sha256": "bc1d60f9d147094ba2c704c06ea30179380678665cbf4808729a1917a5b89475"
+    },
+    {
+      "name": "get_jump_table_entry",
+      "vram": "0x8C042058",
+      "syntax_valid": true,
+      "sha256": "a37a39791d1e272d32506b018f660e3d94186ff280922a06ed9b7a95a016602a"
+    },
+    {
+      "name": "func_8C045896",
+      "vram": "0x8C045896",
+      "syntax_valid": true,
+      "sha256": "77bc1bde9e4fd0c99f678bcbe95f386187113910c8a57373a6a30c082ad4f134"
+    },
+    {
+      "name": "func_8C046396",
+      "vram": "0x8C046396",
+      "syntax_valid": true,
+      "sha256": "702d96d3c05254b540de4e00f904035754ed0bbc691418c83368912f594354eb"
+    },
+    {
+      "name": "func_8C046AB6",
+      "vram": "0x8C046AB6",
+      "syntax_valid": true,
+      "sha256": "7a22511f22720ba5878ca0cd17ec27295ed8a138f48ff31aa888cd7a10a3f599"
+    },
+    {
+      "name": "get_base_addr",
+      "vram": "0x8C0473D4",
+      "syntax_valid": true,
+      "sha256": "8ddafdf1740d2e5d99bb80a4d0bbc59e1274c99f4fa667c4d36d770c13cbecb9"
+    },
+    {
+      "name": "func_8C04CB9E",
+      "vram": "0x8C04CB9E",
+      "syntax_valid": true,
+      "sha256": "30d6631623d73436f4313a4e44385ebbfd94334812a79717871cb99a9e37ac14"
+    },
+    {
+      "name": "helper_func_8c051a9e",
+      "vram": "0x8C051060",
+      "syntax_valid": true,
+      "sha256": "8446c4cb78c01f8b92859855413af87e58dc474626ff17224be384ef8c2d7c54"
+    },
+    {
+      "name": "func_8C0514AE",
+      "vram": "0x8C0514AE",
+      "syntax_valid": true,
+      "sha256": "c9380c7f734d2c1b91f1412ab57d48e71c952a2604fe111e0e3d8759bdcbad78"
+    },
+    {
+      "name": "func_8C053CB0",
+      "vram": "0x8C053CB0",
+      "syntax_valid": true,
+      "sha256": "35bbcbc38c907c94cd8c9f7e9ba5c3ec642ee3b880546610b24b87ac6debb95f"
+    },
+    {
+      "name": "func_8C055A70",
+      "vram": "0x8C055A70",
+      "syntax_valid": true,
+      "sha256": "6c7ecf86ab5f1fdcf811858a6604e89cc2525cbfb48aa3fda3546e06e47d395d"
+    },
+    {
+      "name": "func_8C055D28",
+      "vram": "0x8C055D28",
+      "syntax_valid": true,
+      "sha256": "39c396b4e942e9c1d00efc463b0ef8724e99ae21bbdae7b331038cb45f949271"
+    },
+    {
+      "name": "func_8C010524",
+      "vram": "0x8C059E42",
+      "syntax_valid": true,
+      "sha256": "663e5ca6e38e4db65009ce5a678b4e8ca4a175e49703c6c56bf77ed447bfe120"
+    }
+  ]
+}
