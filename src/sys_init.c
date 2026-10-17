@@ -5941,3 +5941,18 @@ extern uint32_t (*func_0x8c14d310)(void); // Placeholder for 0x8C14D310 if it is
  * 0x8C037360 - func_8C037360
  */
 
+
+/*
+ * 0x8C037B36 - func_8C037B36
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced addresses and functions
+extern uint32_t *g_8C0395C6; // Address stored at 0x8C037BBC (derived from context)
+extern void (*func_ptr)(void); // Placeholder for the function called via JSR @r11
+
+// Note: The actual addresses are embedded in VRAM/ROM. 
+// In a real decompiler, these would be resolved to their final linked values or kept as constants if static analysis allows.
+#define ADDR_8C037BAC  (uint32_t)0x8C136694 // Base address for the structure being iterated over? Or just an offset base. 
+// Based on usage: r3 = mov.l [addr], then shll, implies shifting a pointer or index.
+#define ADDR_8
