@@ -8613,3 +8613,12 @@ extern uint32_t *const _table_8C04D886; // Address 0x8c04d886 loaded via bsr/bsl
 // Re-evaluating the .word sequences:
 // The assembly contains many `.word` directives that act as immediate addresses for subsequent instructions or are part of a lookup structure.
 // Let's map them to externs based on their usage context (e.g.,
+
+/*
+ * 0x8C04CB9E - func_8C04CB9E
+ */
+extern void func_8C04CB9E(void); // Placeholder for external reference if needed, though this is a stub.
+
+void func_8C04CB9E() {
+    return; // Function body contains only 'rts' (return) and padding ('nop').
+}
