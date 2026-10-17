@@ -3243,3 +3243,8 @@ void func_8C01A56(int *ptr_r4_arg, uint32_t val_r7_arg); // Placeholder signatur
  * 0x8C021498 - func_8C021498 (92 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C021498); */
+
+/*
+ * 0x8C0215D6 - func_8C0215D6
+ */
+
