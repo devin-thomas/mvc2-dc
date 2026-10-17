@@ -7659,3 +7659,8 @@ extern void func_0x8C268340(uint32_t *dst, uint32_t src); // Address 0x8C129728 
 // Actually, analyzing 0x8C129728 usage in similar Katana SDK functions usually implies a specific helper or data table access. 
 // However, the instruction `jsr @r3` where r3 is loaded from static address suggests calling a function at that location if it's code, OR loading an offset to call relative?
 // Given "mov.l 0x8c045fc0,r3" and then jsr@r3. If 0x8C12
+
+/*
+ * 0x8C045EF6 - func_8C045EF6
+ */
+
