@@ -9676,3 +9676,18 @@ extern uint32_t *func_8C05A2CC_ptr; // Placeholder for the base pointer logic if
  * 0x8C0528F8 - func_8C0528F8 (14 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C0528F8); */
+
+/*
+ * 0x8C052A72 - func_8C052A72
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced symbols/globals (adjust names as needed based on full context)
+extern uint32_t g_vram_base_1; // Corresponds to address 0x8C052B36
+extern uint32_t g_vram_offset_a; // Corresponds to address 0x8C052B38 (likely a flag or index)
+extern uint32_t g_vram_offset_b; // Corresponds to address 0x8C052B3A (pointer base for r4 offset?)
+
+// Assuming the assembly logic implies accessing data at VRAM based on registers. 
+// Based on standard Katana SDK patterns:
+// - r4 is likely a context pointer or frame buffer start.
+// - The addresses 0x8C052B36, etc., are constants loaded into
