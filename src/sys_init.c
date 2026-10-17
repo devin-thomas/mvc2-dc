@@ -4931,3 +4931,8 @@ extern uint32_t func_8C02FBE6_offset[5]; // Offset array for the indirect store 
 // Here Base = r6, Offset = 5 bytes relative to whatever r6 points to? 
 // Actually, SuperH syntax @(offset, base_register) means address = [base_register] + offset.
 // So it loads a byte from the absolute address: &r1[
+
+/*
+ * 0x8C02FA60 - func_8C02FA60
+ */
+
