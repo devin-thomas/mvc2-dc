@@ -6718,3 +6718,12 @@ extern uint8_t *g_8C26A95C_ptr; // Placeholder for the pointer loaded at 0x8c03e
  * 0x8C03F37A - func_8C03F37A (646 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03F37A); */
+
+/*
+ * 0x8C03F2B6 - func_8C03F2B6
+ */
+extern uint32_t func_8C0FA2EC(uint32_t); // Address 0x8C03F398 -> 0x8C04255A (inferred from context)
+extern void (*func_ptr_table_entry)(void *); // Placeholder for the table at 0x8C03F37a/0x8c03f37a+1 offset logic if needed, but here it's a direct call to address in r5? No, let's re-analyze.
+// Re-analysis of calls:
+// Call 1 (r2): Address from [0x8C03F394] = 0x8C0355B2 -> func_8C0355B2(uint32_t) ? No, args in r6? 
+// Let's look at
