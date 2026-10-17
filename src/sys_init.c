@@ -5413,3 +5413,15 @@ extern uint8_t *g_UnknownArray; // Placeholder for global arrays accessed via of
  * 0x8C032A28 - func_8C032A28 (346 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C032A28); */
+
+/*
+ * 0x8C033532 - func_8C033532
+ */
+#include <stdint.h>
+
+extern uint32_t *g_unk_return_stack; // Placeholder for the global return stack pointer used by lds.l at r15+0x8C033536 (implied context) or local to a larger block if not external. Given "ret" behavior, this is likely returning from an interrupt handler where pr was saved on stack relative to sp/r15.
+
+// Note: The assembly shows `lds.l @r15+,pr` followed immediately by `rts`.
+// This pattern typically restores the Program Counter (PR) and Return Address Stack Pointer (RSP/AR0 in some contexts, but here PR is explicitly loaded from stack).
+// However, standard SH-4 ABI uses R8-R14 as callee-saved. If this function returns via RTS after loading PR into itself or a register that holds the return address? 
+//
