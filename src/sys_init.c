@@ -1900,3 +1900,8 @@ extern void (*func_ptr_8c01a1ba)(void);
 extern void (*func_ptr_8c01a1be)(void); 
 // Note: The assembly uses absolute addresses for function pointers. In a real decompiler, these would be resolved to actual symbols or externs based on the binary map.
 // 0x8
+
+/*
+ * 0x8C01A0D4 - func_8C01A0D4
+ */
+
