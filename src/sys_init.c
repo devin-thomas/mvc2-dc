@@ -8392,3 +8392,14 @@ extern void (*g_func_ptr_8c0498dc)(void); // Function pointer at 0x8C26A530 (loa
 // Wait, looking closely at 0x8C0497D0: `mov.l #... , r3`. The comment says `[Addr] = Value`. 
 // If it's an absolute jump table in ROM (common for Katana), the value is likely a PC-relative offset or direct address.
 // Given "Dreamcast C decompiler" persona
+
+/*
+ * 0x8C04A3AC - func_8C04A3AC
+ */
+extern uint32_t func_8C034E8C(uint32_t a, uint32_t b); // Placeholder for the jump target at 0x8C04A416 context if needed, but logic suggests direct call or table lookup. Based on assembly flow: `jmp @r3` where r3 is loaded from static data.
+extern void func_8C034DEE(void); // Placeholder for the jump target at 0x8C04A574 (func_8c04a44e) context? No, looking closely: `mov.l #92,r0` then `.word 0xfe47`. This is a function pointer table.
+// Re-evaluating the structure based on SH-4 calling conventions and typical Katana SDK patterns (VTable dispatch).
+
+extern uint32_t func_8C051648(uint32_t arg); // Placeholder for return at 0x8c04a45e context.
+// Actually, let's look closer at the data addresses to define externs properly if possible, or assume they are resolved by linker. 
+// Since I cannot resolve external symbols without a map file, I will declare them as `extern` with generic names derived from address patterns or keep placeholders
