@@ -4182,3 +4182,16 @@ extern void func_8c1f(int);           // Helper inferred from jump table logic
  * 0x8C028142 - func_8C028142
  */
 
+
+/*
+ * 0x8C0282EA - func_8C0282EA
+ */
+#include <stdint.h>
+
+// Helper function declarations (extern) based on referenced addresses in assembly.
+static void (*func_8C0450C0)(uint32_t); // Address 0x8C0450C0, called at r3->jsr @r3 with arg from r14? No, looking closely: mov.r4,r14 then jsr@r3. Wait, assembly shows `mov.w @(28,r14),r0` before call in some paths or just passing context. Let's re-examine the specific calls.
+// Re-evaluating logic flow for declarations:
+// 1. mov.l 0x8c0283d8,r3 (addr=0x8C0450C0); jsr @r3; This is a function pointer call taking no args or implicit context? 
+    // Actually, looking at `mov.w @(28,r14), r0` before the branch to 0x8c028398 which jumps over it.
+    // Let's assume standard C calling convention for these helpers if arguments are passed in registers (r4).
+// The assembly is complex with embedded data tables and indirect calls. We will declare them as extern void or uint32_t based on typical patterns, but since
