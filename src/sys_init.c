@@ -9967,3 +9967,8 @@ extern void *g_sgr;                                     // Shadow register targe
 
 extern uint32_t *g_data_8C05DF4; // Address 0x8c053df4 -> points to table at 0x8C2895F1
 // The assembly loads a pointer from address 0x8C053
+
+/*
+ * 0x8C053A14 - func_8C053A14
+ */
+
