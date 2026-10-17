@@ -8767,3 +8767,8 @@ extern int (*func_ptr)(void) = (int (*)(void))((uintptr_t)0x8C034E8C + 16 * size
  * 0x8C04D706 - func_8C04D706
  */
 
+
+/*
+ * 0x8C04D9D2 - func_8C04D9D2
+ */
+
