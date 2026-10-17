@@ -11232,3 +11232,14 @@ extern int (*func_ptr_table[2])(void *); // Addresses at offsets: f2e6, f318 (re
 // However, without explicit global variable names for those addresses (f2e6/f318 etc), we must assume they resolve to specific functions defined elsewhere 
 // OR the assembly snippet provided is incomplete regarding data definitions at 0x8C05B02E/0x8C05B04A/etc.
 // Given the context of Katana
+
+/*
+ * 0x8C05B07E - func_8C05B07E
+ */
+#include <stdint.h>
+
+extern uint32_t (*func_8C034DEE)(void); // Address 0x8C034DEE loaded at offset B07F+6 (B082)
+// Note: The assembly loads the address of func_8C05176E into r3 before jumping. 
+// Based on standard Katana SDK patterns, this is likely a function pointer or indirect call target.
+extern void (*func_ptr_B09A)(void); // Placeholder for 0x8c05b134 if it's not the address itself, but context suggests direct jump to code at B134 which resolves to something else? 
+// Re-evaluating: mov.l 0x8C05B134,r3. The comment says [0x8C05B134]
