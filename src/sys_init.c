@@ -6535,3 +6535,8 @@ extern void func_0xf427(void);       // Placeholder for external function at add
  * 0x8C03CB04 - func_8C03CB04
  */
 
+
+/*
+ * 0x8C03C9AE - func_8C03C9AE
+ */
+
