@@ -4372,3 +4372,8 @@ static const uint32_t g_data_offset = 0x6c;       // Derived from add #116, r1 i
  * 0x8C029964 - func_8C029964
  */
 
+
+/*
+ * 0x8C02999A - func_8C02999A
+ */
+
