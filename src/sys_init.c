@@ -7884,3 +7884,8 @@ extern uint32_t *g_vram_ptr; // Base VRAM address, assumed to be at 0x8C046DBC b
  * 0x8C046DB6 - func_8C046DB6 (870 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C046DB6); */
+
+/*
+ * 0x8C046AFA - func_8C046AFA
+ */
+
