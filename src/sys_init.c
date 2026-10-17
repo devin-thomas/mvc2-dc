@@ -10211,3 +10211,8 @@ extern void func_8C0550BA(uint32_t *ptr); // Helper function referenced in delay
 // The assembly provided: 0x8C0550BA: mov.b r0,@r6 suggests a helper exists at BA or similar logic was skipped/merged.
 // Given the explicit jump 'bf' (branch if false) from B4 to BC, and code at BA is shown as separate lines 
 // in the dump but logically unreachable unless we assume standard SDK structure where
+
+/*
+ * 0x8C055066 - func_8C055066
+ */
+
