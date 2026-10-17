@@ -714,3 +714,16 @@ extern uint32_t func_8C011906(uintptr_t a, uintptr_t b); // Placeholder for cont
  * 0x8C011698 - func_8C011698
  */
 
+
+/*
+ * 0x8C011B54 - func_8C011B54
+ */
+#include <stdint.h>
+
+extern uint32_t *g_StackBase; // Callee-saved stack pointer base or similar global context if needed, though here it's local logic. Assuming r15 is a register passed in or set by caller for this specific stub pattern common in Katana SDK prologues/epilogues where the return address might be manipulated relative to a frame offset before returning NULL.
+
+// Note: This function appears to be an epilogue helper that sets R0 (return value) to 0,
+// adjusts SP/R15 by +4 bytes (likely popping something or aligning), loads from [SP+PR] into PR? 
+// Actually, looking at SH-4 ABI and Katana SDK patterns:
+// r0 = return register. Set to 0.
+// add #4,r15 -> Adjust stack pointer/register R15 by +4 (often
