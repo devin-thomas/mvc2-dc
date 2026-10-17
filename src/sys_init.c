@@ -10357,3 +10357,8 @@ extern int32_t (*func_ptr)(void); // Placeholder for the function called at 0x8c
  * 0x8C0553EE - func_8C0553EE
  */
 
+
+/*
+ * 0x8C05550A - func_8C05550A (32 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C05550A); */
