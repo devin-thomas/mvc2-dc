@@ -3867,3 +3867,8 @@ extern uint32_t g_unk_8C0265e4; // Loaded at 0x8C0265E4, used as base address or
  * 0x8C02664A - func_8C02664A
  */
 
+
+/*
+ * 0x8C0263D0 - func_8C0263D0
+ */
+
