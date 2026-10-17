@@ -7749,3 +7749,8 @@ extern uint8_t *g_vram_base; // Global VRAM start address if not in registers di
 // Correction based on strict ABI analysis of this specific stub type found in MVC2 SDK:
 // r4 is typically passed as the base pointer argument. 
 // Let's redefine
+
+/*
+ * 0x8C04608C - func_8C04608C
+ */
+
