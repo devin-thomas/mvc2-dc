@@ -9871,3 +9871,8 @@ extern uint32_t func_8C01f9(uintptr_t base, uintptr_t offset); // Placeholder fo
 // However, strictly decompiling based on valid SH-4 instructions starting at 0x8C0536AE:
 
 extern uint32_t func_8c01f9(uintptr_t base); // Hypothetical helper if .word implies a
+
+/*
+ * 0x8C053504 - func_8C053504
+ */
+
