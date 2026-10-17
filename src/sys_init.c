@@ -1792,3 +1792,8 @@ extern uint32_t *func_8C0197F8(void); // Address 0x8C0197F8 points to this funct
 // The first instruction loads an address into R3 which is then used for indirect jumps (JMP @R3). This looks like a trampoline or function pointer lookup.
 // However, standard Katana SDK patterns often use static arrays of addresses as dispatch tables.
 // Let's assume the value at 0x8C0197F8 is an address to jump to directly if it were data, but `jmp @r3` implies R3 holds a function pointer or code offset
+
+/*
+ * 0x8C019422 - func_8C019422
+ */
+
