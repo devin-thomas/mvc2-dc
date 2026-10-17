@@ -9881,3 +9881,13 @@ extern uint32_t func_8c01f9(uintptr_t base); // Hypothetical helper if .word imp
  * 0x8C05354E - func_8C05354E
  */
 
+
+/*
+ * 0x8C0536F6 - func_8C0536F6
+ */
+extern void func_8C053706(void); // Helper function referenced in delay slot of rts at 0x8C053704, though logic suggests it might be unreachable or part of a larger sequence not fully shown. Based on the provided snippet ending with 'rts', this helper is likely called after return if control flow continues, but strictly within the 18-byte function body starting at F6 and returning at FC/FE? Wait, let's re-analyze the assembly structure carefully.
+
+// Re-evaluating Assembly Structure:
+// Addr | Opcode                     | Comment
+// -----|-----------------------------|----------------------------------
+// ...F6| mov.w    0x8c05380e,r0     | Load base address into r0 (r4 is likely a frame pointer or offset register passed in, but here it's used as part of the addressing
