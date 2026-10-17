@@ -5338,3 +5338,13 @@ extern void (*func_8C1240A0)(void); // Address 0x8C032270 -> 0x8C1240A0
  * 0x8C032364 - func_8C032364
  */
 
+
+/*
+ * 0x8C0322C0 - func_8C0322C0
+ */
+extern uint32_t *func_8C032390(void); // Address 0x8C03552A, likely a jump table base or function pointer array entry point logic. Note: The assembly loads this address directly into r3 for indirect jumps. Given the context of SH-4 decompilation where addresses are often data pointers to code/data structures, we treat it as an external symbol representing that specific memory location which acts as a dispatcher.
+extern uint8_t *g_UnknownArray; // Placeholder for global arrays accessed via offsets if not defined locally (inferred from pointer arithmetic patterns common in Katana SDK).
+
+// Based on the assembly logic: 
+// - It handles indirect jumps based on r5/r4 calculations relative to 0x8C032390.
+// - If no match, it performs a linear search/swap loop starting at offset
