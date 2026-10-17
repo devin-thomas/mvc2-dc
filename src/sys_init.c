@@ -4910,3 +4910,8 @@ extern uint32_t g_unk_8C02F762; // mov.w
  * 0x8C02F6FE - func_8C02F6FE (866 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C02F6FE); */
+
+/*
+ * 0x8C02FB62 - func_8C02FB62
+ */
+
