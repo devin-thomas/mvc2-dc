@@ -7541,3 +7541,8 @@ extern void func_8C0455f4(uint32_t arg); // Arguments: r6, r7; Return in r14? Or
  * 0x8C045208 - func_8C045208
  */
 
+
+/*
+ * 0x8C04508E - func_8C04508E
+ */
+
