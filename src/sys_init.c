@@ -5278,3 +5278,8 @@ extern uint32_t *g_8c031b5e; // 0x8C031B46 + offset? No, let's look at the const
 // Actually, the assembly has absolute addresses loaded into registers r5 and r6/r7 context.
 // Let's define externs for the specific memory locations referenced by the hardcoded offsets if they are globals, 
 // or just use direct pointer arithmetic on the known base addresses from the disassembly notes provided
+
+/*
+ * 0x8C031BBA - func_8C031BBA
+ */
+
