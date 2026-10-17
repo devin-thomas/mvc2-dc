@@ -8278,3 +8278,37 @@ extern uint32_t *table_1; // Corresponds to address loaded at r3 (0x8c04958c) ->
  * 0x8C04913C - func_8C04913C
  */
 
+
+/*
+ * 0x8C049562 - func_8C049562
+ */
+extern uint32_t *g_8C05A2CC; // Address 0x8C049694
+extern void (*func_ptr_table_entry1)(void); // Placeholder for address at offset from r1/r2 logic if needed, but likely direct call or indirect via table. Based on `jsr @r3` where r3 is loaded with a function pointer (e.g., 0x8C05A2CC).
+extern void (*func_ptr_table_entry2)(void); // Placeholder for address at offset from r1/r2 logic if needed, but likely direct call or indirect via table. Based on `jsr @r3` where r3 is loaded with a function pointer (e.g., 0x8C1292D4).
+extern void (*func_ptr_table_entry3)(void); // Placeholder for address at offset from r1/r2 logic if needed, but likely direct call or indirect via table. Based on `jsr @r3` where r3 is loaded with a function pointer (e.g., 0x8C2896B0).
+extern void (*func_ptr_table_entry4)(void); // Placeholder for address at offset from r1/r2 logic if needed, but likely direct call or indirect via table. Based on `jsr @r3` where r3 is loaded with a function pointer (e.g., 0x8C0F01F8).
+
+// Helper structures inferred from memory layout and usage
+struct _some_struct_ {
+    uint32_t field_a; // Used at offset +4 relative to base in some contexts, or as part of the struct passed.
+}; 
+
+typedef void (*func_ptr)(void);
+
+extern func_ptr g_func_table_entry1; 
+// Note: The assembly loads addresses directly into r0/r1/etc and calls them via `jsr @reg`. 
+// Since we don't have the runtime data, we declare externs for the specific function pointers found in constants.
+extern void (*g_8C2895F0)(void); // Address 0x8C0496AC loads this? No, r13 is set to a value then used as base. 
+// Let's re-evaluate based on `mov.l @r3` where r3 comes from constants like 0x8c28 (which points to code).
+extern void (*g_8C2896B0)(void); // Address loaded at 0x8C0497FC? No, 0x8C0497FC is `mov.l @r3,r2`. r3 comes from constant.
+
+// Re-evaluating constants:
+extern void (*g_8c05A2CC_func)(void); // Address at offset +16 relative to some base? No, 0x8C0497FC loads `@r3` where r3 is a function pointer address directly.
+
+// Correct approach for unknown addresses:
+extern void (*g_unk_ptr_a)(void) __attribute__((section(".text"))); // Placeholder if direct call without table lookup logic visible in C form, but here we see explicit jumps/calls.
+extern uint8_t g_byte_data_at_offset; 
+
+// Actually, looking at the code flow:
+// It seems to be a state machine or dispatcher based on `r13` (state?) and memory reads from specific offsets relative to registers passed in r4/r5/etc? 
+// No, arguments
