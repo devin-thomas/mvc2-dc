@@ -6481,3 +6481,8 @@ extern void func_8C010524(int, int); // Placeholder for address at offset 0xf446
  * 0x8C03C870 - func_8C03C870
  */
 
+
+/*
+ * 0x8C03C7F6 - func_8C03C7F6 (60 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C03C7F6); */
