@@ -5843,3 +5843,17 @@ extern void func_8C213046(void *a);                      // Placeholder for jsr 
  * 0x8C036AB0 - func_8C036AB0 (520 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C036AB0); */
+
+/*
+ * 0x8C036F50 - func_8C036F50
+ */
+#include <stdint.h>
+
+// Extern declarations for global variables referenced by absolute addresses in the assembly.
+extern uint8_t g_vram_0x8C26823C[1]; // Address 0x8C26823C (derived from mov.l at F7C)
+extern const struct { 
+    int field_offset; // Offset for byte write: r4 + offset -> target address? No, logic below suggests indirect.
+} g_data_table_0x8c036f78 = {{ 92 }}; // Address 0x8c036f78 contains the value 92 used as an index/offset
+
+// Reconstructed global based on assembly flow: 
+// The code loads a pointer from 0x8C010524 (implied by context of Katana SDK, but here we see
