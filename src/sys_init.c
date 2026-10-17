@@ -9446,3 +9446,8 @@ extern uint32_t *g_vram_8C051BCA_base; // Corresponds to address 0x8c051c8c cont
 // In SH-4 C decompilation of Dreamcast code: 
 // - Immediate addresses in mov usually point to data structures (like tables) stored in VRAM or ROM that are mapped.
 // - `g_vram_8C051BCA_base` is a placeholder for the
+
+/*
+ * 0x8C051888 - func_8C051888
+ */
+
