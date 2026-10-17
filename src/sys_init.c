@@ -6059,3 +6059,8 @@ extern void func_8C14D4A0(uint32_t *dest, const uint32_t *src, uint32_t count); 
  * 0x8C039588 - func_8C039588
  */
 
+
+/*
+ * 0x8C039514 - func_8C039514
+ */
+
