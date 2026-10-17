@@ -781,3 +781,18 @@ static inline bool check_bit(uint32_t val) {
  * 0x8C011A48 - func_8C011A48
  */
 
+
+/*
+ * 0x8C011D06 - func_8C011D06
+ */
+#include <stdint.h>
+
+// Helper function declaration (extern) to ensure standalone syntax validity if referenced elsewhere, though unused here.
+static uint32_t func_8C011D06(void); 
+
+uint32_t func_8C011D06() {
+    return 1; // mov #1,r0 followed by rts (return)
+}
+
+// Note: The provided assembly snippet ends with a NOP at the delay slot of RTS, which is effectively ignored. 
+// A full decompilation would typically include all bytes up to the next function or data section boundary if available.
