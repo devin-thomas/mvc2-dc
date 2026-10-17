@@ -9166,3 +9166,8 @@ extern void func_8C05060E(uint32_t *a); // Helper function declared as extern to
 
 // Note: The assembly provided shows `rts` at 0x...0C and then code continues at 0x...0E. 
 // This implies an inline expansion or a specific compiler optimization where 'func_8C050606' is actually the label for the block starting at 0x8C050606
+
+/*
+ * 0x8C050518 - func_8C050518
+ */
+
