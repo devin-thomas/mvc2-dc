@@ -2935,3 +2935,8 @@ extern uint32_t func_8C14730E(uint32_t a, uint32_t b); // Address 0x8C147310 inf
 // Since we don't have a symbol for that specific address, and it's an external jump target in the SDK context, 
 // we must assume there exists a function at that address or treat it as opaque if not known.
 // However, looking closely: `mov.l 0x8c01fe14,r3` loads 0x8C1297C4 into r3. Then `jsr @r
+
+/*
+ * 0x8C01FEC0 - func_8C01FEC0
+ */
+
