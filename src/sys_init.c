@@ -6647,3 +6647,8 @@ extern uint32_t func_8C010524(void); // Placeholder for the function at r4 addre
  * 0x8C03D8DC - func_8C03D8DC
  */
 
+
+/*
+ * 0x8C03DEEC - func_8C03DEEC (594 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C03DEEC); */
