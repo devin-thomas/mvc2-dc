@@ -5862,3 +5862,8 @@ extern const struct {
  * 0x8C036CB8 - func_8C036CB8
  */
 
+
+/*
+ * 0x8C036DDE - func_8C036DDE
+ */
+
