@@ -6171,3 +6171,15 @@ extern const uint32_t *g_8C26823C; // Address loaded at 0x8C039A54
  * 0x8C03ACB8 - func_8C03ACB8 (1038 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03ACB8); */
+
+/*
+ * 0x8C03AC3A - func_8C03AC3A
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced functions and data (as per Dreamcast ABI context)
+extern uint32_t (*func_8C01F5E0)(void); // Corresponds to bsr 0x8c03aa90 based on typical SDK patterns, adjusted if needed. 
+    // Note: The assembly uses absolute addresses for the BSR targets which are likely function pointers stored in ROM/RAM constants.
+    // Without a symbol table mapping these specific hex values (0x8C268340 etc) to symbols, we assume they resolve to functions returning uint32_t or void*.
+    // Given 'tst r0' checks for zero return value of the BSR'd function:
+extern int (*func_8C1A9E50)(void); // Placeholder name mapping 0x8c03aa
