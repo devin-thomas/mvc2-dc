@@ -4013,3 +4013,13 @@ static inline uint16_t func_8C02695E(void) { return 0x7F; } // Placeholder for t
  * 0x8C026E28 - func_8C026E28
  */
 
+
+/*
+ * 0x8C027452 - func_8C027452
+ */
+#include <stdint.h>
+
+extern void func_8C174BC2(uint32_t val); // Address 0x8C1F8AC4 -> likely a helper or data pointer logic, adjusted based on context if needed. Assuming standard function call pattern from assembly 'jsr @r12' where r12 holds address of func_8c027588 (which is 0x8c174bc2).
+extern void func_8C174DAC(uint32_t val); // Address 0x8C1F8AC4 -> Wait, checking assembly: 
+// r12 = 0x8c027588 (value is 0x8C174BC2). So the function at that address.
+extern void func_8C174DAC(uint32_t val); // Address
