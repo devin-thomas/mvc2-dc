@@ -6830,3 +6830,17 @@ static const uint32_t g_data_offset_1 = 0x8C03FF2C - 0x8C03FE7A + (uint32_t)(uin
  * 0x8C03FD1A - func_8C03FD1A
  */
 
+
+/*
+ * 0x8C03FEB0 - func_8C03FEB0
+ */
+#include <stdint.h>
+
+// External declarations for referenced globals/data structures (assumed based on context)
+extern uint16_t *g_some_table_8C03FF1C; // Address 0x8C03FF1C, likely a pointer to data or table start
+extern int g_flag_counter_at_offset_28_r4; // Variable at offset +28 from r4 base (modified by -1/+1 logic)
+
+// Note: The assembly contains raw word values embedded in the code section which act as constants.
+// 0x415a, 0xf246, etc., are likely specific magic numbers or flags used directly without loading into a register first if they were immediate ops, 
+// but here `mov.w` loads them from ROM/data segment addresses relative to the function start? 
+// Actually, looking at standard SH-4 layout:
