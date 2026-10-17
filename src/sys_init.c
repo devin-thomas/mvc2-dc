@@ -10114,3 +10114,8 @@ extern void (*func_ptr_8C054D94)(void); // Placeholder name for the routine at 0
 // Trace back from CE A: 
 // CF6 jsr @r2 (where r2 is loaded from table 0x8C054D94 at CFA). So the call at CE A must be different or I misread the flow.
 // Ah, line CE A calls `js
+
+/*
+ * 0x8C054368 - func_8C054368
+ */
+
