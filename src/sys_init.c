@@ -8135,3 +8135,20 @@ static uint32_t g_jump_table_1[7] = {
 };
 
 // Correct
+
+/*
+ * 0x8C048E74 - func_8C048E74
+ */
+extern uint32_t func_8C034DEE(uint32_t); // Address loaded at 0x8C048F1C
+static const struct {
+    int offset;
+} sTable = {
+    {-96, -75},   // Derived from offsets: r1=92+(-r14), then add to base. 
+                   // Actually, let's re-evaluate the pattern logic strictly based on assembly flow.
+};
+
+// Re-deriving constants for clarity without struct if complex pointer math is needed inline.
+// The code loads a table of offsets relative to r0 (which starts at VRAM address).
+// Pattern: 
+// 1. Load base offset from memory? No, it's hardcoded in the assembly as .word sequences added to registers then used for jumps or data access?
+// Wait, looking closely at lines
