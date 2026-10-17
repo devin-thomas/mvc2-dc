@@ -2369,3 +2369,8 @@ extern void (*func_ptr)(void); // Placeholder for the function called at r3 (lik
  * 0x8C01BCCA - func_8C01BCCA
  */
 
+
+/*
+ * 0x8C01BBAC - func_8C01BBAC
+ */
+
