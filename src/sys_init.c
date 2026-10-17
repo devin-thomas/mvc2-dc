@@ -6335,3 +6335,8 @@ static const uint32_t OFFSET_B_4 = 0x8C0F71A8U - 0xCUL; // Derived from
  * 0x8C03BF94 - func_8C03BF94 (720 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C03BF94); */
+
+/*
+ * 0x8C03BE26 - func_8C03BE26
+ */
+
