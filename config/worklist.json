@@ -3741,14 +3741,14 @@
     "end_vram": 2348951330,
     "size": 218,
     "status": "pending",
-    "attempts": 0
+    "attempts": 1
   },
   {
     "name": "func_8C022722",
     "vram": 2348951330,
     "end_vram": 2348952468,
     "size": 1138,
-    "status": "pending",
+    "status": "stubbed",
     "attempts": 0
   },
   {
