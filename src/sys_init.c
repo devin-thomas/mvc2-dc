@@ -851,3 +851,8 @@ uint32_t func_8C011D06() {
  * 0x8C0120C8 - func_8C0120C8
  */
 
+
+/*
+ * 0x8C0120AC - func_8C0120AC
+ */
+
