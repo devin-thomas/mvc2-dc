@@ -10347,3 +10347,8 @@ extern int32_t (*func_ptr)(void); // Placeholder for the function called at 0x8c
  * 0x8C055394 - func_8C055394
  */
 
+
+/*
+ * 0x8C05552A - func_8C05552A
+ */
+
