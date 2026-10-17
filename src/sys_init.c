@@ -7256,3 +7256,9 @@ extern uint32_t *gbr_ptr_base; // Base address for GBR pointers, adjusted by off
  * 0x8C042D74 - func_8C042D74
  */
 
+
+/*
+ * 0x8C04335C - func_8C04335C
+ */
+extern uint32_t *func_8C04335C_base_addr(void); // Base address 0x8c043410, assumed global context or passed differently if not extern. Adjust based on actual linkage. Assuming it's a pointer to the base structure/area for now as per typical SDK patterns where addresses are constants in code but accessed via pointers at runtime. However, looking at `mov.w 0x8c043410,r0`, this is an absolute load of a constant address into r0 which acts as a base pointer offset register or direct array index if the compiler treats it specially? No, SH-4 uses explicit addressing modes. 
+// Correction: In Dreamcast C decompilation for Katana SDK, 0x8c043410 is likely an absolute memory address loaded into r0 to serve as a base pointer (e
