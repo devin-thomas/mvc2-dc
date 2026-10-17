@@ -9797,3 +9797,8 @@ extern void func_8C0532A8(uintptr_t *); // Adjust signature based on actual usag
  * 0x8C052D30 - func_8C052D30
  */
 
+
+/*
+ * 0x8C052B34 - func_8C052B34 (336 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C052B34); */
