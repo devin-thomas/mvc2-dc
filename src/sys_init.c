@@ -965,3 +965,12 @@ extern void *g_some_global_6c_offset; // Placeholder for @(r3+48), assuming it's
  * 0x8C012F62 - func_8C012F62 (550 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C012F62); */
+
+/*
+ * 0x8C0133AC - func_8C0133AC
+ */
+extern void (*func_8C03563A)(void);
+extern int func_8C0355B2(uintptr_t, uintptr_t); // Address 0x8C0355B2 takes (arg1, arg2) where r4 is base pointer and r6/r7 are args? Based on usage: mov #0,r6; jsr @func. Likely func(base_ptr, value).
+extern void (*func_8C212CBC)(void); // Takes byte from memory via r3->b into r2 check
+extern int func_8C17A228(void);
+extern void func_8C044E56(int count, uintptr_t base_ptr); // Loops 'count' times writing 1 to bytes at offset 0..(count-1) of address in r3 (loaded from r
