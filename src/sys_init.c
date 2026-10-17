@@ -8375,3 +8375,20 @@ extern void func_8C034E8C(int a0, int a1); // 0x8C049D18 (Re-verified from `mov.
  * 0x8C0498A0 - func_8C0498A0
  */
 
+
+/*
+ * 0x8C049756 - func_8C049756
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/helpers (assumed based on context)
+extern uint32_t g_vram_table_8c0497d0; // Address 0x8C05AB54 stored here, used as jump target table base? Or direct address. Based on `mov.l`, it's likely a pointer or offset array. Let's assume the assembly loads an absolute address into r3 then jumps.
+extern uint32_t g_vram_table_8c0497d4; // Address 0x8C034E8C stored here, used as jump target table base?
+extern void (*g_func_ptr_8c0498dc)(void); // Function pointer at 0x8C26A530 (loaded from r3) - actually assembly loads address into r3 then jsr. So it's a function call via indirect addressing or just an offset? 
+// Correction: `mov.l #... , r3` followed by `jsr @r3`. The immediate value is likely the *offset* to add to something, OR if it's absolute 24-bit/32-bit address.
+// Looking at SH-4 ABI and typical Katana SDK patterns: 
+// Often these tables contain offsets relative to a base (like VRAM start) or are direct addresses in ROM/RAM banks.
+// However, `mov.l #52,r0` then `jsr @r3`. If r3 is an offset, it's added to something? No, SH-4 jsr uses the register content directly as address if not extended by a base pointer unless using specific addressing modes which this doesn't show.
+// Wait, looking closely at 0x8C0497D0: `mov.l #... , r3`. The comment says `[Addr] = Value`. 
+// If it's an absolute jump table in ROM (common for Katana), the value is likely a PC-relative offset or direct address.
+// Given "Dreamcast C decompiler" persona
