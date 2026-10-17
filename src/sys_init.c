@@ -9544,3 +9544,8 @@ extern void func_8C0532A8(void); // Address loaded from 0x8C0521
  * 0x8C051DF4 - func_8C051DF4
  */
 
+
+/*
+ * 0x8C051EA0 - func_8C051EA0
+ */
+
