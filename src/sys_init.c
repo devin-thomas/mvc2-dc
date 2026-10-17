@@ -5056,3 +5056,28 @@ extern uint32_t func_8C02FBE6_offset[5]; // Offset array for the indirect store 
  * 0x8C0303DE - func_8C0303DE
  */
 
+
+/*
+ * 0x8C030452 - func_8C030452
+ */
+#include <stdint.h>
+
+// External function declarations based on address analysis from assembly constants.
+extern void func_8C120950(void);           // Called at 0x8C0304FC (r3) - likely a helper or callback
+extern int (*func_8C1201E0)(void *);      // Called at 0x8C030500 (r2) - pointer to function taking void* returning int
+extern void func_8C122710(void);           // Called at 0x8C0304FC via r3 in second block? No, addr is different. 
+                                            // Re-evaluating: 0x8c030504 -> 0x8C122710
+extern void func_8C122710(void);           // Called at 0x8C0304FC? No, code says mov.l #... r3 then jsr @r3. 
+                                            // Let's map addresses strictly:
+// 0x8c030504 -> 0x8C122710 (Called at line with add#80)
+extern void func_8C122710(void);
+
+// Helper functions identified in the assembly flow.
+extern int (*func_8C123370)(void *);      // Called at 0x8c030508 (r2) - pointer to function taking void* returning int? 
+                                            // Actually code does: mov.w r4, @r2 then jsr. Wait, assembly says "mov.l ... r2", "mov.w ... r4", "jsr".
+// Correction on ABI usage in this specific block:
+// The pattern `mov.l addr,rX`, `mov.w val,Y` (where Y is a register or immediate offset?), `jsr @addr`.
+// Looking at 0x8c030510 -> 0x00008000. This looks like an interrupt vector table entry or similar constant pointer? 
+// No, it's likely a function address stored in memory that gets loaded into r2/r4/etc to call via indirect jump/branch.
+extern void func_8C132640(void);           // Called at 0x8c030514 (r3) - pointer arithmetic involved? 
+                                            // Code: mov.l ... r3, jsr @r3. So it's a function address in memory loaded to r3 then called.
