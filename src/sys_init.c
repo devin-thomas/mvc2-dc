@@ -7298,3 +7298,8 @@ extern uint32_t *g_unk_ptr_table; // Placeholder for 0x8C043AB6 base + offsets i
 
 extern uint8_t *const g_vram_base; // Represents 0x8C043AD0 if it's a base pointer, but here it looks like an absolute address load. 
 // Correction based on assembly `mov.w #addr`: These are likely direct loads of pointers or
+
+/*
+ * 0x8C04340A - func_8C04340A
+ */
+
