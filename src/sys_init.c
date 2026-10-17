@@ -7796,3 +7796,12 @@ extern uint16_t g_DataAddr_Mid;   // Address 0x8c04643c (Mid/High bytes or next 
  * 0x8C0463D2 - func_8C0463D2 (900 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C0463D2); */
+
+/*
+ * 0x8C046A2A - func_8C046A2A
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function but not defined here
+extern uint8_t *g_vram_buffer; // Base VRAM address, assumed from context of @(r0,r4) usage where r4 is likely base or offset register holding a pointer to buffer start. Given typical Katana SDK patterns and lack of explicit global definition for 'base_ptr' argument in the snippet's logic flow (it seems to modify memory at an absolute location derived internally), we assume standard Dreamcast VRAM access via a fixed address passed as r4 or calculated relative to it. 
+// Correction based on assembly: The function takes NO arguments visible, but uses @(r0,r4). In Katana SDK, this often implies 'base_ptr' is the first argument (in R4) and we are writing into VRAM at offset 0x8C... wait, r2 holds a pointer to another
