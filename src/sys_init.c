@@ -6146,3 +6146,8 @@ extern const uint32_t *g_8C26823C; // Address loaded at 0x8C039A54
  * 0x8C039A16 - func_8C039A16 (404 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C039A16); */
+
+/*
+ * 0x8C039F40 - func_8C039F40 (570 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C039F40); */
