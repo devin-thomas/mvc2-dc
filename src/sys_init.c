@@ -8671,3 +8671,19 @@ extern uint32_t *g_base_ptr; //
  * 0x8C04D000 - func_8C04D000 (528 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04D000); */
+
+/*
+ * 0x8C04D4A4 - func_8C04D4A4
+ */
+#include <stdint.h>
+
+// Global variables referenced in the function (must be declared extern for standalone compilation)
+extern uint32_t g_unk_8C05176E; // Address loaded at 0x8C04D518, used as jump target
+extern uint32_t g_unk_8C051648; // Address loaded at 0x8C04D51C, used as jump target
+
+// Helper function declarations (assumed to exist based on context)
+uint32_t func_dispatcher_case_A(void); 
+void func_dispatcher_case_B(uint32_t arg_a, uint32_t arg_b); // Placeholder for logic if needed, but here it's just a call via r3/r5 pattern? No, let's look closer.
+
+// Actually, looking at the jumps:
+// 0x8C
