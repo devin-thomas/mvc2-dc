@@ -9496,3 +9496,11 @@ extern uint32_t (*g_ptr_to_call)(void);
  * 0x8C051A74 - func_8C051A74
  */
 
+
+/*
+ * 0x8C051FDC - func_8C051FDC
+ */
+extern uint32_t func_8C051E64(uint32_t a, uint32_t b); // Adjusted signature based on usage context if needed, assuming standard args or specific SDK pattern. Given the call `bsr 0x8c051e64` with no explicit arg setup in this snippet before it (though r3 is loaded), we assume r3 holds one argument and potentially another was set earlier or it's a static lookup. However, looking at standard Katana SDK patterns:
+// Re-evaluating the call site logic: 
+// `mov.l @(r0,r4),r3` loads an address/value into r3.
+// Then `bsr 0x8c051e64`. The SH-4 BSR instruction does not take arguments directly; it jumps to a subroutine which must be called via JSR or the
