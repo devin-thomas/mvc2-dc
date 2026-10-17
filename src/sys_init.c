@@ -727,3 +727,8 @@ extern uint32_t *g_StackBase; // Callee-saved stack pointer base or similar glob
 // Actually, looking at SH-4 ABI and Katana SDK patterns:
 // r0 = return register. Set to 0.
 // add #4,r15 -> Adjust stack pointer/register R15 by +4 (often
+
+/*
+ * 0x8C011B14 - func_8C011B14
+ */
+
