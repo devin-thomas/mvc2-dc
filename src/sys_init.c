@@ -8322,3 +8322,8 @@ extern uint8_t g_byte_data_at_offset;
  * 0x8C049AA4 - func_8C049AA4
  */
 
+
+/*
+ * 0x8C049CA8 - func_8C049CA8
+ */
+
