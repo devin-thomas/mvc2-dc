@@ -3903,3 +3903,18 @@ extern uint32_t g_ptr_8C147F0C; // Corresponds to address 0x
  * 0x8C026432 - func_8C026432
  */
 
+
+/*
+ * 0x8C026910 - func_8C026910
+ */
+#include <stdint.h>
+
+// External declarations for global data referenced in the function.
+extern uint32_t g_unk_8C1294C8; // Address loaded from 0x8C026998 (constant offset)
+extern void (*g_func_ptr)(void);   // Function pointer resolved via JSR @r3
+
+// Helper to cast address constants safely as per instructions.
+#define ADDR_CAST(addr, type) ((type *)(uintptr_t)(addr))
+
+static inline uint16_t func_8C02695E(void) { return 0x7F; } // Placeholder for the actual function at this VRAM addr if needed, or just a dummy call target.
+// Note: The assembly loads an address from memory (r3 = [0x8c02698c]), so we must assume that location holds a valid
