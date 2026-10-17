@@ -8021,3 +8021,8 @@ extern int func_8C0518A0(int, int *);           // Address 0x8C048018 -> 0x8C051
 extern void func_8C0526D6(uint32_t *, uint32_t); // Address 0x8C04801C -> 0x8C0526D6
 extern int func_8C051BCA(int, int *);           // Address 0x8C048020 -> 0x8C051BCA (returns in r0)
 extern void func_8C034DEE(uint32_t *, uint32_t); // Address 0x8
+
+/*
+ * 0x8C047594 - func_8C047594
+ */
+
