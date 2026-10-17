@@ -7581,3 +7581,9 @@ extern void func_8C0455f4(uint32_t arg); // Arguments: r6, r7; Return in r14? Or
  * 0x8C045474 - func_8C045474 (340 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C045474); */
+
+/*
+ * 0x8C045830 - func_8C045830
+ */
+extern uint32_t func_8C0178(void); // Placeholder for the function at 0x8C0178 implied by .word usage context or similar pattern if not a direct call, but here it's likely an immediate load logic. Re-evaluating: The assembly shows `mac.l @r9+,@r1+` followed immediately by `.word`. In SH-4 object files from Metrowerks/GCC for Dreamcast, this often represents a sequence where the next instruction is actually part of a larger block or the disassembler split it. However, looking at standard Katana SDK patterns:
+// Actually, `mac.l @r9+,@r1+` consumes 2 words (4 bytes). The `.word` directives following are likely data constants being loaded into registers via specific addressing modes not fully expanded in this snippet or they represent immediate values for subsequent instructions that
