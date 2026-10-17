@@ -8967,3 +8967,8 @@ static const uintptr_t jump_table_B[] = {
 };
 
 // Reconstruct the logic based on SH-4 specific table lookup pattern found in
+
+/*
+ * 0x8C04E7C6 - func_8C04E7C6
+ */
+
