@@ -8933,3 +8933,8 @@ extern const uint32_t *g_DataTable_1; // Address 0x8C04E76C -> points to table s
  * 0x8C04E1B6 - func_8C04E1B6
  */
 
+
+/*
+ * 0x8C04E304 - func_8C04E304
+ */
+
