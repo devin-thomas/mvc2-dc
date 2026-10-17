@@ -10807,3 +10807,8 @@ extern void (*func_ptr_8C2896B0)(void); // Address at 0x8c0577cc
  * 0x8C057DF4 - func_8C057DF4 (606 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C057DF4); */
+
+/*
+ * 0x8C057944 - func_8C057944
+ */
+
