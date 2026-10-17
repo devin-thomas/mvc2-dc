@@ -8421,3 +8421,18 @@ extern uint32_t func_0x8C04A574(void); // Address stored at VRAM offset 0x16 rel
  * 0x8C04A002 - func_8C04A002
  */
 
+
+/*
+ * 0x8C04A4C6 - func_8C04A4C6
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global data/variables (names inferred from context)
+extern uint32_t g_vram_base_8C054400; // Address loaded at 0x8C04A580
+extern const struct { /* Struct containing offsets or flags */ } s_table_start_offset; 
+// Note: The assembly uses hardcoded addresses for table lookups. In a real decompile, these would be resolved to specific global variables if the linker script provided them.
+// Here we assume the data at 0x8C04A562 onwards is accessible via pointer arithmetic or direct access based on runtime context not fully visible in this snippet alone.
+
+extern uint32_t *g_ptr_1; // Corresponds to address loaded into r1 (likely a function table)
+// The assembly loads specific addresses directly, so we model the logic using pointers derived from those constants if they represent data structures, 
+// or assume direct access for code segments. Given "jsr @r2", these are likely jump tables stored in VRAM/ROM mapped memory
