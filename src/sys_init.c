@@ -4805,3 +4805,16 @@ extern void (*helper_func)(void); // Placeholder for address 0x8c02e014 if it's 
  * 0x8C02E2FA - func_8C02E2FA
  */
 
+
+/*
+ * 0x8C02E3DA - func_8C02E3DA
+ */
+#include <stdint.h>
+
+// External declarations for referenced functions and globals (inferred from context)
+extern uint32_t (*func_8C1294C8)(uint32_t, uint32_t); // Address 0x8C1294C8 called at r3
+extern void func_8C02FDE0(void *arg);                   // Address 0x8C02FDE0 (r1)
+extern void func_8C02FD26(uint32_t arg, uint32_t unused_arg); // Address 0x8C02FD26 (r1)
+extern void (*func_ptr_r4)(void *arg);                  // Pointer loaded from r4 at offset E458/E45A? No, likely specific pointers. 
+// Re-evaluating based on assembly:
+// The
