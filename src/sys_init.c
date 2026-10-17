@@ -7576,3 +7576,8 @@ extern void func_8C0455f4(uint32_t arg); // Arguments: r6, r7; Return in r14? Or
  * 0x8C045334 - func_8C045334
  */
 
+
+/*
+ * 0x8C045474 - func_8C045474 (340 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C045474); */
