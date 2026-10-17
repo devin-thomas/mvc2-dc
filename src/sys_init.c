@@ -1525,3 +1525,8 @@ extern uint8_t *g_vram_base; // Base address 0x8C1454AC inferred, or passed via 
  * 0x8C017D74 - func_8C017D74 (24 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C017D74); */
+
+/*
+ * 0x8C017D8C - func_8C017D8C
+ */
+
