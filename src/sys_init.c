@@ -3730,3 +3730,8 @@ static void *resolve_gbr_offset(uintptr_t base_addr) {
  * 0x8C025574 - func_8C025574
  */
 
+
+/*
+ * 0x8C0256A2 - func_8C0256A2
+ */
+
