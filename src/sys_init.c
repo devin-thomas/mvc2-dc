@@ -1016,3 +1016,8 @@ extern uint32_t func_8C04257C; // Address loaded at 0x8C01352E (likely a functio
 // Re-evaluating line 0x8C013526/28 based on standard SH-4 patterns: 
 // .word usually implies an address constant if used with mov.l from memory, but here they are data directives often defining constants or addresses for indirect jumps in SDK code.
 // Given the error about undeclared
+
+/*
+ * 0x8C013420 - func_8C013420
+ */
+
