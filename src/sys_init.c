@@ -3684,3 +3684,8 @@ extern uint32_t gbr; // Global Base Register, typically 0xC01F8000 on DC hardwar
 // Assuming standard Katana/SDK usage where gbr points to the start of the executable image in memory space if used as an address pointer, OR it's a local variable name collision in the original C source mapped here.
 // Given `mov.w r0,@(92,gbr)`, this is likely accessing a specific offset from the GBR register which holds the base address of the loaded program or a specific segment table. 
 // For decompilation safety, we treat it as an external symbol if not defined in scope, but standard Dreamcast C compilers handle `gbr
+
+/*
+ * 0x8C025108 - func_8C025108
+ */
+
