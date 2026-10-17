@@ -6844,3 +6844,8 @@ extern int g_flag_counter_at_offset_28_r4; // Variable at offset +28 from r4 bas
 // 0x415a, 0xf246, etc., are likely specific magic numbers or flags used directly without loading into a register first if they were immediate ops, 
 // but here `mov.w` loads them from ROM/data segment addresses relative to the function start? 
 // Actually, looking at standard SH-4 layout:
+
+/*
+ * 0x8C03FCDE - func_8C03FCDE
+ */
+
