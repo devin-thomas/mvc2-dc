@@ -8221,3 +8221,16 @@ extern void func_8C04A1B2(uint32_t arg0, uint32_t arg1); // Inferred from contex
 extern uint32_t (*func_ptr_table_entry_a)(void) __attribute__((section(".text"))); // Placeholder name, actual address is 0x8c052ce2
 // Note: The assembly uses indirect jumps via registers loaded from fixed addresses. 
 // We must declare the external functions corresponding to those jump targets or assume they are defined elsewhere in the SDK.
+
+/*
+ * 0x8C049446 - func_8C049446
+ */
+#include <stdint.h>
+
+// External declarations for symbols referenced in the function but not defined here.
+extern uint16_t *g_unk_table_ptr; // Likely derived from 0x8C05176E context or similar global lookup table logic inferred from jump tables.
+extern void (*func_jump_table_entry)(void); 
+// Note: The assembly uses indirect jumps via addresses loaded into r3/r0 which point to code/data segments typical of Katana SDK's function pointer arrays or state machines. Without the exact symbol names for 0x8C0494AC, etc., we use extern placeholders representing those specific jump targets found in retail binaries (e.g., func_8c05176E).
+
+// Placeholder for the external functions resolved by the indirect jumps at offsets relative to base addresses.
+extern void (*func_ptr_A)(void); // Corresponds to address
