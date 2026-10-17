@@ -9921,3 +9921,8 @@ extern void func_8C053706(void); // Helper function referenced in delay slot of 
  * 0x8C0533FC - func_8C0533FC
  */
 
+
+/*
+ * 0x8C053C8E - func_8C053C8E (34 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C053C8E); */
