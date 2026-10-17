@@ -2072,3 +2072,8 @@ extern uint32_t *const __attribute__((aligned(4))) g_base_addr_8c26a940; // The 
 
 extern uint8_t g_vram_data_52_offset; // Placeholder for the data at base+0x34 (if 52 was hex? No, #52 is decimal). 
 // Wait, "add #52,r1".
+
+/*
+ * 0x8C01ADE6 - func_8C01ADE6 (1062 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C01ADE6); */
