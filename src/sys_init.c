@@ -9466,3 +9466,8 @@ extern uint32_t func_8C051CA0(uintptr_t); // Placeholder for the function at add
 // Note: In SH-4 Dreamcast context, addresses like 0x8C051CA0 are often function pointers or absolute jumps stored in data segments (VRAM/ROM). 
 // Since the assembly loads a literal address into R3 and then JSRs it, we treat `func_8C051BDE` as calling an external entity located at that specific memory location.
 extern uint32_t (*g_ptr_to_call)(void);
+
+/*
+ * 0x8C051BEC - func_8C051BEC
+ */
+
