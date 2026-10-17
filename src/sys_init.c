@@ -4543,3 +4543,8 @@ extern uint32_t func_8C149850(void); // Address 0x8C149850 from r1 at 0x8c02a4dc
  * 0x8C02AAAE - func_8C02AAAE
  */
 
+
+/*
+ * 0x8C02B498 - func_8C02B498
+ */
+
