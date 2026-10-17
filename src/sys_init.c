@@ -7504,3 +7504,8 @@ extern void *r5_ptr; // Placeholder for r5 base pointer context if needed, thoug
  * 0x8C044F1E - func_8C044F1E
  */
 
+
+/*
+ * 0x8C044E9E - func_8C044E9E
+ */
+
