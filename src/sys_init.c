@@ -7075,3 +7075,8 @@ static inline uint32_t get_jump_table_entry(uint32_t base_addr, int offset) {
 }
 
 // Helper to handle the
+
+/*
+ * 0x8C042008 - func_8C042008
+ */
+
