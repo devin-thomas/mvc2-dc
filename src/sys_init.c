@@ -4152,3 +4152,8 @@ extern void func_8c54(uint32_t, int); // Inferred helper at address 0x8c54 patte
 extern void func_8c1f(int);           // Helper inferred from jump table logic
 
 //
+
+/*
+ * 0x8C027B30 - func_8C027B30
+ */
+
