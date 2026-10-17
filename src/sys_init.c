@@ -3852,3 +3852,8 @@ extern uint32_t *g_data_8C26823C; // Corresponds to 0x8c026198 (value is address
 extern uint32_t g_unk_8C0265e4; // Loaded at 0x8C0265E4, used as base address or offset logic? Context suggests it might be a pointer to data structure. Based on usage: mov.w #addr -> r0/r1 then dereference. Let's assume these are pointers/constants loaded into registers for addressing modes relative to *r4*.
 // Re-evaluating 0x8C0265E4/0xE6 based on typical Katana SDK patterns: These look like absolute addresses of data structures or function tables, but the instruction `mov.w #addr` followed by use in address calculation suggests they are base pointers. 
 // However, looking at `extu.b @(r
+
+/*
+ * 0x8C026340 - func_8C026340
+ */
+
