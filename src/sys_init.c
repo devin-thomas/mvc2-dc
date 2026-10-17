@@ -8772,3 +8772,8 @@ extern int (*func_ptr)(void) = (int (*)(void))((uintptr_t)0x8C034E8C + 16 * size
  * 0x8C04D9D2 - func_8C04D9D2
  */
 
+
+/*
+ * 0x8C04DC42 - func_8C04DC42 (128 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04DC42); */
