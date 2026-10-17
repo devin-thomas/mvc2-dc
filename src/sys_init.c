@@ -1498,3 +1498,15 @@ extern uint32_t *g_ptr_table_start_0x8C044F12_end_of_block; // Address 0x8C044F1
 // Let's ensure all externs are clean and valid C types based on usage (uint8_t*, uint16_t*).
 
 extern void (*func_ptr_0x8C145430)(void); // Address 0x8C145430 loaded at offset E7/E
+
+/*
+ * 0x8C017CCC - func_8C017CCC
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced globals/helpers (inferred from addresses and usage patterns typical of Katana SDK/MvC2 engine)
+extern uint8_t *g_vram_base; // Base address 0x8C1454AC inferred, or passed via r6 context if not global. Assuming g_vram_base points to the structure containing these offsets relative to a base pointer (r4).
+// Note: The assembly uses absolute addresses for data structures but calculates pointers based on 'r4' which acts as an offset from a module base or is the primary VRAM buffer pointer passed in r4. 
+// Based on standard Katana SDK patterns, r4 often holds a specific object/structure address (e.g., 0x8C129xxx) and absolute addresses like 0x8c017d9X are offsets into that structure or global constants relative to the module base.
+// However, looking closely at `mov.b @(r0,r4), r0` where r0 is derived from an offset table (0x8C129xxx etc.), it implies a lookup in a static array defined elsewhere.
+// Let
