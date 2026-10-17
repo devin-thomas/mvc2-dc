@@ -4261,3 +4261,13 @@ extern unsigned char g_byte_at_offset[4];         // Buffer if needed, though di
  * 0x8C028A04 - func_8C028A04 (1360 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C028A04); */
+
+/*
+ * 0x8C028F54 - func_8C028F54
+ */
+#include <stdint.h>
+
+extern uint32_t _sh4_vram_8c029008; // Address stored at 0x8C029008, value is likely a pointer or offset base. Based on context of SH-4 SDK, these are often direct addresses to tables in VRAM/ROM.
+extern uint32_t _sh4_vram_8c0290f4; // Address stored at 0x8C0290F4 (value: 0x8C12...) -> Actually the assembly loads a constant address into r4, then jumps to it? No.
+// Correction on logic based on SH-4 SDK patterns:
+// The pattern `mov.w addr,rX` followed by `.word value` usually means loading an immediate word from ROM/VRAM at 'addr' which contains another pointer or
