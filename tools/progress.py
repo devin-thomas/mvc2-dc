@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Decompilation Progress Tracker for Marvel vs. Capcom 2 (Dreamcast NA).
 
-Calculates matching code and data percentages, tracks function counts,
-and outputs badges / JSON for decomp.dev and GitHub Actions.
+Calculates matching code and data percentages across three distinct tiers:
+1. Verified Byte-Identical Matching: Proven identical machine code via SH-4 diff runner.
+2. Generated C Candidate Coverage: Syntactically valid definitions (estimated bytes).
+3. Queue / Discovery Coverage: Scanned and triaged function candidates.
+4. Legacy Claimed: Preserved historical metrics with explicit provisional disclaimer.
+
+Outputs badges and JSON for agent dashboard and reporting.
 
 Usage:
-    python tools/progress.py [--csv] [--badge] [--json]
+    python tools/progress.py [--badge] [--sync-dashboard] [--json]
 """
 
 import argparse
@@ -17,55 +22,120 @@ from pathlib import Path
 TOTAL_TEXT_BYTES = 1310592      # ~1.25 MB conservative text span
 TOTAL_DATA_BYTES = 499225       # Initialized data + rodata
 TOTAL_UNITS = 8240              # Estimated function candidate count
+PROOFS_DIR = Path("build/proofs")
+WORKLIST_FILE = Path("config/worklist.json")
 
 
-def calculate_progress(src_dir: Path, asm_dir: Path) -> dict:
-    matched_code_bytes = 0
-    matched_data_bytes = 0
-    matched_funcs = 0
-    matched_func_names = set()
+def calculate_progress(src_dir: Path = Path("src"), asm_dir: Path = Path("asm")) -> dict:
+    verified_matched_funcs = 0
+    verified_matched_bytes = 0
+    verified_func_names = set()
 
-    # If worklist.json exists, use exact sizes for matched functions
-    worklist_file = Path("config/worklist.json")
-    if worklist_file.exists():
+    # 1. Scan verified proofs
+    if PROOFS_DIR.exists():
+        for pf in PROOFS_DIR.glob("*.json"):
+            try:
+                pdata = json.loads(pf.read_text(encoding="utf-8"))
+                if pdata.get("byte_identical") is True:
+                    verified_matched_funcs += 1
+                    verified_matched_bytes += pdata.get("size", 0)
+                    verified_func_names.add(pdata.get("name"))
+            except Exception:
+                pass
+
+    # 2. Inspect worklist
+    worklist_entries = []
+    candidate_funcs = 0
+    candidate_code_bytes = 0
+    candidate_names = set()
+
+    legacy_funcs = 0
+    legacy_code_bytes = 0
+
+    pending_funcs = 0
+    stubbed_funcs = 0
+
+    if WORKLIST_FILE.exists():
         try:
-            wl = json.loads(worklist_file.read_text(encoding="utf-8"))
-            for entry in wl:
-                if entry.get("status") == "matched":
-                    matched_funcs += 1
-                    matched_code_bytes += entry.get("size", 64)
-                    matched_func_names.add(entry.get("name"))
+            worklist_entries = json.loads(WORKLIST_FILE.read_text(encoding="utf-8"))
+            for entry in worklist_entries:
+                st = entry.get("status")
+                name = entry.get("name")
+                size = entry.get("size", 64)
+                if st == "byte_identical":
+                    if name not in verified_func_names:
+                        verified_matched_funcs += 1
+                        verified_matched_bytes += size
+                        verified_func_names.add(name)
+                elif st in ("candidate_syntax_valid", "candidate"):
+                    candidate_funcs += 1
+                    candidate_code_bytes += size
+                    candidate_names.add(name)
+                elif st == "legacy_claimed":
+                    legacy_funcs += 1
+                    legacy_code_bytes += size
+                elif st == "stubbed":
+                    stubbed_funcs += 1
+                elif st == "pending":
+                    pending_funcs += 1
+                elif st == "matched":
+                    # Pre-audit legacy entries without diff proof
+                    if name not in verified_func_names:
+                        legacy_funcs += 1
+                        legacy_code_bytes += size
         except Exception:
             pass
 
-    # Scan src/ for any additional matching C implementations not in worklist
-    type_pattern = r"(?:void|int|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|u8|s8|u16|s16|u32|s32|bool|float|double|char|\w+\s*\*)"
-    func_pattern = re.compile(rf"{type_pattern}\s+([a-zA-Z0-9_]+)\s*\([^)]*\)\s*\{{")
+    # 3. Scan src/ for actual non-empty C definitions
+    if src_dir.exists():
+        type_kw = r"(?:void|int|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|u8|s8|u16|s16|u32|s32|bool|float|double|char|\w+\s*\*|\w+)"
+        func_pattern = re.compile(rf"(?:static\s+|inline\s+)*{type_kw}\s+([a-zA-Z0-9_]+)\s*\([^)]*\)\s*\{{", re.MULTILINE)
+        for cf in src_dir.glob("**/*.c"):
+            content = cf.read_text(encoding="utf-8", errors="replace")
+            clean = re.sub(r'/\*.*?\*/|//.*?$', '', content, flags=re.DOTALL | re.MULTILINE)
+            for m in func_pattern.finditer(clean):
+                fn = m.group(1)
+                if fn.startswith("INCLUDE_ASM") or fn in verified_func_names or fn in candidate_names:
+                    continue
+                candidate_funcs += 1
+                candidate_code_bytes += 64
+                candidate_names.add(fn)
 
-    c_files = list(src_dir.glob("**/*.c"))
-    for cf in c_files:
-        content = cf.read_text(encoding="utf-8", errors="replace")
-        funcs = func_pattern.findall(content)
-        for fn in funcs:
-            if fn.startswith("INCLUDE_ASM") or fn in matched_func_names:
-                continue
-            matched_funcs += 1
-            matched_func_names.add(fn)
-            matched_code_bytes += 64
-
-    # Calculate percentages
-    code_pct = (matched_code_bytes / TOTAL_TEXT_BYTES) * 100 if TOTAL_TEXT_BYTES else 0.0
-    data_pct = (matched_data_bytes / TOTAL_DATA_BYTES) * 100 if TOTAL_DATA_BYTES else 0.0
+    triaged_funcs = len(worklist_entries)
+    verified_pct = (verified_matched_bytes / TOTAL_TEXT_BYTES) * 100 if TOTAL_TEXT_BYTES else 0.0
+    candidate_pct = (candidate_code_bytes / TOTAL_TEXT_BYTES) * 100 if TOTAL_TEXT_BYTES else 0.0
+    legacy_pct = (legacy_code_bytes / TOTAL_TEXT_BYTES) * 100 if TOTAL_TEXT_BYTES else 0.0
+    queue_pct = (triaged_funcs / TOTAL_UNITS) * 100 if TOTAL_UNITS else 0.0
 
     return {
-        "matched_funcs": matched_funcs,
+        "verified_matched_funcs": verified_matched_funcs,
+        "verified_matched_bytes": verified_matched_bytes,
+        "verified_code_percent": round(verified_pct, 3),
+
+        "candidate_funcs": candidate_funcs,
+        "candidate_code_bytes": candidate_code_bytes,
+        "candidate_code_percent": round(candidate_pct, 3),
+
+        "triaged_funcs": triaged_funcs,
+        "pending_funcs": pending_funcs,
+        "stubbed_funcs": stubbed_funcs,
         "total_funcs": TOTAL_UNITS,
-        "matched_code_bytes": matched_code_bytes,
-        "total_code_bytes": TOTAL_TEXT_BYTES,
-        "code_percent": round(code_pct, 3),
-        "matched_data_bytes": matched_data_bytes,
+        "queue_coverage_percent": round(queue_pct, 3),
+
+        "legacy_claimed_funcs": legacy_funcs,
+        "legacy_claimed_bytes": legacy_code_bytes,
+        "legacy_claimed_percent": round(legacy_pct, 3),
+        "legacy_disclaimer": "PROVISIONAL PIPELINE STATE: Pre-audit metric based on host syntax checks without AST function body validation or SH-4 binary diff proof.",
+
+        "matched_data_bytes": 0,
         "total_data_bytes": TOTAL_DATA_BYTES,
-        "data_percent": round(data_pct, 3),
+        "data_percent": 0.0,
+        "total_code_bytes": TOTAL_TEXT_BYTES,
+
+        # Backwards compatibility
+        "matched_funcs": verified_matched_funcs,
+        "matched_code_bytes": verified_matched_bytes,
+        "code_percent": round(verified_pct, 3),
     }
 
 
@@ -85,16 +155,41 @@ def sync_dashboard(prog: dict):
         data = json.loads(status_json.read_text(encoding="utf-8"))
         data["updated_at"] = now_iso
         data["current_activity"] = (
-            f"Decompiling Dreamcast MK-51049: {prog['matched_funcs']}/{prog['total_funcs']} functions "
-            f"({prog['code_percent']:.3f}%, {prog['matched_code_bytes']:,} bytes) matched across cluster."
+            f"Decompiling Dreamcast MK-51049: {prog['verified_matched_funcs']}/{prog['total_funcs']} verified byte-identical "
+            f"({prog['verified_code_percent']:.3f}%), {prog['candidate_funcs']} syntax-valid C candidates ({prog['candidate_code_percent']:.3f}% est.), "
+            f"{prog['pending_funcs']} pending."
         )
+        data["verified_matching"] = {
+            "functions": prog["verified_matched_funcs"],
+            "bytes": prog["verified_matched_bytes"],
+            "total_bytes": prog["total_code_bytes"],
+            "percent": prog["verified_code_percent"]
+        }
+        data["candidate_coverage"] = {
+            "functions": prog["candidate_funcs"],
+            "estimated_bytes": prog["candidate_code_bytes"],
+            "percent": prog["candidate_code_percent"]
+        }
+        data["queue_status"] = {
+            "triaged": prog["triaged_funcs"],
+            "pending": prog["pending_funcs"],
+            "stubbed": prog["stubbed_funcs"],
+            "total_estimated": prog["total_funcs"],
+            "percent": prog["queue_coverage_percent"]
+        }
+        data["legacy_provisional"] = {
+            "claimed_functions": prog["legacy_claimed_funcs"],
+            "claimed_bytes": prog["legacy_claimed_bytes"],
+            "claimed_percent": prog["legacy_claimed_percent"],
+            "disclaimer": prog["legacy_disclaimer"]
+        }
         if "walk_away_snapshot" in data:
             data["walk_away_snapshot"]["last_good_state"] = (
-                f"{prog['matched_funcs']} functions matched ({prog['code_percent']:.3f}%, "
-                f"{prog['matched_code_bytes']:,} bytes) verified with Clang syntax check"
+                f"Verified: {prog['verified_matched_funcs']} byte-identical ({prog['verified_code_percent']:.3f}%); "
+                f"Candidates: {prog['candidate_funcs']} C definitions ({prog['candidate_code_percent']:.3f}% est.)"
             )
         status_json.write_text(json.dumps(data, indent=2), encoding="utf-8")
-        print(f"[Dashboard] Updated {status_json} ({prog['code_percent']:.3f}%)")
+        print(f"[Dashboard] Updated {status_json} (Verified: {prog['verified_code_percent']:.3f}%, Candidates: {prog['candidate_funcs']})")
     except Exception as e:
         print(f"[Dashboard Error] Failed to update status.json: {e}", file=sys.stderr)
 
@@ -103,13 +198,15 @@ def sync_dashboard(prog: dict):
             html = index_html.read_text(encoding="utf-8")
             html = re.sub(r'name="dashboard-updated-at" content="[^"]*"', f'name="dashboard-updated-at" content="{now_iso}"', html)
             html = re.sub(r'<span id="updated-at" class="timestamp">[^<]*</span>', f'<span id="updated-at" class="timestamp">{now_iso}</span>', html)
-            pct_str = f"{prog['code_percent']:.3f}%"
-            html = re.sub(
-                r'<p id="current-activity">.*?</p>',
-                f'<p id="current-activity">Decompiling Dreamcast MK-51049: <strong>{prog["matched_funcs"]}/{prog["total_funcs"]}</strong> functions (<strong>{pct_str}</strong>, {prog["matched_code_bytes"]:,} bytes) matched across cluster.</p>',
-                html,
-                flags=re.DOTALL
+            pct_str = f"{prog['verified_code_percent']:.3f}%"
+            activity_html = (
+                f'<p id="current-activity">Decompiling Dreamcast MK-51049: '
+                f'<strong>{prog["verified_matched_funcs"]}/{prog["total_funcs"]}</strong> verified byte-identical '
+                f'(<strong>{pct_str}</strong>, {prog["verified_matched_bytes"]:,} bytes) | '
+                f'<strong>{prog["candidate_funcs"]}</strong> C candidates generated ({prog["candidate_code_percent"]:.3f}% est.) | '
+                f'<strong>{prog["pending_funcs"]}</strong> pending queue items.</p>'
             )
+            html = re.sub(r'<p id="current-activity">.*?</p>', activity_html, html, flags=re.DOTALL)
             index_html.write_text(html, encoding="utf-8")
         except Exception as e:
             print(f"[Dashboard Error] Failed to update index.html: {e}", file=sys.stderr)
@@ -118,11 +215,15 @@ def sync_dashboard(prog: dict):
         try:
             md = status_md.read_text(encoding="utf-8")
             md = re.sub(r'- \*\*Updated At\*\*: `[^`]*`', f'- **Updated At**: `{now_iso}`', md)
-            md = re.sub(
-                r'## Current Activity\n.*?\n\n',
-                f'## Current Activity\nDecompiling Dreamcast MK-51049: **{prog["matched_funcs"]}/{prog["total_funcs"]}** functions (**{prog["code_percent"]:.3f}%**, {prog["matched_code_bytes"]:,} bytes) matched across cluster.\n\n',
-                md
+            activity_md = (
+                f"## Current Activity\n"
+                f"Decompiling Dreamcast MK-51049:\n"
+                f"- **Verified Byte-Identical**: **{prog['verified_matched_funcs']}/{prog['total_funcs']}** functions (**{prog['verified_code_percent']:.3f}%**, {prog['verified_matched_bytes']:,} bytes)\n"
+                f"- **Generated C Candidates**: **{prog['candidate_funcs']}** definitions (**{prog['candidate_code_percent']:.3f}%** est., {prog['candidate_code_bytes']:,} bytes)\n"
+                f"- **Queue / Triage**: **{prog['triaged_funcs']}/{prog['total_funcs']}** candidates triaged (**{prog['pending_funcs']}** pending, **{prog['stubbed_funcs']}** stubbed)\n"
+                f"- **Legacy Provisional**: **{prog['legacy_claimed_funcs']}** functions claimed ({prog['legacy_claimed_percent']:.3f}% provisional before audit)\n\n"
             )
+            md = re.sub(r'## Current Activity\n.*?\n\n', activity_md, md, flags=re.DOTALL)
             status_md.write_text(md, encoding="utf-8")
         except Exception as e:
             print(f"[Dashboard Error] Failed to update STATUS.md: {e}", file=sys.stderr)
@@ -143,18 +244,21 @@ def main():
         print(json.dumps(prog, indent=2))
         return
 
-    print("=" * 60)
+    print("=" * 65)
     print("Marvel vs. Capcom 2 (Dreamcast NA) - Decompilation Progress")
-    print("=" * 60)
-    print(f"Matched Code:   {prog['matched_code_bytes']:,} / {prog['total_code_bytes']:,} bytes ({prog['code_percent']:.3f}%)")
-    print(f"Matched Data:   {prog['matched_data_bytes']:,} / {prog['total_data_bytes']:,} bytes ({prog['data_percent']:.3f}%)")
-    print(f"Functions:      {prog['matched_funcs']:,} / {prog['total_funcs']:,} matched")
-    print("=" * 60)
+    print("=" * 65)
+    print(f"Verified Byte-Match: {prog['verified_matched_bytes']:,} / {prog['total_code_bytes']:,} bytes ({prog['verified_code_percent']:.3f}%) [{prog['verified_matched_funcs']} funcs]")
+    print(f"Generated Candidates:{prog['candidate_code_bytes']:,} / {prog['total_code_bytes']:,} bytes ({prog['candidate_code_percent']:.3f}% est.) [{prog['candidate_funcs']} funcs]")
+    print(f"Queue Triage:        {prog['triaged_funcs']:,} / {prog['total_funcs']:,} funcs ({prog['pending_funcs']} pending, {prog['stubbed_funcs']} stubbed)")
+    if prog['legacy_claimed_funcs'] > 0:
+        print(f"Legacy Claimed:      {prog['legacy_claimed_funcs']:,} funcs ({prog['legacy_claimed_percent']:.3f}% provisional before audit)")
+        print(f"  * Disclaimer: {prog['legacy_disclaimer']}")
+    print("=" * 65)
 
     if args.badge:
         badge_path = Path("assets/progress.svg")
         badge_path.parent.mkdir(parents=True, exist_ok=True)
-        pct = prog["code_percent"]
+        pct = prog["verified_code_percent"]
         color = "#4c1" if pct > 80 else ("#dfb317" if pct > 20 else "#e05d44")
         svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20">
   <linearGradient id="b" x2="0" y2="100%">
@@ -170,8 +274,8 @@ def main():
     <path fill="url(#b)" d="M0 0h130v20H0z"/>
   </g>
   <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
-    <text x="32.5" y="15" fill="#010101" fill-opacity=".3">matching</text>
-    <text x="32.5" y="14">matching</text>
+    <text x="32.5" y="15" fill="#010101" fill-opacity=".3">verified</text>
+    <text x="32.5" y="14">verified</text>
     <text x="96.5" y="15" fill="#010101" fill-opacity=".3">{pct:.3f}%</text>
     <text x="96.5" y="14">{pct:.3f}%</text>
   </g>

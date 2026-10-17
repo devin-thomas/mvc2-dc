@@ -7,7 +7,8 @@ Immutable historical ledger for implementation plans, design decisions, and veri
 | ID | Date | Status | Title | File |
 | :--- | :--- | :--- | :--- | :--- |
 | `001` | `2026-10-16` | `Executed` | Autonomous Multi-Host Dreamcast Decompilation Cluster | [`plans/001-2026-10-16-dreamcast-decompilation-cluster.md`](plans/001-2026-10-16-dreamcast-decompilation-cluster.md) |
-| `002` | `2026-10-17` | `Approved` | Fully Autonomous AFK Decompilation Loop & Reliability Hardening | [`plans/002-2026-10-17-fully-autonomous-afk-loop.md`](plans/002-2026-10-17-fully-autonomous-afk-loop.md) |
+| `002` | `2026-10-17` | `Executed` | Fully Autonomous AFK Decompilation Loop & Reliability Hardening | [`plans/002-2026-10-17-fully-autonomous-afk-loop.md`](plans/002-2026-10-17-fully-autonomous-afk-loop.md) |
+| `003` | `2026-10-17` | `Approved` | Decompilation Orchestrator Integrity Audit & Recovery Implementation Plan | [`plans/003-2026-10-17-orchestrator-audit-and-recovery.md`](plans/003-2026-10-17-orchestrator-audit-and-recovery.md) |
 
 ## Walkthroughs
 

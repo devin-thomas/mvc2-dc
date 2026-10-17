@@ -182,13 +182,16 @@ def load_worklist() -> list[dict]:
     print("[Worklist] Scanning initial binary range for SH-4 function boundaries...")
     funcs = scan_functions(0x8C010080, 0x8C040000)
     
-    # Mark already decompiled functions
+    # Mark already decompiled functions as candidates only if valid definition exists
     if SYS_INIT_C.exists():
         c_code = SYS_INIT_C.read_text(encoding="utf-8", errors="replace")
         for f in funcs:
-            hex_addr = f"0x{f['vram']:08X}".lower()
-            if hex_addr in c_code.lower() or f"{f['vram']:08X}" in c_code:
-                f["status"] = "matched"
+            name = f["name"]
+            vram = f["vram"]
+            # Look for function definition for this target
+            pattern = re.compile(rf"(?:void|int|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|u8|s8|u16|s16|u32|s32|bool|float|double|char|\w+\s*\*)\s+(?:{name}|func_{vram:08x}|sub_{vram:08x})\s*\([^)]*\)\s*\{{", re.IGNORECASE)
+            if pattern.search(c_code):
+                f["status"] = "candidate_syntax_valid"
 
     save_worklist(funcs)
     return funcs
@@ -303,7 +306,36 @@ def extract_c_code(response_text: str) -> str:
     return code
 
 
-def validate_c_syntax(code_snippet: str, worker_id: int = 0) -> tuple[bool, str]:
+def validate_candidate_code(code_snippet: str, target_name: str, target_vram: int) -> tuple[bool, str]:
+    clean = re.sub(r'/\*.*?\*/|//.*?$', '', code_snippet, flags=re.DOTALL | re.MULTILINE).strip()
+    if not clean:
+        return (False, "REJECTED_EMPTY_OR_COMMENTS_ONLY: snippet contains no code")
+
+    # Match actual C function definitions with bodies { ... }
+    type_kw = r"(?:void|int|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|u8|s8|u16|s16|u32|s32|bool|float|double|char|\w+\s*\*|\w+)"
+    def_pattern = re.compile(rf"(?:static\s+|inline\s+)*{type_kw}\s+([a-zA-Z0-9_]+)\s*\([^)]*\)\s*\{{", re.MULTILINE)
+    matches = def_pattern.findall(clean)
+
+    if not matches:
+        return (False, "REJECTED_NO_FUNCTION_DEFINITION: snippet contains declarations/prototypes only, no executable C function definition")
+
+    expected_names = {target_name.lower(), f"func_{target_vram:08x}".lower(), f"sub_{target_vram:08x}".lower()}
+    found_target = any(m.lower() in expected_names for m in matches)
+    if not found_target:
+        return (False, f"REJECTED_TARGET_NAME_MISMATCH: emitted functions {matches} do not match {target_name} or address alias")
+
+    if clean.count('{') != clean.count('}'):
+        return (False, "REJECTED_UNBALANCED_BRACES: function body is truncated or unclosed")
+
+    return (True, "")
+
+
+def validate_c_syntax(code_snippet: str, target_name: str = "", target_vram: int = 0, worker_id: int = 0) -> tuple[bool, str]:
+    if target_name:
+        is_valid, reason = validate_candidate_code(code_snippet, target_name, target_vram)
+        if not is_valid:
+            return (False, reason)
+
     test_file = Path(f"build/temp_syntax_test_w{worker_id}.c")
     test_file.parent.mkdir(parents=True, exist_ok=True)
     full_c = f"""#include "types.h"
@@ -333,7 +365,8 @@ def validate_c_syntax(code_snippet: str, worker_id: int = 0) -> tuple[bool, str]
         )
         return (res.returncode == 0, res.stderr)
     except Exception as e:
-        return (True, str(e))
+        # FAIL CLOSED: Never return True on compiler exception/timeout
+        return (False, f"VALIDATION_COMPILER_EXCEPTION: {e}")
 
 
 def process_function(f: dict, preferred_host: str, worker_id: int, worklist: list[dict]) -> bool:
@@ -351,7 +384,7 @@ def process_function(f: dict, preferred_host: str, worker_id: int, worklist: lis
         return False
 
     with PRINT_LOCK:
-        print(f"[Worker-{worker_id}:{preferred_host}] Starting {name} (0x{vram:08X}, {size} B)", flush=True)
+        print(f"[Worker-{worker_id}:{preferred_host}] Starting candidate {name} (0x{vram:08X}, {size} B)", flush=True)
 
     disasm = disassemble_func(vram, size)
     prompt = f"""Decompile this Sega Dreamcast SH-4 assembly function:
@@ -378,13 +411,13 @@ Assembly:
                 continue
             return False
 
-        valid, err = validate_c_syntax(c_code, worker_id=worker_id)
+        valid, err = validate_c_syntax(c_code, target_name=name, target_vram=vram, worker_id=worker_id)
         if valid:
             with COMMIT_LOCK:
-                f["status"] = "matched"
+                f["status"] = "candidate_syntax_valid"
                 integrate_function(name, vram, c_code, worklist)
             with PRINT_LOCK:
-                print(f"[Worker-{worker_id}:{preferred_host}] [OK] Matched {name} (attempt {attempt}/3)!", flush=True)
+                print(f"[Worker-{worker_id}:{preferred_host}] [OK] Validated candidate for {name} (attempt {attempt}/3, syntax valid)!", flush=True)
             return True
         else:
             prompt += f"\n\nPrevious attempt had syntax issues:\n{err[:350]}\nPlease fix all undeclared identifiers or syntax errors and emit ONLY valid C code inside ```c ... ```."
@@ -405,10 +438,10 @@ def integrate_function(name: str, vram: int, c_code: str, worklist: list[dict]):
 
     res = subprocess.run(["python", "tools/progress.py", "--badge", "--sync-dashboard"], capture_output=True, text=True)
     for line in res.stdout.splitlines():
-        if "Matched Code:" in line or "Functions:" in line:
-            print(f"[Progress] {line.strip()}")
+        if "Matched Code:" in line or "Functions:" in line or "Candidates:" in line:
+            print(f"[Progress] {line.strip()}", flush=True)
     subprocess.run(["git", "add", "src/sys_init.c", "assets/progress.svg", "config/worklist.json", "docs/agent-dashboard/mvc2-dc-decomp/"], capture_output=True)
-    subprocess.run(["git", "commit", "-m", f"feat(decompile): decompile {name} (0x{vram:08X})"], capture_output=True)
+    subprocess.run(["git", "commit", "-m", f"feat(candidate): generate C candidate for {name} (0x{vram:08X})"], capture_output=True)
 
 
 def integrate_stub(name: str, vram: int, size: int, worklist: list[dict]):
@@ -437,13 +470,16 @@ def main():
     print(f"[Daemon] Cluster Status: {cluster.upper()} reachable (Workers={args.workers}: 6x research 27B + 1x command 9B).")
     worklist = load_worklist()
 
-    pending = [f for f in worklist if f["status"] == "pending"]
+    pending = [f for f in worklist if f.get("status") == "pending"]
     total = len(worklist)
-    matched = sum(1 for f in worklist if f["status"] == "matched")
-    print(f"[Daemon] Worklist: {matched}/{total} matched ({len(pending)} pending).")
+    candidates = sum(1 for f in worklist if f.get("status") == "candidate_syntax_valid")
+    byte_identical = sum(1 for f in worklist if f.get("status") in ("byte_identical", "matched"))
+    stubbed = sum(1 for f in worklist if f.get("status") == "stubbed")
+    legacy = sum(1 for f in worklist if f.get("status") == "legacy_claimed")
+    print(f"[Daemon] Worklist: {len(pending)} pending, {candidates} syntax-valid candidates, {byte_identical} byte-identical, {stubbed} stubbed, {legacy} legacy-claimed (Total: {total}).")
 
     if not pending:
-        print("[SUCCESS] All functions in worklist are matched! 100% complete!")
+        print("[SUCCESS] All functions in current worklist queue have been triaged (0 pending).")
         sys.exit(EXIT_SUCCESS)
 
     limit = len(pending) if args.loop else args.batch
