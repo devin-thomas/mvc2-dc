@@ -3667,3 +3667,8 @@ extern uint8_t g_unk_byte_at_offset[10]; // Placeholder for the byte read at off
  * 0x8C024FD4 - func_8C024FD4
  */
 
+
+/*
+ * 0x8C025210 - func_8C025210
+ */
+
