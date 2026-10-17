@@ -9737,3 +9737,8 @@ extern void func_8C0532A8(uintptr_t *); // Adjust signature based on actual usag
  * 0x8C052974 - func_8C052974
  */
 
+
+/*
+ * 0x8C05290E - func_8C05290E
+ */
+
