@@ -887,3 +887,8 @@ extern uint32_t (*func_8C012450)(void); // Address 0x8C03563A
  * 0x8C011FBC - func_8C011FBC
  */
 
+
+/*
+ * 0x8C011D8C - func_8C011D8C
+ */
+
