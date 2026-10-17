@@ -11273,3 +11273,8 @@ extern void (*func_ptr_B09A)(void); // Placeholder for 0x8c05b134 if it's not th
  * 0x8C05ACF8 - func_8C05ACF8
  */
 
+
+/*
+ * 0x8C05B0B0 - func_8C05B0B0 (294 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C05B0B0); */
