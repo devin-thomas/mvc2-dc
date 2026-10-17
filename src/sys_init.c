@@ -4157,3 +4157,8 @@ extern void func_8c1f(int);           // Helper inferred from jump table logic
  * 0x8C027B30 - func_8C027B30
  */
 
+
+/*
+ * 0x8C028246 - func_8C028246
+ */
+
