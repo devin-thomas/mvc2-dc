@@ -2796,3 +2796,8 @@ static const uint8_t g_Offset_0x16 = 0x16; // Derived from 'add #52' where base 
  * 0x8C01F2E6 - func_8C01F2E6 (40 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C01F2E6); */
+
+/*
+ * 0x8C01EEEC - func_8C01EEEC
+ */
+
