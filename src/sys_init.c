@@ -752,3 +752,17 @@ extern uint32_t *g_StackBase; // Callee-saved stack pointer base or similar glob
  * 0x8C011B0A - func_8C011B0A
  */
 
+
+/*
+ * 0x8C011B5E - func_8C011B5E
+ */
+extern uint8_t *r2_bank; // VRAM bank pointer, updated by ldc.l @r2+,r2_bank in delay slot context (simplified for decompilation)
+// Note: In real Katana SDK runtime, r13 and r15 are typically frame-local stack pointers managed by the caller or specific VM state. 
+// Assuming standard Dreamcast C ABI where R0-R7 are args/locals but here they act as data registers in a tight loop.
+
+static inline bool check_bit(uint32_t val) {
+    return (val & 1u); // Check LSB, equivalent to tst rX,rY followed by bf/bt logic if checking specific bit positions relative to alignment
+}
+
+// The assembly implements a lookup or validation routine involving VRAM reads and bitwise checks.
+// It appears to check two conditions based on bits in loaded values from R5 (offset 0
