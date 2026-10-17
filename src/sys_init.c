@@ -4478,3 +4478,8 @@ extern uint32_t g_some_global_var; // Placeholder if r15 points to a specific gl
  * 0x8C02A44A - func_8C02A44A
  */
 
+
+/*
+ * 0x8C02A53A - func_8C02A53A (660 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C02A53A); */
