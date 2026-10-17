@@ -2680,3 +2680,8 @@ extern uint8_t *g_unk_table_a; // Address stored at 0x8C01DF94 (used for multipl
  * 0x8C01DCB4 - func_8C01DCB4
  */
 
+
+/*
+ * 0x8C01DBA6 - func_8C01DBA6
+ */
+
