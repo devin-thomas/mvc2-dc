@@ -7697,3 +7697,19 @@ extern uint16_t *g_8c26a8c4; // Address loaded at 0x8C045FFA (implied by context
  * 0x8C045CCE - func_8C045CCE
  */
 
+
+/*
+ * 0x8C04638C - func_8C04638C
+ */
+#include <stdint.h>
+
+extern uint32_t g_vram_base; // Assumed global VRAM base pointer based on context (r4)
+
+static void func_8C04638C(uint32_t *p_target, int dummy_arg1);
+
+// Note: The provided assembly snippet is a fragment containing two separate code paths
+// that do not form a single complete function. It appears to be part of a larger routine
+// where r4 holds the base address and r0/r1 are set up for specific memory writes or returns.
+// Based on standard Dreamcast SDK patterns:
+// Path 1 (at 8C04638C): Sets return value 62, clears arg register, performs a byte store to VRAM at offset in p_target+base, then RTS.
+// Path 2 (at 8C046394
