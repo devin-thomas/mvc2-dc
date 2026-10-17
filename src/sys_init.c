@@ -3198,3 +3198,8 @@ extern void func_8C021496(void); // Helper function referenced in delay slot
 // Based on Marvel vs Capcom 2 code patterns: likely takes a pointer (r4) and an int/enum (r7).
 void func_8C01A56(int *ptr_r4_arg, uint32_t val_r7_arg); // Placeholder signature based on typical usage in SDK. 
 // Actual
+
+/*
+ * 0x8C021344 - func_8C021344
+ */
+
