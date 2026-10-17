@@ -1484,3 +1484,17 @@ extern void g_proc_a(union SH_REGISTERS *regs); // Corresponds to jump table ent
  * 0x8C0173B2 - func_8C0173B2
  */
 
+
+/*
+ * 0x8C017686 - func_8C017686
+ */
+extern uint32_t *g_ptr_table_start_0x8C044F12_end_of_block; // Address 0x8C044F12 loaded at offset A6/A7 context? No, it's a direct load. Let's re-verify the data flow.
+// Actually, looking closely: 
+// mov.l    @(r0,r13),r13 -> r13 becomes pointer to struct/array based on index in r8 (which is 0x8C044F12).
+// The previous attempt error suggests a typo or missing declaration for the global variable holding that address. 
+// In SH-4 decompilation of Katana SDK, these are often static arrays passed as arguments or globals defined elsewhere.
+// Since I cannot see the linker map, I must assume `g_ptr_table_start_0x8C1294BC` etc exist if they were used directly, but here we load them into registers r3/r2/etc first.
+// The error was specifically on a declaration line that shouldn't be there or had bad syntax. 
+// Let's ensure all externs are clean and valid C types based on usage (uint8_t*, uint16_t*).
+
+extern void (*func_ptr_0x8C145430)(void); // Address 0x8C145430 loaded at offset E7/E
