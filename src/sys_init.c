@@ -3887,3 +3887,14 @@ extern uint32_t g_unk_8C0265e4; // Loaded at 0x8C0265E4, used as base address or
  * 0x8C026344 - func_8C026344
  */
 
+
+/*
+ * 0x8C026580 - func_8C026580
+ */
+extern uint32_t g_data_8C0265E4; // Address 0x8C026744 (from comment in assembly) - actually the label points to data at runtime, but here it's a constant address used as pointer source. Wait, looking closer: `mov.l @r15+, r14` restores stack frame. The previous attempt error suggests I need to declare globals properly or handle inline constants if they are not true externs in this scope. However, the assembly uses absolute addresses for data pointers which act like function calls (jsr) or direct access.
+// Correction: The labels 0x8C147F0C etc are likely functions or global variables defined elsewhere. I will treat them as external symbols based on usage context (JSR).
+
+extern uint32_t (*func_8c02659a)(void); // Placeholder for the JSR target if it's a function, but usually these absolute addresses in Katana SDK are data pointers or specific functions. Let's assume they are global variables/functions declared elsewhere.
+// Re-evaluating based on "Katana SDK": These look like direct jumps to subroutines defined as .word 0x8c14... which implies function calls via JSR @addr.
+
+extern uint32_t g_ptr_8C147F0C; // Corresponds to address 0x
