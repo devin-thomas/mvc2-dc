@@ -2634,3 +2634,29 @@ extern const void *g_addr_table_start; // Placeholder for 0x8c01ca76 if it's not
  * 0x8C01D8F2 - func_8C01D8F2
  */
 
+
+/*
+ * 0x8C01D760 - func_8C01D760
+ */
+extern void func_8C146AA4(uint32_t, uint32_t);
+extern void func_8C146900(void *base_addr, int offset, uint32_t value); // Inferred from usage pattern at 0x8C01D7B6 and similar calls
+// Note: The assembly uses indirect jumps via r2/r3 which are resolved to specific addresses. 
+// Based on the context of Katana SDK/MVCA2 engine, these likely point to internal helper functions or data structures.
+// Since exact function names aren't available in standard headers for this binary, we use placeholders or assume they resolve to known entities if decompiled elsewhere.
+// For compilation purposes with -fsyntax-only without the full symbol table:
+
+extern void func_8C14690C(void *base_addr, int offset, uint32_t value); // Address 0x8C14690C at 0x8C01D7B6
+// Re-evaluating based on the assembly flow: 
+// The code loads addresses into r2/r3 and jumps. These are likely function pointers or specific routine entry points within the engine's internal tables (e.g., hitbox checks, sprite handling).
+// Without a symbol map for 0x8C146900/0xC etc., we must assume they exist as functions taking arguments consistent with their usage.
+
+extern void func_8C1294C8(void *base_addr); // Address loaded into r3 at multiple points (e.g., 0x8C01D7F8, 0x8C01D86A)
+// Usage: jsr @r3 where r3 = address of func_8C1294C8. 
+// Arguments passed before call usually in r5/r6 or stack depending on convention observed nearby.
+
+extern void func_8C1F8B90(void); // Address loaded into r2 at 0x8C01D7CA
+extern void func_8C1F8B91(uint32_t, uint32_t); // Loaded to r6? No, r6 is passed as arg. 
+// Correction: At 0x8C01D7CA, mov.l @r6,r4 implies reading from the argument register directly if it's a pointer array or similar structure access pattern common in Katana SDK for hitboxes/sprites.
+// Let's assume standard C linkage where r5/r6 are passed arguments and used as pointers/indices into internal tables stored at 0x8C1F...
+
+extern void func_8C26823C(void); // Address loaded to r6? No, mov.l @r6,r4 suggests reading FROM the address
