@@ -1881,3 +1881,8 @@ extern uint32_t g_data_ptr_8C019FEF; // Corresponds to 0x8c01a04e/r1 usage patte
  * 0x8C019D04 - func_8C019D04
  */
 
+
+/*
+ * 0x8C019D96 - func_8C019D96
+ */
+
