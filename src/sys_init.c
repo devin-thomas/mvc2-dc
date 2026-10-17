@@ -8476,3 +8476,8 @@ extern uint32_t *g_ptr_1; // Corresponds to address loaded into r1 (likely a fun
  * 0x8C04AF82 - func_8C04AF82 (598 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04AF82); */
+
+/*
+ * 0x8C04B1D8 - func_8C04B1D8 (582 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C04B1D8); */
