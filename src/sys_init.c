@@ -1993,3 +1993,13 @@ extern int (*g_ptr_A71c)(void);    // Function pointer at A71c -> calls func_0x8
  * 0x8C01A4AC - func_8C01A4AC
  */
 
+
+/*
+ * 0x8C01AB54 - func_8C01AB54
+ */
+extern void *func_8C26A940(void); // Address 0x8C26A940 loaded at AC34
+extern uint32_t func_8C108060(uint32_t a, uint32_t b, uint32_t c); // Address 0x8C108060 loaded at AB80 (AC44)
+// Note: The assembly uses hardcoded addresses for function pointers. 
+// func_8c01ac58 -> 0x8C108192, AC54 -> 0x8C1081E6, etc., are treated as external symbols here based on context or assumed to be defined elsewhere in the SDK.
+extern void *func_8C108192(void); // Address loaded at AB8C (AC58) - likely a jump table base or specific handler if not resolved by data flow, but assembly treats it as immediate load then indirect call logic is complex here. 
+// Re-evaluating the "mov.l 0x8c01
