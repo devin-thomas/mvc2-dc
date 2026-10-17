@@ -5521,3 +5521,8 @@ extern void (*g_func_ptr_8c1f9fc)(void);   // Function pointer at 0x8CE60FC? No
  * 0x8C0335DC - func_8C0335DC
  */
 
+
+/*
+ * 0x8C033656 - func_8C033656
+ */
+
