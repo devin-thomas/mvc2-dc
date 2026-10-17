@@ -9817,3 +9817,8 @@ extern uint32_t *g_DataBlock_8C052FB0; // Address 0x8C052FB0 points to this base
                                         // So g_DataBlock_8C052FB0 is likely the base pointer passed in R4? 
                                         // No, R4 is usually a parameter. Let's assume 0x8c052fb0 etc are offsets or specific addresses relative to something.
                                         // Re-evaluating: The code does `mov.w #addr, r0`
+
+/*
+ * 0x8C052D56 - func_8C052D56
+ */
+
