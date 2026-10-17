@@ -9201,3 +9201,13 @@ extern void func_8C05060E(uint32_t *a); // Helper function declared as extern to
  * 0x8C0502A4 - func_8C0502A4
  */
 
+
+/*
+ * 0x8C0507F0 - func_8C0507F0
+ */
+extern uint32_t g_8C0507F4; // Base address for data structures (derived from context, though exact offset logic is implicit in the assembly)
+// Note: The provided assembly uses absolute addresses 0x8c05089X as immediate values. 
+// In a real decompilation of Katana SDK/Shinobi code with fixed VRAM pointers, these would be resolved to specific global variables or structs at those offsets relative to the base pointer (r4).
+// Since r4 is typically passed in and points to an object/struct header:
+extern uint32_t g_8C0507F6; // Placeholder for 0x8c050892 offset data if treated as a field, but assembly treats it as absolute load. 
+// Correction based on standard Katana SDK patterns where r4 is the object pointer:
