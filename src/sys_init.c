@@ -4103,3 +4103,8 @@ extern uint32_t func_8C0275a4[]; // Table starting at 0x8C1F978D (offsets) or da
  * 0x8C0279E4 - func_8C0279E4 (54 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C0279E4); */
+
+/*
+ * 0x8C027AA4 - func_8C027AA4
+ */
+
