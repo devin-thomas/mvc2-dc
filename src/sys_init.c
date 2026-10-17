@@ -6888,3 +6888,8 @@ extern int g_var_r4_offset28;   // Offset for pointer arithmetic, likely a struc
 extern const int g_const_10; // Likely 16 or similar based on 'sub r0,r10' context if not immediate
 // Re-evaluating constants: 
 // - cmp/eq #-119 -> likely checking a specific byte value (e.g., state flag
+
+/*
+ * 0x8C0400CE - func_8C0400CE (94 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0400CE); */
