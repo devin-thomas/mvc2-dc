@@ -4702,3 +4702,8 @@ uint32_t func_8C02BD06(void) {
  * 0x8C02DBD6 - func_8C02DBD6
  */
 
+
+/*
+ * 0x8C02DC0E - func_8C02DC0E
+ */
+
