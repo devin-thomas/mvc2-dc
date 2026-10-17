@@ -8012,3 +8012,12 @@ extern struct StackFrame *g_stack_frame_base; // Base address for the stack fram
  * 0x8C047DD4 - func_8C047DD4 (162 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C047DD4); */
+
+/*
+ * 0x8C047EB2 - func_8C047EB2
+ */
+extern void func_8C051AF6(uint32_t, uint32_t); // Address 0x8C048014 -> 0x8C051AF6
+extern int func_8C0518A0(int, int *);           // Address 0x8C048018 -> 0x8C0518A0 (returns in r0)
+extern void func_8C0526D6(uint32_t *, uint32_t); // Address 0x8C04801C -> 0x8C0526D6
+extern int func_8C051BCA(int, int *);           // Address 0x8C048020 -> 0x8C051BCA (returns in r0)
+extern void func_8C034DEE(uint32_t *, uint32_t); // Address 0x8
