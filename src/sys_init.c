@@ -6426,3 +6426,8 @@ extern uint8_t *g_vram_base; // Assumed global VRAM base pointer based on contex
 // Given the pattern: load offset -> word address -> loop or stack manipulation? 
 // Actually, looking at SH-4 calling conventions for small functions in Katana SDK:
 // This looks like a jump table where r0
+
+/*
+ * 0x8C03C264 - func_8C03C264
+ */
+
