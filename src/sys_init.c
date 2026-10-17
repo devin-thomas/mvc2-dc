@@ -11139,3 +11139,8 @@ extern uint32_t g_limit_val_a;   // Value loaded into r7 initially? No, r7 is mo
 
 extern uint32_t g_base_offset_1; // Address loaded into r4 at 0x8C05A4F6
 extern uint32_t *g_ptr_source_a; // Pointer to data being read/written, derived from
+
+/*
+ * 0x8C05A59C - func_8C05A59C
+ */
+
