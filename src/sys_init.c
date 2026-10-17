@@ -1735,3 +1735,8 @@ extern uint32_t g_offset_base_8C0190D8; // Address where the final write happens
  * 0x8C019406 - func_8C019406
  */
 
+
+/*
+ * 0x8C0191AA - func_8C0191AA
+ */
+
