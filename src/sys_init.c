@@ -10139,3 +10139,8 @@ extern void (*func_ptr_8C054D94)(void); // Placeholder name for the routine at 0
  * 0x8C054D14 - func_8C054D14
  */
 
+
+/*
+ * 0x8C054D4A - func_8C054D4A
+ */
+
