@@ -1208,3 +1208,17 @@ extern uint32_t g_flag_8c2897ac[6];   // Base address for flag array, size infer
 // Based on 0x8C2897AC and subsequent accesses like @(r15+), we assume an aligned structure.
 extern uint32_t *g_data_8c26823c; // Base address for the struct containing flags at offsets +4, +12? 
 // Actually, looking at 0x8C26823C usage: mov.l @r1,r2 then byte ops.
+
+/*
+ * 0x8C0153AE - func_8C0153AE
+ */
+#include <stdint.h>
+
+extern uint32_t func_8C011BBC(uint32_t); // Inferred from jsr call at 0x8C0153B0
+extern void *g_ptr_table_base;           // Placeholder for the base address of pointer table (derived context)
+// Note: The assembly uses absolute addresses. 
+// [0x8c015418] = 0x8C011BBC -> func_8C011BBC is called with no args, result in r0.
+// If the call returns a pointer to data structure containing pointers at offset +12:
+
+extern uint32_t *g_data_ptr_table;       // Placeholder for table starting at 0x8c01540c (derived context)
+extern int g_flag_byte_6C;               // Placeholder for byte stored
