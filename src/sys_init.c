@@ -6041,3 +6041,16 @@ extern void (*func_ptr)(void); // Placeholder for the function called via JSR @r
  * 0x8C039240 - func_8C039240
  */
 
+
+/*
+ * 0x8C03943A - func_8C03943A
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced addresses and functions found in the assembly trace.
+extern uint32_t (*func_8C0395C6)(uint32_t, int); // Address 0x8C0395C6 loaded into r3 at various points
+extern void func_8C14D4A0(uint32_t *dest, const uint32_t *src, uint32_t count); // Address 0x8C14D4A0 (shll logic) - inferred from usage pattern or similar helper if not a direct call. Actually looking at the code: `jsr @r3` where r3 is set to an address that performs shifts? No, let's re-examine specific calls.
+// Re-evaluating indirect jumps based on context usually implies standard library functions like memcpy/memset or custom helpers in Katana SDK.
+// 0x8C14D4A0: Used with `shll2` logic before it? Wait, the assembly at 0x8C039538 loads r2 = 0x8C14D4A0 then does shll2 on r3. This looks like a specific helper or just data movement if misread. 
+// Let's look closer: `mov.l #7,r3` ... `jsr @r3`. If r3 is an address of a function, it calls that function.
+// The assembly at 0x8C1
