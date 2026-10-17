@@ -771,3 +771,8 @@ static inline bool check_bit(uint32_t val) {
  * 0x8C011BBC - func_8C011BBC
  */
 
+
+/*
+ * 0x8C011BB2 - func_8C011BB2
+ */
+
