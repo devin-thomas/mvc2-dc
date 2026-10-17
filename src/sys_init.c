@@ -1978,3 +1978,8 @@ extern int (*g_ptr_A71c)(void);    // Function pointer at A71c -> calls func_0x8
  * 0x8C01A88C - func_8C01A88C
  */
 
+
+/*
+ * 0x8C01A1B6 - func_8C01A1B6
+ */
+
