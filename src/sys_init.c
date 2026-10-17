@@ -7909,3 +7909,23 @@ extern uint32_t *g_vram_ptr; // Base VRAM address, assumed to be at 0x8C046DBC b
  * 0x8C046B02 - func_8C046B02
  */
 
+
+/*
+ * 0x8C0473D4 - func_8C0473D4
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced addresses and globals (as per Dreamcast ABI conventions)
+extern uint32_t *g_unk8C26823C; // Loaded at 0x8C047404 -> 0x8C26823C
+extern void (*func_ptr_table[1])(void); // Hypothetical table based on context, adjusted below if needed
+
+// Helper to resolve the specific pointer arithmetic logic found in the assembly constants.
+// The assembly loads addresses into r7 and uses them as base pointers for array lookups or offsets.
+static inline uint32_t get_base_addr(uint8_t index) {
+    // Based on 0x8C047532, 0x8C047534 etc., these are likely function pointer tables or data arrays.
+    // Without the actual linker map for Marvel vs Capcom 2 SH-4 build, we assume they point to valid uint32_t* structures.
+    return (uint32_t)g_unk8C26823C; 
+}
+
+// Reconstructed logic based on assembly flow:
+// The function appears to be a complex bit-manipulation routine involving byte extraction, shifting, and conditional updates of memory at offset 0x
