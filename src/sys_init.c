@@ -4136,3 +4136,19 @@ extern uint32_t func_8C0275a4[]; // Table starting at 0x8C1F978D (offsets) or da
 void func_8C028268(void) {
     __asm__ volatile ("rts"); 
 }
+
+/*
+ * 0x8C028270 - func_8C028270
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced addresses and helper functions found in the decompiled logic.
+extern uint32_t (*func_8C044F26)(uint32_t, int); // Address 0x8C044F26 loaded at r3 initially
+extern void func_8C108210(uint32_t *dst, const struct _SH4_Context *ctx); // Address 0x8C108210 used for jump
+
+// Global/Static placeholders inferred from context (VRAM addresses)
+static uint8_t g_vram_base = 0; 
+extern void func_8c54(uint32_t, int); // Inferred helper at address 0x8c54 pattern
+extern void func_8c1f(int);           // Helper inferred from jump table logic
+
+//
