@@ -6416,3 +6416,13 @@ extern uint16_t *gbr_27; // @(27,gbr) -> 0x8C26... likely a GBR-relative offset 
  * 0x8C03C440 - func_8C03C440
  */
 
+
+/*
+ * 0x8C03C6AA - func_8C03C6AA
+ */
+extern uint8_t *g_vram_base; // Assumed global VRAM base pointer based on context of SH-4 Dreamcast decompilation patterns for such small stubs. If not present, this function is a raw jump table entry and may require linker resolution or specific runtime data access outside standard C scope without the actual address definition.
+
+// Note: This assembly block contains multiple .word instructions which are typically Jump/Call targets in SH-4 ROM/Virtual Memory maps when used as small stubs with immediate offsets, OR it is a jump table where r0 holds an index and subsequent words hold addresses to be jumped to via indirect addressing (e.g., mov @(r0), pc).
+// Given the pattern: load offset -> word address -> loop or stack manipulation? 
+// Actually, looking at SH-4 calling conventions for small functions in Katana SDK:
+// This looks like a jump table where r0
