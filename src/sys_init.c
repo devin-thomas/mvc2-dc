@@ -1610,3 +1610,15 @@ extern uint8_t *g_vram_base; // Base address 0x8C1454AC inferred, or passed via 
  * 0x8C018620 - func_8C018620
  */
 
+
+/*
+ * 0x8C0189DE - func_8C0189DE
+ */
+#include <stdint.h>
+
+// External declarations for referenced globals/helpers based on context analysis
+extern uint32_t gbr; // Global Base Register (often used as a pointer to VRAM or specific data)
+extern void *func_8C014D6E(void); // Placeholder for the function at 0x8c1458d4 if it's indirect, but here we use direct address logic. Actually, looking at `mov.l @(r0,r2), r3` then `jmp @r3`, this is an indirect jump table lookup.
+// The addresses like 0x8C018BA8 and 0x8c018b34 are likely pointers to function tables or data structures in the ROM/VRAM map of Katana SDK.
+
+extern uint32_t *table_8C018ba8; // Pointer at address
