@@ -6101,3 +6101,8 @@ extern const struct { /* Struct definition inferred from context */ } g_DataBloc
 extern const uint32_t *g_8C26823C; // Address loaded at 0x8C039A54
 // The logic suggests a lookup table or specific data structure traversal. 
 // Given the bit shifts (shll, shll2) and memory access patterns (@(r0,r3)), this is likely unpacking packed integer fields from
+
+/*
+ * 0x8C039686 - func_8C039686
+ */
+
