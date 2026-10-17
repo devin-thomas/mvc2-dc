@@ -9509,3 +9509,13 @@ extern uint32_t func_8C051E64(uint32_t a, uint32_t b); // Adjusted signature bas
  * 0x8C052008 - func_8C052008 (184 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C052008); */
+
+/*
+ * 0x8C0520C0 - func_8C0520C0
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced functions and globals (as per Dreamcast ABI)
+extern void func_8C05A706(void); // Address loaded from 0x8C052108, called at offset C4/C8 context implies this or similar setup function. Based on assembly: mov.l 0x8c052108,r3; jsr @r3
+extern void func_8C02FD26(void); // Address loaded from 0x8C052114, called at offset D0 context implies this or similar setup function. Based on assembly: mov.l 0x8c052114,r2; jsr @r2
+extern void func_8C0532A8(void); // Address loaded from 0x8C0521
