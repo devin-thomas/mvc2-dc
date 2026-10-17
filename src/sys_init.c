@@ -10372,3 +10372,14 @@ extern uint32_t *func_8C010524(void); // Placeholder for external symbol based o
 
 extern uint32_t *g_some_table_8C055764; // Hypothetical name for 0x8c055764 data
 extern void (*func_ptr)(void);           // For indirect jump target resolution
+
+/*
+ * 0x8C0557D6 - func_8C0557D6
+ */
+extern void *g_unk_ptr; // Placeholder for global variable at address in r5/r6 context if needed, or assume local scope based on SDK patterns. Assuming these are function arguments or globals passed via registers as per Dreamcast ABI conventions where specific addresses might be derived from stack frames not fully visible here. However, strictly decompiling the logic:
+
+// Note: In Katana/Shinobi SH-4 code, r5 and r6 often hold pointers to VRAM buffers (e.g., sprite data or texture maps).
+// This function reads a byte at address in r5, writes it back to an offset location derived from r6.
+// It appears to be setting the return value based on input but then modifying memory pointed to by r6 before returning 0? 
+// Wait, re-evaluating logic flow:
+// 1. Load byte from [r5] into r0 (return
