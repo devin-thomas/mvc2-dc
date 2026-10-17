@@ -7536,3 +7536,8 @@ extern void func_8C0455f4(uint32_t arg); // Arguments: r6, r7; Return in r14? Or
 // The sequence `mov.l rX,@-r15` saves regs to stack frame.
 // Then `bsr 0x8c0455f4`.
 // After return, it
+
+/*
+ * 0x8C045208 - func_8C045208
+ */
+
