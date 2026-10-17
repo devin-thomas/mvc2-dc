@@ -4981,3 +4981,8 @@ extern uint32_t func_8C02FBE6_offset[5]; // Offset array for the indirect store 
  * 0x8C02FEC4 - func_8C02FEC4 (142 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C02FEC4); */
+
+/*
+ * 0x8C02FDB0 - func_8C02FDB0
+ */
+
