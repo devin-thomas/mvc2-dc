@@ -9671,3 +9671,8 @@ extern uint32_t *func_8C05A2CC_ptr; // Placeholder for the base pointer logic if
  * 0x8C0526D6 - func_8C0526D6
  */
 
+
+/*
+ * 0x8C0528F8 - func_8C0528F8 (14 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0528F8); */
