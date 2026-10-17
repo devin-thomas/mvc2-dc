@@ -10961,3 +10961,8 @@ extern const uint16_t _data_0; // Placeholder for data starting at .word locatio
  * 0x8C05933C - func_8C05933C (582 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C05933C); */
+
+/*
+ * 0x8C059704 - func_8C059704 (528 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C059704); */
