@@ -5884,3 +5884,8 @@ static const uint32_t *g_ptr_table = (uint32_t *)(uintptr_t)0x8C212CE8; // Loade
 // The function initializes a buffer starting at r14 (offset by some base).
 // It writes specific bytes to fixed offsets in this buffer based on input conditions.
 // Then it performs a lookup into `g_unk_8C26823
+
+/*
+ * 0x8C037176 - func_8C037176
+ */
+
