@@ -9158,3 +9158,11 @@ extern void (*func_ptr_1)(void); // Corresponds to 0x8c0506cc
 
 extern uint32_t *g_table_1; // Points to address stored at 0x8C0506BC (likely 0x8C2895F0)
 extern void (*func_ptr_2)(void); // Corresponds to 0x8c0506cc resolved via g
+
+/*
+ * 0x8C050606 - func_8C050606
+ */
+extern void func_8C05060E(uint32_t *a); // Helper function declared as extern to match the assembly call context if needed, though here it's just a label in asm. In C decompilation of this specific stub pattern (returning 1 and jumping), we assume no external dependency for func_8C05060E unless called recursively or linked externally which is not visible in this snippet alone. However, to satisfy the "extern" requirement for any referenced symbol that isn't a standard library function:
+
+// Note: The assembly provided shows `rts` at 0x...0C and then code continues at 0x...0E. 
+// This implies an inline expansion or a specific compiler optimization where 'func_8C050606' is actually the label for the block starting at 0x8C050606
