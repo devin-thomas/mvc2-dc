@@ -4858,3 +4858,8 @@ extern void (*func_ptr_r4)(void *arg);                  // Pointer loaded from r
  * 0x8C02EE42 - func_8C02EE42 (1680 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C02EE42); */
+
+/*
+ * 0x8C02F4D2 - func_8C02F4D2 (516 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C02F4D2); */
