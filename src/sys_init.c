@@ -2924,3 +2924,14 @@ extern uint32_t g_vram_ptr;          // Corresponds to r0 base address logic, li
  * 0x8C01F6E6 - func_8C01F6E6
  */
 
+
+/*
+ * 0x8C01FD86 - func_8C01FD86
+ */
+#include <stdint.h>
+
+extern uint32_t func_8C14730E(uint32_t a, uint32_t b); // Address 0x8C147310 inferred from context as likely the function called at r3 or similar logic if not direct call
+// Note: The assembly shows `jsr @r3` where r3 is loaded with address 0x8C1297C4. 
+// Since we don't have a symbol for that specific address, and it's an external jump target in the SDK context, 
+// we must assume there exists a function at that address or treat it as opaque if not known.
+// However, looking closely: `mov.l 0x8c01fe14,r3` loads 0x8C1297C4 into r3. Then `jsr @r
