@@ -6126,3 +6126,8 @@ extern const uint32_t *g_8C26823C; // Address loaded at 0x8C039A54
  * 0x8C039BAA - func_8C039BAA
  */
 
+
+/*
+ * 0x8C0396A0 - func_8C0396A0
+ */
+
