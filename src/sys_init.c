@@ -8904,3 +8904,12 @@ extern uint32_t *g_vram_base; // Base address implied by r0 usage in load/store 
 extern void func_8C052CE2(uint32_t arg1, uint32_t arg2); // Address 0x8c04e764 -> 0x8c052ce2
 extern int (*func_ptr_table_entry)(void *base, uintptr_t offset); 
 // Note: The assembly uses indirect jumps to functions loaded from tables. Without the actual table definitions or symbol names for 0x
+
+/*
+ * 0x8C04E6C8 - func_8C04E6C8
+ */
+#include <stdint.h>
+
+// External declarations for global data referenced in the function.
+extern const uint32_t *g_DataTable_1; // Address 0x8C04E76C -> points to table starting at r5 offset logic? No, direct load suggests it's a pointer or base address used directly as an array index source if not dereferenced immediately in the assembly pattern. Looking closely: `mov.l 0x8c04e76c,r3` then `jsr @r3`. This is likely calling a function stored at that address, OR loading a constant pointer to be used later. Given subsequent usage of r14 as base and offsets in tables (implied by sequential loads), let's assume 0x8C05218A is the start of a data structure or code block accessed via indirect jump first? 
+// Re-evalu
