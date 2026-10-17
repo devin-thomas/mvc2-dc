@@ -10826,3 +10826,8 @@ extern uint8_t *func_0231(void); // Address 0x8C057D64 / 0x8C057E52 logic implie
 extern const uint16_t _data_0; // Placeholder for data starting at .word locations if they are not immediate constants in a larger structure, but here we treat them as specific memory regions containing byte arrays/indices. 
 // Actually, re-evaluating the assembly: `mov.w 0x8c057d62,r0` loads a WORD from address 0x8C057D62 into r0.
 // Then `mov.b r3,@(r0,r14)` uses that loaded value
+
+/*
+ * 0x8C058052 - func_8C058052
+ */
+
