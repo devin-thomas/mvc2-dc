@@ -10200,3 +10200,14 @@ extern uint8_t *g_some_global_ptr; // Placeholder for the base address if 0x8C05
  * 0x8C055094 - func_8C055094
  */
 
+
+/*
+ * 0x8C0550A8 - func_8C0550A8
+ */
+extern void func_8C0550BA(uint32_t *ptr); // Helper function referenced in delay slot logic (inferred from context)
+// Note: The provided assembly snippet ends at 0x8C0550B4 with a branch to the helper. 
+// However, standard SH-4 decompilation of this specific Marvel vs Capcom SDK pattern usually implies 
+// that if 'bf' is taken and no return follows in the immediate text block, it jumps to another function.
+// The assembly provided: 0x8C0550BA: mov.b r0,@r6 suggests a helper exists at BA or similar logic was skipped/merged.
+// Given the explicit jump 'bf' (branch if false) from B4 to BC, and code at BA is shown as separate lines 
+// in the dump but logically unreachable unless we assume standard SDK structure where
