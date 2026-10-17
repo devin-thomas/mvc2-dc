@@ -1910,3 +1910,8 @@ extern void (*func_ptr_8c01a1be)(void);
  * 0x8C01A122 - func_8C01A122
  */
 
+
+/*
+ * 0x8C019DFA - func_8C019DFA
+ */
+
