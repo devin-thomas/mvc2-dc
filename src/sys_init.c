@@ -646,3 +646,8 @@ extern uint8_t *g_8c012cbc; // [0x8C010BFC] - derived from context if needed, bu
  * 0x8C010F1A - func_8C010F1A
  */
 
+
+/*
+ * 0x8C010E02 - func_8C010E02
+ */
+
