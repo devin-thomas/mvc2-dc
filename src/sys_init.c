@@ -10514,3 +10514,8 @@ extern uint32_t g_r4_offset_base; // Assuming r4 holds an offset or base, treate
 // - Arguments are in r0-r7 (passed by caller). Here we assume the function takes no args but relies on global state or specific register usage from a larger scope, OR arguments were passed differently than standard C calling convention for this snippet. 
 // However, looking at `mov.w 0x8c055da2,r0`, it loads an address into r0 immediately without using incoming args as base pointers in the first instruction sequence?
 // Re-evalu
+
+/*
+ * 0x8C055BDE - func_8C055BDE
+ */
+
