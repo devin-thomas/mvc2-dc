@@ -6054,3 +6054,8 @@ extern void func_8C14D4A0(uint32_t *dest, const uint32_t *src, uint32_t count); 
 // 0x8C14D4A0: Used with `shll2` logic before it? Wait, the assembly at 0x8C039538 loads r2 = 0x8C14D4A0 then does shll2 on r3. This looks like a specific helper or just data movement if misread. 
 // Let's look closer: `mov.l #7,r3` ... `jsr @r3`. If r3 is an address of a function, it calls that function.
 // The assembly at 0x8C1
+
+/*
+ * 0x8C039588 - func_8C039588
+ */
+
