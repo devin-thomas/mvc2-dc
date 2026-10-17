@@ -9558,3 +9558,19 @@ extern uint32_t func_8C052EC6(uint32_t a, uint32_t b); // Placeholder for BSR ta
 // bsr 0x8C051FAC -> likely a helper that modifies state or checks flags without returning useful data to this stack frame if not used in r0 immediately after.
 // However, standard practice for Katana SDK decompilation when exact prototypes aren't provided is to assume extern void/uint32_t based on usage. 
 // In the assembly: `bsr 0x8C051FAC` happens at 0
+
+/*
+ * 0x8C0523B2 - func_8C0523B2
+ */
+extern uint32_t g_8C0525b4; // 0x8C0525B4: Constant/Pointer value loaded into r5 at offset 0xC relative to func start? No, absolute address.
+// Note: The assembly loads constants from fixed addresses like 0x8c0525b4 directly into registers (mov.w). 
+// These are likely global pointers or constant data used by the SDK runtime. We declare them as extern globals for compilation safety.
+
+extern uint32_t g_8C052540; // Address loaded at 0x8c052540
+extern uint32_t g_8C052541; 
+// Actually, looking closely: mov.w 0x8c0525b4,r5. This is a direct load of the value stored AT address 0x8c0525b4? 
+// Or is it loading an immediate constant if that memory location holds one? In SH-4 'mov.l addr, r' loads from RAM.
+// Given "retail SDK", these are likely pointers to data structures or constants defined in the binary's read-only section (RODATA).
+
+extern uint32_t g_8C0525b4; // Value at 0x8c0525b4 loaded into r5. Likely a pointer base for VRAM access pattern?
+// Re-evaluating: The code does `mov.w 0x8c
