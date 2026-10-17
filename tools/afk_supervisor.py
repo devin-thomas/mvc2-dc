@@ -4,7 +4,7 @@
 Features:
 - Completely unattended (AFK) infinite loop across the local cluster.
 - Dispatches 10-function waves via tools/auto_decomp_daemon.py.
-- Automated multi-channel notifications on every wave (Email via ucmail, Discord webhook, Slack webhook).
+- Automated multi-channel notifications (Email via ucmail every 10 waves, Discord/Slack webhooks).
 - Auto-pushes Git commits to origin/qwen every 3 waves.
 - Auto-syncs and deploys Cloudflare Pages dashboard every 5 waves.
 - Exponential backoff on transient cluster/network disconnects.
@@ -40,23 +40,30 @@ def log(msg: str):
 
 def get_current_progress() -> dict:
     try:
-        from tools.progress import calculate_progress
-        return calculate_progress(Path("src"), Path("asm"))
+        res = subprocess.run([sys.executable, "tools/progress.py", "--json"], capture_output=True, text=True, timeout=10)
+        if res.returncode == 0:
+            return json.loads(res.stdout)
+    except Exception as e:
+        log(f"Warning: could not run tools/progress.py: {e}")
+
+    try:
+        wl_file = Path("config/worklist.json")
+        if wl_file.exists():
+            wl = json.loads(wl_file.read_text(encoding="utf-8"))
+            matched = [f for f in wl if f.get("status") == "matched"]
+            code_bytes = sum(f.get("size", 64) for f in matched)
+            total_code = 1310592
+            pct = (code_bytes / total_code) * 100.0 if total_code else 0.0
+            return {
+                "matched_funcs": len(matched),
+                "total_funcs": 8240,
+                "matched_code_bytes": code_bytes,
+                "total_code_bytes": total_code,
+                "code_percent": round(pct, 3),
+            }
     except Exception:
-        status_file = Path("docs/agent-dashboard/mvc2-dc-decomp/status.json")
-        if status_file.exists():
-            try:
-                data = json.loads(status_file.read_text(encoding="utf-8"))
-                return {
-                    "matched_funcs": 0,
-                    "total_funcs": 8240,
-                    "matched_code_bytes": 0,
-                    "total_code_bytes": 1310592,
-                    "code_percent": 0.0,
-                }
-            except Exception:
-                pass
-        return {"matched_funcs": 0, "total_funcs": 8240, "matched_code_bytes": 0, "total_code_bytes": 1310592, "code_percent": 0.0}
+        pass
+    return {"matched_funcs": 0, "total_funcs": 8240, "matched_code_bytes": 0, "total_code_bytes": 1310592, "code_percent": 0.0}
 
 
 def load_notifications_config() -> dict:
@@ -64,7 +71,7 @@ def load_notifications_config() -> dict:
         "email": {
             "enabled": True,
             "to": "gohan@uppercut-labs.com",
-            "interval": 1,
+            "interval": 10,
         },
         "discord_webhook": os.environ.get("DISCORD_WEBHOOK_URL", ""),
         "slack_webhook": os.environ.get("SLACK_WEBHOOK_URL", ""),
@@ -83,30 +90,38 @@ def load_notifications_config() -> dict:
     return default_cfg
 
 
-def send_email_notification(wave: int, duration_sec: float, prog: dict, cfg: dict):
+def send_email_notification(wave: int, duration_sec: float, batch_size: int, prog: dict, cfg: dict):
     email_cfg = cfg.get("email", {})
     if not email_cfg.get("enabled", True):
         return
-    interval = email_cfg.get("interval", 1)
-    if wave % interval != 0:
+    interval = email_cfg.get("interval", 10)
+    if wave % interval != 0 and wave != 1:
         return
 
     to_addr = email_cfg.get("to", "gohan@uppercut-labs.com")
-    subject = f"[MvC2 DC] Wave {wave} Complete: {prog['code_percent']:.3f}% ({prog['matched_funcs']} funcs)"
-    body_text = f"""Marvel vs. Capcom 2 (Dreamcast NA) Decompilation Wave {wave} Complete!
+    subject = f"[MvC2 DC] Wave {wave} Summary: {prog['code_percent']:.3f}% ({prog['matched_funcs']}/{prog['total_funcs']} funcs)"
+    funcs_pct = (prog['matched_funcs'] / prog['total_funcs'] * 100) if prog.get('total_funcs') else 0.0
 
-Wave Duration: {duration_sec:.1f} seconds
+    body_text = f"""============================================================
+Marvel vs. Capcom 2 (Dreamcast NA) Decompilation
+Cumulative Progress Summary (through Wave {wave})
+============================================================
 
-Current Progress:
-- Matched Code: {prog['matched_code_bytes']:,} / {prog['total_code_bytes']:,} bytes ({prog['code_percent']:.3f}%)
-- Matched Functions: {prog['matched_funcs']} / {prog['total_funcs']} functions
+Overall Progress:
+- Total Matched Code: {prog['matched_code_bytes']:,} / {prog['total_code_bytes']:,} bytes ({prog['code_percent']:.3f}%)
+- Total Functions Matched: {prog['matched_funcs']} / {prog['total_funcs']} ({funcs_pct:.1f}%)
 - Initialized Data: {prog.get('matched_data_bytes', 0):,} / {prog.get('total_data_bytes', 499225):,} bytes
 
-Infrastructure:
-- Zero Cloud Token Cost: 100% local Apple Silicon cluster (research 36GB M5 Max + command 24GB M5 Air)
+Wave {wave} Execution Details:
+- Wave Duration: {duration_sec:.1f} seconds
+- Functions Processed in this Wave: {batch_size}
+
+Surfaces & Monitoring:
 - Public Live Dashboard: https://mvc2-decomp.pages.dev/dc/
 - Private Tailscale Dashboard: https://titan.takaya-lionfish.ts.net:8472/
-- Git Branch: qwen
+- Git Branch: qwen (origin/qwen)
+- Zero Token Cost: Running locally on research (M5 Max 36GB) + command (M5 Air 24GB)
+============================================================
 """
     manifest_path = Path("build/wave_notify.json")
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
@@ -124,14 +139,14 @@ Infrastructure:
     try:
         res = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
         if res.returncode == 0:
-            log(f"Email notification for Wave {wave} sent to {to_addr}.")
+            log(f"Email notification for Wave {wave} sent to {to_addr} ({prog['code_percent']:.3f}%).")
         else:
             log(f"Email notification warning: {res.stderr.strip()[:200]}")
     except Exception as e:
         log(f"Email notification error: {e}")
 
 
-def send_discord_notification(webhook_url: str, wave: int, duration_sec: float, prog: dict):
+def send_discord_notification(webhook_url: str, wave: int, duration_sec: float, batch_size: int, prog: dict):
     if not webhook_url:
         return
     payload = {
@@ -141,7 +156,7 @@ def send_discord_notification(webhook_url: str, wave: int, duration_sec: float, 
             "url": "https://mvc2-decomp.pages.dev/dc/",
             "fields": [
                 {
-                    "name": "Decompiled Code",
+                    "name": "Total Decompiled Code",
                     "value": f"**{prog['matched_code_bytes']:,}** / {prog['total_code_bytes']:,} B (**{prog['code_percent']:.3f}%**)",
                     "inline": True
                 },
@@ -152,7 +167,7 @@ def send_discord_notification(webhook_url: str, wave: int, duration_sec: float, 
                 },
                 {
                     "name": "Wave Duration",
-                    "value": f"{duration_sec:.1f}s",
+                    "value": f"{duration_sec:.1f}s ({batch_size} funcs)",
                     "inline": True
                 },
                 {
@@ -177,7 +192,7 @@ def send_discord_notification(webhook_url: str, wave: int, duration_sec: float, 
         log(f"Discord notification error: {e}")
 
 
-def send_slack_notification(webhook_url: str, wave: int, duration_sec: float, prog: dict):
+def send_slack_notification(webhook_url: str, wave: int, duration_sec: float, batch_size: int, prog: dict):
     if not webhook_url:
         return
     payload = {
@@ -189,9 +204,9 @@ def send_slack_notification(webhook_url: str, wave: int, duration_sec: float, pr
                     "type": "mrkdwn",
                     "text": (
                         f"*🎮 Marvel vs. Capcom 2 (Dreamcast) — Wave {wave} Complete*\n"
-                        f"• *Progress*: {prog['matched_code_bytes']:,} / {prog['total_code_bytes']:,} bytes (*{prog['code_percent']:.3f}%*)\n"
+                        f"• *Overall Progress*: {prog['matched_code_bytes']:,} / {prog['total_code_bytes']:,} bytes (*{prog['code_percent']:.3f}%*)\n"
                         f"• *Functions*: {prog['matched_funcs']} / {prog['total_funcs']} matched\n"
-                        f"• *Duration*: {duration_sec:.1f}s | *Cluster*: research + command\n"
+                        f"• *Wave*: {duration_sec:.1f}s ({batch_size} funcs) | *Cluster*: research + command\n"
                         f"• *Dashboard*: <https://mvc2-decomp.pages.dev/dc/|View Live>"
                     )
                 }
@@ -211,14 +226,14 @@ def send_slack_notification(webhook_url: str, wave: int, duration_sec: float, pr
         log(f"Slack notification error: {e}")
 
 
-def notify_wave(wave: int, duration_sec: float):
+def notify_wave(wave: int, duration_sec: float, batch_size: int):
     prog = get_current_progress()
     cfg = load_notifications_config()
-    send_email_notification(wave, duration_sec, prog, cfg)
+    send_email_notification(wave, duration_sec, batch_size, prog, cfg)
     if cfg.get("discord_webhook"):
-        send_discord_notification(cfg["discord_webhook"], wave, duration_sec, prog)
+        send_discord_notification(cfg["discord_webhook"], wave, duration_sec, batch_size, prog)
     if cfg.get("slack_webhook"):
-        send_slack_notification(cfg["slack_webhook"], wave, duration_sec, prog)
+        send_slack_notification(cfg["slack_webhook"], wave, duration_sec, batch_size, prog)
 
 
 def git_push():
@@ -265,7 +280,7 @@ def main():
     parser.add_argument("--batch-size", type=int, default=10, help="Number of functions per daemon wave")
     parser.add_argument("--push-interval", type=int, default=3, help="Push to git every N waves")
     parser.add_argument("--pages-interval", type=int, default=5, help="Deploy Cloudflare Pages every N waves")
-    parser.add_argument("--notify-email-interval", type=int, default=1, help="Email notification every N waves")
+    parser.add_argument("--notify-email-interval", type=int, default=10, help="Email notification every N waves")
     args = parser.parse_args()
 
     SUPERVISOR_LOG.parent.mkdir(parents=True, exist_ok=True)
@@ -287,7 +302,7 @@ def main():
 
     log("=" * 60)
     log("Starting AFK Decompilation Supervisor with Notifications")
-    log(f"Resuming at Wave {wave + 1} | Batch size: {args.batch_size} | Push interval: {args.push_interval} | Pages interval: {args.pages_interval}")
+    log(f"Resuming at Wave {wave + 1} | Batch size: {args.batch_size} | Push interval: {args.push_interval} | Pages interval: {args.pages_interval} | Email interval: {args.notify_email_interval}")
     log("=" * 60)
 
     backoff = 15
@@ -311,7 +326,7 @@ def main():
             log(f"Wave {wave} completed successfully in {duration:.1f}s.")
 
             # Trigger multi-channel notification for this wave
-            notify_wave(wave, duration)
+            notify_wave(wave, duration, args.batch_size)
 
             # Periodic Git Push
             if wave % args.push_interval == 0:
