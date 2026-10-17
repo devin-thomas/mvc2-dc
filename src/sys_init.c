@@ -5757,3 +5757,24 @@ extern unsigned int *context_struct_ptr_r4; // Placeholder for r
  * 0x8C03596A - func_8C03596A
  */
 
+
+/*
+ * 0x8C035A5A - func_8C035A5A
+ */
+#include <stdint.h>
+
+// External function declarations inferred from usage at addresses 0x8C035A6E, etc.
+extern uint32_t (*func_8C14D1E0)(void); // Called via jsr @r3 where r3 points to this address (from A72)
+// Note: The assembly uses indirect jumps heavily with addresses loaded from data sections.
+// Based on the pattern `mov.l 0x8c..., rX` followed by `jsr @rY`, these are function pointers or VTables.
+
+extern uint32_t (*func_8C14D1E0_ptr)(void); // Alias for clarity if needed, but direct usage below
+// Re-evaluating based on specific addresses in assembly:
+// A72 loads 0x8c035b90 (which is 0x8C14D1E0) into r1. Then later uses it? No, let's trace carefully.
+
+extern uint32_t (*func_8C26823C)(void); // Loaded at A6C
+// Actually, looking at the assembly:
+// 0x8c035b94 = 0x8C11E730 -> func called at A8A (jsr @r2)
+extern uint32_t (*func_8C11E730)(void);
+
+// 0x8
