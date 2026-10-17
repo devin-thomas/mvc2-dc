@@ -5443,3 +5443,8 @@ extern uint64_t func_8C0331D8(uint32_t a, uint32_t b); // Helper function refere
 // Note: The assembly uses 'r9' as an accumulator for bit manipulation logic. 
 // Based on context (dmalu.l r13,r15 followed by shifts), this likely implements a specific fixed-point or bitwise operation pattern common in Katana SDK math routines, where the result is accumulated into R0/R2 and then shifted back out to form bytes/words before being stored via movmu.
 // The exact semantics of func_8C0331D8 depend on its definition elsewhere; here we assume it returns a uint64_t based on dmulu usage context or acts as the core calculation unit returning in R0/R2 pair if not passed args differently
+
+/*
+ * 0x8C0334A8 - func_8C0334A8
+ */
+
