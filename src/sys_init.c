@@ -5448,3 +5448,8 @@ extern uint64_t func_8C0331D8(uint32_t a, uint32_t b); // Helper function refere
  * 0x8C0334A8 - func_8C0334A8
  */
 
+
+/*
+ * 0x8C0335B0 - func_8C0335B0
+ */
+
