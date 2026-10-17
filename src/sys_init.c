@@ -10019,3 +10019,8 @@ extern uint16_t g_unk_8C212CD1; // Address loaded at 0x8C0543B4 (value: 0x8C212C
 extern uint8_t g_unk_8C212CDB;   // Value used as offset/base, address loaded at 0x8C0543B8
 
 // Note on addresses in assembly comments like [0x8C...]: These are the literal values
+
+/*
+ * 0x8C053F66 - func_8C053F66
+ */
+
