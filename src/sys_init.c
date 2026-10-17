@@ -8195,3 +8195,20 @@ extern uint16_t *table_ptr_a;   // Address loaded into r2 (from 0x8c049044) poin
  * 0x8C048AA2 - func_8C048AA2
  */
 
+
+/*
+ * 0x8C048FA4 - func_8C048FA4
+ */
+extern uint32_t *g_8C049026; // Address 0x8C049026: mov.w @(r0,r13), r1 (likely a pointer to data)
+extern uint32_t g_8C049028[2]; // Array at 0x8C049028, size inferred from usage. [0]=0x01f9, [1]=0x0158? No, looking closer: 
+// Actually, the assembly loads addresses into r0 then dereferences. Let's map constants properly based on context or assume they are function pointers/data tables loaded at runtime/static init.
+// Re-evaluating static data labels in asm:
+extern uint32_t g_8C04913c; // Address 0x8C04913c (likely a jump table entry)
+extern uint32_t *g_8C049148_ptr; // Pointer to address at 0x8C049148 -> 0x8C053F14. Let's assume it points to a function or data structure. 
+// Correction: The asm `mov.l 0x8c049148,r3` followed by `jsr @r3`. So r3 is an address of code/data.
+extern uint32_t g_8C053F14; // Address loaded from label at 0x8C049148
+
+// Let's define the static data arrays/pointers as they appear in the assembly constants to ensure compilation without errors, 
+// treating them as external symbols or defining local placeholders if exact addresses aren't known globally.
+extern uint32_t g_8C05; // Placeholder for 0x8c04913e etc which seem to be function pointers stored at specific offsets? No, they are absolute loads in some places but relative in others? 
+// Actually, looking at `mov.w 0x8c04913e,r0`, this is an immediate load of a pointer.
