@@ -7095,3 +7095,17 @@ static inline uint32_t get_jump_table_entry(uint32_t base_addr, int offset) {
  * 0x8C041EE2 - func_8C041EE2
  */
 
+
+/*
+ * 0x8C0420B8 - func_8C0420B8
+ */
+#include <stdint.h>
+
+// External function declarations based on jump targets found in assembly
+extern uint32_t func_8C0417e4(uint32_t a, uint32_t b); // Called at 0x8C04214A (bsr)
+extern void (*func_ptr_table_entry)(void *arg);          // Placeholder for the function pointer table logic inferred from context
+
+// Global data addresses resolved from assembly constants
+static const uintptr_t g_data_8c0331d8 = 0x8C0331D8;   // Address loaded into r3 at start of loop setup (likely a base or offset)
+static const uint32_t *g_table_base_a = (uint32_t *)(uintptr_t)0x8C28C4CE; // Loaded from 0x8c042178, used as table pointer for byte extraction logic A
+static const uintptr_t g_data_8c138b90 = 0x8C138B90;   // Address loaded
