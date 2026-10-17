@@ -8545,3 +8545,8 @@ extern uint16_t data_8c04af50; // 0x01eb (AF50)
  * 0x8C04BCE6 - func_8C04BCE6 (548 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04BCE6); */
+
+/*
+ * 0x8C04B896 - func_8C04B896
+ */
+
