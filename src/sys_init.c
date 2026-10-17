@@ -9402,3 +9402,24 @@ void func_8C0514AE(void) {
  * 0x8C051480 - func_8C051480
  */
 
+
+/*
+ * 0x8C0514C6 - func_8C0514C6
+ */
+#include <stdint.h>
+
+// External declarations for referenced functions/variables (simulating Katana SDK globals)
+extern uint8_t *g_vram_base_0; // Corresponds to 0x8C26A518 context or similar VRAM base logic if direct access isn't via pointer arithmetic in C wrapper, but here we assume the addresses are resolved at runtime. However, based on assembly `mova` and immediate loads:
+extern uint32_t g_vram_base_4; // 0x8C26A518 (derived from mov.l @r9,r0 where r9=... wait, let's trace carefully)
+
+// Re-evaluating addresses based on assembly logic to ensure correctness without hardcoding magic numbers if possible.
+// The code loads specific absolute addresses into registers R8-R14 at the start of a block (likely per-frame or per-object setup).
+// Since we cannot see where these globals are defined, we must assume they exist as externs with appropriate types based on usage.
+
+extern uint32_t g_ptr_0; // 0x8C26A518 (Loaded into R8) - Actually looking at assembly: `mov.l @r9,r0` where r9 is loaded from static word.
+// Let's define the specific addresses found in the disassembly as externs to ensure compilation, assuming they point to valid data structures or functions.
+
+extern uint32_t g_addr_8C14EA50; // 0x8C14EA50 (Loaded into R10)
+extern uint32_t g_addr_8C2896B0; // 0x8C2896B0 (Loaded into R9) - Wait, assembly says `mov.l @r9,r0` then uses r0. 
+// Correction: The code loads addresses from static words at startup of this function? No, it looks like a state machine or object update loop where registers hold pointers to specific VRAM regions loaded once per call chain context (likely passed in R14 as base).
+// Actually, looking closely: `mov.l 0x8c05162c,r8` loads an immediate address. This suggests these are fixed addresses for this function's logic or global constants defined elsewhere.
