@@ -2904,3 +2904,8 @@ extern uint32_t g_vram_ptr;          // Corresponds to r0 base address logic, li
  * 0x8C01F556 - func_8C01F556
  */
 
+
+/*
+ * 0x8C01FB1E - func_8C01FB1E (616 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C01FB1E); */
