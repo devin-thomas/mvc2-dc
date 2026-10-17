@@ -2756,3 +2756,8 @@ static const uint8_t g_Offset_0x16 = 0x16; // Derived from 'add #52' where base 
  * 0x8C01E580 - func_8C01E580
  */
 
+
+/*
+ * 0x8C01EDDC - func_8C01EDDC
+ */
+
