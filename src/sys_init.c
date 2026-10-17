@@ -6683,3 +6683,8 @@ extern uint8_t *g_8C26A95C_ptr; // Placeholder for the pointer loaded at 0x8c03e
  * 0x8C03E674 - func_8C03E674
  */
 
+
+/*
+ * 0x8C03E70A - func_8C03E70A
+ */
+
