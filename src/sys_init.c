@@ -3361,3 +3361,8 @@ extern void func_8C022376(void); // Corresponds to 0x8C022376 (derived from cont
  * 0x8C021C7A - func_8C021C7A
  */
 
+
+/*
+ * 0x8C022B94 - func_8C022B94 (532 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C022B94); */
