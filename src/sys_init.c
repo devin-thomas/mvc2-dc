@@ -6358,3 +6358,8 @@ extern void (*func_8c03bbe2)(void); // Address 0x8C03BBE2 (BSR target)
 extern uint16_t *data_ptr_r9;       // Derived from address 0x8C03BEC4 + offset logic, likely a table lookup base. 
                                      // Specifically: mov.w 0x8c03b17e -> bra ... then load @r9? No, r9 is loaded at BECO.
 // Re-evaluating the flow based on standard Katana SDK patterns for state machines
+
+/*
+ * 0x8C03BF10 - func_8C03BF10
+ */
+
