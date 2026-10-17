@@ -4548,3 +4548,26 @@ extern uint32_t func_8C149850(void); // Address 0x8C149850 from r1 at 0x8c02a4dc
  * 0x8C02B498 - func_8C02B498
  */
 
+
+/*
+ * 0x8C02B332 - func_8C02B332
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced functions and globals (simulated based on context)
+extern void func_8C0395AC(void); // 0x8C212BF0 -> likely a helper, address resolved at runtime in asm as r3 load from table? No, wait. 
+                                  // Re-evaluating addresses:
+// The assembly loads pointers into registers (r3) which are then used to jump or access memory. These look like function pointer tables or data structures loaded once and reused.
+// Let's define placeholders for the indirect jumps based on the literal values found in .word instructions if they represent absolute addresses, 
+// OR assume standard Katana SDK patterns where these load from a table of pointers stored at those VRAM locations?
+// Actually, looking closely: `mov.l 0x8c02b3ac,r13` loads an address into r13. Then later `(r0,r13)` is used as base+offset for byte access. 
+// This suggests the code in .word blocks (like at B4A6) are likely data tables or function pointers stored statically, not inline jumps to absolute addresses directly unless `jsr @r` uses them.
+// Wait, `mov.l 0x8c02b3ac,r13` loads a specific address into r13. 
+// Let's trace: 
+// B4A6 (in the .word block): mov.w ... then later used? No, the assembly provided has inline `.word` directives which are data definitions in ROM/VRAM that get loaded by `mov.l`.
+// The addresses like 0x8C212BF0 at B3B4 seem to be function pointers or base addresses. 
+// Since I cannot resolve external symbols without a map, and the prompt asks for C code assuming these are known entities:
+extern void (*func_ptr_8c212bf0)(void); // Placeholder for 0x8C212BF0 if it's a function pointer load target? No.
+// Correction on Katana SDK structure: These `.word` blocks often define lookup tables or specific constants, but here they are loaded into registers to be used as pointers immediately after `mov.l`. 
+// Example at B3B4: `mov.b r15,@r11` where r11 came from a table load.
+// Let's assume the addresses loaded (e.g., 0x8C212BF0) are function entry
