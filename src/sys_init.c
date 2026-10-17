@@ -1850,3 +1850,8 @@ extern uint8_t *g_0x8C145D1C; // Corresponding to mov.l #0x8c019c2c,r5
  * 0x8C019832 - func_8C019832
  */
 
+
+/*
+ * 0x8C019AD0 - func_8C019AD0
+ */
+
