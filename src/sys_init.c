@@ -3470,3 +3470,17 @@ void func_8C04(void); // Corresponds to branch target 0x8c023a9c logic path or s
  * 0x8C023B8A - func_8C023B8A (114 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C023B8A); */
+
+/*
+ * 0x8C023FFE - func_8C023FFE
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced functions and globals (inferred from context)
+extern void (*func_8C1294BC)(void); // Address 0x8C1294BC loaded at offset F8 relative to base? No, direct load.
+extern void func_8C1294C8(void);    // Address 0x8C1294C8 (loaded from constant table)
+// Note: The assembly loads addresses directly into registers r3 before calling via jsr @r3.
+// We assume these point to valid functions in the game binary.
+
+extern uint8_t g_vram_flag_8c0240cc; // Loaded at offset 0x1C relative to base pointer? No, absolute load from constant table usually implies a global or specific VRAM address. 
+                                      // Given "mov
