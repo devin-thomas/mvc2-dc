@@ -8113,3 +8113,8 @@ extern void (*func_8C0526D6)(int32_t arg); // Address 0x8C0526D6, takes low byte
  * 0x8C048444 - func_8C048444
  */
 
+
+/*
+ * 0x8C048632 - func_8C048632
+ */
+
