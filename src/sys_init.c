@@ -7063,3 +7063,15 @@ extern uint32_t g_vram_base_8C042062; // Corresponds to address 0x8c042062 in as
 // Here we treat them as raw addresses cast to uintptr_t for pointer arithmetic if they represent offsets/data locations.
 
 extern uint32_t *g_ptr_8C041F5C; // Target of the branch at
+
+/*
+ * 0x8C042058 - func_8C042058
+ */
+extern void func_8C041f5c(void); // Branch target at 0x8C0423EC (implied context) - actually branch is to 0x8C041F5C based on disassembly flow, but label in text says bra 0x8c041f5c. Wait, looking at assembly: `bra 0x8c041f5c`. This seems to be a jump back or into another routine. Let's assume it exists externally.
+extern void func_8C03319E(void); // Address loaded from r2 (0x8C042164)
+
+static inline uint32_t get_jump_table_entry(uint32_t base_addr, int offset) {
+    return ((uint32_t *)base_addr)[offset];
+}
+
+// Helper to handle the
