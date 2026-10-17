@@ -1622,3 +1622,8 @@ extern void *func_8C014D6E(void); // Placeholder for the function at 0x8c1458d4 
 // The addresses like 0x8C018BA8 and 0x8c018b34 are likely pointers to function tables or data structures in the ROM/VRAM map of Katana SDK.
 
 extern uint32_t *table_8C018ba8; // Pointer at address
+
+/*
+ * 0x8C018522 - func_8C018522
+ */
+
