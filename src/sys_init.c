@@ -2201,3 +2201,17 @@ extern uint32_t (*func_resolver)(void);           // Pointer to resolver functio
  * 0x8C01B540 - func_8C01B540
  */
 
+
+/*
+ * 0x8C01B5E0 - func_8C01B5E0
+ */
+#include <stdint.h>
+
+// External declarations for referenced globals/pointers based on context analysis.
+extern const void *g_jump_table_base; // Corresponds to address 0x8C1462E8 loaded at r1
+extern uint32_t g_stack_frame_offset;   // Placeholder if the constant load is dynamic, otherwise inline logic handles it directly. 
+// Note: The assembly loads a specific absolute value (0x8c01b6ec) into r1 which points to 0x8C1462E8.
+extern uint32_t g_return_address_offset; // Placeholder for the constant loaded at 0x8c01b6ca
+
+// Assuming standard Katana SDK structure where these are global variables or function pointers stored in ROM/RAM segments accessible via fixed offsets relative to a base (often VRAM start). 
+// Since exact variable names aren
