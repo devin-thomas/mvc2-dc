@@ -11042,3 +11042,17 @@ void func_8C059DC4_check_and_call(void (*func_ptr)(void), void *context_data);
 // These are decompiled into direct calls/switch logic based on the flow at 0x8c059d62 and similar blocks.
 // Since exact function names for these jumps aren't provided in standard SDK headers, 
 // we represent them via inline assembly-like structure or generic
+
+/*
+ * 0x8C059E42 - func_8C059E42
+ */
+#include <stdint.h>
+
+extern uint32_t *g_unk_ptr; // Address 0x8C010524 (derived from context of VRAM access pattern)
+// Note: The assembly directly accesses absolute addresses. 
+// Based on the instruction `mov.b r5,@(r0,r4)` where r0 is loaded with a base address,
+// and typical Katana SDK patterns for sprite data or palette tables in this region (VRAM),
+// we assume g_unk_ptr points to the start of that table. 
+// The assembly loads 0x8c059ec4 into r0 immediately before use.
+
+static void func_8C010524(void) { /* Placeholder for external function at offset */ } // Offset calculation based on relative jumps if needed, but here we assume direct address usage or static data access pattern typical of Katana
