@@ -5265,3 +5265,16 @@ extern uint32_t g_base_table_addr; // The value at address 0x8C0310B0
  * 0x8C031C22 - func_8C031C22 (724 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C031C22); */
+
+/*
+ * 0x8C031B14 - func_8C031B14
+ */
+#include <stdint.h>
+
+extern uint32_t *g_8C031B46; // Address 0x8C031B46, used as stack pointer base for return address in delay slot context (though here it's just a label)
+// Note: The assembly uses hardcoded addresses. We map them to extern pointers or direct casts based on usage pattern.
+
+extern uint32_t *g_8c031b5e; // 0x8C031B46 + offset? No, let's look at the constants provided in comments.
+// Actually, the assembly has absolute addresses loaded into registers r5 and r6/r7 context.
+// Let's define externs for the specific memory locations referenced by the hardcoded offsets if they are globals, 
+// or just use direct pointer arithmetic on the known base addresses from the disassembly notes provided
