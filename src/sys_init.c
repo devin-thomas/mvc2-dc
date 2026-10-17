@@ -9377,3 +9377,8 @@ extern uint32_t *g_unk_return_addr; // Placeholder for the label at 0x8C0514AE+4
 void func_8C0514AE(void) {
     g_unk_return_addr = NULL; 
 }
+
+/*
+ * 0x8C05120E - func_8C05120E
+ */
+
