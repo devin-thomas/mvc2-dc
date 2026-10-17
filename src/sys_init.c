@@ -3258,3 +3258,20 @@ void func_8C01A56(int *ptr_r4_arg, uint32_t val_r7_arg); // Placeholder signatur
  * 0x8C021618 - func_8C021618
  */
 
+
+/*
+ * 0x8C02180E - func_8C02180E
+ */
+extern void *func_8C129128(void); // Address 0x8C129128 from offset 0x8C0218A2 context (inferred)
+extern void func_8C1292D4(int, int, int, int); // Function pointer loaded at 0x8C0218DC
+
+// Helper structures/arrays referenced by absolute addresses in the assembly:
+static const uint32_t *g_ptr_table = (uint32_t *)(uintptr_t)0x8C26A944; 
+extern int func_8c11e680(int, void *, unsigned char); // Address 0x8C11E680 from offset 0x8C02185C context
+
+// The assembly uses hardcoded offsets relative to r13 (which points to a specific structure instance).
+// Based on the logic: 
+// - Offset +32 is used for byte access.
+// - Offsets like +4, +6 are implied by register usage patterns in similar Katana SDK code or derived from context if not explicit.
+// However, looking closely at 0x8C02187E (cmp/str r3,r12) and the jump logic:
+// The assembly seems to be manipulating a specific struct layout where fields are accessed via
