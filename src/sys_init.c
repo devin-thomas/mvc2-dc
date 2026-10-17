@@ -5778,3 +5778,8 @@ extern uint32_t (*func_8C26823C)(void); // Loaded at A6C
 extern uint32_t (*func_8C11E730)(void);
 
 // 0x8
+
+/*
+ * 0x8C0362B0 - func_8C0362B0 (628 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0362B0); */
