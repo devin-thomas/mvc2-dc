@@ -8505,3 +8505,8 @@ extern void (*func_ptr_base)(void);       // Placeholder for the base function p
 // Let's define them as externs representing the actual memory locations found in the binary.
 
 extern uint16_t data_8c04af50; // 0x01eb (AF50)
+
+/*
+ * 0x8C04AE1A - func_8C04AE1A
+ */
+
