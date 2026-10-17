@@ -9456,3 +9456,13 @@ extern uint32_t *g_vram_8C051BCA_base; // Corresponds to address 0x8c051c8c cont
  * 0x8C051AF6 - func_8C051AF6
  */
 
+
+/*
+ * 0x8C051BDE - func_8C051BDE
+ */
+#include <stdint.h>
+
+extern uint32_t func_8C051CA0(uintptr_t); // Placeholder for the function at address in R3 based on context analysis if needed, but here it's a direct call to an absolute or indirect target. Given `mov.l 0x8c051ca0,r3` followed by `jsr @r3`, this is calling whatever resides at that memory location.
+// Note: In SH-4 Dreamcast context, addresses like 0x8C051CA0 are often function pointers or absolute jumps stored in data segments (VRAM/ROM). 
+// Since the assembly loads a literal address into R3 and then JSRs it, we treat `func_8C051BDE` as calling an external entity located at that specific memory location.
+extern uint32_t (*g_ptr_to_call)(void);
