@@ -7674,3 +7674,8 @@ extern void func_0x8C268340(uint32_t *dst, uint32_t src); // Address 0x8C129728 
  * 0x8C045BF0 - func_8C045BF0
  */
 
+
+/*
+ * 0x8C045B7C - func_8C045B7C
+ */
+
