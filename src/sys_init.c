@@ -9947,3 +9947,8 @@ static inline uint32_t func_8C053CB0(uint32_t a) {
  * 0x8C053A70 - func_8C053A70
  */
 
+
+/*
+ * 0x8C053C8A - func_8C053C8A
+ */
+
