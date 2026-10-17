@@ -9641,3 +9641,8 @@ extern uint32_t *func_8C05A2CC(void); // Address 0x8C052924 resolved to this fun
 extern uint32_t *func_8C05A2CC_ptr; // Placeholder for the base pointer logic if func_8C05A2CC is not a function but data. Re-evaluating: 0x8c052924 contains an address (likely to another table). Let's assume standard SDK pattern where these are global pointers or addresses of tables defined elsewhere in .bss/.data.
 // Correction based on "mov.l 0x8c052924,r3" followed by "jsr @r3": r3 holds an address, jsr jumps to it. So func_8C05A2CC is likely a function name or the label for that memory location which happens to be executable code (a subroutine).
 // However, looking at subsequent usage: mov
+
+/*
+ * 0x8C05262C - func_8C05262C
+ */
+
