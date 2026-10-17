@@ -6308,3 +6308,15 @@ extern uint32_t (*func_ptr_table)(uint32_t, int) __attribute__((section(".data")
  * 0x8C03BAD8 - func_8C03BAD8
  */
 
+
+/*
+ * 0x8C03BE7A - func_8C03BE7A
+ */
+extern uint32_t func_8C03BBE2(uint32_t arg); // Placeholder for the actual function name at 0x8C03BBE2
+extern void *g_ptr_table_start;              // Corresponds to address stored in r4 (0x8C26823C)
+extern uint16_t g_counter_offset_1;         // Byte offset logic, derived from context if needed
+extern uint16_t (*func_jump_target)(void);  // Function pointer table at 0x8C0F71A8
+
+// Global constants embedded in the binary (addresses of data)
+static const uintptr_t DATA_ADDR_A = 0x8C26823CU; 
+static const uint32_t OFFSET_B_4 = 0x8C0F71A8U - 0xCUL; // Derived from
