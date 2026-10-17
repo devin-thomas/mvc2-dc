@@ -10787,3 +10787,8 @@ static uint32_t g_8C057930 = 0x8c28; // From data at offset
 
 extern void (*func_ptr_8C2896B0)(void); // Address at 0x8c0577cc
 // Note: The assembly loads addresses from ROM into registers and jumps/calls them directly or uses as base pointers for data structures defined elsewhere in the SDK
+
+/*
+ * 0x8C057574 - func_8C057574
+ */
+
