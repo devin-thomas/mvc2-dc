@@ -7219,3 +7219,15 @@ static const uintptr_t g_data_8c138b90 = 0x8C138B90;   // Address loaded
  * 0x8C0429E4 - func_8C0429E4
  */
 
+
+/*
+ * 0x8C042C80 - func_8C042C80
+ */
+extern void (*get_func)(void);
+extern int gbr_0x1CC0;
+extern uint32_t *gbr_ptr_base; // Base address for GBR pointers, adjusted by offset 0xC8 (196) and others as needed. Assuming standard Katana SDK layout where offsets like @(offset,gbr) resolve to specific global variables or function pointers stored in VRAM/GPR mapping tables relative to a base 'gbr' register value passed at runtime or fixed for the module.
+// Note: In SH-4 Dreamcast binaries, `@(X,gbr)` usually accesses memory at address (GBR + X). 
+// Without knowing the exact GBR content loaded before this function runs statically is impossible unless we assume a specific base pointer 'gbr' passed as an argument or defined globally.
+// However, looking at typical Katana SDK patterns: `@(0,gbr)` often points to a struct containing flags/pointers. 
+// Let's define the necessary externs based on common usage in such decompilations where gbr is treated as a base pointer register value passed implicitly or explicitly if not global.
+// Given the previous error, we must assume `gbr` acts like a
