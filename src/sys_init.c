@@ -4775,3 +4775,8 @@ extern uint32_t *g_vram_base_56_r3; // Same logic for R3
  * 0x8C02DF20 - func_8C02DF20
  */
 
+
+/*
+ * 0x8C02DC4C - func_8C02DC4C
+ */
+
