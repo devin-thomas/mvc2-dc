@@ -9230,3 +9230,8 @@ extern void (*func_8C10004A)(void); // Address 0x8C10004A loaded at offset 0xE4 
 extern void (*func_8C04223A)(void); // Address 0x8C04223A (from offset 0xB4)
 extern uint16_t func_table_entry_r5_offset; // Placeholder name, actually the code loads r5 from @(r5)+? No. 
 // Re-evaluating: `mov.l @r15+,pr` etc restore stack frame. The `.word` instructions are likely defining local variables or constants in place if this were a data section, but here they look like immediate values being loaded into registers for specific logic paths (
+
+/*
+ * 0x8C050646 - func_8C050646
+ */
+
