@@ -2919,3 +2919,8 @@ extern uint32_t g_vram_ptr;          // Corresponds to r0 base address logic, li
  * 0x8C01FE8E - func_8C01FE8E
  */
 
+
+/*
+ * 0x8C01F6E6 - func_8C01F6E6
+ */
+
