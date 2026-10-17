@@ -3324,8 +3324,8 @@
     "vram": 2348942728,
     "end_vram": 2348943174,
     "size": 446,
-    "status": "pending",
-    "attempts": 2
+    "status": "stubbed",
+    "attempts": 3
   },
   {
     "name": "func_8C020746",
