@@ -2675,3 +2675,8 @@ extern uint8_t *g_unk_table_a; // Address stored at 0x8C01DF94 (used for multipl
 // Reconstructing the logic based on SH-4 delay slots and register usage:
 // r3 points to a table of function pointers or data.
 // The code
+
+/*
+ * 0x8C01DCB4 - func_8C01DCB4
+ */
+
