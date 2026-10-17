@@ -10543,3 +10543,8 @@ void func_8C055D28(void) {
  * 0x8C055BE4 - func_8C055BE4
  */
 
+
+/*
+ * 0x8C055D2E - func_8C055D2E
+ */
+
