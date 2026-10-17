@@ -3417,3 +3417,8 @@ extern void func_8C022376(void); // Corresponds to 0x8C022376 (derived from cont
  */
 extern uint32_t *g_8C023A6a; // VRAM address 0x8C023A64 (derived from mov.w) - adjusted based on context if needed, but here it's a literal load. Actually looking at assembly: `mov.w 0x8c023a6a,r1` loads the value AT that address into r1? No, SH-4 syntax `mov.l addr, reg` usually means immediate or absolute addressing depending on context, but in Katana SDK often these are pointers to data tables. Let's assume standard load from memory for pointer arithmetic if it looks like a table base.
 // Correction: In Hitachi SuperH assembly provided here (Katana style): `mov.w 0x8c023a6a,r1` likely loads the WORD at address 0x8C023A
+
+/*
+ * 0x8C023576 - func_8C023576
+ */
+
