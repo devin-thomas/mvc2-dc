@@ -1925,3 +1925,8 @@ extern void (*func_ptr_8c01a1be)(void);
  * 0x8C019E1C - func_8C019E1C
  */
 
+
+/*
+ * 0x8C019E6C - func_8C019E6C
+ */
+
