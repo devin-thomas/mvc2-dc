@@ -796,3 +796,8 @@ uint32_t func_8C011D06() {
 
 // Note: The provided assembly snippet ends with a NOP at the delay slot of RTS, which is effectively ignored. 
 // A full decompilation would typically include all bytes up to the next function or data section boundary if available.
+
+/*
+ * 0x8C011C02 - func_8C011C02
+ */
+
