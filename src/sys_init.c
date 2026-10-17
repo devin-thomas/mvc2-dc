@@ -7337,3 +7337,8 @@ extern uint8_t *g_vram_base; // Base address for VRAM access, derived from 0x8c0
  * 0x8C043568 - func_8C043568
  */
 
+
+/*
+ * 0x8C04346A - func_8C04346A
+ */
+
