@@ -8204,7 +8204,7 @@
     "vram": 2349062482,
     "end_vram": 2349063206,
     "size": 724,
-    "status": "pending",
+    "status": "stubbed",
     "attempts": 0
   },
   {
@@ -8540,6 +8540,2686 @@
     "vram": 2349072086,
     "end_vram": 2349072150,
     "size": 64,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C03FF16",
+    "vram": 2349072150,
+    "end_vram": 2349072228,
+    "size": 78,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C03FF64",
+    "vram": 2349072228,
+    "end_vram": 2349072254,
+    "size": 26,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C03FF7E",
+    "vram": 2349072254,
+    "end_vram": 2349072280,
+    "size": 26,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C03FF98",
+    "vram": 2349072280,
+    "end_vram": 2349072320,
+    "size": 40,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C03FFC0",
+    "vram": 2349072320,
+    "end_vram": 2349072356,
+    "size": 36,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C03FFE4",
+    "vram": 2349072356,
+    "end_vram": 2349072448,
+    "size": 92,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C040040",
+    "vram": 2349072448,
+    "end_vram": 2349072590,
+    "size": 142,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0400CE",
+    "vram": 2349072590,
+    "end_vram": 2349072684,
+    "size": 94,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04012C",
+    "vram": 2349072684,
+    "end_vram": 2349072740,
+    "size": 56,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C040164",
+    "vram": 2349072740,
+    "end_vram": 2349072880,
+    "size": 140,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0401F0",
+    "vram": 2349072880,
+    "end_vram": 2349072930,
+    "size": 50,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C040222",
+    "vram": 2349072930,
+    "end_vram": 2349073566,
+    "size": 636,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04049E",
+    "vram": 2349073566,
+    "end_vram": 2349074284,
+    "size": 718,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04076C",
+    "vram": 2349074284,
+    "end_vram": 2349076490,
+    "size": 2206,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04100A",
+    "vram": 2349076490,
+    "end_vram": 2349076828,
+    "size": 338,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04115C",
+    "vram": 2349076828,
+    "end_vram": 2349076942,
+    "size": 114,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0411CE",
+    "vram": 2349076942,
+    "end_vram": 2349077446,
+    "size": 504,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0413C6",
+    "vram": 2349077446,
+    "end_vram": 2349077888,
+    "size": 442,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041580",
+    "vram": 2349077888,
+    "end_vram": 2349078116,
+    "size": 228,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041664",
+    "vram": 2349078116,
+    "end_vram": 2349078162,
+    "size": 46,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041692",
+    "vram": 2349078162,
+    "end_vram": 2349078342,
+    "size": 180,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041746",
+    "vram": 2349078342,
+    "end_vram": 2349078550,
+    "size": 208,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041816",
+    "vram": 2349078550,
+    "end_vram": 2349078606,
+    "size": 56,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04184E",
+    "vram": 2349078606,
+    "end_vram": 2349078718,
+    "size": 112,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0418BE",
+    "vram": 2349078718,
+    "end_vram": 2349079208,
+    "size": 490,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041AA8",
+    "vram": 2349079208,
+    "end_vram": 2349079230,
+    "size": 22,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041ABE",
+    "vram": 2349079230,
+    "end_vram": 2349079372,
+    "size": 142,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041B4C",
+    "vram": 2349079372,
+    "end_vram": 2349079516,
+    "size": 144,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041BDC",
+    "vram": 2349079516,
+    "end_vram": 2349079586,
+    "size": 70,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041C22",
+    "vram": 2349079586,
+    "end_vram": 2349079790,
+    "size": 204,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041CEE",
+    "vram": 2349079790,
+    "end_vram": 2349080088,
+    "size": 298,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041E18",
+    "vram": 2349080088,
+    "end_vram": 2349080268,
+    "size": 180,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041ECC",
+    "vram": 2349080268,
+    "end_vram": 2349080286,
+    "size": 18,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041EDE",
+    "vram": 2349080286,
+    "end_vram": 2349080290,
+    "size": 4,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041EE2",
+    "vram": 2349080290,
+    "end_vram": 2349080356,
+    "size": 66,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C041F24",
+    "vram": 2349080356,
+    "end_vram": 2349080584,
+    "size": 228,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042008",
+    "vram": 2349080584,
+    "end_vram": 2349080596,
+    "size": 12,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042014",
+    "vram": 2349080596,
+    "end_vram": 2349080664,
+    "size": 68,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042058",
+    "vram": 2349080664,
+    "end_vram": 2349080760,
+    "size": 96,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0420B8",
+    "vram": 2349080760,
+    "end_vram": 2349080918,
+    "size": 158,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042156",
+    "vram": 2349080918,
+    "end_vram": 2349081128,
+    "size": 210,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042228",
+    "vram": 2349081128,
+    "end_vram": 2349081256,
+    "size": 128,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0422A8",
+    "vram": 2349081256,
+    "end_vram": 2349081422,
+    "size": 166,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04234E",
+    "vram": 2349081422,
+    "end_vram": 2349081460,
+    "size": 38,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042374",
+    "vram": 2349081460,
+    "end_vram": 2349081516,
+    "size": 56,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0423AC",
+    "vram": 2349081516,
+    "end_vram": 2349081730,
+    "size": 214,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042482",
+    "vram": 2349081730,
+    "end_vram": 2349082140,
+    "size": 410,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04261C",
+    "vram": 2349082140,
+    "end_vram": 2349082448,
+    "size": 308,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042750",
+    "vram": 2349082448,
+    "end_vram": 2349082630,
+    "size": 182,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042806",
+    "vram": 2349082630,
+    "end_vram": 2349082784,
+    "size": 154,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0428A0",
+    "vram": 2349082784,
+    "end_vram": 2349082912,
+    "size": 128,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042920",
+    "vram": 2349082912,
+    "end_vram": 2349083108,
+    "size": 196,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0429E4",
+    "vram": 2349083108,
+    "end_vram": 2349083410,
+    "size": 302,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042B12",
+    "vram": 2349083410,
+    "end_vram": 2349083530,
+    "size": 120,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042B8A",
+    "vram": 2349083530,
+    "end_vram": 2349083626,
+    "size": 96,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042BEA",
+    "vram": 2349083626,
+    "end_vram": 2349083676,
+    "size": 50,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042C1C",
+    "vram": 2349083676,
+    "end_vram": 2349083750,
+    "size": 74,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042C66",
+    "vram": 2349083750,
+    "end_vram": 2349083776,
+    "size": 26,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042C80",
+    "vram": 2349083776,
+    "end_vram": 2349083948,
+    "size": 172,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042D2C",
+    "vram": 2349083948,
+    "end_vram": 2349083982,
+    "size": 34,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042D4E",
+    "vram": 2349083982,
+    "end_vram": 2349084020,
+    "size": 38,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042D74",
+    "vram": 2349084020,
+    "end_vram": 2349084094,
+    "size": 74,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042DBE",
+    "vram": 2349084094,
+    "end_vram": 2349084366,
+    "size": 272,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042ECE",
+    "vram": 2349084366,
+    "end_vram": 2349084394,
+    "size": 28,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042EEA",
+    "vram": 2349084394,
+    "end_vram": 2349084436,
+    "size": 42,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C042F14",
+    "vram": 2349084436,
+    "end_vram": 2349084834,
+    "size": 398,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0430A2",
+    "vram": 2349084834,
+    "end_vram": 2349085426,
+    "size": 592,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0432F2",
+    "vram": 2349085426,
+    "end_vram": 2349085524,
+    "size": 98,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043354",
+    "vram": 2349085524,
+    "end_vram": 2349085532,
+    "size": 8,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04335C",
+    "vram": 2349085532,
+    "end_vram": 2349085592,
+    "size": 60,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043398",
+    "vram": 2349085592,
+    "end_vram": 2349085606,
+    "size": 14,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0433A6",
+    "vram": 2349085606,
+    "end_vram": 2349085706,
+    "size": 100,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04340A",
+    "vram": 2349085706,
+    "end_vram": 2349085802,
+    "size": 96,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04346A",
+    "vram": 2349085802,
+    "end_vram": 2349085854,
+    "size": 52,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04349E",
+    "vram": 2349085854,
+    "end_vram": 2349086056,
+    "size": 202,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043568",
+    "vram": 2349086056,
+    "end_vram": 2349086540,
+    "size": 484,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04374C",
+    "vram": 2349086540,
+    "end_vram": 2349086882,
+    "size": 342,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0438A2",
+    "vram": 2349086882,
+    "end_vram": 2349087414,
+    "size": 532,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043AB6",
+    "vram": 2349087414,
+    "end_vram": 2349087554,
+    "size": 140,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043B42",
+    "vram": 2349087554,
+    "end_vram": 2349087638,
+    "size": 84,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043B96",
+    "vram": 2349087638,
+    "end_vram": 2349087674,
+    "size": 36,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043BBA",
+    "vram": 2349087674,
+    "end_vram": 2349087756,
+    "size": 82,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043C0C",
+    "vram": 2349087756,
+    "end_vram": 2349087782,
+    "size": 26,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043C26",
+    "vram": 2349087782,
+    "end_vram": 2349087944,
+    "size": 162,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043CC8",
+    "vram": 2349087944,
+    "end_vram": 2349088304,
+    "size": 360,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043E30",
+    "vram": 2349088304,
+    "end_vram": 2349088472,
+    "size": 168,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043ED8",
+    "vram": 2349088472,
+    "end_vram": 2349088608,
+    "size": 136,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043F60",
+    "vram": 2349088608,
+    "end_vram": 2349088696,
+    "size": 88,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C043FB8",
+    "vram": 2349088696,
+    "end_vram": 2349088878,
+    "size": 182,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04406E",
+    "vram": 2349088878,
+    "end_vram": 2349089666,
+    "size": 788,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044382",
+    "vram": 2349089666,
+    "end_vram": 2349089882,
+    "size": 216,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04445A",
+    "vram": 2349089882,
+    "end_vram": 2349089914,
+    "size": 32,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04447A",
+    "vram": 2349089914,
+    "end_vram": 2349090664,
+    "size": 750,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044768",
+    "vram": 2349090664,
+    "end_vram": 2349090946,
+    "size": 282,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044882",
+    "vram": 2349090946,
+    "end_vram": 2349091140,
+    "size": 194,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044944",
+    "vram": 2349091140,
+    "end_vram": 2349091350,
+    "size": 210,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044A16",
+    "vram": 2349091350,
+    "end_vram": 2349091914,
+    "size": 564,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044C4A",
+    "vram": 2349091914,
+    "end_vram": 2349091964,
+    "size": 50,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044C7C",
+    "vram": 2349091964,
+    "end_vram": 2349092044,
+    "size": 80,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044CCC",
+    "vram": 2349092044,
+    "end_vram": 2349092204,
+    "size": 160,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044D6C",
+    "vram": 2349092204,
+    "end_vram": 2349092302,
+    "size": 98,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044DCE",
+    "vram": 2349092302,
+    "end_vram": 2349092438,
+    "size": 136,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044E56",
+    "vram": 2349092438,
+    "end_vram": 2349092510,
+    "size": 72,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044E9E",
+    "vram": 2349092510,
+    "end_vram": 2349092626,
+    "size": 116,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044F12",
+    "vram": 2349092626,
+    "end_vram": 2349092638,
+    "size": 12,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044F1E",
+    "vram": 2349092638,
+    "end_vram": 2349092646,
+    "size": 8,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044F26",
+    "vram": 2349092646,
+    "end_vram": 2349092770,
+    "size": 124,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044FA2",
+    "vram": 2349092770,
+    "end_vram": 2349092832,
+    "size": 62,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C044FE0",
+    "vram": 2349092832,
+    "end_vram": 2349092926,
+    "size": 94,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04503E",
+    "vram": 2349092926,
+    "end_vram": 2349092966,
+    "size": 40,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045066",
+    "vram": 2349092966,
+    "end_vram": 2349093006,
+    "size": 40,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04508E",
+    "vram": 2349093006,
+    "end_vram": 2349093056,
+    "size": 50,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0450C0",
+    "vram": 2349093056,
+    "end_vram": 2349093214,
+    "size": 158,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04515E",
+    "vram": 2349093214,
+    "end_vram": 2349093384,
+    "size": 170,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045208",
+    "vram": 2349093384,
+    "end_vram": 2349093406,
+    "size": 22,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04521E",
+    "vram": 2349093406,
+    "end_vram": 2349093684,
+    "size": 278,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045334",
+    "vram": 2349093684,
+    "end_vram": 2349093862,
+    "size": 178,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0453E6",
+    "vram": 2349093862,
+    "end_vram": 2349094004,
+    "size": 142,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045474",
+    "vram": 2349094004,
+    "end_vram": 2349094344,
+    "size": 340,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0455C8",
+    "vram": 2349094344,
+    "end_vram": 2349094664,
+    "size": 320,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045708",
+    "vram": 2349094664,
+    "end_vram": 2349094680,
+    "size": 16,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045718",
+    "vram": 2349094680,
+    "end_vram": 2349094704,
+    "size": 24,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045730",
+    "vram": 2349094704,
+    "end_vram": 2349094800,
+    "size": 96,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045790",
+    "vram": 2349094800,
+    "end_vram": 2349094872,
+    "size": 72,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0457D8",
+    "vram": 2349094872,
+    "end_vram": 2349094880,
+    "size": 8,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0457E0",
+    "vram": 2349094880,
+    "end_vram": 2349094952,
+    "size": 72,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045828",
+    "vram": 2349094952,
+    "end_vram": 2349094960,
+    "size": 8,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045830",
+    "vram": 2349094960,
+    "end_vram": 2349095062,
+    "size": 102,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045896",
+    "vram": 2349095062,
+    "end_vram": 2349095070,
+    "size": 8,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04589E",
+    "vram": 2349095070,
+    "end_vram": 2349095270,
+    "size": 200,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045966",
+    "vram": 2349095270,
+    "end_vram": 2349095280,
+    "size": 10,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045970",
+    "vram": 2349095280,
+    "end_vram": 2349095634,
+    "size": 354,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045AD2",
+    "vram": 2349095634,
+    "end_vram": 2349095642,
+    "size": 8,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045ADA",
+    "vram": 2349095642,
+    "end_vram": 2349095804,
+    "size": 162,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045B7C",
+    "vram": 2349095804,
+    "end_vram": 2349095920,
+    "size": 116,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045BF0",
+    "vram": 2349095920,
+    "end_vram": 2349096142,
+    "size": 222,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045CCE",
+    "vram": 2349096142,
+    "end_vram": 2349096548,
+    "size": 406,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045E64",
+    "vram": 2349096548,
+    "end_vram": 2349096694,
+    "size": 146,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045EF6",
+    "vram": 2349096694,
+    "end_vram": 2349096872,
+    "size": 178,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045FA8",
+    "vram": 2349096872,
+    "end_vram": 2349096958,
+    "size": 86,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C045FFE",
+    "vram": 2349096958,
+    "end_vram": 2349097100,
+    "size": 142,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04608C",
+    "vram": 2349097100,
+    "end_vram": 2349097158,
+    "size": 58,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0460C6",
+    "vram": 2349097158,
+    "end_vram": 2349097244,
+    "size": 86,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04611C",
+    "vram": 2349097244,
+    "end_vram": 2349097414,
+    "size": 170,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0461C6",
+    "vram": 2349097414,
+    "end_vram": 2349097526,
+    "size": 112,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046236",
+    "vram": 2349097526,
+    "end_vram": 2349097654,
+    "size": 128,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0462B6",
+    "vram": 2349097654,
+    "end_vram": 2349097868,
+    "size": 214,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04638C",
+    "vram": 2349097868,
+    "end_vram": 2349097878,
+    "size": 10,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046396",
+    "vram": 2349097878,
+    "end_vram": 2349097888,
+    "size": 10,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0463A0",
+    "vram": 2349097888,
+    "end_vram": 2349097898,
+    "size": 10,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0463AA",
+    "vram": 2349097898,
+    "end_vram": 2349097938,
+    "size": 40,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0463D2",
+    "vram": 2349097938,
+    "end_vram": 2349098838,
+    "size": 900,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046756",
+    "vram": 2349098838,
+    "end_vram": 2349098958,
+    "size": 120,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0467CE",
+    "vram": 2349098958,
+    "end_vram": 2349099282,
+    "size": 324,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046912",
+    "vram": 2349099282,
+    "end_vram": 2349099434,
+    "size": 152,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0469AA",
+    "vram": 2349099434,
+    "end_vram": 2349099538,
+    "size": 104,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046A12",
+    "vram": 2349099538,
+    "end_vram": 2349099562,
+    "size": 24,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046A2A",
+    "vram": 2349099562,
+    "end_vram": 2349099632,
+    "size": 70,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046A70",
+    "vram": 2349099632,
+    "end_vram": 2349099702,
+    "size": 70,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046AB6",
+    "vram": 2349099702,
+    "end_vram": 2349099708,
+    "size": 6,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046ABC",
+    "vram": 2349099708,
+    "end_vram": 2349099722,
+    "size": 14,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046ACA",
+    "vram": 2349099722,
+    "end_vram": 2349099770,
+    "size": 48,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046AFA",
+    "vram": 2349099770,
+    "end_vram": 2349099778,
+    "size": 8,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046B02",
+    "vram": 2349099778,
+    "end_vram": 2349099946,
+    "size": 168,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046BAA",
+    "vram": 2349099946,
+    "end_vram": 2349100014,
+    "size": 68,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046BEE",
+    "vram": 2349100014,
+    "end_vram": 2349100148,
+    "size": 134,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046C74",
+    "vram": 2349100148,
+    "end_vram": 2349100170,
+    "size": 22,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046C8A",
+    "vram": 2349100170,
+    "end_vram": 2349100392,
+    "size": 222,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046D68",
+    "vram": 2349100392,
+    "end_vram": 2349100414,
+    "size": 22,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046D7E",
+    "vram": 2349100414,
+    "end_vram": 2349100470,
+    "size": 56,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C046DB6",
+    "vram": 2349100470,
+    "end_vram": 2349101340,
+    "size": 870,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04711C",
+    "vram": 2349101340,
+    "end_vram": 2349101592,
+    "size": 252,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047218",
+    "vram": 2349101592,
+    "end_vram": 2349101650,
+    "size": 58,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047252",
+    "vram": 2349101650,
+    "end_vram": 2349101794,
+    "size": 144,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0472E2",
+    "vram": 2349101794,
+    "end_vram": 2349101880,
+    "size": 86,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047338",
+    "vram": 2349101880,
+    "end_vram": 2349102000,
+    "size": 120,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0473B0",
+    "vram": 2349102000,
+    "end_vram": 2349102036,
+    "size": 36,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0473D4",
+    "vram": 2349102036,
+    "end_vram": 2349102226,
+    "size": 190,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047492",
+    "vram": 2349102226,
+    "end_vram": 2349102304,
+    "size": 78,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0474E0",
+    "vram": 2349102304,
+    "end_vram": 2349102386,
+    "size": 82,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047532",
+    "vram": 2349102386,
+    "end_vram": 2349102484,
+    "size": 98,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047594",
+    "vram": 2349102484,
+    "end_vram": 2349102588,
+    "size": 104,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0475FC",
+    "vram": 2349102588,
+    "end_vram": 2349102706,
+    "size": 118,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047672",
+    "vram": 2349102706,
+    "end_vram": 2349102776,
+    "size": 70,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0476B8",
+    "vram": 2349102776,
+    "end_vram": 2349102882,
+    "size": 106,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047722",
+    "vram": 2349102882,
+    "end_vram": 2349104076,
+    "size": 1194,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047BCC",
+    "vram": 2349104076,
+    "end_vram": 2349104596,
+    "size": 520,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047DD4",
+    "vram": 2349104596,
+    "end_vram": 2349104758,
+    "size": 162,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047E76",
+    "vram": 2349104758,
+    "end_vram": 2349104766,
+    "size": 8,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047E7E",
+    "vram": 2349104766,
+    "end_vram": 2349104818,
+    "size": 52,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047EB2",
+    "vram": 2349104818,
+    "end_vram": 2349104966,
+    "size": 148,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047F46",
+    "vram": 2349104966,
+    "end_vram": 2349105038,
+    "size": 72,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C047F8E",
+    "vram": 2349105038,
+    "end_vram": 2349105726,
+    "size": 688,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04823E",
+    "vram": 2349105726,
+    "end_vram": 2349105816,
+    "size": 90,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048298",
+    "vram": 2349105816,
+    "end_vram": 2349106030,
+    "size": 214,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04836E",
+    "vram": 2349106030,
+    "end_vram": 2349106244,
+    "size": 214,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048444",
+    "vram": 2349106244,
+    "end_vram": 2349106502,
+    "size": 258,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048546",
+    "vram": 2349106502,
+    "end_vram": 2349106738,
+    "size": 236,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048632",
+    "vram": 2349106738,
+    "end_vram": 2349106954,
+    "size": 216,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04870A",
+    "vram": 2349106954,
+    "end_vram": 2349107108,
+    "size": 154,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0487A4",
+    "vram": 2349107108,
+    "end_vram": 2349107212,
+    "size": 104,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04880C",
+    "vram": 2349107212,
+    "end_vram": 2349107446,
+    "size": 234,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0488F6",
+    "vram": 2349107446,
+    "end_vram": 2349107658,
+    "size": 212,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0489CA",
+    "vram": 2349107658,
+    "end_vram": 2349107874,
+    "size": 216,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048AA2",
+    "vram": 2349107874,
+    "end_vram": 2349108046,
+    "size": 172,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048B4E",
+    "vram": 2349108046,
+    "end_vram": 2349108532,
+    "size": 486,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048D34",
+    "vram": 2349108532,
+    "end_vram": 2349108638,
+    "size": 106,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048D9E",
+    "vram": 2349108638,
+    "end_vram": 2349108852,
+    "size": 214,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048E74",
+    "vram": 2349108852,
+    "end_vram": 2349108970,
+    "size": 118,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048EEA",
+    "vram": 2349108970,
+    "end_vram": 2349109156,
+    "size": 186,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C048FA4",
+    "vram": 2349109156,
+    "end_vram": 2349109468,
+    "size": 312,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0490DC",
+    "vram": 2349109468,
+    "end_vram": 2349109564,
+    "size": 96,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04913C",
+    "vram": 2349109564,
+    "end_vram": 2349109706,
+    "size": 142,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0491CA",
+    "vram": 2349109706,
+    "end_vram": 2349109784,
+    "size": 78,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049218",
+    "vram": 2349109784,
+    "end_vram": 2349109902,
+    "size": 118,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04928E",
+    "vram": 2349109902,
+    "end_vram": 2349110066,
+    "size": 164,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049332",
+    "vram": 2349110066,
+    "end_vram": 2349110216,
+    "size": 150,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0493C8",
+    "vram": 2349110216,
+    "end_vram": 2349110342,
+    "size": 126,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049446",
+    "vram": 2349110342,
+    "end_vram": 2349110416,
+    "size": 74,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049490",
+    "vram": 2349110416,
+    "end_vram": 2349110626,
+    "size": 210,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049562",
+    "vram": 2349110626,
+    "end_vram": 2349111126,
+    "size": 500,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049756",
+    "vram": 2349111126,
+    "end_vram": 2349111422,
+    "size": 296,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04987E",
+    "vram": 2349111422,
+    "end_vram": 2349111456,
+    "size": 34,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0498A0",
+    "vram": 2349111456,
+    "end_vram": 2349111786,
+    "size": 330,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C0499EA",
+    "vram": 2349111786,
+    "end_vram": 2349111972,
+    "size": 186,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049AA4",
+    "vram": 2349111972,
+    "end_vram": 2349112014,
+    "size": 42,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049ACE",
+    "vram": 2349112014,
+    "end_vram": 2349112032,
+    "size": 18,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049AE0",
+    "vram": 2349112032,
+    "end_vram": 2349112488,
+    "size": 456,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049CA8",
+    "vram": 2349112488,
+    "end_vram": 2349112578,
+    "size": 90,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049D02",
+    "vram": 2349112578,
+    "end_vram": 2349112828,
+    "size": 250,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049DFC",
+    "vram": 2349112828,
+    "end_vram": 2349113006,
+    "size": 178,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049EAE",
+    "vram": 2349113006,
+    "end_vram": 2349113184,
+    "size": 178,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C049F60",
+    "vram": 2349113184,
+    "end_vram": 2349113346,
+    "size": 162,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A002",
+    "vram": 2349113346,
+    "end_vram": 2349113360,
+    "size": 14,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A010",
+    "vram": 2349113360,
+    "end_vram": 2349113626,
+    "size": 266,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A11A",
+    "vram": 2349113626,
+    "end_vram": 2349113966,
+    "size": 340,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A26E",
+    "vram": 2349113966,
+    "end_vram": 2349114284,
+    "size": 318,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A3AC",
+    "vram": 2349114284,
+    "end_vram": 2349114472,
+    "size": 188,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A468",
+    "vram": 2349114472,
+    "end_vram": 2349114566,
+    "size": 94,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A4C6",
+    "vram": 2349114566,
+    "end_vram": 2349114724,
+    "size": 158,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A564",
+    "vram": 2349114724,
+    "end_vram": 2349114966,
+    "size": 242,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A656",
+    "vram": 2349114966,
+    "end_vram": 2349115720,
+    "size": 754,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04A948",
+    "vram": 2349115720,
+    "end_vram": 2349115966,
+    "size": 246,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04AA3E",
+    "vram": 2349115966,
+    "end_vram": 2349116290,
+    "size": 324,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04AB82",
+    "vram": 2349116290,
+    "end_vram": 2349116588,
+    "size": 298,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04ACAC",
+    "vram": 2349116588,
+    "end_vram": 2349116954,
+    "size": 366,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04AE1A",
+    "vram": 2349116954,
+    "end_vram": 2349117058,
+    "size": 104,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04AE82",
+    "vram": 2349117058,
+    "end_vram": 2349117314,
+    "size": 256,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04AF82",
+    "vram": 2349117314,
+    "end_vram": 2349117912,
+    "size": 598,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04B1D8",
+    "vram": 2349117912,
+    "end_vram": 2349118494,
+    "size": 582,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04B41E",
+    "vram": 2349118494,
+    "end_vram": 2349118536,
+    "size": 42,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04B448",
+    "vram": 2349118536,
+    "end_vram": 2349119390,
+    "size": 854,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04B79E",
+    "vram": 2349119390,
+    "end_vram": 2349119638,
+    "size": 248,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04B896",
+    "vram": 2349119638,
+    "end_vram": 2349119910,
+    "size": 272,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04B9A6",
+    "vram": 2349119910,
+    "end_vram": 2349120400,
+    "size": 490,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04BB90",
+    "vram": 2349120400,
+    "end_vram": 2349120658,
+    "size": 258,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04BC92",
+    "vram": 2349120658,
+    "end_vram": 2349120742,
+    "size": 84,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04BCE6",
+    "vram": 2349120742,
+    "end_vram": 2349121290,
+    "size": 548,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04BF0A",
+    "vram": 2349121290,
+    "end_vram": 2349121504,
+    "size": 214,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04BFE0",
+    "vram": 2349121504,
+    "end_vram": 2349121868,
+    "size": 364,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04C14C",
+    "vram": 2349121868,
+    "end_vram": 2349122128,
+    "size": 260,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04C250",
+    "vram": 2349122128,
+    "end_vram": 2349122836,
+    "size": 708,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04C514",
+    "vram": 2349122836,
+    "end_vram": 2349123094,
+    "size": 258,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04C616",
+    "vram": 2349123094,
+    "end_vram": 2349123450,
+    "size": 356,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04C77A",
+    "vram": 2349123450,
+    "end_vram": 2349123756,
+    "size": 306,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04C8AC",
+    "vram": 2349123756,
+    "end_vram": 2349124016,
+    "size": 260,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04C9B0",
+    "vram": 2349124016,
+    "end_vram": 2349124268,
+    "size": 252,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04CAAC",
+    "vram": 2349124268,
+    "end_vram": 2349124506,
+    "size": 238,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04CB9A",
+    "vram": 2349124506,
+    "end_vram": 2349124510,
+    "size": 4,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04CB9E",
+    "vram": 2349124510,
+    "end_vram": 2349124514,
+    "size": 4,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04CBA2",
+    "vram": 2349124514,
+    "end_vram": 2349124636,
+    "size": 122,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04CC1C",
+    "vram": 2349124636,
+    "end_vram": 2349125632,
+    "size": 996,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D000",
+    "vram": 2349125632,
+    "end_vram": 2349126160,
+    "size": 528,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D210",
+    "vram": 2349126160,
+    "end_vram": 2349126306,
+    "size": 146,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D2A2",
+    "vram": 2349126306,
+    "end_vram": 2349126456,
+    "size": 150,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D338",
+    "vram": 2349126456,
+    "end_vram": 2349126706,
+    "size": 250,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D432",
+    "vram": 2349126706,
+    "end_vram": 2349126820,
+    "size": 114,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D4A4",
+    "vram": 2349126820,
+    "end_vram": 2349126894,
+    "size": 74,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D4EE",
+    "vram": 2349126894,
+    "end_vram": 2349127220,
+    "size": 326,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D634",
+    "vram": 2349127220,
+    "end_vram": 2349127224,
+    "size": 4,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D638",
+    "vram": 2349127224,
+    "end_vram": 2349127430,
+    "size": 206,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D706",
+    "vram": 2349127430,
+    "end_vram": 2349127550,
+    "size": 120,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D77E",
+    "vram": 2349127550,
+    "end_vram": 2349127678,
+    "size": 128,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D7FE",
+    "vram": 2349127678,
+    "end_vram": 2349127958,
+    "size": 280,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D916",
+    "vram": 2349127958,
+    "end_vram": 2349128146,
+    "size": 188,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04D9D2",
+    "vram": 2349128146,
+    "end_vram": 2349128332,
+    "size": 186,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DA8C",
+    "vram": 2349128332,
+    "end_vram": 2349128440,
+    "size": 108,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DAF8",
+    "vram": 2349128440,
+    "end_vram": 2349128476,
+    "size": 36,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DB1C",
+    "vram": 2349128476,
+    "end_vram": 2349128728,
+    "size": 252,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DC18",
+    "vram": 2349128728,
+    "end_vram": 2349128770,
+    "size": 42,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DC42",
+    "vram": 2349128770,
+    "end_vram": 2349128898,
+    "size": 128,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DCC2",
+    "vram": 2349128898,
+    "end_vram": 2349128940,
+    "size": 42,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DCEC",
+    "vram": 2349128940,
+    "end_vram": 2349129022,
+    "size": 82,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DD3E",
+    "vram": 2349129022,
+    "end_vram": 2349129070,
+    "size": 48,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DD6E",
+    "vram": 2349129070,
+    "end_vram": 2349129188,
+    "size": 118,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DDE4",
+    "vram": 2349129188,
+    "end_vram": 2349129288,
+    "size": 100,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DE48",
+    "vram": 2349129288,
+    "end_vram": 2349129388,
+    "size": 100,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DEAC",
+    "vram": 2349129388,
+    "end_vram": 2349129418,
+    "size": 30,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DECA",
+    "vram": 2349129418,
+    "end_vram": 2349129500,
+    "size": 82,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DF1C",
+    "vram": 2349129500,
+    "end_vram": 2349129640,
+    "size": 140,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04DFA8",
+    "vram": 2349129640,
+    "end_vram": 2349130020,
+    "size": 380,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E124",
+    "vram": 2349130020,
+    "end_vram": 2349130166,
+    "size": 146,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E1B6",
+    "vram": 2349130166,
+    "end_vram": 2349130378,
+    "size": 212,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E28A",
+    "vram": 2349130378,
+    "end_vram": 2349130500,
+    "size": 122,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E304",
+    "vram": 2349130500,
+    "end_vram": 2349130764,
+    "size": 264,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E40C",
+    "vram": 2349130764,
+    "end_vram": 2349131066,
+    "size": 302,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E53A",
+    "vram": 2349131066,
+    "end_vram": 2349131132,
+    "size": 66,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E57C",
+    "vram": 2349131132,
+    "end_vram": 2349131234,
+    "size": 102,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E5E2",
+    "vram": 2349131234,
+    "end_vram": 2349131340,
+    "size": 106,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E64C",
+    "vram": 2349131340,
+    "end_vram": 2349131464,
+    "size": 124,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E6C8",
+    "vram": 2349131464,
+    "end_vram": 2349131580,
+    "size": 116,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E73C",
+    "vram": 2349131580,
+    "end_vram": 2349131706,
+    "size": 126,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E7BA",
+    "vram": 2349131706,
+    "end_vram": 2349131718,
+    "size": 12,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E7C6",
+    "vram": 2349131718,
+    "end_vram": 2349131736,
+    "size": 18,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E7D8",
+    "vram": 2349131736,
+    "end_vram": 2349131752,
+    "size": 16,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E7E8",
+    "vram": 2349131752,
+    "end_vram": 2349131928,
+    "size": 176,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E898",
+    "vram": 2349131928,
+    "end_vram": 2349132038,
+    "size": 110,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E906",
+    "vram": 2349132038,
+    "end_vram": 2349132056,
+    "size": 18,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E918",
+    "vram": 2349132056,
+    "end_vram": 2349132120,
+    "size": 64,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04E958",
+    "vram": 2349132120,
+    "end_vram": 2349132382,
+    "size": 262,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04EA5E",
+    "vram": 2349132382,
+    "end_vram": 2349132510,
+    "size": 128,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04EADE",
+    "vram": 2349132510,
+    "end_vram": 2349132772,
+    "size": 262,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04EBE4",
+    "vram": 2349132772,
+    "end_vram": 2349133038,
+    "size": 266,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04ECEE",
+    "vram": 2349133038,
+    "end_vram": 2349133586,
+    "size": 548,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04EF12",
+    "vram": 2349133586,
+    "end_vram": 2349134920,
+    "size": 1334,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04F448",
+    "vram": 2349134920,
+    "end_vram": 2349135306,
+    "size": 386,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04F5CA",
+    "vram": 2349135306,
+    "end_vram": 2349135568,
+    "size": 262,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04F6D0",
+    "vram": 2349135568,
+    "end_vram": 2349136230,
+    "size": 662,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04F966",
+    "vram": 2349136230,
+    "end_vram": 2349136318,
+    "size": 88,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04F9BE",
+    "vram": 2349136318,
+    "end_vram": 2349136410,
+    "size": 92,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04FA1A",
+    "vram": 2349136410,
+    "end_vram": 2349136924,
+    "size": 514,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04FC1C",
+    "vram": 2349136924,
+    "end_vram": 2349137054,
+    "size": 130,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04FC9E",
+    "vram": 2349137054,
+    "end_vram": 2349137300,
+    "size": 246,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04FD94",
+    "vram": 2349137300,
+    "end_vram": 2349137532,
+    "size": 232,
+    "status": "pending",
+    "attempts": 0
+  },
+  {
+    "name": "func_8C04FE7C",
+    "vram": 2349137532,
+    "end_vram": 2349137578,
+    "size": 46,
     "status": "pending",
     "attempts": 0
   }
