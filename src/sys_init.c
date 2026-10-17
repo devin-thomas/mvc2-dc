@@ -1807,3 +1807,8 @@ extern uint32_t *func_8C0197F8(void); // Address 0x8C0197F8 points to this funct
  * 0x8C01997E - func_8C01997E
  */
 
+
+/*
+ * 0x8C0199A6 - func_8C0199A6
+ */
+
