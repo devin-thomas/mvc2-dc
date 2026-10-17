@@ -9080,3 +9080,14 @@ extern void func_8C050026(uint16_t arg); // Corresponds to .word 0xf38d at offse
 // Based on standard Katana/MVCA2 patterns for VRAM access or similar small stubs at 0x8C05...:
 
 extern void func_8C050036(uint16_t arg); // Placeholder for .word 0
+
+/*
+ * 0x8C050026 - func_8C050026
+ */
+#include <stdint.h>
+
+// External declarations for referenced symbols and globals (Dreamcast Katana SDK context)
+extern uint32_t gbr; // Global Base Register base address if not implicit, usually 0x1F4 or similar in SH-4 DC ABI but often handled via GBR register directly. Here we assume standard access patterns where @(offset,gbr) resolves to a specific memory region. In Katana SDK, this is likely the VRAM bank pointer table offset from base.
+extern uint32_t *g_vram_bank_table; // Hypothetical global if r5 points here after setup, but logic suggests direct address math or GBR-relative addressing for VRAM banks. 
+// Based on `stc tbr,r3` and subsequent loads:
+// The code manipulates a specific bank (r1) derived from an offset in the table pointed to by something related to r5/r
