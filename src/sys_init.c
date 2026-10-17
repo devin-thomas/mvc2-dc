@@ -8807,3 +8807,17 @@ static int helper_func_b(uint32_t val);                 // Corresponds to 0x8c04
 // Global variables referenced in the assembly flow. 
 extern uint16_t g_some_flag_8C0E;   // Checked at bt/s @ 0x8c04dfb4
 extern int (*g_callback_func)(void); // Called via jsr @
+
+/*
+ * 0x8C04DF1C - func_8C04DF1C
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced global data/variables (addresses inferred from context)
+extern uint32_t *g_unk_offset_table; // Corresponds to 0x8C04DFBC, likely a table of offsets or pointers
+extern int g_flag_a;                 // Likely corresponds to the value at 0x8C04DFA8 (checked for non-zero)
+extern uint32_t *g_unk_ptr_table1;   // Corresponds to address loaded from r0 after checking flag_a
+extern uint32_t *g_unk_ptr_table2;   // Corresponds to address loaded from r0 in the second branch path
+extern int g_flag_b;                 // Likely corresponds to value at 0x8C04DFAA (checked for non-zero)
+extern uint32_t **g_jump_target_map1;// Table starting around offset derived from flag checks, used as jump table base? 
+// Actually looking closer:
