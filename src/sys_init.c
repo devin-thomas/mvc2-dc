@@ -5576,3 +5576,8 @@ extern void (*g_func_ptr_8c1f9fc)(void);   // Function pointer at 0x8CE60FC? No
  * 0x8C033D78 - func_8C033D78
  */
 
+
+/*
+ * 0x8C0342DA - func_8C0342DA (496 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0342DA); */
