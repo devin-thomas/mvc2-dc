@@ -7267,3 +7267,8 @@ extern uint32_t *func_8C04335C_base_addr(void); // Base address 0x8c043410, assu
  * 0x8C043398 - func_8C043398
  */
 
+
+/*
+ * 0x8C042DBE - func_8C042DBE
+ */
+
