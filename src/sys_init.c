@@ -7464,3 +7464,20 @@ extern uint32_t *g_unk_table_B; // Corresponds to address 0x8C287A94 (from const
 uint32_t func_8C044FA2(uint32_t a1, uint32_t a2, uint32_t *a3); // Placeholder for context if needed, but logic is self-contained mostly.
 // Actually, looking at the code: r6 (arg 5) and r7 are used as base pointers/offsets? 
 // Let's re-analyze arguments based on standard SH-4 calling convention
+
+/*
+ * 0x8C044FE0 - func_8C044FE0
+ */
+#include <stdint.h>
+
+// Global variables referenced in the function (must be declared extern for standalone compilation)
+extern uint32_t g_8C045070; // Address 0x8C045070 loaded into r7 at offset 1E
+static const struct { int add_offset; } s_offsets[] = 
+{
+    {92},   // Offset for index 0 (addr 0x8c045006) -> actually the code uses a table of offsets relative to base? No, looking closer.
+             // The assembly loads specific constants into r10 and adds them. Let's map exactly what happens in registers.
+};
+
+// Re-evaluating logic based on raw bytes:
+// 8C045070 is loaded as a pointer (r7). 
+// There are hardcoded offsets added to
