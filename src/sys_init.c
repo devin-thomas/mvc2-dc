@@ -11221,3 +11221,14 @@ extern uint32_t *g_ptr_source_a; // Pointer to data being read/written, derived 
 #include <stdint.h>
 
 extern uint32_t func_8C034DEE(uint32_t a); // Inferred from jsr call at 0x8C05AFCE with arg r3=address of data structure. Adjust signature if known precisely, but context implies it modifies the pointed-to struct or returns status affecting logic flow here. Given 'mov.l @-r15' and subsequent usage, likely a helper that sets up state in memory at 0x8C05B000 (which is passed as r3). Let's assume standard void return for setup unless evidence suggests otherwise, but the call result isn't used directly. Wait, looking closely: `jsr @r3` where r3=0x8c05b000. This calls a function at that address with no arguments (since it was loaded into r3). The actual
+
+/*
+ * 0x8C05AFFA - func_8C05AFFA
+ */
+extern void func_8C034DEE(void); // Address 0x8C05B134 points here
+extern int (*func_ptr_table[2])(void *); // Addresses at offsets: f2e6, f318 (relative to base)
+// Note: The assembly uses relative jumps/branches encoded as words. 
+// Based on the pattern `mov #N,r0` followed by `.word 0xfXXX`, these are likely function pointers or jump targets stored in a table accessed via r14+rX.
+// However, without explicit global variable names for those addresses (f2e6/f318 etc), we must assume they resolve to specific functions defined elsewhere 
+// OR the assembly snippet provided is incomplete regarding data definitions at 0x8C05B02E/0x8C05B04A/etc.
+// Given the context of Katana
