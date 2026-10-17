@@ -689,3 +689,8 @@ extern uint32_t func_8C011906(uintptr_t a, uintptr_t b); // Placeholder for cont
 // mov #92, r0 -> sets return value to 92 (decimal).
 // The subsequent instructions might belong to the caller's delay slot logic if misaligned, OR:
 // Let's look closer at `mov.l r4,@(r0,r5)`. This loads
+
+/*
+ * 0x8C011910 - func_8C011910
+ */
+
