@@ -8631,3 +8631,8 @@ extern int g_unk_8C06;       // Value at offset 78 of r4 structure? Or global. C
 // Based on "mov.w 0x8c04ccf0,r0" and subsequent loads, these look like offsets into the structure pointed by r4 (which holds a base address). 
 // However, without knowing what g_unk_8C05 is exactly, we must treat it as an external pointer.
 extern uint32_t *g_base_ptr; //
+
+/*
+ * 0x8C04C514 - func_8C04C514
+ */
+
