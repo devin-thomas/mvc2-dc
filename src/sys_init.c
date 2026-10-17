@@ -8077,3 +8077,14 @@ extern int func_8C0518A0(int, int, int, int);   // Address 0x8C048814 -> 0x8C051
 extern void func_8C0526D6(uint32_t *);          // Address 0x8C048818 -> 0x8C0526D6
 extern int func_8C051868(int, uint32_t, uint32_t); // Address 0x8C04881C -> 0x8C051868 (Returns: r0)
 extern void func_8C051BCA(uint32_t *);          // Address 0x8C048
+
+/*
+ * 0x8C0487A4 - func_8C0487A4
+ */
+#include <stdint.h>
+
+// Helper functions declared as extern based on SH-4 ABI context (addresses resolved from constants)
+extern void (*func_8C051AF6)(void); // Address 0x8C051AF6, likely a setup/init routine for the first arg check
+extern int func_8C0518A0(int32_t val);   // Address 0x8C0518A0, checks r4 (likely non-zero test) returning bool/int
+extern void (*func_8C0526D6)(int32_t arg); // Address 0x8C0526D6, takes low byte of return value from prev call? Or specific logic. 
+// Note: The pattern suggests a chain where each step might depend on the previous result or state passed via r4/r14 stack frame manipulation
