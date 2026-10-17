@@ -974,3 +974,8 @@ extern int func_8C0355B2(uintptr_t, uintptr_t); // Address 0x8C0355B2 takes (arg
 extern void (*func_8C212CBC)(void); // Takes byte from memory via r3->b into r2 check
 extern int func_8C17A228(void);
 extern void func_8C044E56(int count, uintptr_t base_ptr); // Loops 'count' times writing 1 to bytes at offset 0..(count-1) of address in r3 (loaded from r
+
+/*
+ * 0x8C012D7E - func_8C012D7E
+ */
+
