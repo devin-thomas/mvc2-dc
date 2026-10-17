@@ -10300,3 +10300,15 @@ extern uint8_t  g_byte_field_r6[10]; // Hypothetical buffer at offset from r6 (b
 // Let's assume this function takes pointers/addresses and returns an int status.
 
 extern uint32_t *g_global_table_1;
+
+/*
+ * 0x8C05548A - func_8C05548A
+ */
+#include <stdint.h>
+
+extern uint32_t func_8C055496(uintptr_t addr); // Placeholder for the external helper if needed, though logic is inline here. Actually, looking at assembly: exts.b r0,r0 followed by cmp/pl implies a check on sign bit or zero? Wait, let's re-analyze carefully.
+
+// Re-analysis of 0x8C055496-0x8C0554A2
+// mov.b @(1,r14),r0 -> Load byte from addr+1 into r0 (low nibble or full byte? SH-4 load is usually word, but 'mov.b' loads 3 bytes: low byte to Rn[7..0], next two ignored. So it's a signed char).
+// add #-1,r0       -> Decrement the loaded value.
+//
