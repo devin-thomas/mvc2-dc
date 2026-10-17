@@ -3626,3 +3626,8 @@ extern uint32_t (*func_8C024DE2)(void); // Return type inferred from usage as a 
  * 0x8C024B60 - func_8C024B60
  */
 
+
+/*
+ * 0x8C024C26 - func_8C024C26
+ */
+
