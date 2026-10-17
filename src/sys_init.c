@@ -4747,3 +4747,11 @@ uint32_t func_8C02BD06(void) {
  * 0x8C02DC3E - func_8C02DC3E
  */
 
+
+/*
+ * 0x8C02DE94 - func_8C02DE94
+ */
+extern uint32_t *g_vram_base_56_r1; // Placeholder for @(56,r1) address calculation context if needed, assuming r1 holds base pointer + offset logic or is a specific register holding the VRAM block start. Based on assembly `@(56,r1)` and `@(56,r3)`, these are likely pointers to data structures in VRAM accessed via R1/R3 with an immediate 0x28 (4 bytes? No, SH-4 addressing mode is usually base+offset). Wait, standard SuperH syntax: @(disp,bn). Here disp=56. So it's loading from [R1 + 56].
+extern uint32_t *g_vram_base_56_r3; // Same logic for R3
+
+// Helper to simulate the jump table behavior if necessary, but here we just inline the jumps or assume they are
