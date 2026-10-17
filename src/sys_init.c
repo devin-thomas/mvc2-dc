@@ -7009,3 +7009,14 @@ extern uint32_t (*func_8C040190)(void); // Address 0x8C040190 contains the addre
  * 0x8C041AA8 - func_8C041AA8
  */
 
+
+/*
+ * 0x8C041BDC - func_8C041BDC
+ */
+#include <stdint.h>
+
+extern uint32_t gbr; // Global Base Register (VRAM base)
+extern void *r7_bank; // Pointer to banked memory region for r7 context? Or specific VRAM pointer. Based on 'ldc', likely a register alias or global var holding the target address space offset if not using GBR directly, but here it loads into R2 then used as index base? Wait: `mov.l @(0,r14),r8` and `ldc r2,r7_bank`.
+// Re-evaluating 'ldc': In SH-4 Dreamcast SDK context (Katana/SHARC or specific DC compiler quirks):
+// Usually, this is a custom macro for accessing banked memory. 
+// However, looking at the pattern: `(0x8C26823C)` points to data in RAM? Or VRAM?
