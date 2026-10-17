@@ -7481,3 +7481,8 @@ static const struct { int add_offset; } s_offsets[] =
 // Re-evaluating logic based on raw bytes:
 // 8C045070 is loaded as a pointer (r7). 
 // There are hardcoded offsets added to
+
+/*
+ * 0x8C044DCE - func_8C044DCE
+ */
+
