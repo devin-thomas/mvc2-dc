@@ -2315,3 +2315,11 @@ extern uint32_t g_return_address_offset; // Placeholder for the constant loaded 
  * 0x8C01B8BE - func_8C01B8BE
  */
 
+
+/*
+ * 0x8C01BC26 - func_8C01BC26
+ */
+// This function is a stub containing only an immediate return and NOP.
+void func_8C01BC26(void) {
+    __asm__ volatile ("rts"); // Return from subroutine (empty delay slot handled by compiler/NOP).
+}
