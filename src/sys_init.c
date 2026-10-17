@@ -9651,3 +9651,8 @@ extern uint32_t *func_8C05A2CC_ptr; // Placeholder for the base pointer logic if
  * 0x8C0528DA - func_8C0528DA
  */
 
+
+/*
+ * 0x8C0528CE - func_8C0528CE
+ */
+
