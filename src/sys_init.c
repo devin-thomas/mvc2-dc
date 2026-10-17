@@ -3832,3 +3832,8 @@ extern uint32_t *g_data_8C26823C; // Corresponds to 0x8c026198 (value is address
  * 0x8C025ECE - func_8C025ECE
  */
 
+
+/*
+ * 0x8C025D0A - func_8C025D0A
+ */
+
