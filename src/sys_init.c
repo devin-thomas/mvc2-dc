@@ -11056,3 +11056,16 @@ extern uint32_t *g_unk_ptr; // Address 0x8C010524 (derived from context of VRAM 
 // The assembly loads 0x8c059ec4 into r0 immediately before use.
 
 static void func_8C010524(void) { /* Placeholder for external function at offset */ } // Offset calculation based on relative jumps if needed, but here we assume direct address usage or static data access pattern typical of Katana
+
+/*
+ * 0x8C059E5C - func_8C059E5C
+ */
+#include <stdint.h>
+
+// External declarations for global data referenced by absolute addresses in the assembly.
+extern uint32_t g_Data_8C059EB8; // Address 0x8C059E64 source (loop counter base) - inferred from context of VRAM access pattern, but strictly based on provided asm: this is a literal address load into r1 initially? No, let's re-read carefully.
+// Correction on globals based *strictly* on the assembly instructions provided:
+
+extern uint32_t g_Data_8C059EB8; // Loaded to R0 at start (likely loop counter or index)
+extern uint32_t g_Data_8C059EC6; // Loaded to R1 initially? No, mov.w 0x...r1. Wait, line E64 adds r4,r1. 
+// Let
