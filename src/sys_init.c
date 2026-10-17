@@ -10529,3 +10529,12 @@ extern uint32_t g_r4_offset_base; // Assuming r4 holds an offset or base, treate
  * 0x8C055C3A - func_8C055C3A
  */
 
+
+/*
+ * 0x8C055D28 - func_8C055D28
+ */
+extern void func_8C055D28(void); // Placeholder for external linkage if needed, though this is a stub.
+
+void func_8C055D28(void) {
+    __asm__ volatile ("" ::: "memory"); 
+}
