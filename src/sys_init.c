@@ -5818,3 +5818,8 @@ extern void func_8C213046(void *a);                      // Placeholder for jsr 
 // The code loads pointers from ROM/data segments into registers and then indirection happens.
 // Since I cannot see the content of 0x8C213046 or similar without memory dump, 
 // but the prompt implies these are function calls via indirect jump tables often found in SDK
+
+/*
+ * 0x8C03673E - func_8C03673E
+ */
+
