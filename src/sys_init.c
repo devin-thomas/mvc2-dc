@@ -9091,3 +9091,15 @@ extern uint32_t gbr; // Global Base Register base address if not implicit, usual
 extern uint32_t *g_vram_bank_table; // Hypothetical global if r5 points here after setup, but logic suggests direct address math or GBR-relative addressing for VRAM banks. 
 // Based on `stc tbr,r3` and subsequent loads:
 // The code manipulates a specific bank (r1) derived from an offset in the table pointed to by something related to r5/r
+
+/*
+ * 0x8C050084 - func_8C050084
+ */
+#include <stdint.h>
+
+extern uint32_t *g_unk_8c0105fc; // Base address 0x8C0500FC, likely a pointer to data structure or array base in VRAM/ROM context. Adjust name based on actual symbol if known (e.g., g_vram_base).
+extern uint32_t *g_unk_8c0105fe; // Base address 0x8C0500FE, likely a different offset within the same structure or array.
+
+// Note: The assembly loads absolute addresses into r0 (r4 is assumed to be passed as argument).
+// In SH-4 Dreamcast context with Katana SDK, these are often pointers to VRAM/ROM data structures.
+// We assume g_unk_* represent the base pointer stored at those offsets relative to some global or segment base if not
