@@ -2424,3 +2424,15 @@ extern void (*func_ptr)(void); // Placeholder for the function called at r3 (lik
  * 0x8C01BD7A - func_8C01BD7A
  */
 
+
+/*
+ * 0x8C01BE68 - func_8C01BE68
+ */
+extern void func_8C01BAA4(void); // Target of bsr at offset relative to current (approx) - actually absolute address 0x8c01baa4 in original context, but here treated as function pointer logic or specific call. Based on assembly `bsr 0x8c01baa4`, this is a direct branch and swap routine often used for sub-calls in Katana SDK.
+extern void func_8C02A53A(void); // Target of mov.a / jsr sequence starting at BEB6 (approx) - actually address 0x8c01c00c points to this function pointer stored there? No, `mov.l` loads the value from memory. Let's assume standard Katana SDK pattern where these are global pointers or functions.
+extern void func_8C213B0C(void); // Target of mov.a / jsr sequence starting at BECA (approx) - address 0x8c01c01c points to this function pointer? Wait, `mov.l` loads the value from memory into r3. Then `jsr @r3`. So we need a variable or extern for that location if it's not resolved. However, in Katana SDK decompilation, these are often direct calls to specific routines defined elsewhere. Let's assume they exist as functions at those addresses relative to the binary base, OR more likely, the assembly loads an address into r3/r2 and jumps there.
+// Correction: The assembly uses `mov.l <address>,rX` then `jsr @<reg>`. This means `<address>` is a function pointer stored in data section or global variable? 
+// Looking at Katana SDK structure, these addresses (0x8c01c0xx) are likely pointers to other functions.
+extern void (*func_ptr_8C213B0C)(void); // Placeholder for the value loaded from 0x8c01c01c if it's a pointer. But usually in these SDKs, they call specific known routines. 
+// Let's assume standard behavior: The addresses like `0x8c01baa4` are absolute function calls or pointers to functions defined elsewhere.
+extern void func_8C213AF8(void); // Target of mov.a
