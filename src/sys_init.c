@@ -1930,3 +1930,8 @@ extern void (*func_ptr_8c01a1be)(void);
  * 0x8C019E6C - func_8C019E6C
  */
 
+
+/*
+ * 0x8C01A2D2 - func_8C01A2D2
+ */
+
