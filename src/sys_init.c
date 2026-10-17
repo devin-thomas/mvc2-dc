@@ -7231,3 +7231,8 @@ extern uint32_t *gbr_ptr_base; // Base address for GBR pointers, adjusted by off
 // However, looking at typical Katana SDK patterns: `@(0,gbr)` often points to a struct containing flags/pointers. 
 // Let's define the necessary externs based on common usage in such decompilations where gbr is treated as a base pointer register value passed implicitly or explicitly if not global.
 // Given the previous error, we must assume `gbr` acts like a
+
+/*
+ * 0x8C0430A2 - func_8C0430A2 (592 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C0430A2); */
