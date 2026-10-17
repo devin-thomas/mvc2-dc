@@ -10398,3 +10398,16 @@ extern void *g_unk_ptr; // Placeholder for global variable at address in r5/r6 c
  * 0x8C05560A - func_8C05560A
  */
 
+
+/*
+ * 0x8C0557E6 - func_8C0557E6
+ */
+extern void *r6_base; // Base pointer for the byte array (derived from @(1,r6))
+extern uint32_t r5_val[8]; // Array accessed at offset 0x4 relative to base? Or specific struct. Assuming generic access based on context or global data.
+
+// Note: The assembly uses absolute addresses in registers like @r6 and @(offset, rX). 
+// Without the full symbol table mapping these virtual offsets (1) and register contents (r5),
+// we must assume standard Dreamcast ABI where arguments are passed via specific registers.
+// However, looking at `mov.b @(1,r6)` followed by logic that modifies it:
+// It seems r6 holds a base address + 0x4 offset? Or the code is manipulating a byte in memory pointed to by (r6+1).
+// Given "VRAM Address" context and typical SDK
