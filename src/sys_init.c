@@ -2441,3 +2441,8 @@ extern void func_8C213AF8(void); // Target of mov.a
  * 0x8C01C30E - func_8C01C30E
  */
 
+
+/*
+ * 0x8C01C312 - func_8C01C312
+ */
+
