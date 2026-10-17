@@ -4328,3 +4328,8 @@ extern uint32_t *g_vram_table_start; // Placeholder for the base address if not 
  * 0x8C02925E - func_8C02925E (1798 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C02925E); */
+
+/*
+ * 0x8C029A94 - func_8C029A94 (710 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C029A94); */
