@@ -7109,3 +7109,8 @@ extern void (*func_ptr_table_entry)(void *arg);          // Placeholder for the 
 static const uintptr_t g_data_8c0331d8 = 0x8C0331D8;   // Address loaded into r3 at start of loop setup (likely a base or offset)
 static const uint32_t *g_table_base_a = (uint32_t *)(uintptr_t)0x8C28C4CE; // Loaded from 0x8c042178, used as table pointer for byte extraction logic A
 static const uintptr_t g_data_8c138b90 = 0x8C138B90;   // Address loaded
+
+/*
+ * 0x8C042156 - func_8C042156
+ */
+
