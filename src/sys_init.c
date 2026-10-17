@@ -3963,3 +3963,8 @@ static inline uint16_t func_8C02695E(void) { return 0x7F; } // Placeholder for t
  * 0x8C02695E - func_8C02695E (402 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C02695E); */
+
+/*
+ * 0x8C026CDE - func_8C026CDE
+ */
+
