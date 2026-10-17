@@ -626,3 +626,8 @@ extern uint8_t *g_8c012cbc; // [0x8C010BFC] - derived from context if needed, bu
  * 0x8C010BBC - func_8C010BBC (362 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C010BBC); */
+
+/*
+ * 0x8C010F24 - func_8C010F24 (1220 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C010F24); */
