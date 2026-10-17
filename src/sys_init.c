@@ -10251,3 +10251,8 @@ extern void func_8C0550BA(uint32_t *ptr); // Helper function referenced in delay
  * 0x8C055272 - func_8C055272 (20 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C055272); */
+
+/*
+ * 0x8C05514E - func_8C05514E
+ */
+
