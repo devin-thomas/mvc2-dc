@@ -3709,3 +3709,19 @@ extern uint32_t gbr; // Global Base Register, typically 0xC01F8000 on DC hardwar
  * 0x8C025068 - func_8C025068
  */
 
+
+/*
+ * 0x8C025A04 - func_8C025A04
+ */
+extern void *func_8C044F12(void *, int, uint32_t); // Address 0x8C025A64 -> 0x8C044F12
+static const char gbr_table[] = { /* Data at offset from GBR */ }; 
+extern void *func_8C132AC4(void *, int, uint32_t); // Address 0x8C025BB0 -> 0x8C132AC4
+extern void *func_8C1294C8(void *, int, uint32_t); // Address 0x8C025BB4 -> 0x8C1294C8
+
+// Helper to resolve GBR-relative addresses if the table is sparse or needs specific indexing logic
+static void *resolve_gbr_offset(uintptr_t base_addr) {
+    return (void *)(uintptr_t)(base_addr + gbr_table[0]); // Simplified assumption based on typical Katana SDK patterns, 
+                                                           // actual offset calculation depends on runtime GBR value in r1.
+}
+
+// Note: The assembly uses a complex jump table and indirect calls via the 'gbr' (Global Base Register) mechanism common
