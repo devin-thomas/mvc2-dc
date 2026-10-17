@@ -9574,3 +9574,8 @@ extern uint32_t g_8C052541;
 
 extern uint32_t g_8C0525b4; // Value at 0x8c0525b4 loaded into r5. Likely a pointer base for VRAM access pattern?
 // Re-evaluating: The code does `mov.w 0x8c
+
+/*
+ * 0x8C05216E - func_8C05216E
+ */
+
