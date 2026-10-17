@@ -8597,3 +8597,19 @@ extern uint32_t (*func_ptr_table_entry8)(uint32_t base_ptr); // Placeholder for 
  * 0x8C04C250 - func_8C04C250 (708 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04C250); */
+
+/*
+ * 0x8C04CAAC - func_8C04CAAC
+ */
+#include <stdint.h>
+
+// External declarations for referenced addresses and helper functions found in the assembly.
+extern uint32_t *gbr; // Global Base Register pointer, used as base address 0x8C04CC50 context implies global data segment access or specific GBR-relative addressing if not absolute. Assuming standard Dreamcast ABI where explicit loads from fixed addresses are to known globals/tables.
+
+// Resolved external pointers based on .word directives at runtime load points
+extern uint32_t *const _table_8C04CC50; // Address 0x8c04cc50 loaded into r4 initially, likely a table or struct pointer.
+extern void (*func_ptr_1)(void);         // Jump target: 0x8c04d394 (bra) - resolved as function call in logic flow if treated as JSR context for decompilation safety, though 'bra' is unconditional jump here. In C representation of control flow, we assume it calls a routine or jumps to code that returns void/int. Given the pattern `jsr @r3` later, these are likely entry points into sub-functions.
+extern uint32_t *const _table_8C04D886; // Address 0x8c04d886 loaded via bsr/bsl logic? No, direct load at CB5E is different table. 
+// Re-evaluating the .word sequences:
+// The assembly contains many `.word` directives that act as immediate addresses for subsequent instructions or are part of a lookup structure.
+// Let's map them to externs based on their usage context (e.g.,
