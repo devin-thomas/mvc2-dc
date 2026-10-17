@@ -10745,3 +10745,8 @@ extern void func_f3e6_wrapper(uint8_t *dst, uint8_t src); // Placeholder logic i
  * 0x8C057492 - func_8C057492
  */
 
+
+/*
+ * 0x8C05734C - func_8C05734C
+ */
+
