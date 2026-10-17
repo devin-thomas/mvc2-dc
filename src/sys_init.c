@@ -1318,3 +1318,8 @@ extern uint32_t *g_unk_8C01759A; // Address 0x8C01 + offset implied by context o
  * 0x8C0161BA - func_8C0161BA
  */
 
+
+/*
+ * 0x8C0162F8 - func_8C0162F8
+ */
+
