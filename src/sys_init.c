@@ -8743,3 +8743,12 @@ extern uint32_t (*func_8C04DD94)(void); // Address 0x8C04DBD6 calls this via BSR
 extern volatile unsigned char *g_vram_ptr; // Represents r1, used as base for VRAM access @(r0,r1). The actual address is passed or loaded into R1 before call? 
     // Note: In Katana SDK, often a global pointer to VBO/Texture data exists. Here `mov.b @(r0,r1),r2` suggests r1 holds the base offset of VRAM array.
 // Since we cannot see where R1
+
+/*
+ * 0x8C04DC18 - func_8C04DC18
+ */
+extern void func_8C034DEE(void); // Address 0x8C04DC58 points here
+extern int (*func_ptr)(void) = (int (*)(void))((uintptr_t)0x8C034E8C + 16 * sizeof(int)); // Approximation based on offset logic, but direct call is safer if it's a function pointer table. However, the code loads an address into r3 and jumps to it. Let's assume func_8C034DEE handles the first part or there are multiple functions at those addresses.
+// Correction: The assembly shows two distinct jump targets loaded from static data. 
+// 0x8c04dc58 -> 0x8C034DEE (likely a function)
+// 0x8c04dc5c -> 0x8C03
