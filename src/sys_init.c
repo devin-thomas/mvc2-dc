@@ -10038,3 +10038,8 @@ extern uint8_t g_unk_8C212CDB;   // Value used as offset/base, address loaded at
 extern uint8_t *g_ptr_r6; // Corresponds to register usage of r6 as a data pointer or value source in context, mapped here for extern declaration if it were global. Note: In this specific inline snippet, r6 is used directly from the caller's stack frame (r5+). If g_ptr_r6 represents the variable pointed to by r6 elsewhere, declare accordingly. For strict ABI compliance with local vars passed via registers in a decompiled context without full function scope, we assume standard externs for globals accessed this way or inline logic if it were global data access. 
 // Correction based on typical Katana SDK patterns: This looks like setting up an 8-bit value at offset +5 from r5 and returning the original byte loaded into r0 (which was set to 2).
 // However, without knowing what 'r6' holds or if it's a
+
+/*
+ * 0x8C053EFE - func_8C053EFE
+ */
+
