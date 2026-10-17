@@ -10492,3 +10492,8 @@ static uint32_t *get_ptr_from_offset_table(const struct { int val; } *table, con
  * 0x8C055920 - func_8C055920
  */
 
+
+/*
+ * 0x8C055AF8 - func_8C055AF8
+ */
+
