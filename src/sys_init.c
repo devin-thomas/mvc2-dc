@@ -2486,3 +2486,11 @@ extern void func_8C213AF8(void); // Target of mov.a
  * 0x8C01C3E8 - func_8C01C3E8
  */
 
+
+/*
+ * 0x8C01CA08 - func_8C01CA08
+ */
+#include <stdint.h>
+
+extern uint8_t *g_ptr_8C01CAA0; // Address 0x8C01CAA0 points to this data, or is the address itself? Based on context: mov.l #addr,r2 then load byte from r2. So g_ptr_8C01CAA0 should be a uint32_t constant value representing an address in VRAM/ROM.
+extern const void *g_addr_table_start; // Placeholder for 0x8c01ca76 if it's not a global var but the prompt implies externs are needed. Let's assume 0x8C01CA76 is a known constant or variable address in this context. Since I cannot see globals, I will declare them as external symbols with their addresses/values where possible based on standard decompilation practices for such snippets (often these point to specific tables).
