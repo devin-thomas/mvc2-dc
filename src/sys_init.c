@@ -4571,3 +4571,8 @@ extern void (*func_ptr_8c212bf0)(void); // Placeholder for 0x8C212BF0 if it's a 
 // Correction on Katana SDK structure: These `.word` blocks often define lookup tables or specific constants, but here they are loaded into registers to be used as pointers immediately after `mov.l`. 
 // Example at B3B4: `mov.b r15,@r11` where r11 came from a table load.
 // Let's assume the addresses loaded (e.g., 0x8C212BF0) are function entry
+
+/*
+ * 0x8C02B882 - func_8C02B882 (584 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C02B882); */
