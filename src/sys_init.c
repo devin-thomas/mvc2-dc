@@ -1822,3 +1822,21 @@ extern uint32_t *func_8C0197F8(void); // Address 0x8C0197F8 points to this funct
  * 0x8C019C92 - func_8C019C92
  */
 
+
+/*
+ * 0x8C019B48 - func_8C019B48
+ */
+#include <stdint.h>
+
+// External symbols referenced in the function (addresses loaded from ROM)
+extern uint8_t *g_0x8C145D1C; // Address 0x8C145D1C
+extern void (*func_ptr_table_a[])(void); 
+extern void (*func_ptr_table_b[])(uint32_t, uint32_t);
+
+// Global variables or data structures referenced by the function (inferred from usage)
+extern struct { /* structure containing fields accessed via offsets */ } g_data; // Placeholder for actual global/struct layout if needed. Assuming direct memory access based on pointer arithmetic relative to r4/r6 which act as base pointers in this context, likely a large buffer or specific object instance passed by reference (r4).
+// Note: The assembly uses absolute addresses loaded into registers and then offset from them. 
+// Without the full symbol table mapping these hardcoded 32-bit values to C symbols/structs, we must assume they point to global data structures common in Katana SDK games or specific function pointers embedded in ROM tables.
+
+extern uint8_t *g_0x8C145D1C; // Corresponding to mov.l #0x8c019c2c,r5
+// The assembly loads absolute addresses into r3, then uses them as
