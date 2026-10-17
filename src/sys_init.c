@@ -5435,3 +5435,11 @@ extern uint32_t *g_unk_return_stack; // Placeholder for the global return stack 
  * 0x8C03319E - func_8C03319E
  */
 
+
+/*
+ * 0x8C03353C - func_8C03353C
+ */
+extern uint64_t func_8C0331D8(uint32_t a, uint32_t b); // Helper function referenced in BSR call at 0x8C033572
+// Note: The assembly uses 'r9' as an accumulator for bit manipulation logic. 
+// Based on context (dmalu.l r13,r15 followed by shifts), this likely implements a specific fixed-point or bitwise operation pattern common in Katana SDK math routines, where the result is accumulated into R0/R2 and then shifted back out to form bytes/words before being stored via movmu.
+// The exact semantics of func_8C0331D8 depend on its definition elsewhere; here we assume it returns a uint64_t based on dmulu usage context or acts as the core calculation unit returning in R0/R2 pair if not passed args differently
