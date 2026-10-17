@@ -11019,3 +11019,8 @@ static uint32_t gbr_ptr = 0;                              // GBR register value 
  * 0x8C059914 - func_8C059914
  */
 
+
+/*
+ * 0x8C059A94 - func_8C059A94 (600 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C059A94); */
