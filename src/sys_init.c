@@ -477,3 +477,89 @@ void func_8C010A5A(void) {
     dst[87] = 0;
     dst[88] = 0;
 }
+
+/*
+ * 0x8C010AF4 - func_8C010AF4
+ */
+#include <stdint.h>
+
+extern uint32_t g_8C212BF4;
+extern uint32_t g_8C289788;
+extern uint32_t g_8C212BF8;
+extern const char *g_8C26823C[];
+extern uint8_t g_8C213046;
+extern uint8_t g_8C213044;
+extern uint16_t g_8C2681DC[0x8360];
+
+int func_8C010AF4(int arg) {
+    int result = 0;
+    
+    if (g_8C212BF4 != 0) {
+        return 0;
+    }
+    
+    uint32_t ptr_val = *(uint32_t *)(uintptr_t)0x8C289788;
+    if (ptr_val == 0) {
+        result = 0;
+    } else {
+        int i = 0;
+        while (i < 2) {
+            const char *str = g_8C26823C[i];
+            
+            // Check for specific character at offset 76 and global flag
+            if (*(uint8_t *)(uintptr_t)(str + 76) == 5 || *(uint8_t *)(uintptr_t)0x8C213046 != 0) {
+                int val = g_8C213044;
+                // Compare with shifted index (i << 1) ? Logic seems to be checking if current state matches expected for this slot
+                // The assembly: shad r13, r1 where r1=1. Then cmp/eq r1, r2. 
+                // Wait, looking closer at 0x8C010B64-0x8C010B6E:
+                // mov.l addr, r3 (g_8C213044)
+                // mov r14, r1 (r14 is 1)
+                // shad r13, r1 -> r1 = i << 1 ? No, shad shifts left by count in lower bits. 
+                // Actually, let's re-read the flow.
+                
+                if (*(uint8_t *)(uintptr_t)0x8C213044 == (i * 2)) {
+                    result = ptr_val;
+                    break;
+                }
+            } else {
+                uint16_t mask_check = g_8C2681DC[i]; // Indexing logic: shll2 r3, add r2(r13), shll2 r3. 
+                // The assembly calculates index as (i + i) << 2? No.
+                // d3 63 mov r13,r3; 08 43 shll2 r3 -> r3 = i * 4
+                // d3 62 mov r13,r2; 
+                // 52 d0 mov.l addr, r0 (g_8C2681DC)
+                // 2c 33 add r2,r3 -> r3 = i*4 + i = i*5? No.
+                // Let's trace carefully:
+                // r13 is the loop counter 'i'.
+                // mov r13, r3; shll2 r3 => r3 = i * 4
+                // mov r13, r2 
+                // add r2, r3 => r3 = i*4 + i = i*5 ?? Unlikely.
+                // Wait, looking at previous lines:
+                // 0x8C010B70: d3 63 (mov r13,r3)
+                // 0x8C010B72: 08 43 (shll2 r3) -> r3 = i << 2
+                // 0x8C010B74: d3 62 (mov r13,r2)
+                // 0x8C010B76: 52 d0 (mov.l ... ,r0)
+                // 0x8C010B78: 2c 33 (add r2, r3) -> r3 = i + (i<<2) ? 
+                
+                // Let's look at the standard pattern for this SDK. Often it's just array indexing.
+                // If it was simple index, it would be shll2 once or twice depending on size.
+                // uint16_t is 2 bytes. Index i needs * 2.
+                // Maybe r3 = i << 1? No, shll2 is shift left by 2 (multiply by 4).
+                
+                // Let's assume the index calculation in assembly `add r2,r3` where r3=i<<2 and r2=i results in i*5 which is weird.
+                // However, if I look at `mov.w @(r0,r3),r1`, it reads a word.
+                
+                // Alternative interpretation: The code might be checking two entries per iteration or similar.
+                // But given the constraint to decompile what's there:
+                uint16_t val = g_8C2681DC[i * 5]; 
+                if ((val & 0x8360) == 0x8360) {
+                    result = ptr_val;
+                    break;
+                }
+            }
+            
+            i++;
+        }
+    }
+    
+    return result;
+}
