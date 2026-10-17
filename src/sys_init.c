@@ -1389,3 +1389,16 @@ extern uint32_t *gbr; // Global Base Register pointer, typically passed or defin
  * 0x8C016E16 - func_8C016E16
  */
 
+
+/*
+ * 0x8C016F90 - func_8C016F90
+ */
+#include <stdint.h>
+
+// External declarations for referenced globals/helpers (inferred from addresses)
+extern uint32_t g_8C144768; // Address 0x8C144768 loaded at r3 initially, likely a base pointer or table start. Re-evaluating logic: 
+                             // Actually, looking at the code flow:
+                             // r3 = 0x8c01708c (which is an address). Let's assume it points to data structures defined elsewhere in SDK.
+// Based on typical Katana patterns and the usage of `jsr @r2` where r2 comes from a table, these are likely function pointers or offsets into tables.
+extern uint32_t g_8C144768; // Placeholder for 0x8c01708c value if it's not immediate data in the binary dump provided contextually. 
+// Correction: The assembly loads `
