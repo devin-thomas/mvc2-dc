@@ -2509,3 +2509,8 @@ extern const void *g_addr_table_start; // Placeholder for 0x8c01ca76 if it's not
  * 0x8C01CA48 - func_8C01CA48
  */
 
+
+/*
+ * 0x8C01C8C6 - func_8C01C8C6
+ */
+
