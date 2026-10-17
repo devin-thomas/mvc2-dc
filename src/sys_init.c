@@ -766,3 +766,8 @@ static inline bool check_bit(uint32_t val) {
 
 // The assembly implements a lookup or validation routine involving VRAM reads and bitwise checks.
 // It appears to check two conditions based on bits in loaded values from R5 (offset 0
+
+/*
+ * 0x8C011BBC - func_8C011BBC
+ */
+
