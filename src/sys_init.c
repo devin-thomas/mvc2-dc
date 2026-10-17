@@ -8520,3 +8520,8 @@ extern uint16_t data_8c04af50; // 0x01eb (AF50)
  * 0x8C04AB82 - func_8C04AB82
  */
 
+
+/*
+ * 0x8C04AA3E - func_8C04AA3E
+ */
+
