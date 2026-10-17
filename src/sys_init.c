@@ -8851,3 +8851,21 @@ extern uint32_t **g_jump_target_map1;// Table starting around offset derived fro
  * 0x8C04DD6E - func_8C04DD6E
  */
 
+
+/*
+ * 0x8C04DFA8 - func_8C04DFA8
+ */
+#include <stdint.h>
+
+// External declarations for referenced functions/globals (names inferred from context)
+extern uint8_t func_8C04DFAA(void); // Placeholder if the label at DFF6 is a function call target, though likely it's just an offset calculation. 
+                                    // Based on assembly: mov.b @(r0,r1), r2; .word 0x0000 -> This looks like loading data from VRAM/ROM using offsets defined in constants below.
+// Actually, looking at the pattern `mov.w @(r0,r14),r3` followed by `.word X`, these are likely constant addresses or values loaded into r2/r5/etc for use as pointers/constants later.
+// The previous error suggests a label was treated as an identifier. In SH-4 object files, labels like 8C04DFAA might be resolved to constants if they don't point to code execution in this context, but here we must assume the provided assembly has literal values or external symbols for those `.word` entries that act as addresses/offsets relative to a base.
+// However, standard decompilation of such patterns usually implies: 
+// `mov.b @(r0,r1), r2; .word 0x8C04DFAA` means load byte at (base + offset). The `.word` is the *value* loaded or an immediate address.
+// Given the error, we assume there are external symbols for these specific addresses if they represent functions, but here they seem to be data offsets relative to a base pointer passed in r13/r14 context? 
+// Let's re-evaluate: `mov.b @(r0,r1),r2` loads from address (r0+r1). Then `.word 0x8C04DFAA`. This is likely an immediate value loaded into the next register or used as a constant.
+// Wait, the assembly format provided has labels like `func_8C04DFB6` implicitly defined by the label before it? No, the input just lists instructions and `.word` directives which are data constants in SH-4 object code representation often seen in decompilers when disassembling raw binaries without symbol resolution.
+// The error implies that somewhere `func_8C04DFAA` was used as an identifier (like a function pointer) instead of the constant value it represents or vice versa. 
+// Looking at line 22: `(arg_ptr + (func_8C04DFAA - func_8C04DFB6))`. This suggests `func_8C04DFAA` and `func_8C04
