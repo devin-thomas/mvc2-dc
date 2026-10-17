@@ -945,3 +945,8 @@ extern void *g_some_global_6c_offset; // Placeholder for @(r3+48), assuming it's
  * 0x8C0126B0 - func_8C0126B0
  */
 
+
+/*
+ * 0x8C012CAA - func_8C012CAA
+ */
+
