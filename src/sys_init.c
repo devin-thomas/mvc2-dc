@@ -10024,3 +10024,8 @@ extern uint8_t g_unk_8C212CDB;   // Value used as offset/base, address loaded at
  * 0x8C053F66 - func_8C053F66
  */
 
+
+/*
+ * 0x8C054238 - func_8C054238
+ */
+
