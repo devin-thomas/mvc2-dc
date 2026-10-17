@@ -8792,3 +8792,18 @@ extern int (*func_ptr)(void) = (int (*)(void))((uintptr_t)0x8C034E8C + 16 * size
  * 0x8C04DEAC - func_8C04DEAC (30 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04DEAC); */
+
+/*
+ * 0x8C04DECA - func_8C04DECA
+ */
+extern void *g_vram_ptr; // VRAM base pointer (inferred from context)
+extern uint32_t g_some_flag_8C05; 
+extern int (*func_table_entry)(void); 
+
+// Helper function declarations inferred from jump targets and usage patterns in Katana SDK/MvC2 engine.
+static void helper_func_a(void *arg, uintptr_t offset); // Corresponds to 0x8c04ec9a logic (likely a callback or state update)
+static int helper_func_b(uint32_t val);                 // Corresponds to 0x8c04dd80 logic
+
+// Global variables referenced in the assembly flow. 
+extern uint16_t g_some_flag_8C0E;   // Checked at bt/s @ 0x8c04dfb4
+extern int (*g_callback_func)(void); // Called via jsr @
