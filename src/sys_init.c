@@ -5610,3 +5610,8 @@ extern uint16_t (*g_callback_ptr)(void); // Pointer loaded from 0x8C03507C
  * 0x8C034CD6 - func_8C034CD6
  */
 
+
+/*
+ * 0x8C03515C - func_8C03515C (658 bytes) - STUBBED FOR REVIEW
+ */
+/* INCLUDE_ASM("asm/sys_init.s", func_8C03515C); */
