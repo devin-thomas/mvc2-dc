@@ -10718,3 +10718,10 @@ extern uint8_t g_vram_data_0x8C2896B0[4]; // Address 0x8C2896B0 loaded into r3 i
  * 0x8C056F2A - func_8C056F2A
  */
 
+
+/*
+ * 0x8C057650 - func_8C057650
+ */
+extern uint32_t func_8C0570aa(uint32_t arg); // Callee-saved callee, assumed based on context of SH-4 SDK patterns if not defined locally. Adjust signature as needed for actual implementation (likely void or returning status). Assuming it takes r14/r4 stack frame setup implies standard prologue/epilogue handling where arguments might be passed via registers before call, but here we see direct register usage after save. Given the specific instruction sequence `mov.r0 #...` then jump to address in delay slot logic often used for function pointers or indirect calls with immediate offsets, and typical SDK patterns:
+// Note: The assembly shows a complex pattern of setting r0, jumping via branch target (bsr), which is characteristic of calling functions stored at specific addresses relative to the current code segment or using jump tables. 
+// However, looking closely at `mov.w 0x
