@@ -2823,3 +2823,8 @@ extern const uint32_t g_offset_low_byte = 0x8C147178; // Address at F364 (r0 loa
 extern const uint32_t g_ptr_base_1 = 0x8C26A940; // Address at F360 (r3 load)
 // Note: The assembly loads absolute addresses directly into registers, not relative offsets from a base register like r4 in the final usage context shown. 
 // However, to make it compilable as
+
+/*
+ * 0x8C01F028 - func_8C01F028
+ */
+
