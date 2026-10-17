@@ -4598,3 +4598,8 @@ extern uint32_t (*func_ptr_table_entry)(void); // Generic type for the result of
  * 0x8C02BC18 - func_8C02BC18
  */
 
+
+/*
+ * 0x8C02BACA - func_8C02BACA
+ */
+
