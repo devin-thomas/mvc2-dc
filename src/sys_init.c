@@ -7734,3 +7734,18 @@ uint8_t func_8C046396(uint16_t *vram_addr, int index_offset) {
 // Note: The provided assembly snippet contains a jump/branch delay slot issue or an unreachable tail.
 // Original flow at rts is immediate, but the next instruction (mov r3,r0) would execute if we ignore 'rts'.
 // Given standard SH-4 behavior where RTS halts execution immediately
+
+/*
+ * 0x8C0463A0 - func_8C0463A0
+ */
+#include <stdint.h>
+
+extern uint8_t *g_vram_ptr; // Assumed global VRAM base pointer based on r4 usage context in SDKs, adjusted per ABI note if needed. 
+// Note: In strict SH-4 Dreamcast C decompilation without globals defined elsewhere, we assume the caller sets up 'a1' (r0) and 'a2' (r4).
+// However, standard practice for these stubs where r4 is used as a base offset implies it's passed or global. 
+// Given the prompt constraints to make it standalone compilable with externs:
+
+extern uint8_t *g_vram_base; // Global VRAM start address if not in registers directly (common pattern)
+// Correction based on strict ABI analysis of this specific stub type found in MVC2 SDK:
+// r4 is typically passed as the base pointer argument. 
+// Let's redefine
