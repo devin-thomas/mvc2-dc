@@ -8727,3 +8727,19 @@ void func_dispatcher_case_B(uint32_t arg_a, uint32_t arg_b); // Placeholder for 
  * 0x8C04DAF8 - func_8C04DAF8 (36 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C04DAF8); */
+
+/*
+ * 0x8C04DB1C - func_8C04DB1C
+ */
+#include <stdint.h>
+
+// Extern declarations for referenced functions and globals (as per Dreamcast ABI conventions)
+extern uint32_t (*func_8C04DAA2)(void); // Address 0x8C04DB26 calls this via BSR, likely a helper or table lookup result. Assuming void return based on usage context if not used directly as arg, but SH-4 returns in R0. Let's assume it modifies state and we need its address logic handled by the caller or specific signature known to Katana SDK. Given `bsr`, it jumps there.
+extern uint32_t (*func_8C04DD3E)(void); // Address 0x8C04DB5A calls this via BSR.
+extern void func_8C04DC16(void) __attribute__((noinline)); // Placeholder for the jump target at DC16 if it's a function, though assembly shows `mov.l @r15+, r14` which is likely part of an unrolled loop or specific logic.
+extern uint32_t (*func_8C04DD94)(void); // Address 0x8C04DBD6 calls this via BSR.
+
+// Global variables referenced in the assembly (VRAM addresses)
+extern volatile unsigned char *g_vram_ptr; // Represents r1, used as base for VRAM access @(r0,r1). The actual address is passed or loaded into R1 before call? 
+    // Note: In Katana SDK, often a global pointer to VBO/Texture data exists. Here `mov.b @(r0,r1),r2` suggests r1 holds the base offset of VRAM array.
+// Since we cannot see where R1
