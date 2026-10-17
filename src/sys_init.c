@@ -5697,3 +5697,8 @@ extern unsigned int *context_struct_ptr_r4; // Placeholder for r
  * 0x8C03552A - func_8C03552A
  */
 
+
+/*
+ * 0x8C03580C - func_8C03580C
+ */
+
