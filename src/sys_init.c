@@ -1379,3 +1379,8 @@ extern uint32_t *gbr; // Global Base Register pointer, typically passed or defin
  * 0x8C016A6E - func_8C016A6E (624 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C016A6E); */
+
+/*
+ * 0x8C016F8C - func_8C016F8C
+ */
+
