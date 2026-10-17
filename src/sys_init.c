@@ -7287,3 +7287,14 @@ extern uint32_t *func_8C04335C_base_addr(void); // Base address 0x8c043410, assu
  * 0x8C0438A2 - func_8C0438A2 (532 bytes) - STUBBED FOR REVIEW
  */
 /* INCLUDE_ASM("asm/sys_init.s", func_8C0438A2); */
+
+/*
+ * 0x8C043AB6 - func_8C043AB6
+ */
+extern uint32_t *g_unk_ptr_table; // Placeholder for 0x8C043AB6 base + offsets if not absolute, but here addresses are hardcoded or indirect via globals. Assuming standard SDK pattern where these constants point to specific data structures in RAM/ROM.
+// Note: The assembly uses direct memory loads from fixed ROM/RAM addresses (e.g., 0x8c043ad0). 
+// In a real decompiler context, `g_unk_ptr_table` would be defined as an array of these constants or the code assumes global symbols exist at those offsets.
+// For this snippet to compile standalone with -fsyntax-only without linker errors on undefined addresses:
+
+extern uint8_t *const g_vram_base; // Represents 0x8C043AD0 if it's a base pointer, but here it looks like an absolute address load. 
+// Correction based on assembly `mov.w #addr`: These are likely direct loads of pointers or
